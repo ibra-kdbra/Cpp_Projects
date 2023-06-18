@@ -1,4 +1,3 @@
-//Sajjad Aemmi
 
 #include<iostream>
 #include<conio.h>
