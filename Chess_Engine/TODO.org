@@ -1,0 +1,16 @@
+* Move generation
+** DONE Take piece when en passant is played
+** DONE Castling
+** DONE Checks
+** DONE Pins
+** DONE En passant discovered checks
+** DONE Promotions
+** DONE Checkmake & Draw
+** DONE Make sure move generation works
+** DONE 50 move rule
+** DONE Draw by repitition
+
+* TODO Add Tests
+
+* Search & Eval
+** ??

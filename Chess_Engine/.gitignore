@@ -1,0 +1,4 @@
+build*
+compile_flags.txt
+*.bak
+.vscode
