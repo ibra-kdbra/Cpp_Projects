@@ -9,3 +9,5 @@ I will also put some projects that I want to look into when I have time.
 I hope this repo never stop to grow and teach new things I love about this super programming language
 
 **I also hope in feeding back to it**
+
+Update, I'm finishing some c++ code to add, maybe another game later also
