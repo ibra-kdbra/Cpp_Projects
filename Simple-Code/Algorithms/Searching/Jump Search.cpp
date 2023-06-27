@@ -52,12 +52,10 @@ int main()
     cout << "\nNumber " << x << " is at index " << index; 
     return 0; 
 } 
-  
-// Contributed by nuclode 
 
-Output:
+// Output:
 
-Number 55 is at index 10
+// Number 55 is at index 10
   
 /*Time Complexity : O(√n)
 Auxiliary Space : O(1)
