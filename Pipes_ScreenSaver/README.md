@@ -1,5 +1,6 @@
 # pipes
 Pipes terminal screen saver made in C  
+(Also see [matrix](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Matrix_ScreenSaver))
 
 ## Config
 Config can be found in `config.h`  
