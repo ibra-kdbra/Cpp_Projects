@@ -1,3 +1,7 @@
+#include<iostream>
+#include <cstring>
+#include <climits>
+using namespace std;
 int minCount(int n){
     if(n <= 3){
         return n;
