@@ -19,6 +19,6 @@ int main()
     cout<<"Enter elements: ";
     for(int i=0;i<n;i++)
         cin>>v[i];
-    cout<<"Maximum sum contiguous subarray = "<<kadane(v);
+    cout<<"Maximum sum contiguous subarray = \n"<<kadane(v)<<endl;
     return 0;
 }
