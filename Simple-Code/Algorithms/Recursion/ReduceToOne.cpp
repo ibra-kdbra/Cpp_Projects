@@ -4,7 +4,6 @@ Title: Recursion
        Operation 1: If the number is even then you can divide the number by 2. 
        Operation 2: If the number is odd then you are allowed to perform either (n+1) or (n-1).
 
-Author: Sharmila
 */
 
 #include <bits/stdc++.h>
