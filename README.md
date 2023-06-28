@@ -10,4 +10,6 @@ I hope this repo never stop to grow and teach new things I love about this super
 
 **I also hope in feeding back to it**
 
-Update, I'm finishing some c++ code to add, maybe another game later also
+Update, Two games been added, and I made two related screen saver with C-programming language, also training with some algorithms in simple code directory, this will be helpful
+
+*Note:* I'm starting to like this..
