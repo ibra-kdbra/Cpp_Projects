@@ -1,7 +1,5 @@
 # Marble Marcher
 
-[![Build Status](https://travis-ci.org/jgoldfar/MarbleMarcher.svg?branch=master)](https://travis-ci.org/jgoldfar/MarbleMarcher)
-
 Marble Marcher is a video game demo that uses a fractal physics engine and fully procedural rendering to produce beautiful and unique gameplay unlike anything you've seen before.
 
 The goal of the game is to reach the flag as quickly as possible.  But be careful not to
@@ -33,9 +31,9 @@ Alternatively, [vcpkg](https://github.com/Microsoft/vcpkg) can be used:
 Alternatively, one can use the platform-dependent build system, for example `Make`:
 
 * `make -C build`
-### Arch Linux
-* `cd ~`
-* `git clone https://github.com/HackerPoet/MarbleMarcher.git`
+### Linux
+* `using https://download-directory.github.io `
+* `copy this folder directory and past it to download`
 * `cd MarbleMarcher`
 * `mkdir build && cd build`
 * `cmake ..`
