@@ -77,3 +77,11 @@ Also, you can check out the man page after installing if you wish.
 ```
 $  man tsnake
 ```
+
+## This code don't belong to me, I just modified it to my need.
+## Credits:
+[AUTHOR]
+Toni Sagrista Selles <admin@tonisagrista.com>
+
+[SEE ALSO]
+Online repository: <https://gitlab.com/langurmonkey/tsnake>
