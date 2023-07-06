@@ -1,3 +1,8 @@
+/*
+This was made by ibra-kdbra 
+https://github.com/ibra-kdbra
+*/
+
 #include <iostream>
 #include <iomanip>
 #include <time.h>
