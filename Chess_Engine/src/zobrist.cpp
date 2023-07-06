@@ -1,3 +1,9 @@
+/*
+This was made by ibra-kdbra 
+https://github.com/ibra-kdbra
+I'm trying to build this with all programming languages I konw.
+*/
+
 #include "zobrist.hpp"
 
 #include <random>
