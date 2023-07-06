@@ -1,6 +1,5 @@
 
-// Created by Utkarsh Nagdev
-#include "heap.h"
+#include "Heap.h"
 using namespace std;
 // HEAPTYPE = TRUE = maxHeap otherwise MINHEAP
 Heap::Heap(bool heapType) : heapType(heapType) {
