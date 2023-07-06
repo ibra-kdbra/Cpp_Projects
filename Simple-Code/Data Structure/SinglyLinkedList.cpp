@@ -1,6 +1,5 @@
-// Created by Utkarsh Nagdev;
-// An implementation of singly linked list in C++;
 
+// An implementation of singly linked list in C++;
 
 #include "SinglyLinkedList.h"
 #include <iostream>
