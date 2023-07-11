@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Model 3D, file format, triangle mesh, validator, validation">
+    <meta name="author" content="bzt">
+    <title>Model 3D Validator</title>
+    <link href="../logo.png" rel="shortcut icon">
+    <style>
+        select, option, input[type=file] { font-family: monospace,fixed; }
+        #jserr { color:white; background:red; font-weight:bold; font-size: 150%; text-align:center; padding: 32px; }
+    </style>
+  </head>
+  <body>
+    <h1>Model 3D Validator</h1>
+    <div id="jserr">Please enable JavaScript</div>
+    <p>This tool provides the same functionality as <a href="https://gitlab.com/bztsrc/model3d/tree/master/m3dconv" target="new">converter</a> utility's dump feature.
+    It is using the same M3D SDK in C, but compiled as WebAssembly and outputs to HTML DOM, so <em>considerably</em> slower than the native <samp>m3dconv</samp> command line tool.
+    If everything went well, you should see "<samp>Model parsed OK.</samp>" as the last line of the output.</p>
+    <table>
+        <tr><td><samp>-d</samp></td><td>dump uncompressed chunks, do basic verification</td></tr>
+        <tr><td><samp>-dd</samp></td><td>verify and dump summary of uncompressed chunks</td></tr>
+        <tr><td><samp>-ddd</samp></td><td>verify and dump detailed chunk contents too</td></tr>
+        <tr><td><samp>-D</samp></td><td>dump parsed, in-memory C struct representation</td></tr>
+        <tr><td><samp>-v, -vv, -vvv&nbsp;&nbsp;</samp></td><td>set verbosity level of parsing (only useful with <samp>-D</samp>)</td></tr>
+    </table>
+    <h3>Command</h3>
+    <p><samp>m3dconv</samp>&nbsp;
+    <select id="dump">
+        <option value=1 default>-d</option>
+        <option value=2>-dd</option>
+        <option value=3>-ddd</option>
+        <option value=99>-D</option>
+    </select>&nbsp;
+    <select id="verbose">
+        <option value=0 default>&nbsp;</option>
+        <option value=1>-v</option>
+        <option value=2>-vv</option>
+        <option value=3>-vvv</option>
+    </select>&nbsp;
+    <input type="file" id="input" onchange="execute()">&nbsp;
+    <input type="button" id="enter" onclick="execute()" value="&#8626;&nbsp;Enter">
+    </p>
+    <h3>Output</h3>
+    <pre id="output"></pre>
+    <script src="validator.js"></script>
+    <script>
+        var outbuf, outpre = document.getElementById("output");
+        const decoder = new TextDecoder();
+        document.getElementById("jserr").style.display = "none";
+        outpre.innerText = "";
+        function output(len) {
+            /* let's waste some precious resources! Copy and convert uint8array to string! */
+            const view = new Uint8Array(Module.HEAPU8.buffer,outbuf,len);
+            const str = decoder.decode(view);
+            /* refreshing the updated pre element on screen won't happen unless it's async */
+            setTimeout(function () {
+                if(str.charCodeAt(0) == 3) {
+                    document.getElementById("enter").disabled = false;
+                    document.body.style.cursor = "default";
+                } else
+                    outpre.innerText += str;
+            }, 1);
+        }
+        function execute() {
+            var verb=document.getElementById("verbose").value;
+            var dump=document.getElementById("dump").value;
+            var input=document.getElementById("input");
+            outpre.innerText = "";
+            if(input.files.length<1) {
+                alert("No file given.");
+            } else {
+                var reader = new FileReader();
+                document.getElementById("enter").disabled = true;
+                document.body.style.cursor = "wait";
+                reader.onloadend = function() {
+                    var data = new Uint8Array(reader.result);
+                    var validator = Module.cwrap("m3d_validate", "number", [ "number", "number", "number", "number" ]);
+                    const buf = Module._malloc(data.length);
+                    outbuf = Module._malloc(4096);
+                    Module.HEAPU8.set(data, buf);
+                    validator(buf, data.length, dump, verb, outbuf);
+                    Module._free(buf);
+                    Module._free(outbuf);
+                };
+                reader.readAsArrayBuffer(input.files[0]);
+            }
+        }
+    </script>
+  </body>
+</html>
