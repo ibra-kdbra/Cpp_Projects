@@ -1,0 +1,8 @@
+---
+Checks:          '-*,clang-diagnostic-*,clang-analyzer-*,clang-analyzer-*,bugprone-*,concurrency-*,modernize-*,portability-*,readability-*,cppcoreguidelines-*,cert-*,misc-*,-readability-implicit-bool-conversion,-cppcoreguidelines-avoid-magic-numbers,-readability-magic-numbers,-readability-braces-around-statements,-cppcoreguidelines-pro-bounds-*,-readability-isolate-declaration,-cppcoreguidelines-special-member-functions,-cppcoreguidelines-pro-type-reinterpret-cast,-readability-qualified-auto,-cert-err58-cpp,-*-avoid-c-arrays,-*-type-vararg,-*-type-union-access,-*-non-private-member-variables*,-modernize-use-nodiscard,-*-avoid-goto,-cppcoreguidelines-pro-type-const-cast,-readability-identifier-length,-readability-function-cognitive-complexity,-cert-err33-c,-concurrency-mt-unsafe,-cppcoreguidelines-avoid-non-const-global-variables,-bugprone-easily-swappable-parameters,-misc-no-recursion'
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+AnalyzeTemporaryDtors: false
+FormatStyle:     none
+...
+
