@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Model 3D, file format, triangle mesh, viewer">
+    <meta name="author" content="bzt">
+    <title>Model 3D Viewer</title>
+    <link href="../logo.png" rel="shortcut icon">
+    <style>
+        input { font-family: monospace,fixed; width:100%; }
+        table { width:100%; }
+        canvas { width:100%; height:100%; }
+        #jserr { color:white; background:red; font-weight:bold; font-size: 150%; text-align:center; padding: 32px; }
+    </style>
+  </head>
+  <body>
+    <h1>Model 3D Viewer</h1>
+    <div id="jserr">Please enable JavaScript</div>
+    <table>
+        <tr><td>URL</td><td width="100%"><input id="url" onchange="geturl()" placeholder="https://..."></td></tr>
+        <tr><td>File</td><td><input type="file" id="input" onchange="getfile()"></td></tr>
+    </table>
+    <canvas id="canvas"></canvas>
+    <script src="viewer.js"></script>
+    <script>
+        document.getElementById("jserr").style.display = "none";
+        Module.canvas = document.getElementById("canvas");
+        try {
+            var url = document.location.href.split('?')[1];
+            if(url.substr(0,4) != "http" && url.substr(0,5) != "file:") url = "https://bztsrc.gitlab.io/model3d/models/" + url;
+            if(url && url != "" && url != undefined) {
+                document.getElementById("url").value = url;
+                geturl();
+            }
+        }catch(e){}
+        function execute(data) {
+            var viewer = Module.cwrap("m3d_viewer", "number", [ "number", "number" ]);
+            const buf = Module._malloc(data.length);
+            Module.HEAPU8.set(data, buf);
+            viewer(buf, data.length);
+            Module._free(buf);
+        }
+        function geturl() {
+            fetch(document.getElementById("url").value).then((response) => {
+                if(response.ok) response.arrayBuffer().then((buf) => { execute(Uint8Array(buf)); });
+            })
+            .catch((error) => alert("Unable to get url\n" + error));
+        }
+        function getfile() {
+            var input=document.getElementById("input");
+            if(input.files.length<1) {
+                alert("No file given.");
+            } else {
+                var reader = new FileReader();
+                reader.onloadend = function() { execute(Uint8Array(reader.result)); };
+                reader.readAsArrayBuffer(input.files[0]);
+            }
+        }
+    </script>
+  </body>
+</html>
