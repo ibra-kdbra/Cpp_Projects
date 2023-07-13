@@ -20,13 +20,13 @@ inline static char randchar(unsigned int n) {
 }
 
 // Set color to the color for the matrix line
-#define R 255
-#define G 221
-#define B 255
+#define R 0
+#define G 128
+#define B 0
 #define V 50 // Variance
 static unsigned char color[3] = {R, G, B};
 inline static void randcolor() {
-	color[0] = R - (rand() % V);
-	color[1] = G - (rand() % V);
-	color[2] = B - (rand() % V);
+    color[0] = R + (rand() % V);
+    color[1] = G + (rand() % V);
+    color[2] = B + (rand() % V);
 }
