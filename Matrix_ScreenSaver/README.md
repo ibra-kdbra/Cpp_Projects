@@ -1,6 +1,6 @@
 # Matrix
 Matrix terminal screen saver made in C  
-(Also see [pipers](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Pipes_ScreenSaver))
+(Also see [pipes](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Pipes_ScreenSaver))
 
 ## Config
 Config can be found in `config.h`  
