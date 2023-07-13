@@ -10,13 +10,13 @@
 const char chars[][4] = {"┃", "━", "┏", "┓", "┗", "┛"};
 
 // Set color of the pipe
-#define R 255
-#define G 221
-#define B 255
+#define R 128
+#define G 0
+#define B 128
 #define V 50 // Variance
 static unsigned char color[3] = {R, G, B};
 inline static void randcolor() {
-	color[0] = R - (rand() % V);
-	color[1] = G - (rand() % V);
-	color[2] = B - (rand() % V);
+	color[0] = R + (rand() % V);
+	color[1] = G + (rand() % V);
+	color[2] = B + (rand() % V);
 }
