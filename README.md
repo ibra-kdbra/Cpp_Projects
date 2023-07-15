@@ -1,16 +1,24 @@
 # C++ Projects **PlayGround**
 
-So I made this repo to make more C++ projects and implement new things I always wanted to try.
+### I made this repo to make more C++ projects and implement new things I always wanted to try.
 
-**This repo** will also contain some forked repo from other people, I will give their credit in every *README* of its directory and I will edit them to my need.
+### **This repo** will contain some forked,cloned repo from other people, their credit will be found every *README* of each directory and it will edited to my need.
 
-I will also put some projects that I want to look into when I have time.
+### This will include some projects that I want to look into when I have time.
 
-I hope this repo never stops growing and teaches me new things about this super programming language.
+### I hope this repository never stops growing, and teaches me new things about this fascinating programming language.
 
-**I also hope in feeding back to it**
+#### **I also hope in feeding back to it**
 
-Update, Two games have been added, and I made two related screen savers with C-programming language, also training with some algorithms in the SimpleCode directory, this will be helpful.
-I also added the Marble Marcher game which has been made by the Code-Paradoy youtube channel and changed some things to it.
+Update, made two related screen savers with C-programming language(Pipes_ScreenSaver)(Matrix_ScreenSaver), also training with some algorithms in the SimpleCode directory, this will be helpful.
 
-*Note:* I'm starting to like this.
+Added the Marble Marcher game(MarbleMarcher) which has been made by the Code-Paradoy youtube channel and changed some things to it.
+
+
+Made template for c/c++ library or executed files(Template_Language_Generator), support desing modules(support_modules),System Cpu Monitor(SystemMonitor),tokenizer for c/c++, terminal file manager(tfm)
+
+Made a shell with c low level programming language.(miniShell)
+
+Pushed (Dump_c++) doc and (ModerCLI) which I don't own, left the credits in the markdown file.
+
+Made custom operator with c++ for customizing with my need.(CustomizedOperator)
