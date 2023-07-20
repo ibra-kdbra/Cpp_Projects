@@ -2,13 +2,11 @@
 
 ### I made this repo to make more C++ projects and implement new things I always wanted to try.
 
-### **This repo** will contain some forked,cloned repo from other people, their credit will be found every *README* of each directory and it will edited to my need.
-
-### This will include some projects that I want to look into when I have time.
+### **This repo** will may contain some forked and cloned repo from other users, their credit will be found in every *README* of each directory and it will be edited to my need.
 
 ### I hope this repository never stops growing, and teaches me new things about this fascinating programming language.
 
-#### **I also hope in feeding back to it**
+#### **I hope in feeding back to it**
 
 Update, made two related screen savers with C-programming language(Pipes_ScreenSaver)(Matrix_ScreenSaver), also training with some algorithms in the SimpleCode directory, this will be helpful.
 
