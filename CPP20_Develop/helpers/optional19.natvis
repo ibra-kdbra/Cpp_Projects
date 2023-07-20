@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+  <Type Name="optional19::Optional&lt;*&gt;">
+    <DisplayString Condition="!m_valid">nullopt</DisplayString>
+    <DisplayString Condition="m_valid" Optional="true">{*($T1*)&amp;m_storage}</DisplayString>
+    <DisplayString Condition="m_valid" Optional="true">{m_value}</DisplayString>
+    <Expand HideRawView="true">
+      <Item Condition="m_valid" Optional="true" Name="value">*($T1*)&amp;m_storage</Item>
+      <Item Condition="m_valid" Optional="true" Name="value">m_value</Item>
+    </Expand>
+  </Type>
+
+  <Type Name="optional19::PackedOptional&lt;*,*&gt;">
+    <DisplayString>{m_data}</DisplayString>
+    <Expand HideRawView="true">
+      <Item Name="value">m_data</Item>
+    </Expand>
+  </Type>
+
+</AutoVisualizer>

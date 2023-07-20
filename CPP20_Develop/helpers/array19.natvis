@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+  <Type Name="array19::Array&lt;*,*&gt;">
+    <DisplayString Condition="count==0">{{empty}}</DisplayString>
+    <Expand>
+      <ArrayItems>
+        <Size>count</Size>
+        <ValuePointer>m</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+
+  <Type Name="array19::SliceOf&lt;*&gt;">
+    <DisplayString Condition="m_data==0 || m_count==0">{{empty}}</DisplayString>
+    <DisplayString Condition="m_data!=0 &amp;&amp; m_count!=0">&amp;{m_data,[m_count]na}</DisplayString>
+    <Expand>
+      <ArrayItems Condition="m_data!=0">
+        <Size>m_count</Size>
+        <ValuePointer>m_data</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+  <Type Name="array19::MoveSliceOf&lt;*&gt;">
+    <DisplayString Condition="m_data==0 || m_count==0">{{empty}}</DisplayString>
+    <DisplayString Condition="m_data!=0 &amp;&amp; m_count!=0">&amp;&amp;{m_data,[m_count]na}</DisplayString>
+    <Expand>
+      <ArrayItems Condition="m_data!=0">
+        <Size>m_count</Size>
+        <ValuePointer>m_data</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+
+  <Type Name="array19::DynamicArrayOf&lt;*&gt;">
+    <DisplayString Condition="m_pointer==0 || m_count==0">{{empty}}</DisplayString>
+    <DisplayString Condition="m_pointer!=0 &amp;&amp; m_count==1">[{m_pointer,na}]</DisplayString>
+    <DisplayString Condition="m_pointer!=0 &amp;&amp; m_count >1">[{m_count}]</DisplayString>
+    <Expand>
+      <ArrayItems Condition="m_pointer!=0">
+        <Size>m_count</Size>
+        <ValuePointer>m_pointer</ValuePointer>
+      </ArrayItems>
+      <Item Name="[…] unused_capacity" Condition="m_pointer!=0 &amp;&amp; m_capacity > m_count" ExcludeView="simple">m_capacity - m_count</Item>
+    </Expand>
+  </Type>
+</AutoVisualizer>
