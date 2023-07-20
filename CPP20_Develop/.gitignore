@@ -1,0 +1,14 @@
+!*.lib/
+!*.app/
+!*.data/
+!*.view/
+*.user
+*.user.*
+*.pyc
+third_party/*/
+.vagrant/
+.vscode/
+.vs/
+build/
+artifacts/
+CMakeUserPresets.json
