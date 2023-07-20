@@ -1,0 +1,202 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "multi-config",
+            "hidden": true,
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_CTEST_ARGUMENTS": "--output-on-failure",
+                "CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+            }
+        },
+        {
+            "name": "msvc",
+            "inherits": "multi-config",
+            "displayName": "Visual Studio 2019/2022",
+            "description": "Recommended configuration for windows builds",
+            "installDir": "${sourceDir}/artifacts/msvc",
+            "cacheVariables": {
+                "CMAKE_CXX_FLAGS": "/EHsc /permissive- /Zc:__cplusplus /Zc:externConstexpr /Zc:inline /Zc:preprocessor /Zc:throwingNew /diagnostics:caret /experimental:external /external:anglebrackets /external:W0 /wd4068 /D_ENABLE_EXTENDED_ALIGNED_STORAGE"
+            }
+        },
+        {
+            "name": "clang",
+            "inherits": "multi-config",
+            "displayName": "Clang",
+            "description": "Recommended configuration for Clang with libc++",
+            "installDir": "${sourceDir}/artifacts/clang",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_CXX_FLAGS": "-stdlib=libc++ -fsized-deallocation -Wall -Wextra -Werror --pedantic -ftemplate-backtrace-limit=0 -Wno-gnu-zero-variadic-macro-arguments"
+            }
+        },
+        {
+            "name": "clang-libstdcpp",
+            "inherits": "multi-config",
+            "displayName": "Clang",
+            "description": "Recommended configuration for Clang with libstdcpp",
+            "installDir": "${sourceDir}/artifacts/clang-libstdcpp",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_CXX_FLAGS": "-stdlib=libstdc++ -fsized-deallocation -Wall -Wextra -Werror --pedantic -ftemplate-backtrace-limit=0 -Wno-gnu-zero-variadic-macro-arguments"
+            }
+        },
+        {
+            "name": "clang-analyze",
+            "inherits": "multi-config",
+            "displayName": "Clang Static Analyser",
+            "description": "Configuration for Clang based static analyser",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_CXX_FLAGS": "--analyze -stdlib=libc++ -fsized-deallocation -Wno-unused-command-line-argument"
+            }
+        },
+        {
+            "name": "gcc",
+            "inherits": "multi-config",
+            "displayName": "G++",
+            "description": "Recommended configuration for GNU GCC",
+            "installDir": "${sourceDir}/artifacts/gcc",
+            "cacheVariables": {
+                "CMAKE_CXX_FLAGS": "-fsized-deallocation -Wall -Wextra -Werror --pedantic -ftemplate-backtrace-limit=0 -Wno-maybe-uninitialized -Wno-stringop-overflow -Wno-array-bounds -Wno-restrict"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "msvc-debug",
+            "displayName": "Visual Studio 2019/2022 Debug Build",
+            "configurePreset": "msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "msvc-release",
+            "displayName": "Visual Studio 2019/2022 Release Build",
+            "configurePreset": "msvc",
+            "configuration": "Release"
+        },
+        {
+            "name": "clang-debug",
+            "displayName": "Clang Debug Build",
+            "configurePreset": "clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "clang-release",
+            "displayName": "Clang Release Build",
+            "configurePreset": "clang",
+            "configuration": "Release"
+        },
+        {
+            "name": "clang-libstdcpp-debug",
+            "displayName": "Clang libstdc++ Debug Build",
+            "configurePreset": "clang-libstdcpp",
+            "configuration": "Debug"
+        },
+        {
+            "name": "clang-libstdcpp-release",
+            "displayName": "Clang libstdc++ Release Build",
+            "configurePreset": "clang-libstdcpp",
+            "configuration": "Release"
+        },
+        {
+            "name": "gcc-debug",
+            "displayName": "G++ Debug Build",
+            "configurePreset": "gcc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "gcc-release",
+            "displayName": "G++ Release Build",
+            "configurePreset": "gcc",
+            "configuration": "Release"
+        },
+        {
+            "name": "clang-analyze-debug",
+            "displayName": "Clang Analyse Debug Build",
+            "configurePreset": "clang-analyze",
+            "configuration": "Debug"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "test-base",
+            "hidden": true,
+            "output": {
+                "outputOnFailure": true,
+                "debug": false
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            }
+        },
+        {
+            "name": "test-msvc-debug",
+            "inherits": "test-base",
+            "displayName": "Test Visual Studio 2019/2022 Debug Build",
+            "configurePreset": "msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "test-msvc-release",
+            "inherits": "test-base",
+            "displayName": "Test Visual Studio 2019/2022 Release Build",
+            "configurePreset": "msvc",
+            "configuration": "Release"
+        },
+        {
+            "name": "test-clang-debug",
+            "inherits": "test-base",
+            "displayName": "Test Clang Debug Build",
+            "configurePreset": "clang",
+            "configuration": "Debug"
+        },
+        {
+            "name": "test-clang-release",
+            "inherits": "test-base",
+            "displayName": "Test Clang Release Build",
+            "configurePreset": "clang",
+            "configuration": "Release"
+        },
+        {
+            "name": "test-clang-libstdcpp-debug",
+            "inherits": "test-base",
+            "displayName": "Test Clang libstdc++ Debug Build",
+            "configurePreset": "clang-libstdcpp",
+            "configuration": "Debug"
+        },
+        {
+            "name": "test-clang-libstdcpp-release",
+            "inherits": "test-base",
+            "displayName": "Test Clang libstdc++ Release Build",
+            "configurePreset": "clang-libstdcpp",
+            "configuration": "Release"
+        },
+        {
+            "name": "test-gcc-debug",
+            "inherits": "test-base",
+            "displayName": "Test GCC Debug Build",
+            "configurePreset": "gcc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "test-gcc-release",
+            "inherits": "test-base",
+            "displayName": "Test GCC Release Build",
+            "configurePreset": "gcc",
+            "configuration": "Release"
+        }
+    ]
+}
