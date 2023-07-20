@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>I18N_MAINWINDOW</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/Logos/App</normaloff>:/Logos/App</iconset>
+  </property>
+  <widget class="QWidget" name="wid_center">
+   <layout class="QGridLayout" name="lay_mainwindow">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
+    <property name="spacing">
+     <number>2</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="wid_mdi"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="wid_menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="mm_app">
+    <property name="title">
+     <string>I18N_MM_APP</string>
+    </property>
+    <widget class="QMenu" name="sm_app_export">
+     <property name="title">
+      <string>I18N_SM_APP_EXPORT</string>
+     </property>
+     <property name="icon">
+      <iconset resource="Resources.qrc">
+       <normaloff>:/Icons/Application/Export</normaloff>:/Icons/Application/Export</iconset>
+     </property>
+     <addaction name="me_export_txt"/>
+     <addaction name="me_export_html"/>
+     <addaction name="me_export_odf"/>
+     <addaction name="me_export_pdf"/>
+    </widget>
+    <addaction name="me_app_new"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_open"/>
+    <addaction name="me_app_save"/>
+    <addaction name="me_app_saveas"/>
+    <addaction name="separator"/>
+    <addaction name="sm_app_export"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_close"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_print"/>
+    <addaction name="separator"/>
+    <addaction name="me_app_quit"/>
+   </widget>
+   <widget class="QMenu" name="mm_edit">
+    <property name="title">
+     <string>I18N_MM_EDIT</string>
+    </property>
+    <addaction name="me_edit_undo"/>
+    <addaction name="me_edit_redo"/>
+    <addaction name="separator"/>
+    <addaction name="me_edit_cut"/>
+    <addaction name="me_edit_copy"/>
+    <addaction name="me_edit_paste"/>
+    <addaction name="me_edit_clear"/>
+    <addaction name="separator"/>
+    <addaction name="me_edit_selectall"/>
+   </widget>
+   <widget class="QMenu" name="mm_window">
+    <property name="title">
+     <string>I18N_MM_WINDOW</string>
+    </property>
+    <addaction name="me_window_next"/>
+    <addaction name="me_window_prev"/>
+    <addaction name="separator"/>
+    <addaction name="me_window_maximize"/>
+    <addaction name="me_window_minimize"/>
+    <addaction name="separator"/>
+    <addaction name="me_window_close"/>
+    <addaction name="me_window_closeall"/>
+   </widget>
+   <widget class="QMenu" name="mm_help">
+    <property name="title">
+     <string>I18N_MM_HELP</string>
+    </property>
+    <addaction name="me_help_app"/>
+    <addaction name="me_help_qt"/>
+   </widget>
+   <widget class="QMenu" name="mm_search">
+    <property name="title">
+     <string>I18N_MM_SEARCH</string>
+    </property>
+    <addaction name="me_search_find"/>
+    <addaction name="me_search_find_next"/>
+    <addaction name="me_search_find_prev"/>
+    <addaction name="separator"/>
+    <addaction name="me_search_replace"/>
+    <addaction name="me_search_goto"/>
+   </widget>
+   <widget class="QMenu" name="mm_config">
+    <property name="title">
+     <string>I18N_MM_CONFIG</string>
+    </property>
+    <widget class="QMenu" name="sm_config_lang">
+     <property name="title">
+      <string>I18N_SM_CONFIG_LANG</string>
+     </property>
+     <addaction name="me_lang_english"/>
+     <addaction name="separator"/>
+     <addaction name="me_lang_dutch"/>
+     <addaction name="me_lang_french"/>
+     <addaction name="me_lang_german"/>
+     <addaction name="me_lang_italian"/>
+     <addaction name="me_lang_spanish"/>
+    </widget>
+    <widget class="QMenu" name="sm_config_theme">
+     <property name="title">
+      <string>I18N_SM_CONFIG_THEME</string>
+     </property>
+     <addaction name="me_theme_fusion"/>
+     <addaction name="separator"/>
+     <addaction name="me_theme_macos"/>
+     <addaction name="me_theme_qtcurve"/>
+     <addaction name="me_theme_windows"/>
+     <addaction name="separator"/>
+     <addaction name="me_theme_darkmode"/>
+    </widget>
+    <addaction name="sm_config_lang"/>
+    <addaction name="sm_config_theme"/>
+   </widget>
+   <addaction name="mm_app"/>
+   <addaction name="mm_edit"/>
+   <addaction name="mm_search"/>
+   <addaction name="mm_window"/>
+   <addaction name="mm_config"/>
+   <addaction name="mm_help"/>
+  </widget>
+  <widget class="QStatusBar" name="wid_statusbar"/>
+  <action name="me_app_new">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/New</normaloff>:/Icons/Application/New</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_APP_NEW</string>
+   </property>
+  </action>
+  <action name="me_app_open">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Open</normaloff>:/Icons/Application/Open</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_APP_OPEN</string>
+   </property>
+  </action>
+  <action name="me_app_save">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Save</normaloff>:/Icons/Application/Save</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_APP_SAVE</string>
+   </property>
+  </action>
+  <action name="me_app_saveas">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/SaveAs</normaloff>:/Icons/Application/SaveAs</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_APP_SAVEAS</string>
+   </property>
+  </action>
+  <action name="me_app_close">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Close</normaloff>:/Icons/Application/Close</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_APP_CLOSE</string>
+   </property>
+  </action>
+  <action name="me_app_print">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Print</normaloff>:/Icons/Application/Print</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_APP_PRINT</string>
+   </property>
+  </action>
+  <action name="me_app_quit">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Application/Exit</normaloff>:/Icons/Application/Exit</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_APP_QUIT</string>
+   </property>
+  </action>
+  <action name="me_edit_undo">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Undo</normaloff>:/Icons/Edit/Undo</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_EDIT_UNDO</string>
+   </property>
+  </action>
+  <action name="me_edit_redo">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Redo</normaloff>:/Icons/Edit/Redo</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_EDIT_REDO</string>
+   </property>
+  </action>
+  <action name="me_edit_cut">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Cut</normaloff>:/Icons/Edit/Cut</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_EDIT_CUT</string>
+   </property>
+  </action>
+  <action name="me_edit_copy">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Copy</normaloff>:/Icons/Edit/Copy</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_EDIT_COPY</string>
+   </property>
+  </action>
+  <action name="me_edit_paste">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Paste</normaloff>:/Icons/Edit/Paste</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_EDIT_PASTE</string>
+   </property>
+  </action>
+  <action name="me_edit_clear">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/Clear</normaloff>:/Icons/Edit/Clear</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_EDIT_CLEAR</string>
+   </property>
+  </action>
+  <action name="me_edit_selectall">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Edit/SelectAll</normaloff>:/Icons/Edit/SelectAll</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_EDIT_SELECTALL</string>
+   </property>
+  </action>
+  <action name="me_search_find">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Find</normaloff>:/Icons/Search/Find</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_SEARCH_FIND</string>
+   </property>
+  </action>
+  <action name="me_search_replace">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Replace</normaloff>:/Icons/Search/Replace</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_SEARCH_REPLACE</string>
+   </property>
+  </action>
+  <action name="me_search_goto">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Goto</normaloff>:/Icons/Search/Goto</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_SEARCH_GOTO</string>
+   </property>
+  </action>
+  <action name="me_format_font">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/Font</normaloff>:/Icons/Format/Font</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_FORMAT_FONT</string>
+   </property>
+  </action>
+  <action name="me_align_left">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignLeft</normaloff>:/Icons/Format/AlignLeft</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_ALIGN_LEFT</string>
+   </property>
+  </action>
+  <action name="me_align_center">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignCenter</normaloff>:/Icons/Format/AlignCenter</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_ALIGN_CENTER</string>
+   </property>
+  </action>
+  <action name="me_align_right">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignRight</normaloff>:/Icons/Format/AlignRight</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_ALIGN_RIGHT</string>
+   </property>
+  </action>
+  <action name="me_align_fill">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Format/AlignFill</normaloff>:/Icons/Format/AlignFill</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_ALIGN_FILL</string>
+   </property>
+  </action>
+  <action name="me_window_next">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Next</normaloff>:/Icons/Window/Next</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_NEXT</string>
+   </property>
+  </action>
+  <action name="me_window_prev">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Prev</normaloff>:/Icons/Window/Prev</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_PREV</string>
+   </property>
+  </action>
+  <action name="me_window_close">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Close</normaloff>:/Icons/Window/Close</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_CLOSE</string>
+   </property>
+  </action>
+  <action name="me_window_closeall">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Close</normaloff>:/Icons/Window/Close</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_CLOSEALL</string>
+   </property>
+  </action>
+  <action name="me_help_app">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Logos/App</normaloff>:/Logos/App</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_HELP_APP</string>
+   </property>
+  </action>
+  <action name="me_help_qt">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Logos/Qt</normaloff>:/Logos/Qt</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_HELP_QT</string>
+   </property>
+  </action>
+  <action name="me_lang_english">
+   <property name="text">
+    <string>I18N_ME_LANG_ENGLISH</string>
+   </property>
+  </action>
+  <action name="me_lang_dutch">
+   <property name="text">
+    <string>I18N_ME_LANG_DUTCH</string>
+   </property>
+  </action>
+  <action name="me_lang_french">
+   <property name="text">
+    <string>I18N_ME_LANG_FRENCH</string>
+   </property>
+  </action>
+  <action name="me_lang_italian">
+   <property name="text">
+    <string>I18N_ME_LANG_ITALIAN</string>
+   </property>
+  </action>
+  <action name="me_lang_german">
+   <property name="text">
+    <string>I18N_ME_LANG_GERMAN</string>
+   </property>
+  </action>
+  <action name="me_lang_spanish">
+   <property name="text">
+    <string>I18N_ME_LANG_SPANISH</string>
+   </property>
+  </action>
+  <action name="me_theme_default">
+   <property name="text">
+    <string>I18N_ME_THEME_DEFAULT</string>
+   </property>
+  </action>
+  <action name="me_theme_fusion">
+   <property name="text">
+    <string>I18N_ME_THEME_FUSION</string>
+   </property>
+  </action>
+  <action name="me_theme_windows">
+   <property name="text">
+    <string>I18N_ME_THEME_WINDOWS</string>
+   </property>
+  </action>
+  <action name="me_theme_macos">
+   <property name="text">
+    <string>I18N_ME_THEME_MACOS</string>
+   </property>
+  </action>
+  <action name="me_theme_qtcurve">
+   <property name="text">
+    <string>I18N_ME_THEME_QTCURVE</string>
+   </property>
+  </action>
+  <action name="me_theme_darkmode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>I18N_ME_THEME_DARKMODE</string>
+   </property>
+  </action>
+  <action name="me_search_find_next">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Find</normaloff>:/Icons/Search/Find</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_SEARCH_FIND_NEXT</string>
+   </property>
+  </action>
+  <action name="me_search_find_prev">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Search/Find</normaloff>:/Icons/Search/Find</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_SEARCH_FIND_PREV</string>
+   </property>
+  </action>
+  <action name="me_export_txt">
+   <property name="text">
+    <string>I18N_ME_EXPORT_TXT</string>
+   </property>
+  </action>
+  <action name="me_export_html">
+   <property name="text">
+    <string>I18N_ME_EXPORT_HTML</string>
+   </property>
+  </action>
+  <action name="me_export_odf">
+   <property name="text">
+    <string>I18N_ME_EXPORT_ODF</string>
+   </property>
+  </action>
+  <action name="me_export_pdf">
+   <property name="text">
+    <string>I18N_ME_EXPORT_PDF</string>
+   </property>
+  </action>
+  <action name="me_window_maximize">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Maximize</normaloff>:/Icons/Window/Maximize</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_MAXIMIZE</string>
+   </property>
+  </action>
+  <action name="me_window_minimize">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/Icons/Window/Minimize</normaloff>:/Icons/Window/Minimize</iconset>
+   </property>
+   <property name="text">
+    <string>I18N_ME_WINDOW_MINIMIZE</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
