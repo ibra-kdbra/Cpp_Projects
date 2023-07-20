@@ -1,0 +1,96 @@
+<RCC>
+  <qresource prefix="Language">
+    <file alias="Dutch">i18n_Dutch.qm</file>
+    <file alias="English">i18n_English.qm</file>
+    <file alias="Italian">i18n_Italian.qm</file>
+    <file alias="French">i18n_French.qm</file>
+    <file alias="German">i18n_German.qm</file>
+    <file alias="Spanish">i18n_Spanish.qm</file>
+  </qresource>
+  <qresource prefix="Logos">
+    <file alias="App">../assets/icons/logo-app.svg</file>
+    <file alias="Qt">../assets/icons/logo-qt.svg</file>
+  </qresource>
+  <qresource prefix="DarkIcons/Application">
+    <file alias="Exit">../assets/icons/dark-application-exit.svg</file>
+    <file alias="Close">../assets/icons/dark-document-close.svg</file>
+    <file alias="Export">../assets/icons/dark-document-export.svg</file>
+    <file alias="New">../assets/icons/dark-document-new.svg</file>
+    <file alias="Open">../assets/icons/dark-document-open.svg</file>
+    <file alias="Print">../assets/icons/dark-document-print.svg</file>
+    <file alias="Save">../assets/icons/dark-document-save.svg</file>
+    <file alias="SaveAs">../assets/icons/dark-document-saveas.svg</file>
+  </qresource>
+  <qresource prefix="DarkIcons/Edit">
+    <file alias="Clear">../assets/icons/dark-edit-clear.svg</file>
+    <file alias="Copy">../assets/icons/dark-edit-copy.svg</file>
+    <file alias="Cut">../assets/icons/dark-edit-cut.svg</file>
+    <file alias="Paste">../assets/icons/dark-edit-paste.svg</file>
+    <file alias="Redo">../assets/icons/dark-edit-redo.svg</file>
+    <file alias="SelectAll">../assets/icons/dark-edit-selectall.svg</file>
+    <file alias="Undo">../assets/icons/dark-edit-undo.svg</file>
+  </qresource>
+  <qresource prefix="DarkIcons/Format">
+    <file alias="AlignCenter">../assets/icons/dark-format-align-center.svg</file>
+    <file alias="AlignFill">../assets/icons/dark-format-align-fill.svg</file>
+    <file alias="AlignLeft">../assets/icons/dark-format-align-left.svg</file>
+    <file alias="AlignRight">../assets/icons/dark-format-align-right.svg</file>
+    <file alias="Font">../assets/icons/dark-format-font.svg</file>
+    <file alias="TextBold">../assets/icons/dark-format-text-bold.svg</file>
+    <file alias="TextItalic">../assets/icons/dark-format-text-italic.svg</file>
+    <file alias="TextUnderline">../assets/icons/dark-format-text-underline.svg</file>
+  </qresource>
+  <qresource prefix="DarkIcons/Search">
+    <file alias="Find">../assets/icons/search-find.svg</file>
+    <file alias="Goto">../assets/icons/search-goto.svg</file>
+    <file alias="Replace">../assets/icons/search-replace.svg</file>
+  </qresource>
+  <qresource prefix="DarkIcons/Window">
+    <file alias="Close">../assets/icons/window-close.svg</file>
+    <file alias="Maximize">../assets/icons/window-maximize.svg</file>
+    <file alias="Minimize">../assets/icons/window-minimize.svg</file>
+    <file alias="Next">../assets/icons/window-next.svg</file>
+    <file alias="Prev">../assets/icons/window-prev.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Application">
+    <file alias="Export">../assets/icons/document-export.svg</file>
+    <file alias="Exit">../assets/icons/application-exit.svg</file>
+    <file alias="Print">../assets/icons/document-print.svg</file>
+    <file alias="Close">../assets/icons/document-close.svg</file>
+    <file alias="Open">../assets/icons/document-open.svg</file>
+    <file alias="SaveAs">../assets/icons/document-save-as.svg</file>
+    <file alias="Save">../assets/icons/document-save.svg</file>
+    <file alias="New">../assets/icons/document-new.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Edit">
+    <file alias="SelectAll">../assets/icons/edit-selectall.svg</file>
+    <file alias="Paste">../assets/icons/edit-paste.svg</file>
+    <file alias="Cut">../assets/icons/edit-cut.svg</file>
+    <file alias="Copy">../assets/icons/edit-copy.svg</file>
+    <file alias="Clear">../assets/icons/edit-clear.svg</file>
+    <file alias="Redo">../assets/icons/edit-redo.svg</file>
+    <file alias="Undo">../assets/icons/edit-undo.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Format">
+    <file alias="TextBold">../assets/icons/format-text-bold.svg</file>
+    <file alias="TextItalic">../assets/icons/format-text-italic.svg</file>
+    <file alias="TextUnderline">../assets/icons/format-text-underline.svg</file>
+    <file alias="AlignFill">../assets/icons/format-align-fill.svg</file>
+    <file alias="AlignCenter">../assets/icons/format-align-center.svg</file>
+    <file alias="AlignLeft">../assets/icons/format-align-left.svg</file>
+    <file alias="AlignRight">../assets/icons/format-align-right.svg</file>
+    <file alias="Font">../assets/icons/format-font.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Search">
+    <file alias="Goto">../assets/icons/search-goto.svg</file>
+    <file alias="Find">../assets/icons/search-find.svg</file>
+    <file alias="Replace">../assets/icons/search-replace.svg</file>
+  </qresource>
+  <qresource prefix="Icons/Window">
+    <file alias="Minimize">../assets/icons/window-minimize.svg</file>
+    <file alias="Maximize">../assets/icons/window-maximize.svg</file>
+    <file alias="Close">../assets/icons/window-close.svg</file>
+    <file alias="Next">../assets/icons/window-next.svg</file>
+    <file alias="Prev">../assets/icons/window-prev.svg</file>
+  </qresource>
+</RCC>
