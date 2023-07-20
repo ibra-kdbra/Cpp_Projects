@@ -22,3 +22,8 @@ Made a shell with c low level programming language.(miniShell)
 Pushed (Dump_c++) doc and (ModerCLI) which I don't own, left the credits in the markdown file.
 
 Made custom operator with c++ for customizing with my need.(CustomizedOperator)
+
+Pushed a header file that brings reflection to any class that wants it, regardless of
+whether the reflected member is a constant(introspective)
+
+Finished the Word Processor with qt5 finally(WordProc)
