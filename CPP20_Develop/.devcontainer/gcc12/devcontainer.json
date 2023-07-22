@@ -1,0 +1,16 @@
+{
+	"name": "gcc12",
+	"build": {
+		"dockerfile": "./gcc12.Dockerfile",
+		"context": "."
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools"
+			]
+		}
+	},
+	"remoteUser": "vscode"
+}
