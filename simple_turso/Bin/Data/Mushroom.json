@@ -1,0 +1,22 @@
+{
+  "passes": {
+    "shadow": {
+      "shader": "Shaders/Shadow.glsl",
+      "colorWrite": false
+    },
+    "opaque": {
+      "shader": "Shaders/Diffuse.glsl"
+    }
+  },
+  "textures": {
+    "0": "Mushroom.dds"
+  },
+  "uniforms": [
+    {
+      "matDiffColor": "1 1 1 1"
+    },
+    {
+      "matSpecColor": "0.25 0.25 0.25 1"
+    }
+  ]
+}

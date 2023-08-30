@@ -1,0 +1,23 @@
+{
+  "passes": {
+    "shadow": {
+      "shader": "Shaders/Shadow.glsl",
+      "colorWrite": false
+    },
+    "opaque": {
+      "shader": "Shaders/DiffuseNormal.glsl"
+    }
+  },
+  "textures": {
+    "0": "StoneDiffuse.dds",
+    "1": "StoneNormal.dds"
+  },
+  "uniforms": [
+    {
+      "matDiffColor": "1 1 1 1"
+    },
+    {
+      "matSpecColor": "1 1 1 16"
+    }
+  ]
+}
