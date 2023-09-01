@@ -25,3 +25,7 @@ Pushed a header file that brings reflection to any class that wants it, regardle
 whether the reflected member is a constant(introspective)
 
 Finished the Word Processor with qt5 finally(WordProc)
+
+Building an improved version of c++ 19/20 for my uses(CPP20Develop)
+
+Trying with some simple made game engine trying to figure somethings on my own(simple_turso)
