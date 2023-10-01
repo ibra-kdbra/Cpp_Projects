@@ -1,0 +1,1 @@
+cmake -B ".build/vs2017" -G "Visual Studio 15" %* .
