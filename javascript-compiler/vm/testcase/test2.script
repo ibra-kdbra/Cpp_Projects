@@ -1,0 +1,10 @@
+var x = 10;
+var sum = 0;
+while (x > 0) {
+    function test(y) {
+        return 2*y;
+    }
+    sum = sum + test(x);
+    x = x - 1;
+}
+var z = sum;
