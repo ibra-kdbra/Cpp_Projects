@@ -1,0 +1,12 @@
+function test(x) {
+    function inner(x) {
+        if (x > 1) {
+            return inner(x - 1) + x;
+        } else {
+            return 1;
+        }
+    }
+    return inner(x);
+}
+
+var res = test(4);

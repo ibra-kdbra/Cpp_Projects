@@ -1,0 +1,12 @@
+var x = 1;
+var y = 2;
+function test(x, y) {
+    function inner(z) {
+        return z * 2;
+    }
+    var a = x;
+    var b = y;
+    inner(2);
+    return (a + b) * (a - b);
+}
+test(x, y);
