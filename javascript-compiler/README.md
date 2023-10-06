@@ -4,7 +4,7 @@
 
 This is a project which I developed to learn the mechanism of compilers. The project contains 5 parts:
 
-1) a lexser;
+1) a lexer;
 
 2) a parser;
 
