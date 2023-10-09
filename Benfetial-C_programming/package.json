@@ -1,0 +1,8 @@
+{
+  "name": "c",
+  "version": "v0.12",
+  "description": "Compile and execute C \'scripts\' in one go!",
+  "global": "true",
+  "install": "mkdir -p ${PREFIX:-/usr}/bin; install -m 775 c ${PREFIX:-/usr}/bin",
+  "scripts": [ "c" ]
+}
