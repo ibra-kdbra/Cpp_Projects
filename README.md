@@ -28,4 +28,9 @@ Finished the Word Processor with qt5 finally(WordProc)
 
 Building an improved version of c++ 19/20 for my uses(CPP20Develop)
 
-Trying with some simple made game engine trying to figure somethings on my own(simple_turso)
+Trying with some simple made game engine trying to figure somethings on my own(simple_turso)=finished
+
+Added a similar javascript interpreter(javascript-compiler)
+
+Customized a C_programming language(Benefetial-C_programming)
+
