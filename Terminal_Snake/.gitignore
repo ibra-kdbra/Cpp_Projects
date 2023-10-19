@@ -1,3 +1,5 @@
 tsnake
 *.o
 *.h.gch
+tsnake 
+tsnake.o
