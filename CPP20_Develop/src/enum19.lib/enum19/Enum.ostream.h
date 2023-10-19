@@ -1,6 +1,7 @@
 #pragma once
 #include "Enum.names.h"
 
+#include <cstdint>
 #include <ostream>
 #include <string19/StringView.ostream.h>
 
