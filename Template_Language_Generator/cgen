@@ -2244,12 +2244,12 @@ main() {
 
   read -p 'Description: ' description;
   
-  lang="$(echo 'C\nC++' | selection_menu 'Language?' "$DEFAULT_LANG")"
-  type="$(echo 'Executable\nLibrary' | selection_menu 'Type?' "$DEFAULT_TYPE")"
-  linking="$(echo 'Static\nDynamic' | selection_menu 'Linking?' "$DEFAULT_LINKING")"
-  license="$(echo 'UNLICENSE\nCC0_1.0_Universal\nMIT\nBSD_1_CLAUSE\nAPACHE_2_0\nAGPL_v3\nGPL_v3\nGPL_v2' | selection_menu 'License?' "$DEFAULT_LICENSE")"
-  create_dir="$(echo 'Yes\nNo' | selection_menu 'Create new directory?' "$DEFAULT_MKDIR")"
-  create_git_repo="$(echo 'Yes\nNo' | selection_menu 'Create git repository?' "$DEFAULT_GIT")"
+  lang="$(echo 'C C++' | selection_menu 'Language?' "$DEFAULT_LANG")"
+  type="$(echo 'Executable Library' | selection_menu 'Type?' "$DEFAULT_TYPE")"
+  linking="$(echo 'Static Dynamic' | selection_menu 'Linking?' "$DEFAULT_LINKING")"
+  license="$(echo 'UNLICENSE CC0_1.0_Universal MIT BSD_1_CLAUSE  APACHE_2_0  AGPL_v3  GPL_v3  GPL_v2' | selection_menu 'License?' "$DEFAULT_LICENSE")"
+  create_dir="$(echo 'Yes No' | selection_menu 'Create new directory?' "$DEFAULT_MKDIR")"
+  create_git_repo="$(echo 'Yes No' | selection_menu 'Create git repository?' "$DEFAULT_GIT")"
 
   if yesno "$create_dir"; then
     mkdir "$name"
