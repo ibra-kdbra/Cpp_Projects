@@ -1,0 +1,12 @@
+# ignored files in the sources directory
+
+*.qm
+*_parameters
+*.cpp
+*.depends
+Makefile
+*.h
+
+# ignore CMakeFiles
+CMakeFiles/
+*.cmake
