@@ -1,4 +1,4 @@
-// Edit: Modified to pass fucntion as a fucntion parameter
+// Edit: Modified to pass fucntion as a function parameter
 #include<stdio.h>
 
 bool compare(int a, int b) {
