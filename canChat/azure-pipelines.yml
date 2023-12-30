@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+jobs:
+  - job: ubuntu_20_04
+    displayName: 'Build - Ubuntu 20.04'
+    continueOnError: false
+    pool:
+      vmImage: 'ubuntu-20.04'
+    workspace:
+      clean: all
+    steps:
+      - script: |
+          sudo apt-get install libssl-dev -y
+        displayName: 'Install - openssl'
+      - script: |
+          sudo /bin/bash ./install-oatpp-modules.sh
+        displayName: 'install oatpp modules'
+        workingDirectory: utility
+      - script: |
+          mkdir build/
+        displayName: 'Create "build/" folder'
+        workingDirectory: server
+      - script: |
+          cmake ..
+          sudo make
+        displayName: 'CMake'
+        workingDirectory: server/build
+      - script: |
+          make test ARGS="-V"
+        displayName: 'Test'
+        workingDirectory: server/build
