@@ -39,4 +39,9 @@ Added simple async thread pool implementation(Thread_Pool)
 
 Added automata loops(Resgular_Expressions)
 
+Added injection for the app(Injection)
+
+Added a confine simple and very secure chat app with otpp(canChat)
+
+Pushed safeguard for the windows system(safeGuards)
 
