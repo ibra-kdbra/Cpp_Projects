@@ -51,5 +51,5 @@ int main()
     int n = sizeof(arr) / sizeof(arr[0]);
     quicksort(arr, 0, n-1);
     printf("Sorted array: \n");
-    for (auto numb: arr) std::cout << numb << " ";
+    for (auto numb: arr) std::cout << numb << " "<<std::endl;
 }
