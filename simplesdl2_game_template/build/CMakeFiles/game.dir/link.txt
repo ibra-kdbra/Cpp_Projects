@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/game.dir/src/main.cpp.o CMakeFiles/game.dir/src/gamehandler.cpp.o CMakeFiles/game.dir/src/input.cpp.o CMakeFiles/game.dir/src/gamemanager.cpp.o CMakeFiles/game.dir/src/object.cpp.o CMakeFiles/game.dir/src/tasker.cpp.o -o game  -L/usr/lib/x86_64-linux-gnu  -lSDL2 ../libs/libPathfinder.a -ltbb 

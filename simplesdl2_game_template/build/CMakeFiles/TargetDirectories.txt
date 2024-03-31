@@ -1,3 +1,0 @@
-/home/ibra-kdbra/Workspace/tryOut/simplesdl2_game_template/build/CMakeFiles/game.dir
-/home/ibra-kdbra/Workspace/tryOut/simplesdl2_game_template/build/CMakeFiles/edit_cache.dir
-/home/ibra-kdbra/Workspace/tryOut/simplesdl2_game_template/build/CMakeFiles/rebuild_cache.dir
