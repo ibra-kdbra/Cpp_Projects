@@ -1,4 +1,4 @@
-# Turso3D
+# Simple_Turso
 
 Experimental 3D / game engine technology partially based on the Urho3D codebase.
 
@@ -22,4 +22,3 @@ Experimental 3D / game engine technology partially based on the Urho3D codebase.
 - 5 toggle shadow debug draw
 - F toggle fullscreen
 - V toggle vsync
-

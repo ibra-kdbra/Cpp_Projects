@@ -1,4 +1,4 @@
-# cgen
+# Template Language Generator
 
 A small POSIX shell script for generating a C/C++ code structure, build system files, etc.
 
@@ -12,8 +12,3 @@ A small POSIX shell script for generating a C/C++ code structure, build system f
 ## Future Features
 
 * Choose build system
-
-# Contributions and Improvements
-
-Always welcome
-

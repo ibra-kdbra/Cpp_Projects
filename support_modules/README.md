@@ -1,12 +1,11 @@
-# Stand-Alone Support Modules
-===========================
+# Support Modules
 
 This is a repository of stand-alone C/C++ modules, each of which is
 implemented in no more than two files (header & source).
 
-## Various open source licenses are used.  See the individual modules for details.
+## Various open source licenses are used.  See the individual modules for details
 
-### The modules are organized in these directories:
+### The modules are organized in these directories
 
 Directory | Contents
 ----------|---------

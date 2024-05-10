@@ -3,13 +3,12 @@
 `tsnake` is a terminal snake game written in C++ using the ncurses library with
 support for maps and interactive resizing.
 
-
 Move the snake using the arrow keys [`↑↓←→`], [`wasd`] or vi's [`hjkl`].
 Here are some controls:
 
--  [`p`] Pause the game
--  [`r`] Restart with next map
--  [`q`] Quit
+- [`p`] Pause the game
+- [`r`] Restart with next map
+- [`q`] Quit
 
 The game starts with a speed of 2 m/s and every 20 points the speed
 is increased until a maximum of 20 m/s.
@@ -20,28 +19,15 @@ Otherwise, maps are cycled automatically when the game is restarted.
 
 ## Requirements
 
-* C++17
-* ncurses
+- C++17
+- ncurses
 
-## Installation
+## Building
 
-If you are on **Arch Linux** or derivatives, use our [`tsnake`](https://aur.archlinux.org/packages/tsnake/) AUR package:
+Build and install.
 
-```
-$  yay -S tsnake
-```
-You are done.
-
-If you are on **any other distro**, first clone the repository.
-
-```
-$  git clone git@gitlab.com:langurmonkey/tsnake.git && cd tsnake
-```
-
-Then, build and install the software.
-
-```
-$  make && make install
+```sh
+make && make install
 ```
 
 You may need to run the `make install` as a superuser.
@@ -50,36 +36,32 @@ You may need to run the `make install` as a superuser.
 
 To run the software, just do:
 
-```
-$  tsnake
+```sh
+tsnake
 ```
 
 ## Usage
 
 Here is the info listed by the `--help` flag.
 
-```
+```sh
 Usage: tsnake [OPTION]...
 
 Options:
- -h		shows usage information
- -v		prints version and exit
- -n [SIZE]	set inital size of snake, which defaults to 4
- -m [MAP_NUM]	number of the first map to use as an integer, which is cycled
-		using (map % nmaps)
- -c		deactivate colors
- -x, --cheat	activate cheat mode where speed can be increased and
-		decreased with '+' and '-'
+ -h  shows usage information
+ -v  prints version and exit
+ -n [SIZE] set inital size of snake, which defaults to 4
+ -m [MAP_NUM] number of the first map to use as an integer, which is cycled
+  using (map % nmaps)
+ -c  deactivate colors
+ -x, --cheat activate cheat mode where speed can be increased and
+  decreased with '+' and '-'
 ```
 
-Also, you can check out the man page after installing if you wish.
+## This code don't belong to me, I just modified it to my need
 
-```
-$  man tsnake
-```
+## Credits
 
-## This code don't belong to me, I just modified it to my need.
-## Credits:
 [AUTHOR]
 Toni Sagrista Selles <admin@tonisagrista.com>
 

@@ -2,7 +2,7 @@
 
 A CLI password generator coded in C++.
 
-##### Status: In development
+## Status: In development
 
 At the moment the features are minimal and the random number generator is __not secure__.
 
