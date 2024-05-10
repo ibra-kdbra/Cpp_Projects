@@ -351,7 +351,7 @@ void about()
 	gotoxy(54, 10);
 	cout << "TETRIS v1.1";
 	gotoxy(54, 12);
-	cout << "Programmer: Sajjad Aemmi";
+	cout << "Programmer: ibra-kdbra";
 
 	_getch();
 	clear_half_screen();

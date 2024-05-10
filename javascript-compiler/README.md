@@ -18,10 +18,11 @@ The designed programming language is similar to Javascript, but much simpler. Co
 
 Each part can be both compiled to a runnable program, or a library linked by others. To compile a runnable program, goto that part and run command:
 
+```sh
+make intergrate # compile the runnable program
+make clean # clean this directory and other dependencies
 ```
-$ make intergrate # compile the runnable program
-$ make clean # clean this directory and other dependencies
-```
+
 The dependencies are as follows, once again, each part can be run and tested independently.
 
 a) lexser: itself
@@ -37,7 +38,8 @@ e) vm: compiler, parser, lexser
 ## DEMO ##
 
 Let's take a simple program as an example, the program actually recusivly do arithmetic calucation of (4 + 3 + 2 + 1 = 10)
-```
+
+```CPP
 function test(x) {
     function inner(x) {
         if (x > 1) {
@@ -50,8 +52,10 @@ function test(x) {
 }
 var res = test(4);
 ```
+
 The output of parser is as follows, in fact it's the ast-tree of the previous program.
-```
+
+```txt
 └─ <  > STATEMENTS
   ├─ < test > FUNCTION
   │ ├─ < x > IDENTIFIER
@@ -86,16 +90,18 @@ The output of parser is as follows, in fact it's the ast-tree of the previous pr
         ├─ < test > IDENTIFIER
         └─ < 4 > NUM
 ```
+
 The interpreter will take the ast-tree as input, directly execute the the nodes of the ast-tree. Whenever an assign happens, the interpreter will output the assigned value, which can be the indications of running status.
 
 output of interpreter, because there is only one assign:
-```
+
+```txt
 assgin res 10
 ```
 
 The compiler will try to compile the ast-tree, unlike interpreter, it will generate IR code, assembly code, and finally the executable code. Let's look at the IR code first. The IR code represents the purpose of ast-tree, and irrelevant to any specific cpu architecture.
 
-```
+```txt
 .start:
         t0 := alloc res
         t1 := 4
@@ -141,7 +147,7 @@ The compiler will try to compile the ast-tree, unlike interpreter, it will gener
 
 Next the compiler will translate the IR code to arch-specific assembly code. Let's have a look. OK, the code is a little bit longer and difficult than IR. Here, stm is store to memory, ldm is load from memory.
 
-```
+```txt
 .start:
         push ebp
         mov ebp, esp
@@ -227,9 +233,10 @@ Next the compiler will translate the IR code to arch-specific assembly code. Let
         pop ebp
         ret
 ```
+
 Finally, the compiler will translate the assembly code into binary, that is, the executable code which specific cpu or vm can understand. The binary code is as follows. The instruction structure is borrowed from [linux ebpf](https://github.com/iovisor/bpf-docs/blob/master/eBPF.md), you can find more detail in instruction.h
 
-```
+```hexa
           0x9003
           0x89bf
      0x800000817
@@ -248,7 +255,7 @@ Finally, the compiler will translate the assembly code into binary, that is, the
 
 The vm will take the executable biary code as input, one instruction at a time, to decode and execute it. the vm's output is as follows. Each time the vm executing an instruction, it will decode and output the instruction, you can compare it with binary code mentioned previously. Since there are loops, function calls and recusion, the output will be much more. Each time a function returns, the vm will output the returned value, which can indicate the vm's running status.
 
-```
+```txt
              0x3                0              0x9                0                0
             0xbf              0x9              0x8                0                0
             0x17              0x8                0                0              0x8

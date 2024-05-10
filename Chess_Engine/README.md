@@ -1,11 +1,17 @@
 # Chess-Engine
+
 Chess Engine in C++17.
+
 # Dependencies
+
 Cmake will try to download & compile them, but I am not very good with it, so it might fail :)
+
 - [cmake](https://cmake.org)
 - [raylib](https://www.raylib.com/)
 - [fmt](https://fmt.dev/latest/index.html)
+
 # Building
+
 The engine works with GCC, Clang or ICC (tested only with GCC though).
 <br>To build, run this in a terminal (from the root directory of the project):
 <br>`mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build .`

@@ -1,15 +1,14 @@
 # C++ Projects **PlayGround**
 
-### I made this repo to make more C++ projects and implement new things I always wanted to try.
+## I made this repo to make more C++ projects and implement new things I always wanted to try
 
-### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need.
+### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
 
-### I hope this repository never stops growing and teaches me new things about this fascinating programming language.
+### I hope this repository never stops growing and teaches me new things about this fascinating programming language
 
 Update, made two related screen savers with C-programming language(Pipes_ScreenSaver)(Matrix_ScreenSaver), and also trained with some algorithms in the SimpleCode directory, this will be helpful.
 
 Added the Marble Marcher game(MarbleMarcher) which has been made by the Code-Paradoy YouTube channel and changed some things to it.
-
 
 Made template for c/c++ library or executed files(Template_Language_Generator), support desing modules(support_modules),System Cpu Monitor(SystemMonitor),tokenizer for c/c++, terminal file manager(tfm)
 
@@ -43,4 +42,3 @@ Added injection for the app(Injection)
 Added a confined simple and very secure chat app with otpp(canChat)
 
 Pushed safeguard for the Windows system(safeGuards)
-

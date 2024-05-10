@@ -1,4 +1,4 @@
-# mage-hand
+# CustomizedOperators
 
 implements custom operators for C++.
 

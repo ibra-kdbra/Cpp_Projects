@@ -1,4 +1,4 @@
-# Can-Chat [![Build Status](https://dev.azure.com/lganzzzo/lganzzzo/_apis/build/status/lganzzzo.canchat?branchName=master)](https://dev.azure.com/lganzzzo/lganzzzo/_build/latest?definitionId=24&branchName=master)
+# Can-Chat
 
 ![Can-Chat](https://upload.wikimedia.org/wikipedia/commons/0/0a/Tr%C3%A5dtelefon-illustration.png)
 
@@ -57,7 +57,7 @@ If host-peer exits the room, all of his file-sharing is canceled.
 #### Build Chat Server
 
 ```bash
-cd <this-repo>/server/
+cd <canChat>/server/
 mkdir build/ && cd build/
 cmake ..
 make

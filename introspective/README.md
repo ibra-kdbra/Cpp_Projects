@@ -83,7 +83,7 @@ If you can't find your language in the examples, don't worry: this header is scr
 can be made to work with any one that is written in C. The specifications for the marshalling interface that you need
 to build are listed here:
 
-* `template <bool isStaticCall, typename Data> static auto FromEmbedded(MarshallArgs..., std::size_t where)`. Extracts 
+* `template <bool isStaticCall, typename Data> static auto FromEmbedded(MarshallArgs..., std::size_t where)`. Extracts
   one value of type `Data` through the facilities exposed in `MarshallArgs...`, and returns that value.
   Whether you return a `Data` value by copy, by reference or `const`-qualified is your choice; the
   only thing this function template needs to satisfy are the needs of the wrapped functions.
@@ -125,7 +125,7 @@ Once such a specialisation has been written, all that's left to do to get the de
 constexpr auto scriptReadyFnArray = introspective::MarshalledFns<MarshallSig>(«Introspective Type»::GetMembers());
 ```
 
-That array will contain `introspective::FnBrief<MarshallSig>` elements, where the first element in such a 
+That array will contain `introspective::FnBrief<MarshallSig>` elements, where the first element in such a
 pair is the name of the wrapped function and the second element is a pointer to a function with signature
 `MarshallSig` which automatically converts arguments that are provided inside the embedded scripting language
 to C++ arguments and feeds them to the wrapped function in the correct order, using the five functions
@@ -162,4 +162,3 @@ Until C++ implements some real universal reflection, this header ought to do it
 for the time being.
 
 Any feedback or contribution is greatly appreciated!
-

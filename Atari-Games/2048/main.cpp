@@ -271,7 +271,7 @@ void about()
 	gotoxy(30, 8);
 	cout << "2048 v1.5";
 	gotoxy(30, 10);
-	cout << "Programmer: Sajjad Aemmi";
+	cout << "Programmer: ibra-kdbra";
 
 	_getch();
 }

@@ -1,11 +1,13 @@
 ## Building
-```
+
+```sh
 meson setup build/
 meson compile -C build/
 ```
 
 ## Usage
-```
+
+```sh
 abidump - Dump C++ Itanium ABI from ELF objects
 
 USAGE:
@@ -23,7 +25,7 @@ SUBCOMMANDS:
 
 **Example - Dumping virtual function tables:**
 
-```
+```sh
 $ abidump tf/bin/server_srv.so vtables CTFGameMovement
 VTable for CTFGameMovement:
     [0] CTFGameMovement::~CTFGameMovement()
@@ -39,4 +41,4 @@ VTable for CTFGameMovement:
 
 ## License
 
-[MIT](/LICENSE.txt)
+[MIT](./LICENSE)
