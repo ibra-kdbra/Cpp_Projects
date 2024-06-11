@@ -1,6 +1,6 @@
 # Support Modules
 
-This is a repository of stand-alone C/C++ modules, each of which is
+This is a project of stand-alone C/C++ modules, each of which is
 implemented in no more than two files (header & source).
 
 ## Various open source licenses are used.  See the individual modules for details
