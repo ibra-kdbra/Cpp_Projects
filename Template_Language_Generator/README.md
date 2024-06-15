@@ -12,3 +12,6 @@ A small POSIX shell script for generating a C/C++ code structure, build system f
 ## Future Features
 
 * Choose build system
+
+### Example:
+![](example.png)
