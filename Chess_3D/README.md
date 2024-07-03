@@ -1,4 +1,4 @@
-# chess-3d
+# Chess_3D
 
 A simple 3d chess game.
 
