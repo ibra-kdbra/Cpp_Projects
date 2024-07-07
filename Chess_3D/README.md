@@ -7,9 +7,9 @@ A simple 3d chess game.
 - C to reset camera angle
 - F to toggle fullscreen
 
-![alt text](/images/screenshot.png)
+## ScreenShot
 
-Board and piece models are taken from [here](https://polyhaven.com/a/chess_set) (CC0).
+![Chess_3D_screenshot](./images/screenshot.png)
 
 ## Building
 
@@ -29,3 +29,4 @@ following line to your `cmake` command:
 
 - [Learn OpenGL](https://learnopengl.com)
 - [Chess Programming Wiki](https://www.chessprogramming.org)
+- Board and piece models are taken from [here](https://polyhaven.com/a/chess_set) (CC0).x
