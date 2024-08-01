@@ -405,3 +405,46 @@ static int fcfg_agent_do_conn_config_server (ConnectionInfo **conn)
 
     return ret;
 }
+
+int fcfg_agent_wait_config_server_loop ()
+{
+    int ret;
+    int64_t version;
+    ConnectionInfo *join_conn = NULL;
+    ret = 0;
+    srand(time(NULL));
+    while (g_agent_global_vars.continue_flag) {
+        if (join_conn && join_conn->sock >= 0) {
+            conn_pool_disconnect_server(join_conn);
+            sleep(1);
+        }
+        ret = fcfg_agent_do_conn_config_server(&join_conn);
+        if (ret) {
+            join_conn = NULL;
+            lerr ("join server conn_pool_connect_server fail:%d, %s",
+                    ret, strerror(ret));
+            sleep(1);
+            continue;
+        }
+        ret = fcfg_agent_get_config_version(&version);
+        if (ret) {
+            g_agent_global_vars.continue_flag = false;
+            continue;
+        }
+
+        ret = fcfg_send_agent_join_request(join_conn, version);
+        if (ret) {
+            lerr ("join server fcfg_send_agent_join_request fail.%d, %s", ret, strerror(ret));
+            continue;
+        }
+        linfo("agent join server success.conn: %s:%d",
+                join_conn->ip_addr, join_conn->port);
+        ret = fcfg_agent_recv_server_push(join_conn);
+        if (ret) {
+            lerr ("fcfg_agent_recv_server_push fail");
+            continue;
+        }
+    }
+
+    return 0;
+}
