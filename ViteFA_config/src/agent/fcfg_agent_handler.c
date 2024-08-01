@@ -273,3 +273,24 @@ int fcfg_agent_recv_server_active_test (ConnectionInfo *join_conn)
 {
     return fcfg_agent_send_header_resp(join_conn, FCFG_PROTO_ACTIVE_TEST_RESP);
 }
+
+int fcfg_agent_send_push_config_resp(ConnectionInfo *join_conn,
+        int64_t max_version, unsigned char resp_status)
+{
+    char buff[32];
+    int size;
+    FCFGProtoHeader *fcfg_header_resp_pro =
+        (FCFGProtoHeader *)buff;
+    FCFGProtoPushResp *fcfg_push_resp_pro =
+        (FCFGProtoPushResp *)(fcfg_header_resp_pro + 1);
+    fcfg_header_resp_pro->status = resp_status;
+    fcfg_header_resp_pro->cmd = FCFG_PROTO_PUSH_RESP;
+    int2buff(sizeof(FCFGProtoPushResp), fcfg_header_resp_pro->body_len);
+    long2buff(max_version, fcfg_push_resp_pro->agent_cfg_version);
+    linfo("fcfg_agent_send_push_config_resp.status:%d, max_version:%"PRId64,
+            resp_status, max_version);
+
+    size = sizeof(FCFGProtoHeader) + sizeof(FCFGProtoPushResp);
+    return tcpsenddata_nb(join_conn->sock, buff,
+            size, g_agent_global_vars.network_timeout);
+}
