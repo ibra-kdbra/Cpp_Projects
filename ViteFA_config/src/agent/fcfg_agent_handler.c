@@ -178,5 +178,57 @@ static int fcfg_set_push_config(const char *body_data,
 
     return ret;
 }
+int fcfg_agent_shm_init ()
+{
+    return shmcache_init_from_file(&g_agent_global_vars.shm_context,
+            g_agent_global_vars.shm_config_file);
+}
 
+static int fcfg_agent_check_response(ConnectionInfo *join_conn,
+        FCFGResponseInfo *resp_info, int network_timeout,
+        unsigned char resp_cmd, int64_t version)
+{
+    int ret;
+    char buff[128];
+    FCFGJoinResp join_resp_data;
 
+    ret = -1;
+    if (resp_info->cmd == resp_cmd && resp_info->status == 0) {
+        ret = 0;
+        if (resp_info->body_len) {
+            ret = tcprecvdata_nb_ex(join_conn->sock, buff,
+                    resp_info->body_len, network_timeout, NULL);
+            if (ret) {
+                lerr("join server tcprecvdata_nb_ex fail.err:%d, err info:%s\n",
+                        ret, strerror(ret));
+                return ret;
+            } else {
+                fcfg_extract_join_resp(&join_resp_data,
+                        (FCFGProtoAgentJoinResp *)buff);
+                linfo("join server success. current version: %"PRId64", resp version: %"PRId64,
+                        version, join_resp_data.center_cfg_version);
+                if (join_resp_data.center_cfg_version < version) {
+                    ret = shmcache_clear(&g_agent_global_vars.shm_context);
+                    if (ret) {
+                        lerr("shmcache_remove_all fail. %d, %s", ret,
+                                strerror(ret));
+                        return ret;
+                    } else {
+                        ret = fcfg_agent_set_config_version(0);
+                        linfo("set version 0. and re-join");
+                        return -1;
+                    }
+                }
+            }
+        }
+    } else {
+        if (resp_info->body_len) {
+            tcprecvdata_nb_ex(join_conn->sock, resp_info->error.message,
+                    resp_info->body_len, network_timeout, NULL);
+        } else {
+            resp_info->error.message[0] = '\0';
+        }
+    }
+
+    return ret;
+}
