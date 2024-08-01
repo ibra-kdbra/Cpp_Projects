@@ -317,3 +317,62 @@ int fcfg_agent_recv_server_psuh_config (ConnectionInfo *join_conn, int body_len)
 
     return ret;
 }
+
+
+int fcfg_agent_recv_server_push (ConnectionInfo *join_conn)
+{
+    int ret = 0;
+    int recv_len;
+    FCFGResponseInfo resp_info;
+    FCFGProtoHeader fcfg_header_resp_pro;
+
+    while (g_agent_global_vars.continue_flag && (ret == 0)) {
+        ret = tcprecvdata_nb_ex(join_conn->sock, &fcfg_header_resp_pro,
+                sizeof(FCFGProtoHeader),
+                g_agent_global_vars.network_timeout, &recv_len);
+        if (ret == ETIMEDOUT && recv_len == 0) {
+            ldebug ("recv server fail %d, %s",
+                     ret, strerror(ret));
+            resp_info.body_len = 0;
+            ret = fcfg_send_active_test_req(join_conn, &resp_info,
+                    g_agent_global_vars.network_timeout);
+            if (ret) {
+                lerr("fcfg_send_active_test_req fail.server:%s:%d "
+                        "err no:%d, err info: %s, err msg: %.*s",
+                        join_conn->ip_addr,
+                        join_conn->port,
+                        ret, strerror(ret),
+                        resp_info.body_len, resp_info.error.message);
+                break;
+            }
+            ldebug ("send active test request success. "
+                    "will continue to recv");
+            continue;
+        }
+
+        if (ret) {
+            lerr ("fcfg_agent_recv_server_push rcv err: %d, %s",
+                    ret, strerror(ret)); 
+            break;
+        }
+
+        fcfg_proto_response_extract(&fcfg_header_resp_pro, &resp_info);
+        linfo ("fcfg_agent_recv_server_push rcv info. cmd:%d, body len:%d",
+                resp_info.cmd, resp_info.body_len);
+        switch (resp_info.cmd) {
+            case FCFG_PROTO_ACTIVE_TEST_REQ:
+                ret = fcfg_agent_recv_server_active_test(join_conn);
+                break;
+            case FCFG_PROTO_PUSH_CONFIG:
+                ret = fcfg_agent_recv_server_psuh_config(join_conn,
+                        resp_info.body_len);
+                break;
+            default:
+                lerr ("get push config error cmd: %d", resp_info.cmd);
+                ret = -1;
+                break;
+        }
+    }
+
+    return ret;
+}
