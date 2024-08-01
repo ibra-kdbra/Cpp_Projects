@@ -294,3 +294,26 @@ int fcfg_agent_send_push_config_resp(ConnectionInfo *join_conn,
     return tcpsenddata_nb(join_conn->sock, buff,
             size, g_agent_global_vars.network_timeout);
 }
+
+
+int fcfg_agent_recv_server_psuh_config (ConnectionInfo *join_conn, int body_len)
+{
+    int ret;
+    unsigned char resp_status;
+    char buff[256 * 1024];
+    int64_t max_version = 0;
+
+    ret = tcprecvdata_nb_ex(join_conn->sock, buff,
+            body_len, g_agent_global_vars.network_timeout, NULL);
+    if (ret) {
+        lerr ("tcprecvdata_nb_ex ret:%d, %s", ret, strerror(ret));
+        return ret;
+    }
+    ret = fcfg_set_push_config(buff, body_len, &max_version);
+    if (ret == 0) {
+        resp_status = (ret >= 0) ? ret : (-1 * ret);
+        return fcfg_agent_send_push_config_resp(join_conn, max_version, resp_status);
+    }
+
+    return ret;
+}
