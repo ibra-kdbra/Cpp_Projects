@@ -47,6 +47,40 @@ static int fcfg_agent_set_config_version(int64_t version)
     return ret;
 }
 
+static int fcfg_agent_get_config_version(int64_t *version)
+{
+    char buff[FCFG_CONFIG_ENV_SIZE];
+    int ret;
+    struct shmcache_value_info value;
+    struct shmcache_key_info key;
+    
+    key.data = g_agent_global_vars.shm_version_key;
+    key.length = strlen(g_agent_global_vars.shm_version_key);
+    ret = shmcache_get(&g_agent_global_vars.shm_context,
+            &key,
+            &value);
+    if (ret) {
+        lerr("shmcache_get fail:%d, %s", ret, strerror(ret));
+        ret = shmcache_clear(&g_agent_global_vars.shm_context);
+        if (ret) {
+            lerr("shmcache_remove_all fail. %d, %s. new env: %s",
+                 ret, strerror(ret), g_agent_global_vars.env);
+            return ret;
+        } else {
+            linfo("shmcache_remove_all for new env: %s",
+                   g_agent_global_vars.env);
+        }
+
+        *version = 0;
+        return ret;
+    }
+    memcpy(buff, value.data, value.length);
+    buff[value.length] = '\0';
+    *version = atol(buff);
+
+    return ret;
+}
+
 
 
 
