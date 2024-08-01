@@ -96,5 +96,21 @@ static void _print_push_config (int status, struct shmcache_key_info *key,
     return;
 }
 
+static int _get_options_from_type(unsigned char type)
+{
+    int options;
+
+    if (type == FCFG_CONFIG_TYPE_STRING) {
+        options = SHMCACHE_SERIALIZER_STRING;
+    } else if (type == FCFG_CONFIG_TYPE_LIST) {
+        options = SHMCACHE_SERIALIZER_LIST;
+    } else if (type == FCFG_CONFIG_TYPE_MAP) {
+        options = SHMCACHE_SERIALIZER_MAP;
+    } else {
+        options = SHMCACHE_SERIALIZER_STRING;
+    }
+
+    return options;
+}
 
 
