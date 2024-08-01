@@ -132,3 +132,19 @@ int fcfg_proto_set_join_req(char *buff, char *env, int64_t version, int *req_len
 
     return 0;
 }
+int fcfg_extract_join_resp(FCFGJoinResp *join_resp_data,
+        FCFGProtoAgentJoinResp *join_resp_pro)
+{
+    join_resp_data->center_cfg_version = buff2long(join_resp_pro->center_cfg_version);
+
+    return 0;
+}
+
+int fcfg_extract_push_config_header(
+        FCFGProtoPushConfigHeader *fcfg_push_header_pro,
+        FCFGPushConfigHeader *fcfg_push_header)
+{
+    fcfg_push_header->count = buff2short(fcfg_push_header_pro->count);
+
+    return 0;
+}
