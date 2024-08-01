@@ -116,3 +116,19 @@ int fcfg_agent_load_config(const char *filename)
     return 0;
 }
 
+int fcfg_proto_set_join_req(char *buff, char *env, int64_t version, int *req_len)
+{
+    FCFGProtoHeader *fcfg_header_pro;
+    FCFGProtoAgentJoinReq *fcfg_join_req_pro;
+
+    fcfg_header_pro = (FCFGProtoHeader *)buff;
+    fcfg_header_pro->cmd = FCFG_PROTO_AGENT_JOIN_REQ;
+    int2buff(sizeof(FCFGProtoAgentJoinReq), fcfg_header_pro->body_len);
+
+    fcfg_join_req_pro = (FCFGProtoAgentJoinReq *)(buff + sizeof(FCFGProtoHeader));
+    memcpy(fcfg_join_req_pro->env, env, sizeof(fcfg_join_req_pro->env));
+    long2buff(version, fcfg_join_req_pro->agent_cfg_version);
+    *req_len = sizeof(FCFGProtoHeader) + sizeof(FCFGProtoAgentJoinReq);
+
+    return 0;
+}
