@@ -113,4 +113,70 @@ static int _get_options_from_type(unsigned char type)
     return options;
 }
 
+static int fcfg_set_push_config(const char *body_data,
+        const int body_len, int64_t *max_version)
+{
+    int ret;
+    int i;
+    int size;
+    FCFGPushConfigHeader fcfg_push_header;
+    FCFGProtoPushConfigHeader *fcfg_push_header_pro;
+    FCFGProtoPushConfigBodyPart *fcfg_push_body_pro;
+    FCFGPushConfigBodyPart fcfg_push_body_data;
+    struct shmcache_key_info key;
+    struct shmcache_value_info value;
+
+    fcfg_push_header_pro = (FCFGProtoPushConfigHeader *)(body_data);
+    fcfg_extract_push_config_header(fcfg_push_header_pro, &fcfg_push_header);
+
+    fcfg_push_body_pro = (FCFGProtoPushConfigBodyPart *)(fcfg_push_header_pro +
+            1);
+    ret = fcfg_check_push_config_body_len(&fcfg_push_header, fcfg_push_body_pro,
+            body_len - sizeof(FCFGProtoPushConfigHeader));
+    if (ret) {
+        lerr("fcfg_check_push_config_body_len fail.count:%d",
+                fcfg_push_header.count);
+        return ret;
+    }
+    size = sizeof(FCFGProtoPushConfigBodyPart);
+    for (i = 0; i < fcfg_push_header.count; i++) {
+        fcfg_extract_push_config_body_data(fcfg_push_body_pro, &fcfg_push_body_data);
+        key.data = fcfg_push_body_pro->name;
+        key.length = fcfg_push_body_data.name_len;
+        if (fcfg_push_body_data.status == FCFG_CONFIG_STATUS_NORMAL) {
+            value.data = fcfg_push_body_pro->name + fcfg_push_body_data.name_len;
+            value.length = fcfg_push_body_data.value_len;
+            value.options = _get_options_from_type(fcfg_push_body_data.type);
+            value.expires = SHMCACHE_NEVER_EXPIRED;
+            ret = shmcache_set_ex(&g_agent_global_vars.shm_context, &key, &value);
+        } else {
+            ret = shmcache_delete(&g_agent_global_vars.shm_context, &key);
+        }
+
+        _print_push_config(fcfg_push_body_data.status,
+                &key, &value, fcfg_push_body_data.version);
+        if (ret) {
+            lerr ("shmcache_set_ex/delete fail. status:%d, %d, %s",
+                    fcfg_push_body_data.status, ret, strerror(ret));
+            if (fcfg_push_body_data.status == FCFG_CONFIG_STATUS_NORMAL) {
+                break;
+            }
+            ret = 0;
+        }
+
+        /* the last one is the max version that is ensured by sender */
+        *max_version = fcfg_push_body_data.version;
+
+        fcfg_push_body_pro = (FCFGProtoPushConfigBodyPart *)(((char *)fcfg_push_body_pro) + size +
+                              fcfg_push_body_data.name_len +
+                              fcfg_push_body_data.value_len);
+    }
+
+    if (fcfg_push_header.count && (ret == 0)) {
+        ret = fcfg_agent_set_config_version(*max_version);
+    }
+
+    return ret;
+}
+
 
