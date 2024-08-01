@@ -179,3 +179,18 @@ int fcfg_check_push_config_body_len(FCFGPushConfigHeader *fcfg_push_header,
 
     return 0;
 }
+int fcfg_extract_push_config_body_data (
+        FCFGProtoPushConfigBodyPart *fcfg_push_body_pro,
+        FCFGPushConfigBodyPart *fcfg_push_body_data)
+{
+    fcfg_push_body_data->status = fcfg_push_body_pro->status;
+    fcfg_push_body_data->name_len = fcfg_push_body_pro->name_len;
+    fcfg_push_body_data->type = fcfg_push_body_pro->type;
+    fcfg_push_body_data->value_len = buff2int(fcfg_push_body_pro->value_len);
+    fcfg_push_body_data->version = buff2long(fcfg_push_body_pro->version);
+    fcfg_push_body_data->create_time = buff2int(fcfg_push_body_pro->create_time);
+    fcfg_push_body_data->update_time =
+        buff2int(fcfg_push_body_pro->update_time);
+
+    return 0;
+}
