@@ -260,3 +260,16 @@ int fcfg_send_agent_join_request(ConnectionInfo *join_conn, int64_t version)
     return ret;
 }
 
+int fcfg_agent_send_header_resp(ConnectionInfo *join_conn, unsigned char resp_cmd)
+{
+    FCFGProtoHeader fcfg_header_resp_pro; 
+    memset(&fcfg_header_resp_pro, 0, sizeof(FCFGProtoHeader));
+    fcfg_header_resp_pro.cmd = resp_cmd;
+    return tcpsenddata_nb(join_conn->sock, &fcfg_header_resp_pro,
+                    sizeof(FCFGProtoHeader), g_agent_global_vars.network_timeout);
+}
+
+int fcfg_agent_recv_server_active_test (ConnectionInfo *join_conn)
+{
+    return fcfg_agent_send_header_resp(join_conn, FCFG_PROTO_ACTIVE_TEST_RESP);
+}
