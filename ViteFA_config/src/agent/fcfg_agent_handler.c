@@ -232,3 +232,31 @@ static int fcfg_agent_check_response(ConnectionInfo *join_conn,
 
     return ret;
 }
+
+int fcfg_send_agent_join_request(ConnectionInfo *join_conn, int64_t version)
+{
+    int ret;
+    char buff[1024];
+    int req_len;
+    FCFGResponseInfo resp_info;
+    int network_timeout = g_agent_global_vars.network_timeout;
+
+    fcfg_proto_set_join_req(buff, g_agent_global_vars.env, version, &req_len);
+    ret = send_and_recv_response_header(join_conn, buff, req_len, &resp_info,
+            network_timeout);
+    if (ret) {
+        lerr("send_and_recv_response_header fail. ret:%d, %s",
+                ret, strerror(ret));
+        return ret;
+    }
+    ret = fcfg_agent_check_response (join_conn, &resp_info, network_timeout,
+            FCFG_PROTO_AGENT_JOIN_RESP, version);
+    if (ret) {
+        lerr("agent join server fail. %s "
+             "conn: %s:%d",
+                resp_info.error.message, join_conn->ip_addr, join_conn->port);
+    }
+
+    return ret;
+}
+
