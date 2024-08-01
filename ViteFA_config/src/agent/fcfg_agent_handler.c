@@ -376,3 +376,32 @@ int fcfg_agent_recv_server_push (ConnectionInfo *join_conn)
 
     return ret;
 }
+
+static int fcfg_agent_do_conn_config_server (ConnectionInfo **conn)
+{
+    int ret;
+    int server_index;
+    ConnectionInfo *join_conn;
+    int index;
+
+    index = 0;
+    server_index = rand() % g_agent_global_vars.server_count;
+    while (index < g_agent_global_vars.server_count) {
+        join_conn = g_agent_global_vars.join_conn + server_index;
+        if ((ret = conn_pool_connect_server(join_conn, 1000 *
+                        g_agent_global_vars.connect_timeout)) != 0)
+        {
+            lerr("conn_pool_connect_server fail. server index[%d] %s:%d, "
+                    "ret: %d, %s", server_index, join_conn->ip_addr,
+                    join_conn->port, ret, strerror(ret));
+            server_index = (server_index + 1) % g_agent_global_vars.server_count;
+            index ++;
+        } else {
+            /* connect success */
+            *conn = join_conn;
+            break;
+        }
+    }
+
+    return ret;
+}
