@@ -148,3 +148,34 @@ int fcfg_extract_push_config_header(
 
     return 0;
 }
+
+
+int fcfg_check_push_config_body_len(FCFGPushConfigHeader *fcfg_push_header,
+        FCFGProtoPushConfigBodyPart *fcfg_push_body_pro, int len)
+{
+    int i;
+    int size;
+    unsigned char name_len;
+    int value_len;
+    int body_part_len = 0;
+    int count = fcfg_push_header->count;
+
+    size = sizeof(FCFGProtoPushConfigBodyPart);
+    for (i = 0; i < count; i ++) {
+        name_len = fcfg_push_body_pro->name_len;
+        value_len = buff2int(fcfg_push_body_pro->value_len);
+        body_part_len += size + name_len + value_len;
+        if (body_part_len > len) {
+            return -1;
+        }
+        fcfg_push_body_pro = (FCFGProtoPushConfigBodyPart *)(((char *)fcfg_push_body_pro) + size +
+                name_len +
+                value_len);
+    }
+
+    if (body_part_len != len) {
+        return -1;
+    }
+
+    return 0;
+}
