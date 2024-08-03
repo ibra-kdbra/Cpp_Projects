@@ -327,3 +327,42 @@ int fcfg_admin_list_env (struct fcfg_context *fcfg_context, FCFGEnvArray *array)
 }
 
 
+int fcfg_admin_env_list (struct fcfg_context *fcfg_context,
+        FCFGEnvArray *array)
+{
+    int ret;
+    memset(array, 0, sizeof(FCFGEnvArray));
+
+    ret = fcfg_admin_list_env(fcfg_context, array);
+    return ret;
+}
+
+void fcfg_print_env_array (FCFGEnvArray *array)
+{
+    int i;
+
+    for (i = 0; i < array->count; i++) {
+        fprintf(stderr, "%s\n", (array->rows+i)->env.str);
+    }
+}
+void fcfg_free_env_info_array(FCFGEnvArray *array)
+{
+    FCFGEnvEntry *current;
+    FCFGEnvEntry *end;
+
+    if (array->rows == NULL) {
+        return;
+    }
+
+    end = array->rows + array->count;
+    for (current=array->rows; current<end; current++) {
+        if (current->env.str != NULL) {
+            free(current->env.str);
+        }
+    }
+
+    free(array->rows);
+    array->rows = NULL;
+    array->count = 0;
+}
+
