@@ -135,4 +135,47 @@ void fcfg_set_admin_get_env(const char *env, char *buff,
     *body_len = sizeof(FCFGProtoGetEnvReq) + env_len;
 }
 
+static int _extract_to_array(char *buff, int len, FCFGEnvArray *array,
+        int offset, int count)
+{
+    int env_size;
+    int size;
+    int index;
+    int ret = 0;
+
+    size = offset;
+    for (index = 0; index < count; index ++) {
+        ret = fcfg_admin_env_set_entry(
+                (FCFGProtoListEnvRespBodyPart *)(buff + size),
+                array->rows + index,
+                &env_size);
+        if (ret) {
+            break;
+        }
+        size += env_size;
+        array->count ++;
+    }
+    if (ret || (size != len)) {
+        logError("file: "__FILE__", line: %d, "
+                "_extract_to_array fail ret:%d, count:%d, size: %d, len: %d",
+                __LINE__, ret, count, size, len);
+        return -1;
+    }
+
+    return ret;
+}
+
+static int fcfg_admin_extract_to_array (char *buff, int len, FCFGEnvArray *array)
+{
+    array->rows = (FCFGEnvEntry *)malloc(sizeof(FCFGEnvEntry));
+    if (array->rows == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %ld bytes fail", __LINE__, sizeof(FCFGEnvEntry));
+        fcfg_free_env_info_array(array);
+        return ENOMEM;
+    }
+    return _extract_to_array(buff, len, array, 0, 1);
+}
+
+
 
