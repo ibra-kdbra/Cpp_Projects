@@ -125,3 +125,14 @@ int fcfg_admin_env_del (struct fcfg_context *fcfg_context, const char *env)
     return ret;
 }
 
+void fcfg_set_admin_get_env(const char *env, char *buff,
+        int *body_len)
+{
+    FCFGProtoGetEnvReq *get_env_req = (FCFGProtoGetEnvReq *)buff;
+    unsigned char env_len = strlen(env);
+    memcpy(get_env_req->env, env,
+           env_len);
+    *body_len = sizeof(FCFGProtoGetEnvReq) + env_len;
+}
+
+
