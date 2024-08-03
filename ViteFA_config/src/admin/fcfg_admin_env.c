@@ -80,3 +80,37 @@ void fcfg_set_admin_del_env(char *buff, const char *env,
     *body_len = sizeof(FCFGProtoDelEnvReq) + env_len;
 }
 
+int fcfg_admin_del_env (struct fcfg_context *fcfg_context, const char *env)
+{
+    int ret;
+    char buff[64 + FCFG_CONFIG_ENV_SIZE];
+    int body_len;
+    int size;
+    FCFGResponseInfo resp_info;
+    ConnectionInfo *join_conn;
+    FCFGProtoHeader *fcfg_header_proto;
+
+    fcfg_header_proto = (FCFGProtoHeader *)buff;
+    join_conn = fcfg_context->join_conn + fcfg_context->join_index;
+    fcfg_set_admin_del_env(buff + sizeof(FCFGProtoHeader), env, &body_len);
+    fcfg_set_admin_header(fcfg_header_proto, FCFG_PROTO_DEL_ENV_REQ, body_len);
+    size = sizeof(FCFGProtoHeader) + body_len;
+    ret = send_and_recv_response_header(join_conn, buff, size, &resp_info,
+            fcfg_context->network_timeout);
+    if (ret) {
+        logError("file: "__FILE__", line: %d "
+                "send_and_recv_response_header fail. ret:%d, %s",
+                __LINE__, ret, strerror(ret));
+        return ret;
+    }
+    ret = fcfg_admin_check_response(join_conn, &resp_info,
+            fcfg_context->network_timeout, FCFG_PROTO_ACK);
+    if (ret) {
+        logError("file: "__FILE__", line: %d "
+                "del env fail. error info: %s",
+                __LINE__, resp_info.error.message);
+    }
+
+    return ret;
+}
+
