@@ -177,5 +177,56 @@ static int fcfg_admin_extract_to_array (char *buff, int len, FCFGEnvArray *array
     return _extract_to_array(buff, len, array, 0, 1);
 }
 
+static int fcfg_admin_extract_list_to_array (char *buff, int len, FCFGEnvArray *array)
+{
+    short count;
+    FCFGProtoListEnvRespHeader *list_env_resp_header_proto;
+
+    list_env_resp_header_proto = (FCFGProtoListEnvRespHeader *)buff;
+    count = buff2short(list_env_resp_header_proto->count);
+
+    array->rows = (FCFGEnvEntry *)malloc(sizeof(FCFGEnvEntry) * count);
+    if (array->rows == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %ld bytes fail", __LINE__, sizeof(FCFGEnvEntry));
+        return ENOMEM;
+    }
+    memset(array->rows, 0, sizeof(FCFGEnvEntry) * count);
+    return _extract_to_array(buff, len, array, sizeof(FCFGProtoListEnvRespHeader), count);
+}
+
+int fcfg_admin_env_response(ConnectionInfo *join_conn,
+        FCFGResponseInfo *resp_info, int network_timeout,
+        FCFGEnvArray *array, int is_list)
+{
+    char *buff;
+    int ret;
+    if (resp_info->body_len == 0) {
+        return -1;
+    }
+
+    buff = (char *)malloc(resp_info->body_len);
+    if (buff == NULL) {
+        logError("file: "__FILE__", line: %d "
+                "malloc fail %d ", __LINE__, resp_info->body_len);
+        return ENOMEM;
+    }
+    ret = tcprecvdata_nb_ex(join_conn->sock, buff,
+            resp_info->body_len, network_timeout, NULL);
+    if (ret) {
+        logError("file: "__FILE__", line: %d "
+                "tcprecvdata_nb_ex fail %d ", __LINE__, resp_info->body_len);
+        free(buff);
+        return -1;
+    }
+
+    if (is_list) {
+        ret = fcfg_admin_extract_list_to_array(buff, resp_info->body_len, array);
+    } else {
+        ret = fcfg_admin_extract_to_array(buff, resp_info->body_len, array);
+    }
+    free(buff);
+    return ret;
+}
 
 
