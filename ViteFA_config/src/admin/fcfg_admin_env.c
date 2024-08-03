@@ -114,3 +114,14 @@ int fcfg_admin_del_env (struct fcfg_context *fcfg_context, const char *env)
     return ret;
 }
 
+int fcfg_admin_env_del (struct fcfg_context *fcfg_context, const char *env)
+{
+    int ret;
+
+    ret = fcfg_admin_check_arg(env, NULL, NULL);
+    if (ret == 0) {
+        ret = fcfg_admin_del_env(fcfg_context, env);
+    }
+    return ret;
+}
+
