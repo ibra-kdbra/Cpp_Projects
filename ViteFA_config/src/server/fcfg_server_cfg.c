@@ -251,3 +251,37 @@ static int fcfg_server_cfg_reload_by_env_all(struct fcfg_mysql_context *context,
 
     return fcfg_server_cfg_notify(publisher);
 }
+
+int fcfg_server_cfg_reload(struct fcfg_mysql_context *context)
+{
+    FCFGEnvPublisher *publisher;
+    FCFGServerReloadAllConfigsPolicy *reload_all_policy;
+    int i;
+    int result;
+    int changed_count;
+
+    reload_all_policy = &g_server_global_vars.reload_all_configs_policy;
+    for (i=0; i<publisher_array.count; i++) {
+        publisher = publisher_array.envs[i];
+        changed_count = publisher->config_stat.version_changed.total_count -
+            publisher->config_stat.version_changed.last_count;
+        if ((changed_count >= reload_all_policy->min_version_changed &&
+                g_current_time - publisher->config_stat.last_reload_all_time >
+                reload_all_policy->min_interval) ||
+                (publisher->config_stat.reload_all && changed_count > 0))
+        {
+            publisher->config_stat.reload_all = false;
+            publisher->config_stat.version_changed.last_count =
+                publisher->config_stat.version_changed.total_count;
+            result = fcfg_server_cfg_reload_by_env_all(context, publisher);
+        } else {
+            result = fcfg_server_cfg_reload_by_env_incr(context, publisher);
+        }
+
+        if (result != 0) {
+            return result;
+        }
+    }
+
+    return 0;
+}
