@@ -110,3 +110,37 @@ static int fcfg_server_cfg_reload_config_incr(struct fcfg_mysql_context *context
     fcfg_server_dao_free_config_array(&inc_array);
     return result;
 }
+
+static int fcfg_server_cfg_reload_config_all(struct fcfg_mysql_context *context,
+        FCFGEnvPublisher *publisher)
+{
+    const int64_t version = 0;
+    const int limit = 1024 * 1024;
+    FCFGConfigArray *old_array;
+    FCFGConfigArray *new_array;
+    int result;
+
+    new_array = (FCFGConfigArray *)malloc(sizeof(FCFGConfigArray));
+    if (new_array == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %d bytes fail",
+                __LINE__, (int)sizeof(FCFGConfigArray));
+        return ENOMEM;
+    }
+
+    if ((result=fcfg_server_dao_list_config_by_env_and_version(context,
+                    publisher->env, version, limit, new_array)) != 0)
+    {
+        return result;
+    }
+
+    new_array->version = __sync_add_and_fetch(&current_config_version, 1);
+    old_array = publisher->config_array;
+    publisher->config_array = new_array;
+    if (old_array != NULL) {
+        return sched_add_delay_task(fcfg_server_cfg_free_config_array,
+                old_array, 10 * SF_G_NETWORK_TIMEOUT, false);
+    } else {
+        return 0;
+    }
+}
