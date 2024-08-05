@@ -226,3 +226,28 @@ static int fcfg_server_cfg_reload_by_env_incr(struct fcfg_mysql_context *context
 
     return fcfg_server_cfg_notify(publisher);
 }
+
+static int fcfg_server_cfg_reload_by_env_all(struct fcfg_mysql_context *context,
+        FCFGEnvPublisher *publisher)
+{
+    int result;
+
+    publisher->config_stat.last_reload_all_time = g_current_time;
+    if ((result=fcfg_server_cfg_reload_config_all(context, publisher)) != 0) {
+        return result;
+    }
+
+    if (publisher->config_array->count > 0) {
+        publisher->current_version = publisher->config_array->rows
+            [publisher->config_array->count - 1].version;
+    } else {
+        publisher->current_version = 0;
+    }
+
+    logInfo("file: "__FILE__", line: %d, reload_by_env_all "
+            "env: %s, config count: %d, current_version: %"PRId64,
+            __LINE__, publisher->env, publisher->config_array->count,
+            publisher->current_version);
+
+    return fcfg_server_cfg_notify(publisher);
+}
