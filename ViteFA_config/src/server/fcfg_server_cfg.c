@@ -162,3 +162,8 @@ int fcfg_server_add_task_event(struct fast_task_info *task, const int type)
     push_queue = &((FCFGServerContext *)task->thread_data->arg)->push_queue;
     return common_blocked_queue_push(push_queue, event);
 }
+
+void fcfg_server_free_event(FCFGServerPushEvent *event)
+{
+    fast_mblock_free_object(&event_allocator, event);
+}
