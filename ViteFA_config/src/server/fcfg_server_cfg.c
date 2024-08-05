@@ -285,3 +285,8 @@ int fcfg_server_cfg_reload(struct fcfg_mysql_context *context)
 
     return 0;
 }
+
+static int compare_env(const void *p1, const void *p2)
+{
+    return strcmp((*((FCFGEnvPublisher **)p1))->env, (*((FCFGEnvPublisher **)p2))->env);
+}
