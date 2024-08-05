@@ -167,3 +167,23 @@ void fcfg_server_free_event(FCFGServerPushEvent *event)
 {
     fast_mblock_free_object(&event_allocator, event);
 }
+
+static int fcfg_server_cfg_notify(FCFGEnvPublisher *publisher)
+{
+    FCFGServerTaskArg *task_arg;
+    struct fast_task_info *task;
+    int result;
+
+    result = 0;
+    pthread_mutex_lock(&publisher->lock);
+    fc_list_for_each_entry(task_arg, &publisher->head, subscribe) {
+        task = (struct fast_task_info *)((char *)task_arg - ALIGNED_TASK_INFO_SIZE);
+        if ((result=fcfg_server_add_task_event(task,
+                        FCFG_SERVER_EVENT_TYPE_PUSH_CONFIG)) != 0)
+        {
+            break;
+        }
+    }
+    pthread_mutex_unlock(&publisher->lock);
+    return result;
+}
