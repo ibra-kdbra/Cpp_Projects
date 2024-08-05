@@ -77,3 +77,36 @@ static int check_alloc_config_array(FCFGConfigArray **array, const int inc)
             old_array, 10 * SF_G_NETWORK_TIMEOUT, false);
 }
 
+static int fcfg_server_cfg_reload_config_incr(struct fcfg_mysql_context *context,
+        FCFGEnvPublisher *publisher)
+{
+    const int limit = 1024 * 1024;
+    FCFGConfigArray inc_array;
+    int result;
+
+    if ((result=fcfg_server_dao_list_config_by_env_and_version(context,
+                    publisher->env, publisher->current_version, limit,
+                    &inc_array)) != 0)
+    {
+        return result;
+    }
+
+    if (inc_array.count == 0) {
+        return 0;
+    }
+
+    if (publisher->config_array->count == 0) {
+        *(publisher->config_array) = inc_array;
+        return 0;
+    }
+
+    if ((result=check_alloc_config_array(&publisher->config_array,
+                    inc_array.count)) == 0)
+    {
+        result = fcfg_server_dao_copy_config_array(&inc_array,
+                publisher->config_array);
+    }
+
+    fcfg_server_dao_free_config_array(&inc_array);
+    return result;
+}
