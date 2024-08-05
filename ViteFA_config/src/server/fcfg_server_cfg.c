@@ -144,3 +144,21 @@ static int fcfg_server_cfg_reload_config_all(struct fcfg_mysql_context *context,
         return 0;
     }
 }
+
+int fcfg_server_add_task_event(struct fast_task_info *task, const int type)
+{
+    FCFGServerPushEvent *event;
+    struct common_blocked_queue *push_queue;
+
+    event = (FCFGServerPushEvent *)fast_mblock_alloc_object(&event_allocator);
+    if (event == NULL) {
+        return ENOMEM;
+    }
+
+    event->task = task;
+    event->type = type;
+    event->task_version = __sync_add_and_fetch(
+            &((FCFGServerTaskArg *)task->arg)->task_version, 0);
+    push_queue = &((FCFGServerContext *)task->thread_data->arg)->push_queue;
+    return common_blocked_queue_push(push_queue, event);
+}
