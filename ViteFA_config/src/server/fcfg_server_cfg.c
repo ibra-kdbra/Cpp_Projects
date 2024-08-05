@@ -290,3 +290,36 @@ static int compare_env(const void *p1, const void *p2)
 {
     return strcmp((*((FCFGEnvPublisher **)p1))->env, (*((FCFGEnvPublisher **)p2))->env);
 }
+
+static int check_alloc_publisher_array(FCFGPublisherArray *array)
+{
+    FCFGEnvPublisher **envs;
+    int bytes;
+    int alloc_size;
+
+    if (array->alloc > array->count) {
+        return 0;
+    }
+
+    alloc_size = array->alloc == 0 ? 8 : array->alloc * 2;
+    bytes = sizeof(FCFGEnvPublisher *) * alloc_size;
+    envs = (FCFGEnvPublisher **)malloc(bytes);
+    if (envs == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %d bytes fail", __LINE__, bytes);
+        return ENOMEM;
+    }
+
+    memset(envs, 0, bytes);
+    if (array->count > 0) {
+        memcpy(envs, array->envs, sizeof(FCFGEnvPublisher *) * array->count);
+    }
+
+    if (array->envs != NULL) {
+        free(array->envs);
+    }
+
+    array->alloc = alloc_size;
+    array->envs = envs;
+    return 0;
+}
