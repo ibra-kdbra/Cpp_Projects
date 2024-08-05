@@ -187,3 +187,42 @@ static int fcfg_server_cfg_notify(FCFGEnvPublisher *publisher)
     pthread_mutex_unlock(&publisher->lock);
     return result;
 }
+
+static int fcfg_server_cfg_reload_by_env_incr(struct fcfg_mysql_context *context,
+        FCFGEnvPublisher *publisher)
+{
+    int result;
+    int64_t max_version;
+
+    if ((result=fcfg_server_dao_max_config_version(context,
+            publisher->env, &max_version)) != 0)
+    {
+        return result;
+    }
+
+    if (publisher->current_version == max_version) {
+        return 0;
+    }
+
+    if ((result=fcfg_server_cfg_reload_config_incr(context, publisher)) != 0) {
+        return result;
+    }
+
+    if (publisher->config_array->count > 0) {
+        publisher->current_version = publisher->config_array->rows
+            [publisher->config_array->count - 1].version;
+    } else {
+        publisher->current_version = max_version;
+    }
+    publisher->config_stat.version_changed.total_count++;
+
+    logInfo("file: "__FILE__", line: %d, reload_by_env_incr "
+            "env: %s, config count: %d, current_version: %"PRId64
+            ", version changed count %"PRId64", last count: %"PRId64,
+            __LINE__, publisher->env, publisher->config_array->count,
+            publisher->current_version, publisher->config_stat.
+            version_changed.total_count, publisher->config_stat.
+            version_changed.last_count);
+
+    return fcfg_server_cfg_notify(publisher);
+}
