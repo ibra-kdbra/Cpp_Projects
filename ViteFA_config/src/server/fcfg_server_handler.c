@@ -247,3 +247,59 @@ static int fcfg_proto_deal_get_env(struct fast_task_info *task,
     response->response_done = true;
     return 0;
 }
+
+static int fcfg_proto_deal_list_env(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGMySQLContext *mysql_context;
+    FCFGProtoListEnvRespHeader *resp_header;
+    FCFGProtoGetEnvResp *env_resp;
+    char *p;
+    FCFGEnvEntry *entry;
+    FCFGEnvEntry *end;
+    FCFGEnvArray array;
+    int result;
+    int expect_size;
+
+    if ((result=FCFG_PROTO_EXPECT_BODY_LEN(task, request, response, 0)) != 0) {
+        return result;
+    }
+
+    mysql_context = &((FCFGServerContext *)task->thread_data->arg)->mysql_context;
+    if ((result=fcfg_server_dao_list_env(mysql_context, &array)) != 0) {
+        return result;
+    }
+
+    end = array.rows + array.count;
+    expect_size = sizeof(FCFGProtoHeader) + sizeof(FCFGProtoListEnvRespHeader);
+    for (entry=array.rows; entry<end; entry++) {
+        expect_size += sizeof(FCFGProtoGetEnvResp) + entry->env.len;
+    }
+    if (expect_size > task->send.ptr->size) {
+        if ((result=sf_set_task_send_buffer_size(task, expect_size)) != 0) {
+            fcfg_server_dao_free_env_array(&array);
+            return result;
+        }
+    }
+
+    p = task->send.ptr->data + sizeof(FCFGProtoHeader) + sizeof(FCFGProtoListEnvRespHeader);
+    for (entry=array.rows; entry<end; entry++) {
+        env_resp = (FCFGProtoGetEnvResp *)p;
+        env_resp->env_len = entry->env.len;
+        int2buff(entry->create_time, env_resp->create_time);
+        int2buff(entry->update_time, env_resp->update_time);
+        memcpy(env_resp->env, entry->env.str, entry->env.len);
+        
+        p += sizeof(FCFGProtoGetEnvResp) + entry->env.len;
+    }
+
+    resp_header = (FCFGProtoListEnvRespHeader *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    short2buff(array.count, resp_header->count);
+    response->body_len = (p - task->send.ptr->data) - sizeof(FCFGProtoHeader);
+    response->cmd = FCFG_PROTO_LIST_ENV_RESP;
+    response->response_done = true;
+
+    fcfg_server_dao_free_env_array(&array);
+    return 0;
+}
+
