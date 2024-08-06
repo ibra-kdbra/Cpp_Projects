@@ -214,3 +214,36 @@ static int fcfg_proto_deal_add_del_env(struct fast_task_info *task,
     return result;
 }
 
+static int fcfg_proto_deal_get_env(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGMySQLContext *mysql_context;
+    FCFGProtoGetEnvResp *env_resp;
+    FCFGEnvEntry entry;
+    char env[FCFG_CONFIG_ENV_SIZE];
+    int result;
+
+    if ((result=FCFG_PROTO_CHECK_BODY_LEN(task, request, response,
+                    1, FCFG_CONFIG_ENV_SIZE - 1)) != 0)
+    {
+        return result;
+    }
+
+    mysql_context = &((FCFGServerContext *)task->thread_data->arg)->mysql_context;
+    memcpy(env, task->send.ptr->data + sizeof(FCFGProtoHeader), request->body_len);
+    *(env + request->body_len) = '\0';
+    if ((result=fcfg_server_dao_get_env(mysql_context, env, &entry)) != 0) {
+        return result;
+    }
+
+    env_resp = (FCFGProtoGetEnvResp *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    env_resp->env_len = entry.env.len;
+    int2buff(entry.create_time, env_resp->create_time);
+    int2buff(entry.update_time, env_resp->update_time);
+    memcpy(env_resp->env, entry.env.str, entry.env.len);
+
+    response->body_len = sizeof(FCFGProtoGetEnvResp) + entry.env.len;
+    response->cmd = FCFG_PROTO_GET_ENV_RESP;
+    response->response_done = true;
+    return 0;
+}
