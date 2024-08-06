@@ -133,3 +133,53 @@ static int fcfg_proto_deal_agent_join(struct fast_task_info *task,
     return result;
 }
 
+static int fcfg_proto_deal_admin_join(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGProtoAdminJoinReq *join_req;
+    string_t username;
+    string_t secret_key;
+    int expect_len;
+    int result;
+
+    if ((result=FCFG_PROTO_CHECK_BODY_LEN(task, request, response,
+                    sizeof(FCFGProtoAdminJoinReq), 256)) != 0)
+    {
+        return result;
+    }
+
+    join_req = (FCFGProtoAdminJoinReq *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    username.len = join_req->username_len;
+    secret_key.len = join_req->secret_key_len;
+    username.str = join_req->username;
+    secret_key.str = join_req->username + username.len;
+
+    expect_len = sizeof(FCFGProtoAdminJoinReq) + username.len + secret_key.len;
+    if (request->body_len != expect_len) {
+        response->error.length = sprintf(response->error.message,
+                "invalid body length: %d, expect length: %d",
+                request->body_len, expect_len);
+        return EINVAL;
+    }
+
+    if (!(fc_compare_string(&username, &g_server_global_vars.admin.username) == 0 &&
+            fc_compare_string(&secret_key, &g_server_global_vars.admin.secret_key) == 0))
+    {
+        response->error.length = sprintf(response->error.message,
+                "invalid username or secret_key");
+
+        logError("file: "__FILE__", line: %d, "
+                "client ip: %s, cmd: %d, %s. "
+                "username: %.*s, secret_key: %.*s",
+                __LINE__, task->client_ip, request->cmd,
+                response->error.message, username.len, username.str,
+                secret_key.len, secret_key.str);
+        response->log_error = false;
+        return EINVAL;
+    }
+
+    ((FCFGServerTaskArg *)task->arg)->joined = true;
+    return result;
+}
+
+
