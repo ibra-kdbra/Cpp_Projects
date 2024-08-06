@@ -303,3 +303,176 @@ static int fcfg_proto_deal_list_env(struct fast_task_info *task,
     return 0;
 }
 
+static int fcfg_proto_deal_set_config(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGMySQLContext *mysql_context;
+    FCFGProtoSetConfigReq *set_config_req;
+    char env[FCFG_CONFIG_ENV_SIZE];
+    char name[FCFG_CONFIG_NAME_SIZE];
+    int env_len;
+    int name_len;
+    short type;
+    int data_body_len;
+    string_t value;
+    string_t new_value;
+    const fc_json_array_t *array;
+    const fc_json_map_t *map;
+    BufferInfo buffer;
+    int result;
+
+    if ((result=FCFG_PROTO_CHECK_BODY_LEN(task, request, response,
+                    sizeof(FCFGProtoSetConfigReq),
+                    sizeof(FCFGProtoSetConfigReq) + FCFG_CONFIG_MAX_ENV_LEN +
+                    FCFG_CONFIG_MAX_NAME_LEN + FCFG_CONFIG_MAX_VALUE_LEN)) != 0)
+    {
+        return result;
+    }
+
+    set_config_req = (FCFGProtoSetConfigReq *)(
+            task->send.ptr->data + sizeof(FCFGProtoHeader));
+
+    env_len = set_config_req->env_len;
+    name_len = set_config_req->name_len;
+    type = set_config_req->type;
+    value.len = buff2int(set_config_req->value_len);
+
+    if (env_len <= 0 || env_len > FCFG_CONFIG_MAX_ENV_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid env length: %d", env_len);
+        return EINVAL;
+    }
+
+    if (name_len <= 0 || name_len  > FCFG_CONFIG_MAX_NAME_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid name length: %d", name_len);
+        return EINVAL;
+    }
+
+    if (!(type == FCFG_CONFIG_TYPE_NONE || type == FCFG_CONFIG_TYPE_STRING ||
+                type == FCFG_CONFIG_TYPE_LIST || type == FCFG_CONFIG_TYPE_MAP))
+    {
+        response->error.length = sprintf(response->error.message,
+                "invalid type: %d", type);
+        return EINVAL;
+    }
+
+    if (value.len < 0 || value.len > FCFG_CONFIG_MAX_VALUE_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid value length: %d", value.len);
+        return EINVAL;
+    }
+
+    data_body_len = sizeof(FCFGProtoSetConfigReq) +
+        env_len + name_len + value.len;
+    if (request->body_len != data_body_len) {
+        response->error.length = sprintf(response->error.message,
+                "invalid body length: %d, expect: %d",
+                request->body_len, data_body_len);
+        return EINVAL;
+    }
+
+    memcpy(env, set_config_req->env, env_len);
+    *(env + env_len) = '\0';
+    if (!fcfg_server_env_exists(env)) {
+        response->error.length = sprintf(response->error.message,
+                "env: %s not exist", env);
+        return ENOENT;
+    }
+
+    memset(&buffer, 0, sizeof(buffer));
+    memcpy(name, set_config_req->env + env_len, name_len);
+    *(name + name_len) = '\0';
+
+    value.str = set_config_req->env + env_len + name_len;
+    *(value.str + value.len) = '\0';
+    if (type == FCFG_CONFIG_TYPE_NONE) {
+        int json_type;
+        json_type = fc_detect_json_type(&value);
+        switch (json_type) {
+            case FC_JSON_TYPE_STRING:
+                type = FCFG_CONFIG_TYPE_STRING;
+                break;
+            case FC_JSON_TYPE_ARRAY:
+                type = FCFG_CONFIG_TYPE_LIST;
+                break;
+            case FC_JSON_TYPE_MAP:
+                type = FCFG_CONFIG_TYPE_MAP;
+                break;
+            default:
+                response->error.length = sprintf(response->error.message,
+                        "unkown json type: %d", json_type);
+                return EINVAL;
+        }
+    }
+
+    switch (type) {
+        case FCFG_CONFIG_TYPE_LIST:
+            if ((array=fc_decode_json_array(&SERVER_CTX->
+                            json_ctx, &value)) != NULL)
+            {
+                result = fc_encode_json_array_ex(&SERVER_CTX->json_ctx,
+                        array->elements, array->count, &buffer);
+                if (result == 0) {
+                    new_value.str = buffer.buff;
+                    new_value.len = buffer.length;
+                } else {
+                    new_value = value;
+                }
+            } else {
+                result = fc_json_parser_get_error_no(&SERVER_CTX->json_ctx);
+                new_value = value;
+            }
+
+            if (result != 0) {
+                response->error.length = snprintf(response->error.message,
+                        sizeof(response->error.message),
+                        "%s", fc_json_parser_get_error_info(
+                            &SERVER_CTX->json_ctx)->str);
+                return result;
+            }
+
+            break;
+        case FCFG_CONFIG_TYPE_MAP:
+            if ((map=fc_decode_json_map(&SERVER_CTX->
+                            json_ctx, &value)) != NULL)
+            {
+                result = fc_encode_json_map_ex(&SERVER_CTX->json_ctx,
+                        map->elements, map->count, &buffer);
+                if (result == 0) {
+                    new_value.str = buffer.buff;
+                    new_value.len = buffer.length;
+                } else {
+                    new_value = value;
+                }
+            } else {
+                result = fc_json_parser_get_error_no(&SERVER_CTX->json_ctx);
+                new_value = value;
+            }
+
+            if (result != 0) {
+                response->error.length = snprintf(response->error.message,
+                        sizeof(response->error.message),
+                        "%s", fc_json_parser_get_error_info(
+                            &SERVER_CTX->json_ctx)->str);
+                return result;
+            }
+
+            break;
+	default:
+            result = 0;
+            new_value = value;
+            break;
+    }
+
+    mysql_context = &SERVER_CTX->mysql_context;
+    result = fcfg_server_dao_set_config(mysql_context, env, name,
+            type, new_value.str);
+    if (result != 0) {
+        response->error.length = sprintf(response->error.message,
+                "internal server error");
+    }
+
+    fc_free_buffer(&buffer);
+    return result;
+}
