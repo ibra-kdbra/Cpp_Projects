@@ -58,3 +58,23 @@ void fcfg_server_task_finish_cleanup(struct fast_task_info *task)
     sf_task_finish_clean_up(task);
 }
 
+int fcfg_server_recv_timeout_callback(struct fast_task_info *task)
+{
+    FCFGServerTaskArg *task_arg;
+    task_arg = (FCFGServerTaskArg *)task->arg;
+    if ((task_arg->waiting_type & FCFG_SERVER_TASK_WAITING_RESP) != 0) {
+        logWarning("file: "__FILE__", line: %d, "
+                "client ip: %s, waiting type: %d, "
+                "recv timeout", __LINE__, task->client_ip,
+                task_arg->waiting_type);
+        return ETIMEDOUT;
+    }
+
+    if (g_current_time - task_arg->last_recv_pkg_time >=
+            g_server_global_vars.check_alive_interval)
+    {
+        return fcfg_server_add_task_event(task, FCFG_SERVER_EVENT_TYPE_ACTIVE_TEST);
+    }
+
+    return 0;
+}
