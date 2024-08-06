@@ -335,3 +335,36 @@ static int set_reload_all_flag(void *args)
 
     return 0;
 }
+
+int fcfg_server_cfg_init()
+{
+#define SCHEDULE_ENTRIES_COUNT 1
+
+    ScheduleArray scheduleArray;
+    ScheduleEntry scheduleEntries[SCHEDULE_ENTRIES_COUNT];
+    int result;
+    int id;
+
+    scheduleArray.entries = scheduleEntries;
+    scheduleArray.count = 1;
+
+    memset(scheduleEntries, 0, sizeof(scheduleEntries));
+
+    id = sched_generate_next_id();
+    INIT_SCHEDULE_ENTRY(scheduleEntries[0], id, 0, 0, 0,
+            g_server_global_vars.reload_all_configs_policy.max_interval,
+            set_reload_all_flag, NULL);
+
+    if ((result=sched_add_entries(&scheduleArray)) != 0) {
+        return result;
+    }
+
+    if ((result=fast_mblock_init_ex(&event_allocator,
+                    sizeof(FCFGServerPushEvent), 10240, 0,
+                    NULL, NULL, true)) != 0)
+    {
+        return result;
+    }
+
+    return init_pthread_lock(&publisher_array.lock);
+}
