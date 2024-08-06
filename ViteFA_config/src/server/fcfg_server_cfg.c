@@ -368,3 +368,64 @@ int fcfg_server_cfg_init()
 
     return init_pthread_lock(&publisher_array.lock);
 }
+
+void fcfg_server_cfg_destroy()
+{
+}
+
+static FCFGEnvPublisher *fcfg_server_cfg_find_publisher(const char *env)
+{
+    FCFGEnvPublisher **found;
+    FCFGEnvPublisher *target;
+    FCFGEnvPublisher temp;
+
+    if (publisher_array.count == 0) {
+        return NULL;
+    }
+
+    target = &temp;
+    target->env = (char *)env;
+    found = (FCFGEnvPublisher **)bsearch(&target, publisher_array.envs,
+            publisher_array.count, sizeof(FCFGEnvPublisher *), compare_env);
+    return (found != NULL) ? *found : NULL;
+}
+
+int fcfg_server_cfg_add_publisher(const char *env, struct fast_task_info *task,
+        FCFGEnvPublisher **publisher)
+{
+    int result;
+    FCFGMySQLContext *mysql_context;
+
+    if ((result=check_alloc_publisher_array(&publisher_array)) != 0) {
+        return result;
+    }
+
+    *publisher = (FCFGEnvPublisher *)malloc(sizeof(FCFGEnvPublisher));
+    if (*publisher == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %d bytes fail", __LINE__,
+                (int)sizeof(FCFGEnvPublisher));
+        return ENOMEM;
+    }
+
+    memset(*publisher, 0, sizeof(FCFGEnvPublisher));
+    (*publisher)->env = strdup(env);
+    init_pthread_lock(&(*publisher)->lock);
+    FC_INIT_LIST_HEAD(&(*publisher)->head);
+
+    mysql_context = &((FCFGServerContext *)task->thread_data->arg)->mysql_context;
+    if ((result=fcfg_server_cfg_reload_by_env_all(mysql_context, *publisher)) != 0) {
+        free((*publisher)->env);
+        free(*publisher);
+        *publisher = NULL;
+        return result;
+    }
+    
+    publisher_array.envs[publisher_array.count++] = *publisher;
+    if (publisher_array.count > 1) {
+        qsort(publisher_array.envs, publisher_array.count,
+                sizeof(FCFGEnvPublisher *), compare_env);
+    }
+
+    return 0;
+}
