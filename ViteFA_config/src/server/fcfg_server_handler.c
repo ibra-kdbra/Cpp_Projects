@@ -182,4 +182,35 @@ static int fcfg_proto_deal_admin_join(struct fast_task_info *task,
     return result;
 }
 
+static int fcfg_proto_deal_add_del_env(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGMySQLContext *mysql_context;
+    char *env;
+    int result;
+
+    if ((result=FCFG_PROTO_CHECK_BODY_LEN(task, request, response,
+                    1, FCFG_CONFIG_ENV_SIZE - 1)) != 0)
+    {
+        return result;
+    }
+
+    mysql_context = &((FCFGServerContext *)task->thread_data->arg)->mysql_context;
+    env = task->send.ptr->data + sizeof(FCFGProtoHeader);
+    *(env + request->body_len) = '\0';
+    if (request->cmd == FCFG_PROTO_ADD_ENV_REQ) {
+        result = fcfg_server_dao_add_env(mysql_context, env);
+        if (result == EEXIST) {
+            response->error.length = sprintf(response->error.message,
+                    "env: %s already exist", env);
+        }
+    } else {
+        result = fcfg_server_dao_del_env(mysql_context, env);
+        if (result == ENOENT) {
+            response->error.length = sprintf(response->error.message,
+                    "env: %s not exist", env);
+        }
+    }
+    return result;
+}
 
