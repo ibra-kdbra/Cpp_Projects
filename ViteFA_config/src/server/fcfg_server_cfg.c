@@ -429,3 +429,41 @@ int fcfg_server_cfg_add_publisher(const char *env, struct fast_task_info *task,
 
     return 0;
 }
+
+int fcfg_server_cfg_add_subscriber(const char *env, struct fast_task_info *task)
+{
+    int result;
+    FCFGEnvPublisher *publisher;
+
+    pthread_mutex_lock(&publisher_array.lock);
+    if ((publisher=fcfg_server_cfg_find_publisher(env)) == NULL) {
+        result = fcfg_server_cfg_add_publisher(env, task, &publisher);
+    } else {
+        result = 0;
+    }
+    pthread_mutex_unlock(&publisher_array.lock);
+
+    if (publisher != NULL) {
+        FCFGServerTaskArg *task_arg;
+        task_arg = (FCFGServerTaskArg *)task->arg;
+        task_arg->publisher = publisher;
+
+        pthread_mutex_lock(&publisher->lock);
+        fc_list_add_tail(&task_arg->subscribe, &publisher->head);
+        pthread_mutex_unlock(&publisher->lock);
+    }
+    return result;
+}
+
+void fcfg_server_cfg_remove_subscriber(struct fast_task_info *task)
+{
+    FCFGServerTaskArg *task_arg;
+    task_arg = (FCFGServerTaskArg *)task->arg;
+    if (task_arg->publisher != NULL) {
+        pthread_mutex_lock(&task_arg->publisher->lock);
+        fc_list_del_init(&task_arg->subscribe);
+        pthread_mutex_unlock(&task_arg->publisher->lock);
+
+        task_arg->publisher = NULL;
+    }
+}
