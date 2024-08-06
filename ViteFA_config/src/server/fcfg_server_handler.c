@@ -78,3 +78,58 @@ int fcfg_server_recv_timeout_callback(struct fast_task_info *task)
 
     return 0;
 }
+
+static int fcfg_proto_deal_agent_join(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGProtoAgentJoinReq *join_req;
+    FCFGProtoAgentJoinResp *join_resp;
+    char env[FCFG_CONFIG_ENV_SIZE];
+    int result;
+    int64_t agent_cfg_version;
+    int64_t center_cfg_version;
+
+    if ((result=FCFG_PROTO_EXPECT_BODY_LEN(task, request, response,
+                    sizeof(FCFGProtoAgentJoinReq))) != 0)
+    {
+        return result;
+    }
+
+    memset(env, 0, sizeof(env));
+    join_req = (FCFGProtoAgentJoinReq *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    memcpy(env, join_req->env, sizeof(join_req->env));
+    if (!fcfg_server_env_exists(env)) {
+        response->error.length = sprintf(response->error.message,
+                "env: %s not exist", env);
+        return ENOENT;
+    }
+
+    if ((result=fcfg_server_cfg_add_subscriber(env, task)) != 0) {
+        return result;
+    }
+
+    agent_cfg_version = buff2long(join_req->agent_cfg_version);
+    center_cfg_version = ((FCFGServerTaskArg *)task->arg)->publisher->current_version;
+    if (agent_cfg_version > center_cfg_version) {
+        logWarning("file: "__FILE__", line: %d, client ip: %s, "
+                "agent_cfg_version: %"PRId64" > center_cfg_version: %"PRId64,
+                __LINE__, task->client_ip, agent_cfg_version, center_cfg_version);
+    } else if (agent_cfg_version < center_cfg_version) {
+        result = fcfg_server_add_config_push_event(task);
+    }
+
+    logDebug("file: "__FILE__", line: %d, client ip: %s, env: %s, "
+            "agent_cfg_version: %"PRId64", center_cfg_version: %"PRId64,
+            __LINE__, task->client_ip, env, agent_cfg_version, center_cfg_version);
+
+    ((FCFGServerTaskArg *)task->arg)->msg_queue.agent_cfg_version = agent_cfg_version;
+    join_resp = (FCFGProtoAgentJoinResp *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    long2buff(center_cfg_version, join_resp->center_cfg_version);
+
+    ((FCFGServerTaskArg *)task->arg)->joined = true;
+    response->body_len = 8;
+    response->cmd = FCFG_PROTO_AGENT_JOIN_RESP;
+    response->response_done = true;
+    return result;
+}
+
