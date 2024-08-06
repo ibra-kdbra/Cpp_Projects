@@ -323,3 +323,15 @@ static int check_alloc_publisher_array(FCFGPublisherArray *array)
     array->envs = envs;
     return 0;
 }
+
+static int set_reload_all_flag(void *args)
+{
+    int i;
+    pthread_mutex_lock(&publisher_array.lock);
+    for (i=0; i<publisher_array.count; i++) {
+        publisher_array.envs[i]->config_stat.reload_all = true;
+    }
+    pthread_mutex_unlock(&publisher_array.lock);
+
+    return 0;
+}
