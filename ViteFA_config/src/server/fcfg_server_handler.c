@@ -476,3 +476,102 @@ static int fcfg_proto_deal_set_config(struct fast_task_info *task,
     fc_free_buffer(&buffer);
     return result;
 }
+
+static int fcfg_proto_deal_get_config(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGMySQLContext *mysql_context;
+    FCFGProtoGetConfigReq *get_config_req;
+    FCFGConfigArray array;
+    char env[FCFG_CONFIG_ENV_SIZE];
+    char name[FCFG_CONFIG_NAME_SIZE];
+    int env_len;
+    int name_len;
+    int expect_size;
+    int data_body_len;
+    FCFGProtoGetConfigResp *get_config_resp;
+    int result;
+
+    if ((result=FCFG_PROTO_CHECK_BODY_LEN(task, request, response,
+                    sizeof(FCFGProtoGetConfigReq),
+                    sizeof(FCFGProtoGetConfigReq) + FCFG_CONFIG_MAX_ENV_LEN +
+                    FCFG_CONFIG_MAX_NAME_LEN)) != 0)
+    {
+        return result;
+    }
+
+    get_config_req = (FCFGProtoGetConfigReq *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+
+    env_len = get_config_req->env_len;
+    name_len = get_config_req->name_len;
+
+    if (env_len <= 0 || env_len > FCFG_CONFIG_MAX_ENV_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid env length: %d", env_len);
+        return EINVAL;
+    }
+
+    if (name_len <= 0 || name_len  > FCFG_CONFIG_MAX_NAME_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid name length: %d", name_len);
+        return EINVAL;
+    }
+
+    data_body_len = sizeof(FCFGProtoGetConfigReq) + env_len + name_len;
+    if (request->body_len != data_body_len) {
+        response->error.length = sprintf(response->error.message,
+                "invalid body length: %d, expect: %d",
+                request->body_len, data_body_len);
+        return EINVAL;
+    }
+    memcpy(env, get_config_req->env, env_len);
+    *(env + env_len) = '\0';
+
+    memcpy(name, get_config_req->env + env_len, name_len);
+    *(name + name_len) = '\0';
+
+    mysql_context = &((FCFGServerContext *)task->thread_data->arg)->mysql_context;
+    result = fcfg_server_dao_get_config(mysql_context, env, name, &array);
+    if (result != 0) {
+        response->error.length = sprintf(response->error.message,
+                "query config fail, errno: %d", result);
+        return result;
+    }
+
+    if (array.count == 0) {
+        response->error.length = sprintf(response->error.message,
+                "config not exist");
+        return ENOENT;
+    }
+
+    expect_size = sizeof(FCFGProtoHeader) + sizeof(FCFGProtoGetConfigResp)
+        + array.rows->name.len + array.rows->value.len;
+    if (expect_size > task->send.ptr->size) {
+        if ((result=sf_set_task_send_buffer_size(task, expect_size)) != 0) {
+            response->error.length = sprintf(response->error.message,
+                    "response data is too large: %d", expect_size);
+            fcfg_server_dao_free_config_array(&array);
+            return result;
+        }
+    }
+
+    get_config_resp = (FCFGProtoGetConfigResp *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    get_config_resp->status = array.rows->status;
+    get_config_resp->name_len = array.rows->name.len;
+    get_config_resp->type = array.rows->type;
+    int2buff(array.rows->value.len, get_config_resp->value_len);
+    long2buff(array.rows->version, get_config_resp->version);
+    int2buff(array.rows->create_time, get_config_resp->create_time);
+    int2buff(array.rows->update_time, get_config_resp->update_time);
+    memcpy(get_config_resp->name, array.rows->name.str, array.rows->name.len);
+    memcpy(get_config_resp->name + array.rows->name.len,
+           array.rows->value.str, array.rows->value.len);
+
+    response->body_len = sizeof(FCFGProtoGetConfigResp) +
+        array.rows->name.len + array.rows->value.len;
+    response->cmd = FCFG_PROTO_GET_CONFIG_RESP;
+    response->response_done = true;
+
+    fcfg_server_dao_free_config_array(&array);
+    return 0;
+}
