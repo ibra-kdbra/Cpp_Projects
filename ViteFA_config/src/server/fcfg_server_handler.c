@@ -575,3 +575,67 @@ static int fcfg_proto_deal_get_config(struct fast_task_info *task,
     fcfg_server_dao_free_config_array(&array);
     return 0;
 }
+
+static int fcfg_proto_deal_del_config(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGMySQLContext *mysql_context;
+    FCFGProtoDelConfigReq *del_config_req;
+    char env[FCFG_CONFIG_ENV_SIZE];
+    char name[FCFG_CONFIG_NAME_SIZE];
+    int env_len;
+    int name_len;
+    int data_body_len;
+    int result;
+
+    if ((result=FCFG_PROTO_CHECK_BODY_LEN(task, request, response,
+                    sizeof(FCFGProtoDelConfigReq),
+                    sizeof(FCFGProtoDelConfigReq) + FCFG_CONFIG_MAX_ENV_LEN +
+                    FCFG_CONFIG_MAX_NAME_LEN)) != 0)
+    {
+        return result;
+    }
+
+    del_config_req = (FCFGProtoDelConfigReq *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    env_len = del_config_req->env_len;
+    name_len = del_config_req->name_len;
+
+    if (env_len <= 0 || env_len > FCFG_CONFIG_MAX_ENV_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid env length: %d", env_len);
+        return EINVAL;
+    }
+
+    if (name_len <= 0 || name_len  > FCFG_CONFIG_MAX_NAME_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid name length: %d", name_len);
+        return EINVAL;
+    }
+
+    data_body_len = sizeof(FCFGProtoDelConfigReq) + env_len + name_len;
+    if (request->body_len != data_body_len) {
+        response->error.length = sprintf(response->error.message,
+                "invalid body length: %d, expect: %d",
+                request->body_len, data_body_len);
+        return EINVAL;
+    }
+    memcpy(env, del_config_req->env, env_len);
+    *(env + env_len) = '\0';
+
+    memcpy(name, del_config_req->env + env_len, name_len);
+    *(name + name_len) = '\0';
+
+    mysql_context = &((FCFGServerContext *)task->thread_data->arg)->mysql_context;
+    result = fcfg_server_dao_del_config(mysql_context, env, name);
+    if (result != 0) {
+        if (result == ENOENT) {
+            response->error.length = sprintf(response->error.message,
+                    "config: %s not exist", name);
+        } else {
+            response->error.length = sprintf(response->error.message,
+                    "internal server error");
+        }
+    }
+
+    return result;
+}
