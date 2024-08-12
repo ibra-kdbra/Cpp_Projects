@@ -962,3 +962,21 @@ void *fcfg_server_alloc_thread_extra_data(const int thread_index)
     common_blocked_queue_init_ex(&thread_extra_data->push_queue, 4096);
     return thread_extra_data;
 }
+
+static int fcfg_server_send_active_test(struct fast_task_info *task)
+{
+    FCFGProtoHeader *proto_header;
+
+    logDebug("file: "__FILE__", line: %d, "
+            "client ip: %s, send_active_test",
+            __LINE__, task->client_ip);
+
+    task->send.ptr->length = sizeof(FCFGProtoHeader);
+    proto_header = (FCFGProtoHeader *)task->send.ptr->data;
+    int2buff(0, proto_header->body_len);
+    proto_header->cmd = FCFG_PROTO_ACTIVE_TEST_REQ;
+    proto_header->status = 0;
+    ((FCFGServerTaskArg *)task->arg)->waiting_type |=
+        FCFG_SERVER_TASK_WAITING_ACTIVE_TEST_RESP;
+    return sf_send_add_event(task);
+}
