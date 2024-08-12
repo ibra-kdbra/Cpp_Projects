@@ -980,3 +980,59 @@ static int fcfg_server_send_active_test(struct fast_task_info *task)
         FCFG_SERVER_TASK_WAITING_ACTIVE_TEST_RESP;
     return sf_send_add_event(task);
 }
+
+int fcfg_server_thread_loop(struct nio_thread_data *thread_data)
+{
+    FCFGServerContext *server_context;
+    struct common_blocked_queue *push_queue;
+    FCFGServerPushEvent *event;
+    FCFGServerTaskArg *task_arg;
+    int64_t task_version;
+    int unexpect_waiting_type;
+
+    server_context = (FCFGServerContext *)thread_data->arg;
+    push_queue = &server_context->push_queue;
+    while ((event=(FCFGServerPushEvent *)common_blocked_queue_try_pop(
+                    push_queue)) != NULL)
+    {
+        task_arg = (FCFGServerTaskArg *)event->task->arg;
+
+        task_version = __sync_add_and_fetch(&task_arg->task_version, 0);
+        if (event->task_version != task_version) {
+            logWarning("file: "__FILE__", line: %d, client ip: %s, "
+                    "task version changed, current task version: %"PRId64", "
+                    "task version in event: %"PRId64, __LINE__,
+                    event->task->client_ip, task_version, event->task_version);
+            fcfg_server_free_event(event);
+            continue;
+        }
+
+        if (event->type == FCFG_SERVER_EVENT_TYPE_PUSH_CONFIG) {
+            unexpect_waiting_type = FCFG_SERVER_TASK_WAITING_PUSH_RESP;
+        } else {
+            unexpect_waiting_type = FCFG_SERVER_TASK_WAITING_ACTIVE_TEST_RESP;
+        }
+        if ((sf_client_sock_in_read_stage(event->task) && event->task->send.ptr->offset == 0) &&
+                (task_arg->waiting_type & unexpect_waiting_type) == 0)
+        {
+            if (event->type == FCFG_SERVER_EVENT_TYPE_PUSH_CONFIG) {
+                fcfg_server_push_configs(event->task);
+            } else {
+                fcfg_server_send_active_test(event->task);
+            }
+        }
+
+        fcfg_server_free_event(event);
+    }
+
+    if (g_server_global_vars.db_config.ping_interval > 0 &&
+            g_current_time - server_context->mysql_context.last_ping_time >=
+            g_server_global_vars.db_config.ping_interval)
+    {
+        int thread_index = SF_G_THREAD_INDEX(thread_data);
+        fcfg_server_dao_ping(&server_context->mysql_context, thread_index);
+        server_context->mysql_context.last_ping_time = g_current_time;
+    }
+
+    return 0;
+}
