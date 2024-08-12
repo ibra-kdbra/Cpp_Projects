@@ -639,3 +639,124 @@ static int fcfg_proto_deal_del_config(struct fast_task_info *task,
 
     return result;
 }
+
+static int fcfg_proto_deal_list_config(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    FCFGMySQLContext *mysql_context;
+    FCFGProtoListConfigReq *list_config_req;
+    FCFGProtoListConfigRespBodyPart *list_config_resp;
+    FCFGProtoListConfigRespHeader *resp_header;
+    FCFGConfigEntry *entry;
+    FCFGConfigEntry *end;
+    char *p;
+    FCFGConfigArray array;
+    char env[FCFG_CONFIG_ENV_SIZE];
+    char name[FCFG_CONFIG_NAME_SIZE];
+    int env_len;
+    int name_len;
+    short offset;
+    short count;
+    int expect_size;
+    int data_body_len;
+    int result;
+
+    if ((result=FCFG_PROTO_CHECK_BODY_LEN(task, request, response,
+                    sizeof(FCFGProtoListConfigReq),
+                    sizeof(FCFGProtoListConfigReq) + FCFG_CONFIG_MAX_ENV_LEN +
+                    FCFG_CONFIG_MAX_NAME_LEN)) != 0)
+    {
+        return result;
+    }
+
+    list_config_req = (FCFGProtoListConfigReq *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+
+    env_len = list_config_req->env_len;
+    name_len = list_config_req->name_len;
+
+    if (env_len <= 0 || env_len > FCFG_CONFIG_MAX_ENV_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid env length: %d", env_len);
+        return EINVAL;
+    }
+
+    if (name_len < 0 || name_len > FCFG_CONFIG_MAX_NAME_LEN) {
+        response->error.length = sprintf(response->error.message,
+                "invalid name length: %d", name_len);
+        return EINVAL;
+    }
+
+    data_body_len = sizeof(FCFGProtoListConfigReq) + env_len + name_len;
+    if (request->body_len != data_body_len) {
+        response->error.length = sprintf(response->error.message,
+                "invalid body length: %d, expect: %d",
+                request->body_len, data_body_len);
+        return EINVAL;
+    }
+
+    memcpy(env, list_config_req->env, env_len);
+    *(env + env_len) = '\0';
+
+    memcpy(name, list_config_req->env + env_len, name_len);
+    *(name + name_len) = '\0';
+    if (*name == '\0') {
+        strcpy(name, "%");
+    }
+
+    offset = buff2short(list_config_req->limit.offset);
+    count = buff2short(list_config_req->limit.count);
+
+    mysql_context = &((FCFGServerContext *)task->thread_data->arg)->mysql_context;
+    result = fcfg_server_dao_search_config(mysql_context, env, name,
+            offset, count, &array);
+    if (result != 0) {
+        response->error.length = sprintf(response->error.message,
+                "internal server error");
+        return result;
+    }
+
+    expect_size = sizeof(FCFGProtoHeader) +
+        sizeof(FCFGProtoListConfigRespHeader);
+    end = array.rows + array.count;
+    for (entry = array.rows; entry < end; entry++) {
+        expect_size += sizeof(FCFGProtoListConfigRespBodyPart) +
+            entry->name.len + entry->value.len;
+    }
+    if (expect_size > task->send.ptr->size) {
+        if ((result=sf_set_task_send_buffer_size(task, expect_size)) != 0) {
+            response->error.length = sprintf(response->error.message,
+                    "response data is too large: %d", expect_size);
+            fcfg_server_dao_free_config_array(&array);
+            return result;
+        }
+    }
+
+    p = (char *)(task->send.ptr->data + sizeof(FCFGProtoHeader) + 
+            sizeof(FCFGProtoListConfigRespHeader));
+    for (entry = array.rows; entry < end; entry++) {
+        list_config_resp = (FCFGProtoListConfigRespBodyPart *)p;
+        list_config_resp->status = entry->status;
+        list_config_resp->name_len = entry->name.len;
+        list_config_resp->type = entry->type;
+        int2buff(entry->value.len, list_config_resp->value_len);
+        long2buff(entry->version, list_config_resp->version);
+        int2buff(entry->create_time, list_config_resp->create_time);
+        int2buff(entry->update_time, list_config_resp->update_time);
+        memcpy(list_config_resp->name, entry->name.str, entry->name.len);
+        memcpy(list_config_resp->name + entry->name.len,
+                entry->value.str, entry->value.len);
+
+        p += sizeof(FCFGProtoListConfigRespBodyPart) +
+            entry->name.len + entry->value.len;
+    }
+
+    resp_header = (FCFGProtoListConfigRespHeader *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    short2buff(array.count, resp_header->count);
+
+    response->body_len = expect_size - sizeof(FCFGProtoHeader);
+    response->cmd = FCFG_PROTO_LIST_CONFIG_RESP;
+    response->response_done = true;
+
+    fcfg_server_dao_free_config_array(&array);
+    return 0;
+}
