@@ -760,3 +760,31 @@ static int fcfg_proto_deal_list_config(struct fast_task_info *task,
     fcfg_server_dao_free_config_array(&array);
     return 0;
 }
+
+static int fcfg_proto_deal_push_config_resp(struct fast_task_info *task,
+        const FCFGRequestInfo *request, FCFGResponseInfo *response)
+{
+    int result;
+    FCFGProtoPushResp *push_resp;
+    int64_t agent_cfg_version;
+    FCFGServerTaskArg *task_arg;
+
+    if ((result=FCFG_PROTO_EXPECT_BODY_LEN(task, request, response,
+                    sizeof(FCFGProtoPushResp))) != 0)
+    {
+        return result;
+    }
+
+    task_arg = (FCFGServerTaskArg *)task->arg;
+    push_resp = (FCFGProtoPushResp *)(task->send.ptr->data + sizeof(FCFGProtoHeader));
+    agent_cfg_version = buff2long(push_resp->agent_cfg_version);
+    if (agent_cfg_version != task_arg->msg_queue.agent_cfg_version) {
+        logError("file: "__FILE__", line: %d, client ip: %s, "
+                "response agent_cfg_version: %"PRId64" != %"
+                PRId64, __LINE__, task->client_ip, agent_cfg_version,
+                task_arg->msg_queue.agent_cfg_version);
+        return EINVAL;
+    }
+
+    return fcfg_server_push_configs(task);
+}
