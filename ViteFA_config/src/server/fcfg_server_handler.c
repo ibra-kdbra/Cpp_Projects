@@ -942,3 +942,23 @@ int fcfg_server_deal_task(struct fast_task_info *task, const int stage)
 
     return r == 0 ? result : r;
 }
+
+void *fcfg_server_alloc_thread_extra_data(const int thread_index)
+{
+    FCFGServerContext *thread_extra_data;
+
+    thread_extra_data = (FCFGServerContext *)malloc(sizeof(FCFGServerContext));
+    if (thread_extra_data == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %d bytes fail, errno: %d, error info: %s",
+                __LINE__, (int)sizeof(FCFGServerContext),
+                errno, strerror(errno));
+        return NULL;
+    }
+
+    memset(thread_extra_data, 0, sizeof(FCFGServerContext));
+    fc_init_json_context(&thread_extra_data->json_ctx);
+    fcfg_server_dao_init(&thread_extra_data->mysql_context);
+    common_blocked_queue_init_ex(&thread_extra_data->push_queue, 4096);
+    return thread_extra_data;
+}
