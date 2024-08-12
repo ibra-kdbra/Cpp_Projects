@@ -788,3 +788,157 @@ static int fcfg_proto_deal_push_config_resp(struct fast_task_info *task,
 
     return fcfg_server_push_configs(task);
 }
+
+int fcfg_server_deal_task(struct fast_task_info *task, const int stage)
+{
+    FCFGProtoHeader *proto_header;
+    FCFGServerTaskArg *task_arg;
+    FCFGRequestInfo request;
+    FCFGResponseInfo response;
+    int result;
+    int r;
+    int64_t tbegin;
+    int time_used;
+    int expect_waiting_type;
+
+    tbegin = get_current_time_ms();
+    response.cmd = FCFG_PROTO_ACK;
+    response.body_len = 0;
+    response.log_error = true;
+    response.error.length = 0;
+    response.error.message[0] = '\0';
+    response.response_done = false;
+
+    task_arg = (FCFGServerTaskArg *)task->arg;
+    task_arg->last_recv_pkg_time = g_current_time;
+    request.cmd = ((FCFGProtoHeader *)task->send.ptr->data)->cmd;
+    request.body_len = task->send.ptr->length - sizeof(FCFGProtoHeader);
+    do {
+        if (request.cmd == FCFG_PROTO_AGENT_JOIN_REQ ||
+                        request.cmd == FCFG_PROTO_ADMIN_JOIN_REQ)
+        {
+            if (task_arg->joined) {
+                response.error.length = sprintf(response.error.message,
+                        "already joined");
+                result = -EINVAL;
+                break;
+            }
+        } else if (!task_arg->joined) {
+            response.error.length = sprintf(response.error.message,
+                    "please join first");
+            result = -EINVAL;
+            break;
+        }
+
+        switch (request.cmd) {
+            case FCFG_PROTO_ACTIVE_TEST_REQ:
+                response.cmd = FCFG_PROTO_ACTIVE_TEST_RESP;
+                result = fcfg_proto_deal_actvie_test(task, &request, &response);
+                break;
+            case FCFG_PROTO_PUSH_RESP:
+            case FCFG_PROTO_ACTIVE_TEST_RESP:
+                if (request.cmd == FCFG_PROTO_PUSH_RESP) {
+                    expect_waiting_type = FCFG_SERVER_TASK_WAITING_PUSH_RESP;
+                } else {
+                    expect_waiting_type = FCFG_SERVER_TASK_WAITING_ACTIVE_TEST_RESP;
+                }
+                if ((task_arg->waiting_type & expect_waiting_type) == 0) {
+                    logError("file: "__FILE__", line: %d, "
+                            "client ip: %s, unknow expect cmd: %d, "
+                            "body length: %d", __LINE__,
+                            task->client_ip, request.cmd, request.body_len);
+                    return -EINVAL;
+                }
+
+                task_arg->waiting_type &= ~expect_waiting_type;
+                if (request.cmd == FCFG_PROTO_PUSH_RESP) {
+                    result = fcfg_proto_deal_push_config_resp(task, &request, &response);
+                } else {
+                    result = 0;
+                }
+
+                task->send.ptr->offset = task->send.ptr->length = 0;
+                break;
+            case FCFG_PROTO_AGENT_JOIN_REQ:
+                result = fcfg_proto_deal_agent_join(task, &request, &response);
+                break;
+            case FCFG_PROTO_ADMIN_JOIN_REQ:
+                result = fcfg_proto_deal_admin_join(task, &request, &response);
+                break;
+            case FCFG_PROTO_ADD_ENV_REQ:
+                result = fcfg_proto_deal_add_del_env(task, &request, &response);
+                break;
+            case FCFG_PROTO_DEL_ENV_REQ:
+                result = fcfg_proto_deal_add_del_env(task, &request, &response);
+                break;
+            case FCFG_PROTO_GET_ENV_REQ:
+                result = fcfg_proto_deal_get_env(task, &request, &response);
+                break;
+            case FCFG_PROTO_LIST_ENV_REQ:
+                result = fcfg_proto_deal_list_env(task, &request, &response);
+                break;
+            case FCFG_PROTO_SET_CONFIG_REQ:
+                result = fcfg_proto_deal_set_config(task, &request, &response);
+                break;
+            case FCFG_PROTO_GET_CONFIG_REQ:
+                result = fcfg_proto_deal_get_config(task, &request, &response);
+                break;
+            case FCFG_PROTO_LIST_CONFIG_REQ:
+                result = fcfg_proto_deal_list_config(task, &request, &response);
+                break;
+            case FCFG_PROTO_DEL_CONFIG_REQ:
+                result = fcfg_proto_deal_del_config(task, &request, &response);
+                break;
+            default:
+                response.error.length = sprintf(response.error.message,
+                    "unkown cmd: %d", request.cmd);
+                result = -EINVAL;
+                break;
+        }
+    } while(0);
+
+    if (response.log_error && response.error.length > 0) {
+        logError("file: "__FILE__", line: %d, "
+                "client ip: %s, cmd: %d, body length: %d, %s", __LINE__,
+                task->client_ip, request.cmd, request.body_len,
+                response.error.message);
+    }
+
+    if (request.cmd == FCFG_PROTO_PUSH_RESP ||
+            request.cmd == FCFG_PROTO_ACTIVE_TEST_RESP)
+    {
+        return result > 0 ? -1 * result : result;
+    }
+
+    proto_header = (FCFGProtoHeader *)task->send.ptr->data;
+    if (!response.response_done) {
+        response.body_len = response.error.length;
+        if (response.error.length > 0) {
+            memcpy(task->send.ptr->data + sizeof(FCFGProtoHeader),
+                    response.error.message, response.error.length);
+        }
+    }
+
+    proto_header->status = result >= 0 ? result : -1 * result;
+    proto_header->cmd = response.cmd;
+    int2buff(response.body_len, proto_header->body_len);
+    task->send.ptr->length = sizeof(FCFGProtoHeader) + response.body_len;
+
+    r = sf_send_add_event(task);
+    time_used = (int)(get_current_time_ms() - tbegin);
+    if (time_used > 1000) {
+        lwarning("timed used to process a request is %d ms, "
+                "cmd: %d, req body len: %d, resp body len: %d",
+                time_used, request.cmd,
+                request.body_len, response.body_len);
+    }
+
+    ldebug("client ip: %s, req cmd: %d, req body_len: %d, "
+            "resp cmd: %d, status: %d, resp body_len: %d, "
+            "time used: %d ms",  task->client_ip,
+            request.cmd, request.body_len,
+            response.cmd, proto_header->status,
+            response.body_len, time_used);
+
+    return r == 0 ? result : r;
+}
