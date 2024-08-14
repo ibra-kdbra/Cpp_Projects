@@ -97,3 +97,46 @@ const char *max_cfg_ver_sql = "SELECT MAX(version) FROM fast_config "
 #define FCFG_GET_MONITOR_MAX_CFG_VER_STMT(context) \
             fcfg_server_dao_check_stmt(context, &context->monitor.max_cfg_ver_stmt, \
                     max_cfg_ver_sql)
+
+int fcfg_server_dao_init(FCFGMySQLContext *context)
+{
+    my_bool on;
+    int timeout;
+
+    context->mysql = mysql_init(NULL);
+
+    on = false;
+    mysql_options(context->mysql, MYSQL_OPT_RECONNECT, &on);
+    timeout = SF_G_CONNECT_TIMEOUT;
+    mysql_options(context->mysql, MYSQL_OPT_CONNECT_TIMEOUT, &timeout);
+
+    timeout = SF_G_NETWORK_TIMEOUT;
+    mysql_options(context->mysql, MYSQL_OPT_READ_TIMEOUT, &timeout);
+
+    timeout = SF_G_NETWORK_TIMEOUT;
+    mysql_options(context->mysql, MYSQL_OPT_WRITE_TIMEOUT, &timeout);
+
+    if (mysql_real_connect(context->mysql,
+                g_server_global_vars.db_config.host,
+                g_server_global_vars.db_config.user,
+                g_server_global_vars.db_config.password,
+                g_server_global_vars.db_config.database,
+                g_server_global_vars.db_config.port, NULL, 0) == NULL)
+    {
+        logError("file: "__FILE__", line: %d, "
+                "connect to mysql %s:%d fail, error info: %s",
+                __LINE__, g_server_global_vars.db_config.host,
+                g_server_global_vars.db_config.port,
+                mysql_error(context->mysql));
+        mysql_close(context->mysql);
+        context->mysql = NULL;
+        return ENOTCONN;
+    }
+
+    logInfo("file: "__FILE__", line: %d, "
+            "connect to mysql server %s:%d success",
+            __LINE__, g_server_global_vars.db_config.host,
+            g_server_global_vars.db_config.port);
+    context->last_ping_time = g_current_time;
+    return 0;
+}
