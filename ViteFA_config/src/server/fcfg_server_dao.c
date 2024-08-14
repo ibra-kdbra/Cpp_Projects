@@ -140,3 +140,30 @@ int fcfg_server_dao_init(FCFGMySQLContext *context)
     context->last_ping_time = g_current_time;
     return 0;
 }
+
+#define FCFG_MYSQL_STMT_CLOSE(stmt) \
+    do { \
+        if (stmt != NULL) { \
+            mysql_stmt_close(stmt); \
+        } \
+    } while (0)
+
+void fcfg_server_dao_destroy(FCFGMySQLContext *context)
+{
+    if (context->mysql == NULL) {
+        return;
+    }
+
+    FCFG_MYSQL_STMT_CLOSE(context->admin.update_stmt);
+    FCFG_MYSQL_STMT_CLOSE(context->admin.insert_stmt);
+    FCFG_MYSQL_STMT_CLOSE(context->admin.delete_stmt);
+    FCFG_MYSQL_STMT_CLOSE(context->admin.search_stmt);
+    FCFG_MYSQL_STMT_CLOSE(context->admin.get_pk_stmt);
+    FCFG_MYSQL_STMT_CLOSE(context->agent.select_stmt);
+    FCFG_MYSQL_STMT_CLOSE(context->monitor.max_env_ver_stmt);
+    FCFG_MYSQL_STMT_CLOSE(context->monitor.max_cfg_ver_stmt);
+
+    mysql_close(context->mysql);
+    memset(context, 0, sizeof(FCFGMySQLContext));
+    context->last_ping_time = g_current_time;
+}
