@@ -189,3 +189,33 @@ static inline int fcfg_server_dao_stmt_execute(FCFGMySQLContext *context,
 
     return 0;
 }
+
+#define MYSQL_STMT_EXECUTE(context, stmt) \
+    fcfg_server_dao_stmt_execute(context, stmt, __FILE__, __LINE__)
+
+static inline int fcfg_server_dao_real_query(FCFGMySQLContext *context,
+        const char *sql, const int len)
+{
+    int result;
+    int error_no;
+
+    if (context->mysql == NULL) {
+        if ((result=fcfg_server_dao_init(context)) != 0) {
+            return result;
+        }
+    }
+
+    if ((result=mysql_real_query(context->mysql, sql, len)) != 0) {
+        error_no = mysql_errno(context->mysql);
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_real_query fail, "
+                "result: %d, error code: %d, error info: %s, sql: %s",
+                __LINE__, result, error_no, mysql_error(context->mysql), sql);
+        if ((error_no == CR_SERVER_GONE_ERROR) || (error_no == CR_SERVER_LOST)) {
+            fcfg_server_dao_destroy(context);
+        }
+        return EFAULT;
+    }
+
+    return 0;
+}
