@@ -382,3 +382,54 @@ int fcfg_server_dao_set_config(FCFGMySQLContext *context, const char *env,
 
     return MYSQL_STMT_EXECUTE(context, context->admin.insert_stmt);
 }
+
+int fcfg_server_dao_del_config(FCFGMySQLContext *context, const char *env,
+        const char *name)
+{
+    MYSQL_BIND delete_binds[3];
+    int64_t version;
+    unsigned long env_len;
+    unsigned long name_len;
+    int result;
+
+    version = fcfg_server_dao_next_config_version(context);
+    if (version < 0) {
+        return EINVAL;
+    }
+
+    if ((result=FCFG_GET_ADMIN_DELETE_STMT(context)) != 0) {
+        return result;
+    }
+
+    env_len = strlen(env);
+    name_len = strlen(name);
+    memset(delete_binds, 0, sizeof(delete_binds));
+
+    delete_binds[0].buffer_type = MYSQL_TYPE_LONGLONG;
+    delete_binds[0].buffer = (char *)&version;
+
+    delete_binds[1].buffer_type = MYSQL_TYPE_STRING;
+    delete_binds[1].buffer = (char *)env;
+    delete_binds[1].length = &env_len;
+
+    delete_binds[2].buffer_type = MYSQL_TYPE_STRING;
+    delete_binds[2].buffer = (char *)name;
+    delete_binds[2].length = &name_len;
+
+    if (mysql_stmt_bind_param(context->admin.delete_stmt, delete_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_param fail, error info: %s",
+                __LINE__, mysql_stmt_error(context->admin.delete_stmt));
+        return EINVAL;
+    }
+
+    if ((result=MYSQL_STMT_EXECUTE(context,
+                    context->admin.delete_stmt)) != 0)
+    {
+        return result;
+    }
+    if (mysql_stmt_affected_rows(context->admin.delete_stmt) == 0) {
+        return ENOENT;
+    }
+    return 0;
+}
