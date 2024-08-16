@@ -167,3 +167,25 @@ void fcfg_server_dao_destroy(FCFGMySQLContext *context)
     memset(context, 0, sizeof(FCFGMySQLContext));
     context->last_ping_time = g_current_time;
 }
+
+static inline int fcfg_server_dao_stmt_execute(FCFGMySQLContext *context,
+        MYSQL_STMT *stmt, const char *filename, const int line)
+{
+    int result;
+    int error_no;
+
+    if ((result=mysql_stmt_execute(stmt)) != 0) {
+        error_no = mysql_stmt_errno(stmt);
+        logError("file: %s, line: %d, "
+                "call mysql_stmt_execute fail, "
+                "result: %d, error code: %d, error info: %s",
+                filename, line, result, error_no, mysql_stmt_error(stmt));
+
+        if ((error_no == CR_SERVER_GONE_ERROR) || (error_no == CR_SERVER_LOST)) {
+            fcfg_server_dao_destroy(context);
+        }
+        return EFAULT;
+    }
+
+    return 0;
+}
