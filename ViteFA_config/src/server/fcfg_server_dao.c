@@ -219,3 +219,54 @@ static inline int fcfg_server_dao_real_query(FCFGMySQLContext *context,
 
     return 0;
 }
+
+static int64_t fcfg_server_dao_next_version(FCFGMySQLContext *context,
+        const char *name)
+{
+    MYSQL_RES *mysql_result;
+    MYSQL_ROW row;
+    int64_t version;
+    int len;
+    int result;
+    char update_sql[256];
+    const char *nextval_sql = "SELECT @nextval";
+   
+    len = sprintf(update_sql, "UPDATE fast_increment "
+        "SET value=(@nextval:=value+1) WHERE name = '%s'", name);
+    if ((result=fcfg_server_dao_real_query(context, update_sql, len)) != 0) {
+        return -1;
+    }
+
+    if (mysql_affected_rows(context->mysql) != 1) {
+        logError("file: "__FILE__", line: %d, "
+                "mysql_affected_rows != 1, sql: %s",
+                __LINE__, update_sql);
+        return -2;
+    }
+
+    if ((result=fcfg_server_dao_real_query(context, nextval_sql,
+                    strlen(nextval_sql))) != 0)
+    {
+        return -3;
+    }
+
+    mysql_result = mysql_store_result(context->mysql);
+    if (mysql_result == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_store_result fail, error info: %s, sql: %s",
+                __LINE__, mysql_error(context->mysql), nextval_sql);
+        return -4;
+    }
+
+    row = mysql_fetch_row(mysql_result);
+    if (row == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_fetch_row fail, error info: %s, sql: %s",
+                __LINE__, mysql_error(context->mysql), nextval_sql);
+        return -5;
+    }
+
+    version = strtoll(row[0], NULL, 10);
+    mysql_free_result(mysql_result);
+    return version;
+}
