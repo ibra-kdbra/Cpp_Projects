@@ -270,3 +270,9 @@ static int64_t fcfg_server_dao_next_version(FCFGMySQLContext *context,
     mysql_free_result(mysql_result);
     return version;
 }
+
+#define fcfg_server_dao_next_config_version(context) \
+    fcfg_server_dao_next_version(context, FCFG_KEY_NAME_CONFIG_VERSION)
+
+#define fcfg_server_dao_next_env_version(context) \
+    fcfg_server_dao_next_version(context, FCFG_KEY_NAME_ENVIRONMENT_VERSION)
