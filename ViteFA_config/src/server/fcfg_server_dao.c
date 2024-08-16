@@ -276,3 +276,109 @@ static int64_t fcfg_server_dao_next_version(FCFGMySQLContext *context,
 
 #define fcfg_server_dao_next_env_version(context) \
     fcfg_server_dao_next_version(context, FCFG_KEY_NAME_ENVIRONMENT_VERSION)
+
+
+int fcfg_server_dao_set_config(FCFGMySQLContext *context, const char *env,
+        const char *name, const short type, const char *value)
+{
+    MYSQL_BIND update_binds[5];
+    MYSQL_BIND insert_binds[5];
+    int64_t version;
+    unsigned long env_len;
+    unsigned long name_len;
+    unsigned long value_len;
+    FCFGConfigArray array;
+    int result;
+
+    if (fcfg_server_dao_get_config(context, env, name, &array) == 0
+            && array.count == 1)
+    {
+        bool same;
+        same = (type == array.rows[0].type) &&
+            (strcmp(value, array.rows[0].value.str) == 0);
+        fcfg_server_dao_free_config_array(&array);
+        if (same) {
+            return 0;
+        }
+    }
+
+    version = fcfg_server_dao_next_config_version(context);
+    if (version < 0) {
+        return EINVAL;
+    }
+
+    if ((result=FCFG_GET_ADMIN_UPDATE_STMT(context)) != 0) {
+        return result;
+    }
+
+    env_len = strlen(env);
+    name_len = strlen(name);
+    value_len = strlen(value);
+
+    memset(update_binds, 0, sizeof(update_binds));
+
+    update_binds[0].buffer_type = MYSQL_TYPE_SHORT;
+    update_binds[0].buffer = (char *)&type;
+
+    update_binds[1].buffer_type = MYSQL_TYPE_STRING;
+    update_binds[1].buffer = (char *)value;
+    update_binds[1].length = &value_len;
+
+    update_binds[2].buffer_type = MYSQL_TYPE_LONGLONG;
+    update_binds[2].buffer = (char *)&version;
+
+    update_binds[3].buffer_type = MYSQL_TYPE_STRING;
+    update_binds[3].buffer = (char *)env;
+    update_binds[3].length = &env_len;
+
+    update_binds[4].buffer_type = MYSQL_TYPE_STRING;
+    update_binds[4].buffer = (char *)name;
+    update_binds[4].length = &name_len;
+
+    if (mysql_stmt_bind_param(context->admin.update_stmt, update_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_param fail, error info: %s",
+                __LINE__, mysql_stmt_error(context->admin.update_stmt));
+        return EINVAL;
+    }
+
+    if ((result=MYSQL_STMT_EXECUTE(context,
+                    context->admin.update_stmt)) != 0)
+    {
+        return result;
+    }
+    if (mysql_stmt_affected_rows(context->admin.update_stmt) != 0) {
+        return 0;
+    }
+
+    if ((result=FCFG_GET_ADMIN_INSERT_STMT(context)) != 0) {
+        return result;
+    }
+    memset(insert_binds, 0, sizeof(insert_binds));
+    insert_binds[0].buffer_type = MYSQL_TYPE_STRING;
+    insert_binds[0].buffer = (char *)env;
+    insert_binds[0].length = &env_len;
+
+    insert_binds[1].buffer_type = MYSQL_TYPE_STRING;
+    insert_binds[1].buffer = (char *)name;
+    insert_binds[1].length = &name_len;
+
+    insert_binds[2].buffer_type = MYSQL_TYPE_SHORT;
+    insert_binds[2].buffer = (char *)&type;
+
+    insert_binds[3].buffer_type = MYSQL_TYPE_STRING;
+    insert_binds[3].buffer = (char *)value;
+    insert_binds[3].length = &value_len;
+
+    insert_binds[4].buffer_type = MYSQL_TYPE_LONGLONG;
+    insert_binds[4].buffer = (char *)&version;
+
+    if (mysql_stmt_bind_param(context->admin.insert_stmt, insert_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_param fail, error info: %s",
+                __LINE__, mysql_stmt_error(context->admin.insert_stmt));
+        return EINVAL;
+    }
+
+    return MYSQL_STMT_EXECUTE(context, context->admin.insert_stmt);
+}
