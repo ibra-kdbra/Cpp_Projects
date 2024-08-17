@@ -628,3 +628,46 @@ int fcfg_server_dao_list_config_by_env_and_version(FCFGMySQLContext *context,
 
     return fcfg_server_dao_store_rows(context, context->agent.select_stmt, array);
 }
+
+int fcfg_server_dao_search_config(FCFGMySQLContext *context,
+        const char *env, const char *name, const int offset,
+        const int limit, FCFGConfigArray *array)
+{
+    MYSQL_BIND search_binds[4];
+    unsigned long env_len;
+    unsigned long name_len;
+    int result;
+
+    if ((result=FCFG_GET_ADMIN_SEARCH_STMT(context)) != 0) {
+        return result;
+    }
+
+    env_len = strlen(env);
+    name_len = strlen(name);
+    memset(search_binds, 0, sizeof(search_binds));
+
+    search_binds[0].buffer_type = MYSQL_TYPE_STRING;
+    search_binds[0].buffer = (char *)env;
+    search_binds[0].length = &env_len;
+
+    search_binds[1].buffer_type = MYSQL_TYPE_STRING;
+    search_binds[1].buffer = (char *)name;
+    search_binds[1].length = &name_len;
+
+    search_binds[2].buffer_type = MYSQL_TYPE_LONG;
+    search_binds[2].buffer = (char *)&offset;
+
+    search_binds[3].buffer_type = MYSQL_TYPE_LONG;
+    search_binds[3].buffer = (char *)&limit;
+
+    if (mysql_stmt_bind_param(context->admin.search_stmt, search_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_param fail, error info: %s",
+                __LINE__, mysql_stmt_error(context->admin.search_stmt));
+        array->rows = NULL;
+        array->count = 0;
+        return EINVAL;
+    }
+
+    return fcfg_server_dao_store_rows(context, context->admin.search_stmt, array);
+}
