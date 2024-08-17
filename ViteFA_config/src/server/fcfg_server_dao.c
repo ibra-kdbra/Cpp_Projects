@@ -744,3 +744,24 @@ int fcfg_server_dao_copy_config_array(FCFGConfigArray *src, FCFGConfigArray *des
     dest->count += src->count;
     return 0;
 }
+
+void fcfg_server_dao_free_config_array(FCFGConfigArray *array)
+{
+    FCFGConfigEntry *current;
+    FCFGConfigEntry *end;
+
+    if (array->rows == NULL) {
+        return;
+    }
+
+    end = array->rows + array->count;
+    for (current=array->rows; current<end; current++) {
+        if (current->name.str != NULL) {
+            free(current->name.str);
+        }
+    }
+
+    free(array->rows);
+    array->rows = NULL;
+    array->alloc = array->count = 0;
+}
