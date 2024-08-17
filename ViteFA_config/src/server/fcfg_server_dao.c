@@ -765,3 +765,59 @@ void fcfg_server_dao_free_config_array(FCFGConfigArray *array)
     array->rows = NULL;
     array->alloc = array->count = 0;
 }
+
+static int fcfg_server_dao_env_execute(FCFGMySQLContext *context,
+        const char *sql, const char *env, int *affected_rows)
+{
+    MYSQL_STMT *stmt;
+    MYSQL_BIND binds[2];
+    unsigned long env_len;
+    int64_t version;
+    int result;
+
+    version = fcfg_server_dao_next_env_version(context);
+    if (version < 0) {
+        return EINVAL;
+    }
+
+    stmt = NULL;
+    if ((result=fcfg_server_dao_check_stmt(context, &stmt, sql)) != 0) {
+        return result;
+    }
+
+    env_len = strlen(env);
+    memset(binds, 0, sizeof(binds));
+
+    binds[0].buffer_type = MYSQL_TYPE_LONGLONG;
+    binds[0].buffer = (char *)&version;
+
+    binds[1].buffer_type = MYSQL_TYPE_STRING;
+    binds[1].buffer = (char *)env;
+    binds[1].length = &env_len;
+
+    do {
+        if (mysql_stmt_bind_param(stmt, binds) != 0) {
+            logError("file: "__FILE__", line: %d, "
+                    "call mysql_stmt_bind_param fail, "
+                    "error info: %s, stmt: %s",
+                    __LINE__, mysql_stmt_error(stmt), sql);
+            result = EINVAL;
+            break;
+        }
+
+        if ((result=MYSQL_STMT_EXECUTE(context, stmt)) != 0) {
+            logError("file: "__FILE__", line: %d, "
+                    "execute stmt fail, sql: %s", __LINE__, sql);
+            break;
+        }
+
+        if (affected_rows != NULL) {
+            *affected_rows = mysql_stmt_affected_rows(stmt);
+        }
+
+        result = 0;
+    } while (0);
+
+    mysql_stmt_close(stmt);
+    return result;
+}
