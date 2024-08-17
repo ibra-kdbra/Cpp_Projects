@@ -707,3 +707,40 @@ int fcfg_server_dao_get_config(FCFGMySQLContext *context, const char *env,
 
     return fcfg_server_dao_store_rows(context, context->admin.get_pk_stmt, array);
 }
+
+int fcfg_server_dao_copy_config_array(FCFGConfigArray *src, FCFGConfigArray *dest)
+{
+    FCFGConfigEntry *cur;
+    FCFGConfigEntry *end;
+    FCFGConfigEntry *out;
+    int bytes;
+
+    if (src->count == 0) {
+        return 0;
+    }
+
+    out = dest->rows + dest->count;
+    end = src->rows + src->count;
+    for (cur=src->rows; cur<end; cur++, out++) {
+        out->name.len = cur->name.len;
+        out->value.len = cur->value.len;
+        out->type = cur->type;
+        out->version = cur->version;
+        out->status = cur->status;
+        out->create_time = cur->create_time;
+        out->update_time = cur->update_time;
+
+        bytes = cur->name.len + cur->value.len + 2;
+        out->name.str = (char *)malloc(bytes);
+        if (out->name.str == NULL) {
+            logError("file: "__FILE__", line: %d, "
+                    "malloc %d bytes fail", __LINE__, bytes);
+            return ENOMEM;
+        }
+        out->value.str = out->name.str + cur->name.len + 1;
+        memcpy(out->name.str, cur->name.str, bytes);
+    }
+
+    dest->count += src->count;
+    return 0;
+}
