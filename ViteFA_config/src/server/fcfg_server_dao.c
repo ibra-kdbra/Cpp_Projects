@@ -433,3 +433,161 @@ int fcfg_server_dao_del_config(FCFGMySQLContext *context, const char *env,
     }
     return 0;
 }
+
+static int fcfg_server_dao_store_rows(FCFGMySQLContext *context,
+        MYSQL_STMT *stmt, FCFGConfigArray *array)
+{
+    MYSQL_BIND result_binds[7];
+    int result;
+    int row_count;
+    int bytes;
+    struct {
+        char name[FCFG_CONFIG_NAME_SIZE];
+        char value[FCFG_CONFIG_VALUE_SIZE];
+        int64_t version;
+        short status;
+        short type;
+        unsigned long name_len;
+        unsigned long value_len;
+        int create_time;
+        int update_time;
+    } buffer;
+    my_bool is_null[7];
+    my_bool error[7];
+    FCFGConfigEntry *current;
+    FCFGConfigEntry *end;
+
+    if ((result=MYSQL_STMT_EXECUTE(context, stmt)) != 0) {
+        array->rows = NULL;
+        array->alloc = array->count = 0;
+        return result;
+    }
+
+    buffer.name_len = buffer.value_len = 0;
+    memset(result_binds, 0, sizeof(result_binds));
+    result_binds[0].buffer_type = MYSQL_TYPE_STRING;
+    result_binds[0].buffer = buffer.name;
+    result_binds[0].buffer_length = FCFG_CONFIG_NAME_SIZE;
+    result_binds[0].length = &buffer.name_len;
+    result_binds[0].is_null = &is_null[0];
+    result_binds[0].error = &error[0];
+
+    result_binds[1].buffer_type = MYSQL_TYPE_SHORT;
+    result_binds[1].buffer = (char *)&buffer.type;
+    result_binds[1].is_null = &is_null[1];
+    result_binds[1].error = &error[1];
+
+    result_binds[2].buffer_type = MYSQL_TYPE_STRING;
+    result_binds[2].buffer = buffer.value;
+    result_binds[2].buffer_length = FCFG_CONFIG_VALUE_SIZE;
+    result_binds[2].length = &buffer.value_len;
+    result_binds[2].is_null = &is_null[2];
+    result_binds[2].error = &error[2];
+
+    result_binds[3].buffer_type = MYSQL_TYPE_LONGLONG;
+    result_binds[3].buffer = (char *)&buffer.version;
+    result_binds[3].is_null = &is_null[3];
+    result_binds[3].error = &error[3];
+
+    result_binds[4].buffer_type = MYSQL_TYPE_SHORT;
+    result_binds[4].buffer = (char *)&buffer.status;
+    result_binds[4].is_null = &is_null[4];
+    result_binds[4].error = &error[4];
+
+    result_binds[5].buffer_type = MYSQL_TYPE_LONG;
+    result_binds[5].buffer = (char *)&buffer.create_time;
+    result_binds[5].is_null = &is_null[5];
+    result_binds[5].error = &error[5];
+
+    result_binds[6].buffer_type = MYSQL_TYPE_LONG;
+    result_binds[6].buffer = (char *)&buffer.update_time;
+    result_binds[6].is_null = &is_null[6];
+    result_binds[6].error = &error[6];
+
+    if (mysql_stmt_bind_result(stmt, result_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_result fail, error info: %s",
+                __LINE__, mysql_stmt_error(stmt));
+        array->rows = NULL;
+        array->alloc = array->count = 0;
+        return EINVAL;
+    }
+
+    if (mysql_stmt_store_result(stmt) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_store_result fail, error info: %s",
+                __LINE__, mysql_stmt_error(stmt));
+        array->rows = NULL;
+        array->alloc = array->count = 0;
+        return EINVAL;
+    }
+
+    row_count = mysql_stmt_num_rows(stmt);
+    if (row_count == 0) {
+        array->alloc = array->count = 0;
+        array->rows = NULL;
+        return 0;
+    }
+
+    if (row_count <= 2) {  //fast path
+        array->alloc = row_count;
+    } else {
+        array->alloc = 4;
+        while (array->alloc < row_count) {
+            array->alloc *= 2;
+        }
+    }
+
+    bytes = sizeof(FCFGConfigEntry) * array->alloc;
+    array->rows = (FCFGConfigEntry *)malloc(bytes);
+    if (array->rows == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %d bytes fail", __LINE__, bytes);
+        array->alloc = array->count = 0;
+        return ENOMEM;
+    }
+
+    end = array->rows + row_count;
+    for (current=array->rows; current<end; current++) {
+        if (mysql_stmt_fetch(stmt) != 0) {
+            logError("file: "__FILE__", line: %d, "
+                    "call mysql_stmt_fetch fail, error info: %s",
+                    __LINE__, mysql_stmt_error(stmt));
+            array->count = current - array->rows;
+            fcfg_server_dao_free_config_array(array);
+            return EFAULT;
+        }
+
+        bytes = buffer.name_len + buffer.value_len + 2;
+        current->name.str = (char *)malloc(bytes);
+        if (current->name.str == NULL) {
+            logError("file: "__FILE__", line: %d, "
+                    "malloc %d bytes fail", __LINE__, bytes);
+            array->count = current - array->rows;
+            fcfg_server_dao_free_config_array(array);
+            return ENOMEM;
+        }
+        current->value.str = current->name.str + buffer.name_len + 1;
+        memcpy(current->name.str, buffer.name, buffer.name_len + 1);
+        memcpy(current->value.str, buffer.value, buffer.value_len + 1);
+        current->version = buffer.version;
+        current->status = buffer.status;
+        current->type = buffer.type;
+        current->create_time = buffer.create_time;
+        current->update_time = buffer.update_time;
+        current->name.len = buffer.name_len;
+        current->value.len = buffer.value_len;
+
+        /*
+        logInfo("name: %.*s, type: %d, value: %.*s, version: %"PRId64", status: %d, "
+                "create_time: %ld, update_time: %ld",
+                current->name.len, current->name.str, current->type,
+                current->value.len, current->value.str,
+                current->version, current->status,
+                (long)current->create_time, (long)current->update_time);
+                */
+    }
+
+    array->count = row_count;
+    return 0;
+}
