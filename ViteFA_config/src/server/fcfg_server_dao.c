@@ -591,3 +591,40 @@ static int fcfg_server_dao_store_rows(FCFGMySQLContext *context,
     array->count = row_count;
     return 0;
 }
+
+int fcfg_server_dao_list_config_by_env_and_version(FCFGMySQLContext *context,
+        const char *env, const int64_t version, const int limit,
+        FCFGConfigArray *array)
+{
+    MYSQL_BIND select_binds[3];
+    unsigned long env_len;
+    int result;
+
+    if ((result=FCFG_GET_AGENT_SELECT_STMT(context)) != 0) {
+        return result;
+    }
+
+    env_len = strlen(env);
+    memset(select_binds, 0, sizeof(select_binds));
+
+    select_binds[0].buffer_type = MYSQL_TYPE_STRING;
+    select_binds[0].buffer = (char *)env;
+    select_binds[0].length = &env_len;
+
+    select_binds[1].buffer_type = MYSQL_TYPE_LONGLONG;
+    select_binds[1].buffer = (char *)&version;
+
+    select_binds[2].buffer_type = MYSQL_TYPE_LONG;
+    select_binds[2].buffer = (char *)&limit;
+
+    if (mysql_stmt_bind_param(context->agent.select_stmt, select_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_param fail, error info: %s",
+                __LINE__, mysql_stmt_error(context->agent.select_stmt));
+        array->rows = NULL;
+        array->count = 0;
+        return EINVAL;
+    }
+
+    return fcfg_server_dao_store_rows(context, context->agent.select_stmt, array);
+}
