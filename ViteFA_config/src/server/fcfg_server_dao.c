@@ -671,3 +671,39 @@ int fcfg_server_dao_search_config(FCFGMySQLContext *context,
 
     return fcfg_server_dao_store_rows(context, context->admin.search_stmt, array);
 }
+
+int fcfg_server_dao_get_config(FCFGMySQLContext *context, const char *env,
+        const char *name, FCFGConfigArray *array)
+{
+    MYSQL_BIND get_pk_binds[2];
+    unsigned long env_len;
+    unsigned long name_len;
+    int result;
+
+    if ((result=FCFG_GET_ADMIN_GET_PK_STMT(context)) != 0) {
+        return result;
+    }
+
+    env_len = strlen(env);
+    name_len = strlen(name);
+    memset(get_pk_binds, 0, sizeof(get_pk_binds));
+
+    get_pk_binds[0].buffer_type = MYSQL_TYPE_STRING;
+    get_pk_binds[0].buffer = (char *)env;
+    get_pk_binds[0].length = &env_len;
+
+    get_pk_binds[1].buffer_type = MYSQL_TYPE_STRING;
+    get_pk_binds[1].buffer = (char *)name;
+    get_pk_binds[1].length = &name_len;
+
+    if (mysql_stmt_bind_param(context->admin.get_pk_stmt, get_pk_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_param fail, error info: %s",
+                __LINE__, mysql_stmt_error(context->admin.get_pk_stmt));
+        array->rows = NULL;
+        array->count = 0;
+        return EINVAL;
+    }
+
+    return fcfg_server_dao_store_rows(context, context->admin.get_pk_stmt, array);
+}
