@@ -931,3 +931,9 @@ static int fcfg_server_dao_do_list_env(FCFGMySQLContext *context, const char *en
 
     return 0;
 }
+
+int fcfg_server_dao_list_env(FCFGMySQLContext *context, FCFGEnvArray *array)
+{
+    const char *env = NULL;
+    return fcfg_server_dao_do_list_env(context, env, array);
+}
