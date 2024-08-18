@@ -821,3 +821,22 @@ static int fcfg_server_dao_env_execute(FCFGMySQLContext *context,
     mysql_stmt_close(stmt);
     return result;
 }
+int fcfg_server_dao_del_env(FCFGMySQLContext *context, const char *env)
+{
+    int affected_rows;
+    int result;
+    FCFGEnvEntry entry;
+    const char *delete_sql = "UPDATE fast_environment SET status = 1, "
+        "version = ? WHERE env = ?";
+
+    if ((result=fcfg_server_dao_get_env(context, env, &entry)) != 0) {
+        return result;
+    }
+
+    if ((result=fcfg_server_dao_env_execute(context, delete_sql, env,
+                    &affected_rows)) != 0)
+    {
+        return result;
+    }
+    return affected_rows >= 1 ? 0 : ENOENT;
+}
