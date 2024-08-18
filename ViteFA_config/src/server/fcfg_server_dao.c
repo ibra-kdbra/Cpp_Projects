@@ -840,3 +840,94 @@ int fcfg_server_dao_del_env(FCFGMySQLContext *context, const char *env)
     }
     return affected_rows >= 1 ? 0 : ENOENT;
 }
+
+static int fcfg_server_dao_do_list_env(FCFGMySQLContext *context, const char *env,
+        FCFGEnvArray *array)
+{
+    MYSQL_RES *mysql_result;
+    MYSQL_ROW row;
+    FCFGEnvEntry *current;
+    FCFGEnvEntry  *end;
+    int row_count;
+    int bytes;
+    int sql_len;
+    int result;
+    char select_sql[512];
+    
+    strcpy(select_sql, "SELECT env, UNIX_TIMESTAMP(create_time), "
+        "UNIX_TIMESTAMP(update_time) FROM fast_environment "
+        "WHERE status = 0");
+    sql_len = strlen(select_sql);
+    if (env != NULL) {
+        char escaped_env[2 * FCFG_CONFIG_ENV_SIZE];
+        mysql_real_escape_string_quote(context->mysql, escaped_env,
+                env, strlen(env), '\'');
+        sql_len += sprintf(select_sql + sql_len, " AND env = '%s'",
+                escaped_env);
+    } else {
+        sql_len += sprintf(select_sql + sql_len, " ORDER BY env");
+    }
+
+    if ((result=fcfg_server_dao_real_query(context, select_sql,
+                    sql_len)) != 0)
+    {
+        return result;
+    }
+
+    mysql_result = mysql_store_result(context->mysql);
+    if (mysql_result == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_store_result fail, error info: %s, sql: %s",
+                __LINE__, mysql_error(context->mysql), select_sql);
+        return EINVAL;
+    }
+
+    row_count = mysql_num_rows(mysql_result);
+    if (row_count == 0) {
+        array->count = 0;
+        array->rows = NULL;
+        mysql_free_result(mysql_result);
+        return 0;
+    }
+
+    bytes = sizeof(FCFGEnvEntry) * row_count;
+    array->rows = (FCFGEnvEntry *)malloc(bytes);
+    if (array->rows == NULL) {
+        logError("file: "__FILE__", line: %d, "
+                "malloc %d bytes fail", __LINE__, bytes);
+        array->count = 0;
+        mysql_free_result(mysql_result);
+        return ENOMEM;
+    }
+
+    array->count = row_count;
+    end = array->rows + row_count;
+    for (current=array->rows; current<end; current++) {
+        if ((row=mysql_fetch_row(mysql_result)) == NULL) {
+            logError("file: "__FILE__", line: %d, "
+                    "call mysql_fetch_row fail, error info: %s",
+                    __LINE__, mysql_error(context->mysql));
+            array->count = current - array->rows;
+            break;
+        }
+
+        current->env.str = strdup(row[0]);
+        current->env.len = strlen(row[0]);
+        if (current->env.str == NULL) {
+            logError("file: "__FILE__", line: %d, "
+                    "strdup %s fail", __LINE__, row[0]);
+            array->count = current - array->rows;
+            break;
+        }
+        current->create_time = strtoll(row[1], NULL, 10);
+        current->update_time = strtoll(row[2], NULL, 10);
+    }
+    mysql_free_result(mysql_result);
+
+    if (current < end) {
+        fcfg_server_dao_free_env_array(array);
+        return EFAULT;
+    }
+
+    return 0;
+}
