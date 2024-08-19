@@ -958,3 +958,24 @@ int fcfg_server_dao_get_env(FCFGMySQLContext *context, const char *env,
     fcfg_server_dao_free_env_array(&array);
     return 0;
 }
+
+void fcfg_server_dao_free_env_array(FCFGEnvArray *array)
+{
+    FCFGEnvEntry *current;
+    FCFGEnvEntry  *end;
+    
+    if (array->rows == NULL) {
+        return;
+    }
+
+    end = array->rows + array->count;
+    for (current=array->rows; current<end; current++) {
+        if (current->env.str != NULL) {
+            free(current->env.str);
+        }
+    }
+
+    free(array->rows);
+    array->rows = NULL;
+    array->count = 0;
+}
