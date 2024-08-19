@@ -979,3 +979,52 @@ void fcfg_server_dao_free_env_array(FCFGEnvArray *array)
     array->rows = NULL;
     array->count = 0;
 }
+
+static int fcfg_server_dao_store_max_version(FCFGMySQLContext *context,
+        MYSQL_STMT *stmt, int64_t *max_version)
+{
+    MYSQL_BIND result_binds[1];
+    my_bool is_null;
+    my_bool error;
+    int row_count;
+    int result;
+
+    *max_version = 0;
+
+    if ((result=MYSQL_STMT_EXECUTE(context, stmt)) != 0) {
+        return result;
+    }
+
+    memset(result_binds, 0, sizeof(result_binds));
+    result_binds[0].buffer_type = MYSQL_TYPE_LONGLONG;
+    result_binds[0].buffer = (char *)max_version;
+    result_binds[0].is_null = &is_null;
+    result_binds[0].error = &error;
+    if (mysql_stmt_bind_result(stmt, result_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_result fail, error info: %s",
+                __LINE__, mysql_stmt_error(stmt));
+        return EINVAL;
+    }
+
+    if (mysql_stmt_store_result(stmt) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_store_result fail, error info: %s",
+                __LINE__, mysql_stmt_error(stmt));
+        return EINVAL;
+    }
+
+    row_count = mysql_stmt_num_rows(stmt);
+    if (row_count == 0) {
+        return 0;
+    }
+
+    if (mysql_stmt_fetch(stmt) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_fetch fail, error info: %s",
+                __LINE__, mysql_stmt_error(stmt));
+        return EFAULT;
+    }
+
+    return 0;
+}
