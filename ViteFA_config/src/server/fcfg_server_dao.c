@@ -1,4 +1,3 @@
-
 #include <sys/stat.h>
 #include "fastcommon/shared_func.h"
 #include "fastcommon/logger.h"
@@ -936,4 +935,26 @@ int fcfg_server_dao_list_env(FCFGMySQLContext *context, FCFGEnvArray *array)
 {
     const char *env = NULL;
     return fcfg_server_dao_do_list_env(context, env, array);
+}
+
+int fcfg_server_dao_get_env(FCFGMySQLContext *context, const char *env,
+        FCFGEnvEntry *entry)
+{
+    FCFGEnvArray array;
+    int result;
+
+    if ((result=fcfg_server_dao_do_list_env(context, env, &array)) != 0) {
+        return result;
+    }
+    if (array.count == 0) {
+        return ENOENT;
+    }
+
+    entry->env.len = strlen(env);
+    entry->env.str = (char *)env;
+    entry->create_time = array.rows[0].create_time;
+    entry->update_time = array.rows[0].update_time;
+
+    fcfg_server_dao_free_env_array(&array);
+    return 0;
 }
