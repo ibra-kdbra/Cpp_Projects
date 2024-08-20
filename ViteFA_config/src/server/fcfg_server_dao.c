@@ -1057,3 +1057,16 @@ int fcfg_server_dao_max_config_version(FCFGMySQLContext *context,
     return fcfg_server_dao_store_max_version(context,
             context->monitor.max_cfg_ver_stmt, max_version);
 }
+
+int fcfg_server_dao_max_env_version(FCFGMySQLContext *context,
+        int64_t *max_version)
+{
+    int result;
+
+    if ((result=FCFG_GET_MONITOR_MAX_ENV_VER_STMT(context)) != 0) {
+        return result;
+    }
+
+    return fcfg_server_dao_store_max_version(context,
+            context->monitor.max_env_ver_stmt, max_version);
+}
