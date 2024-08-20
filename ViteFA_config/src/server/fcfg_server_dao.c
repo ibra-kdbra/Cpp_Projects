@@ -1028,3 +1028,32 @@ static int fcfg_server_dao_store_max_version(FCFGMySQLContext *context,
 
     return 0;
 }
+
+int fcfg_server_dao_max_config_version(FCFGMySQLContext *context,
+            const char *env, int64_t *max_version)
+{
+    MYSQL_BIND select_binds[1];
+    unsigned long env_len;
+    int result;
+
+    if ((result=FCFG_GET_MONITOR_MAX_CFG_VER_STMT(context)) != 0) {
+        return result;
+    }
+
+    env_len = strlen(env);
+    memset(select_binds, 0, sizeof(select_binds));
+
+    select_binds[0].buffer_type = MYSQL_TYPE_STRING;
+    select_binds[0].buffer = (char *)env;
+    select_binds[0].length = &env_len;
+    if (mysql_stmt_bind_param(context->monitor.max_cfg_ver_stmt, select_binds) != 0) {
+        logError("file: "__FILE__", line: %d, "
+                "call mysql_stmt_bind_param fail, error info: %s",
+                __LINE__, mysql_stmt_error(context->monitor.max_cfg_ver_stmt));
+        *max_version = 0;
+        return EINVAL;
+    }
+
+    return fcfg_server_dao_store_max_version(context,
+            context->monitor.max_cfg_ver_stmt, max_version);
+}
