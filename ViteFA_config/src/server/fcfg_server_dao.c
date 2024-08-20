@@ -1070,3 +1070,36 @@ int fcfg_server_dao_max_env_version(FCFGMySQLContext *context,
     return fcfg_server_dao_store_max_version(context,
             context->monitor.max_env_ver_stmt, max_version);
 }
+
+int fcfg_server_dao_ping(FCFGMySQLContext *context, const int thread_index)
+{
+    int error_no;
+    int result;
+
+    if (context->mysql == NULL) {
+        logDebug("file: "__FILE__", line: %d, "
+                "thread[%d] mysql handler is NULL, skip ping",
+                __LINE__, thread_index);
+        return 0;
+    }
+
+    if (mysql_ping(context->mysql) == 0) {
+        logDebug("file: "__FILE__", line: %d, "
+                "thread[%d] mysql ping OK",
+                __LINE__, thread_index);
+        result = 0;
+    } else {
+        error_no = mysql_errno(context->mysql);
+        logError("file: "__FILE__", line: %d, "
+                "thread[%d] call mysql_ping fail, "
+                "error code: %d, error info: %s",
+                __LINE__, thread_index, error_no,
+                mysql_error(context->mysql));
+        if ((error_no == CR_SERVER_GONE_ERROR) || (error_no == CR_SERVER_LOST)) {
+            fcfg_server_dao_destroy(context);
+        }
+        result = EFAULT;
+    }
+
+    return result;
+}
