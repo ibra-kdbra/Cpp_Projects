@@ -1,20 +1,3 @@
-/*
- * Copyright (c) 2023-2024 Kaan Çırağ
- *
- * This file is part of staticpagegen.
- *
- * staticpagegen is free software: you can redistribute it and/or modify it
- * under the terms of the GNU Affero General Public License as published by the
- * Free Software Foundation, version 3 of the License only.
- * 
- * staticpagegen is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
- * FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License
- * for more details.
- * 
- * You should have received a copy of the GNU Affero General Public License
- * along with staticpagegen. If not, see <https://www.gnu.org/licenses/>.
- */
 #ifndef _STATICPAGEGEN_H_
 #define _STATICPAGEGEN_H_
 #define STATICPAGEGEN_VERSION "0.1.1"
