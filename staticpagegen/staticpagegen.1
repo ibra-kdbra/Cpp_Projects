@@ -1,0 +1,107 @@
+.Dd $Mdocdate: June 30 2024 $
+.Dt STATICPAGEGEN 1
+.Os
+.Sh NAME
+.Nm staticpagegen
+.Nd generate static pages representing directory hierarchies
+.Sh SYNOPSIS
+.Nm
+.Op Fl ghPv
+.Op Fl G Ar gopher-server
+.Op Fl H Ar xhtml-standard
+.Op Fl T Ar page-title
+.Op Fl U Ar base-address
+.Ar directory
+.Sh DESCRIPTION
+.Nm
+is a tool used to generate static pages for directory hierarchies which uses
+the simplest possible form for the protocols or standards it supports. After
+passing it a
+.Ar directory ,
+it generates directories containing the same files in the passed
+.Ar directory ,
+alongside landing pages which link to the said files in each
+subdirectory.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl G Ar gopher-server
+Indicate the Gopher server software so that the Gophermap files will be
+generated according to the needs of the server software, as each server
+may require different Gophermap specification.
+Currently, only \(dqgeomyidae\(dq is supported.
+.It Fl g
+Generate static pages only for Gopher. When used together with the option
+.Fl h ,
+.Nm
+will generate static pages for both protocols similar to default invocation.
+.It Fl H Ar xhtml-standard
+Indicate the XHTML standard so that the XHTML files will be generated according
+to the specifications of the given XHTML standard.
+Currently, only \(dqxhtml_basic_1-0\(dq is supported.
+.It Fl h
+Generate static pages only for XHTML. When used together with the option
+.Fl g ,
+.Nm
+will generate static pages for both protocols similar to default invocation.
+.It Fl P
+Do not copy the files that are linked by symbolic links. Ignore symbolic
+links.
+.It Fl T Ar page-title
+Specify the title and the header of generated pages. By default, pages will be
+generated with the title \(dqPage\(dq.
+.It Fl U Ar base-address
+Specify the base address (URL), so that the gophermaps (.gph files) shall
+follow the destination in the correct base address. By default, the base
+address is \(dqserver\(dq, so that geomyidae can replace it with the server's
+hostname accordingly.
+.It Fl V
+Print version information to standard output and exit.
+.It Fl v
+Verbose mode. Multiple
+.Fl v
+options increase the verbosity
+.El
+.Pp
+.Nm
+generates directories \(dqxhtml\(dq and \(dqgopher\(dq in the working directory.
+See the
+.Fl g
+and
+.Fl h
+options to change this behaviour.
+.Pp
+The given
+.Ar directory
+will be recursively copied over into the \(dqxhtml\(dq and \(dqgopher\(dq
+directories. Then, in each of these directories, XHTML files and Gophermap files
+will be generated, alongside in every subdirectory of the respective directory
+in a recursive manner.
+.Pp
+By default, when
+.Nm
+comes across symbolic links, it follows the symbolic link and treats the file
+the symbolic link links to similar to any other file. See the option
+.Fl P
+to change this behaviour.
+.Sh EXIT STATUS
+.Nm
+exits 0 on success, and >0 if an error occurs.
+.Sh EXAMPLES
+Generate XHTML and Gopher pages from the directory
+.Pa foobar :
+.Pp
+.Dl $ staticpagegen foobar
+.Pp
+Generate from the directory
+.Pa foobar
+in level 2 verbose mode, only XHTML pages with the title \(dqFTP\(dq, in which
+the links are containing the base address \(dqftp.mysrv.org\(dq, while ignoring
+symbolic links.
+.Pp
+.Dl $ staticpagegen -h -P -vv -T \(dqFTP\(dq -U \(dqftp.mysrv.org\(dq foobar
+.Sh SEE ALSO
+geomyidae(8)
+.Sh AUTHOR
+.Nm
+is written by Kaan Çırağ <pixificial () pixificial ! xyz>.
