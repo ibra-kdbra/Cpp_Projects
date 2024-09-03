@@ -1,0 +1,45 @@
+
+#step 1. download libfastcommon source codes from github and install it,
+   git clone https://github.com/happyfish100/libfastcommon.git
+   cd libfastcommon
+   ./make.sh && sudo ./make.sh install
+
+#step 2. download libserverframe source codes from github and install it,
+   git clone https://github.com/happyfish100/libserverframe.git
+   cd libserverframe 
+   ./make.sh && sudo ./make.sh install
+
+#step 3. download libshmcache source codes from github and install it,
+   git clone https://github.com/happyfish100/libshmcache.git
+   cd  libshmcache/src
+   make && sudo make install
+
+#step 4. install mysql client library
+   * ubuntu OS: sudo apt-get install libmysqlclient-dev 
+   * CentOS: sudo yum install mysql-devel
+          or sudo yum install mysql-community-devel
+          or sudo yum install rh-mysql57-mysql-devel
+   * Mac OS: brew install mysql-client
+
+#step 5. download fastconfig source package from github and install it
+   git clone https://github.com/happyfish100/fastconfig.git
+   cd fastconfig/src
+   ./make.sh && sudo ./make.sh install
+
+#step 6. create database and execute SQL scripts:
+   in mysql command shell, execute following commands:
+   CREATE DATABASE fastconfig;
+   use fastconfig;
+   source sql/create_table.sql;
+
+#step 7. start config server in the config server
+   /usr/bin/fcfg_serverd /etc/fcfg/fcfg_serverd.conf restart
+
+#step 8. use fcfg_add_env to add env, for example:
+   /usr/bin/fcfg_add_env -c /etc/fcfg/fcfg_admin.conf -e test
+
+#step 9. use fcfg_set_config to set config items, for example:
+   /usr/bin/fcfg_set_config -c /etc/fcfg/fcfg_admin.conf -e test -n app1.key1 -v value1
+
+#step 10. start config agent in the application server
+   /usr/bin/fcfg_agentd /etc/fcfg/fcfg_agentd.conf restart
