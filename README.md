@@ -1,23 +1,75 @@
 # C++ Projects **PlayGround** #
 
-## I made this repo to make more C++ projects and implement new things I always wanted to try
+### I made this repo to make more C++ projects and implement new things I always wanted to try
 
 ### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
 
 ### I hope this repository never stops growing and teaches me new things about this fascinating programming language
 
-#
-# Overview
+# Table of Contents
+
+[Overview](#overview)
+
+[Side note](#side-note)
+
+[Projects:](#projects)
+
+- [Atari Games](#atrai-games)
+- [Beneficial C Programming](#beneficial-c_programming)
+- [canChat](#canchat)
+- [Chess-Engine](#chess-engine)
+- [Chess_3D](#chess_3d)
+- [Collatz Conjecture](#collatz-conjecture)
+- [CPP20_Develop](#cpp20_develop)
+- [CustomizedOperators](#customizedoperators)
+- [define_evil](#define_evil)
+- [Demystifying_Guard](#demystifying_guard)
+- [design-patterns](#design-patterns)
+- [Dump C++](#dump-c)
+- [FileLockSocket](#filelocksocket)
+- [Hangman-game](#hangman-game)
+- [InjectHook](#injecthook)
+- [introspective](#introspective)
+- [javascript-compiler](#javascript-compiler)
+- [JsonConverter](#jsonconverter)
+- [MarbleMarcher](#marblemarcher)
+- [Matrix_ScreenSaver](#matrix_screenSaver)
+- [miniShell](#minishell)
+- [mothbar](#mothbar)
+- [ofxAsync](#ofxasync)
+- [OpenGL_examples](#opengl_examples)
+- [password_generator](#password_generator)
+- [Pipes_ScreenSaver](#pipes_screenSaver)
+- [Random Utility tools](#random_utility_tools)
+- [Resgular Expressions](#resgular_expressions)
+- [simple_turso](#simple_turso)
+- [Simple-Code](#simple-code)
+- [simplesdl2_game_template](#simplesdl2_game_template)
+- [staticpagegen](#staticpagegen)
+- [support_modules](#support_modules)
+- [SystemMonitor](#systemmonitor)
+- [Template Language Generator](#template_language_generator)
+- [Terminal File Manager](#terminal_file_manager)
+- [Terminal Snake](#terminal_snake)
+- [Thread Pool](#thread_pool)
+- [Tokenizer_tok](#tokenizer_tok)
+- [Trigonometric Functions](#trigonometric-functions)
+- [ViteFA_config](#vitefa_config)
+- [volumetric-clouds](#volumetric-clouds)
+- [WordProc](#wordproc)
+
+
+## Overview
 This repository serves as a personal playground for experimenting with various C++ projects. It includes original implementations, as well as forked or cloned repositories from other developers with my own improvements as fits. Each project aims to explore different concepts and features of the C++ programming language.
 
 
-## Side note:
-Projects are organized alphabetically for easy navigation. Each project directory contains its own README.md file, which provides specific details, usage instructions, and credits for any borrowed code.
+### Side note:
+Projects are organized alphabetically for easy navigation. Each corresponding *README* file provides specific details, usage instructions, and credits for any borrowed code.
 #
 
-# Projects
+## Projects
 
-## Atrai Games [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Atari-Games)
+### [Atrai-Games](./Atari-Games)
 
 A collection of classic Atari games implemented in C++:
 
@@ -26,17 +78,25 @@ A collection of classic Atari games implemented in C++:
 2. Snake - [Learn more](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
 
 3. Tetris - [Learn more](https://en.wikipedia.org/wiki/Tetris)
-
 #
 
-## Beneficial-C_programming [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Benfetial-C_programming)
-
- `Compile and execute C "scripts" in one go!`
+### [Beneficial-C_programming](./Benfetial-C_programming)
+*Compile and execute C "scripts" in one go!*
 
  A shell script designed to streamline the process of compiling and executing C (and C++) scripts with unparalleled speed. This tool allows users to run C code directly from the command line or via shebang, making it as convenient as running shell scripts. With support for multiple files and customizable compiler options.
+#
+
+### [canChat](./canChat)
+Feature-complete rooms-based chat for tens of thousands of users. Client plus Server. Built with [Oat++ Web Framework](https://oatpp.io/).
+`Single-Node` `In-Memory` `WebSocket` `TLS`.
 
 #
-## CPP20_Develop [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/CPP20_Develop)
+### [Chess_3D](./Chess_3D)
+
+A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game controls.
+
+#
+### [CPP20_Develop](./CPP20_Develop)
 
 `A versatile collection of compile-time optimized tools for C++ programming.`
 
@@ -44,100 +104,102 @@ This library uses the latest C++ features available in GCC, Clang and Visual Stu
 
 #
 
-## Chess_3D [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Chess_3D)
-
-A simple 3d chess game.
-#
-
-## Chess-Engine [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Chess_Engine)
+### [Chess-Engine](./Chess_Engine)
 
 Chess Engine in C++17.
 #
 
-## Collatz-Conjecture [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Collatz)
+### [Collatz-Conjecture](./Collatz)
 
-#### What does it mean?
-The Collatz conjecture in mathematics asks whether repeating two simple arithmetic operations will eventually transform every positive integer into one.
+[Learn more](https://en.wikipedia.org/wiki/Collatz_conjecture) about Collatz Conjecture.
+
+A program that attempts to solve Collatz-Conjecture question which asks whether repeating two simple arithmetic operations will eventually transform every positive integer into one.
 
 #
 
-## CustomizedOperators [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/CustomizedOperators)
+### [CustomizedOperators](./CustomizedOperators)
 
 Implements custom operators for C++.
 #### Like what?
 In C++ one can not create new operators such as <> or |&. What you can do however is create a variable named x of newly created type with irrelevant name and overload the operators < and > such that you can write <x> creating a new operators of sorts.
+#
 
-## Demystifying_Guard [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Demystifying_Guard)
+### [Demystifying_Guard](./Demystifying_Guard)
+Demystifying PatchGuard is a comprehensive analysis of Microsoft's security feature called PatchGuard, which is designed to prevent unauthorized modifications to the Windows kernel. The analysis is done through practical engineering, with a focus on understanding PatchGuard's inner workings. 
+#
 
-## Dump C++ [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Dump_c%2B%2B)
+### [Dump C++](./Dump_c%2B%2B)
+#
+### [FileLockSocket](./FileLockSocket)
 
-## FileLockSocket [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/FileLockSocket)
+Transfer files quickly and securely! 
 
-## Hangman-game [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Hangman-game)
+The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key derivation, employs AES-256-GCM for encryption/decryption, and uses [SHA3-256](https://en.wikipedia.org/wiki/SHA-3) for integrity check.
+#
 
-## InjectHook [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/InjectHook)
+### [Hangman-game](./Hangman-game)
 
-## JsonConverter [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/JsonConverter)
+### [InjectHook](./InjectHook)
 
-## MarbleMarcher [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/MarbleMarcher)
+### [JsonConverter](./JsonConverter)
 
-## Matrix_ScreenSaver [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Matrix_ScreenSaver)
+### [MarbleMarcher](./MarbleMarcher)
 
-## OpenGL_examples [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/OpenGL_examples)
+### [Matrix_ScreenSaver](./Matrix_ScreenSaver)
 
-## Pipes_ScreenSaver [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Pipes_ScreenSaver)
+### [OpenGL_examples](./OpenGL_examples)
 
-## Random_Utility_tools [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Random_Utility_tools)
+### [Pipes_ScreenSaver](./Pipes_ScreenSaver)
 
-## Resgular_Expressions [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/RegularExpression_Convertors)
+### [Random_Utility_tools](./Random_Utility_tools)
 
-## Simple-Code [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Simple-Code)
+### [Regular_Expressions](./RegularExpression_Convertors)
 
-## SystemMonitor [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/SystemMonitor)
+### [Simple-Code](./Simple-Code)
 
-## Template_Language_Generator [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Template_Language_Generator)
+### [SystemMonitor](./SystemMonitor)
 
-## Terminal_File_Manager [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Terminal_File_Manager)
+### [Template_Language_Generator](./Template_Language_Generator)
 
-## Terminal_Snake [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Terminal_Snake)
+### [Terminal_File_Manager](./Terminal_File_Manager)
 
-## Thread_Pool [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Thread_Pool)
+### [Terminal_Snake](./Terminal_Snake)
 
-## Tokenizer_tok [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Tokenizer_tok)
+### [Thread_Pool](./Thread_Pool)
 
-## Trigonometric-Functions [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Trigonometric-Functions)
+### [Tokenizer_tok](./Tokenizer_tok)
 
-## ViteFA_config [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/ViteFA_config)
+### [Trigonometric-Functions](./Trigonometric-Functions)
 
-## WordProc [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/WordProc)
+### [ViteFA_config](./ViteFA_config)
 
-## canChat [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/canChat)
+### [WordProc](./WordProc)
 
-## define_evil [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/define_evil)
+### [define_evil](./define_evil)
 
-## design-patterns [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/design-patterns)
+### [design-patterns](./design-patterns)
 
-## introspective [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/introspective)
+### [introspective](./introspective)
 
-## javascript-compiler [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/javascript-compiler)
+### [javascript-compiler](./javascript-compiler)
 
-## miniShell [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/miniShell)
+### [miniShell](./miniShell)
 
-## mothbar [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/mothbar)
+### [mothbar](./mothbar)
 
-## ofxAsync [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/ofxAsync)
+### [ofxAsync](./ofxAsync)
 
-## password_generator [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/password-generator)
+### [password_generator](./password-generator)
 
-## simple_turso [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/simple_turso)
+### [simple_turso](./simple_turso)
 
-## simplesdl2_game_template [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/simplesdl2_game_template)
+### [simplesdl2_game_template](./simplesdl2_game_template)
 
-## staticpagegen [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/staticpagegen)
+### [staticpagegen](./staticpagegen)
 
-## support_modules [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/support_modules)
+### [support_modules](./support_modules)
 
-## volumetric-clouds [link](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/volumetric-clouds)
+### [volumetric-clouds](./volumetric-clouds)
 
 Update, made two related screen savers with C-programming language(Pipes_ScreenSaver)(Matrix_ScreenSaver), and also trained with some algorithms in the SimpleCode directory, this will be helpful.
 
