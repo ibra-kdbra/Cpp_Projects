@@ -210,11 +210,33 @@ A collection of algorithms and data structures made with C++ language.
 
 ### [SystemMonitor](./SystemMonitor)
 
+This repository contains the result of the second project of the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The project concerns a system monitor for the Linux Operating System, which depends on [ncurses](https://www.gnu.org/software/ncurses/) library.
+
+#
+
 ### [Template_Language_Generator](./Template_Language_Generator)
+
+A small POSIX shell script for generating a C/C++ code structure, build system files, etc.
+
+#
 
 ### [Terminal_File_Manager](./Terminal_File_Manager)
 
+
+Terminal file manager in C++20 (and [ncurses](https://www.gnu.org/software/ncurses/)).
+
+#
+
 ### [Terminal_Snake](./Terminal_Snake)
+
+`tsnake` is a terminal snake game written in C++ using the [ncurses](https://www.gnu.org/software/ncurses/) library with
+support for maps and interactive resizing.
+
+&emsp;**Screen record:**
+
+&emsp;<img src="Terminal_Snake/img/tsnake.gif" width="600">
+
+#
 
 ### [Thread_Pool](./Thread_Pool)
 
@@ -229,6 +251,7 @@ A collection of algorithms and data structures made with C++ language.
 ### [define_evil](./define_evil)
 
 ### [design-patterns](./design-patterns)
+
 
 ### [introspective](./introspective)
 
