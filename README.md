@@ -41,7 +41,7 @@
 - [password_generator](#password_generator)
 - [Pipes_ScreenSaver](#pipes_screenSaver)
 - [Random Utility tools](#random_utility_tools)
-- [Resgular Expressions](#resgular_expressions)
+- [Regular Expression Convertors](#regular_expression_convertors)
 - [simple_turso](#simple_turso)
 - [Simple-Code](#simple-code)
 - [simplesdl2_game_template](#simplesdl2_game_template)
@@ -132,30 +132,81 @@ Demystifying PatchGuard is a comprehensive analysis of Microsoft's security feat
 #
 ### [FileLockSocket](./FileLockSocket)
 
-Transfer files quickly and securely! 
+*Transfer files quickly and securely!*
 
 The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key derivation, employs AES-256-GCM for encryption/decryption, and uses [SHA3-256](https://en.wikipedia.org/wiki/SHA-3) for integrity check.
 #
 
 ### [Hangman-game](./Hangman-game)
 
+**What is hangman game?** [Learn more](https://en.wikipedia.org/wiki/Hangman_(game))
+
+A text based game, the program takes in 2 parametes, the first one is a word or an expression, the second one is the number of attempts you want in your game.
+#
+
 ### [InjectHook](./InjectHook)
-
+A lightweight C++ library designed for function interception within injected DLLs, providing a streamlined approach to modifying application behavior at runtime. Ideal for educational purposes, debugging, and dynamic software analysis.
+#
 ### [JsonConverter](./JsonConverter)
-
+A C++ Library providing a `std::string` parser for JavaScript Object Notation aka JSON.
+The STL containers are in favor to represent the Json entities: Object, Array and Value.
+#
 ### [MarbleMarcher](./MarbleMarcher)
+
+Marble Marcher is a video game demo that uses a fractal physics engine and fully procedural rendering to produce beautiful and unique gameplay unlike anything you've seen before.
+
+The goal of the game is to reach the flag as quickly as possible.  But be careful not to
+fall off the level or get crushed by the fractal!  There are 24 levels to unlock.
+#
 
 ### [Matrix_ScreenSaver](./Matrix_ScreenSaver)
 
+Matrix terminal screen saver made in C language.
+
+&emsp;**Screenshot:**
+
+&emsp;<img src="Matrix_ScreenSaver/screenshots/matrix.png" width="400">
+
+#
+
 ### [OpenGL_examples](./OpenGL_examples)
+A group of examples done upon taking a Computer Graphics course to better understand OpenGL and apply some of the techniques read in the litterature.
+
+&emsp; **Screenshots:**
+
+&emsp;
+<img src="./OpenGL_examples/screenshots/grass_1.png" width="100"> <img src="./OpenGL_examples/screenshots/shadow_mapping_2.png" width="100"> <img src="./OpenGL_examples/screenshots/water_1.png" width="100"> <img src="./OpenGL_examples/screenshots/tree_2.png" width="100"> <br>
+&emsp; <img src="./OpenGL_examples/screenshots/clouds_1.png" width="150"> <img src="./OpenGL_examples/screenshots/lod_terrain_2.png" width="150"> <img src="./OpenGL_examples/screenshots/volumetric_light_2.png" width="100">
+#
 
 ### [Pipes_ScreenSaver](./Pipes_ScreenSaver)
 
+
+Pipes terminal screen saver made in C language.
+
+&emsp;**Screenshot:**
+
+&emsp;<img src="Pipes_ScreenSaver/screenshots/pipes.png" width="400">
+
+#
 ### [Random_Utility_tools](./Random_Utility_tools)
 
-### [Regular_Expressions](./RegularExpression_Convertors)
+#
+### [Regular_Expression_Convertors](./RegularExpression_Convertors)
+
+There are three convertors:
+
+- Regular Expression to Deterministic Finite Automata
+- Regular Expression to Non-deterministic Finite Automata
+- Regular Expression to Epsilon Non-deterministic Finite Automata
+
+#
 
 ### [Simple-Code](./Simple-Code)
+
+A collection of algorithms and data structures made with C++ language.
+
+#
 
 ### [SystemMonitor](./SystemMonitor)
 
