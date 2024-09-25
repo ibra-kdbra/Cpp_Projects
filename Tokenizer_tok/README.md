@@ -5,7 +5,29 @@ First, this `Tok` library has nothing to do with the Tok'ra. :-) Instead it is a
 single header *source code tokenizer* written in ANSI C. It has a simple to use interface to manipulate the tokens and then
 concatenate them into a string again.
 
-[[*TOC*]]
+## Table of Contents
+<!-- TOC -->
+
+- [Tokenizer](#tokenizer)
+    - [Table of Contents](#table-of-contents)
+    - [Usage](#usage)
+    - [Language Rules](#language-rules)
+    - [Tokens](#tokens)
+    - [API](#api)
+        - [Tokenizer](#tokenizer)
+        - [Detokenizer](#detokenizer)
+        - [String Length](#string-length)
+        - [Delete](#delete)
+        - [Insert](#insert)
+        - [Replace](#replace)
+        - [Append](#append)
+        - [Find](#find)
+        - [Find Parenthesis Correctly](#find-parenthesis-correctly)
+        - [Match Pattern](#match-pattern)
+        - [Free](#free)
+        - [Debugging](#debugging)
+
+<!-- /TOC -->
 
 Usage
 -----

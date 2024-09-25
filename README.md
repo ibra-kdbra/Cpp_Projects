@@ -240,7 +240,18 @@ support for maps and interactive resizing.
 
 ### [Thread_Pool](./Thread_Pool)
 
+A thread pool is a software design pattern for achieving concurrency of execution in a computer program ([learn more](https://en.wikipedia.org/wiki/Thread_pool)).
+The project is a simple async thread pool implementation in C++ language.
+
+#
+
 ### [Tokenizer_tok](./Tokenizer_tok)
+
+A simple, dependency-free, stb-style
+single header *source code tokenizer* written in ANSI C. It has a simple to use interface to manipulate the tokens and then
+concatenate them into a string again.
+
+#
 
 ### [Trigonometric-Functions](./Trigonometric-Functions)
 
