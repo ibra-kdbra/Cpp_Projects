@@ -3,6 +3,8 @@
 Matrix terminal screen saver made in C  
 (Also see [pipes](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Pipes_ScreenSaver))
 
+<img src="screenshots/matrix.png" width="800">
+
 ## Config
 
 Config can be found in `config.h`  
