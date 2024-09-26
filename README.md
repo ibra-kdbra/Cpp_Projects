@@ -232,9 +232,9 @@ Terminal file manager in C++20 (and [ncurses](https://www.gnu.org/software/ncurs
 `tsnake` is a terminal snake game written in C++ using the [ncurses](https://www.gnu.org/software/ncurses/) library with
 support for maps and interactive resizing.
 
-&emsp;**Screen record:**
+&emsp;**Preview:**
 
-&emsp;<img src="Terminal_Snake/img/tsnake.gif" width="600">
+&emsp;<img src="Terminal_Snake/img/tsnake.gif" width="400">
 
 #
 
@@ -255,14 +255,36 @@ concatenate them into a string again.
 
 ### [Trigonometric-Functions](./Trigonometric-Functions)
 
+
+A small program that lets you visualize multipe trigonometric functions, built in C++ with OpenGL and GLUT.
+
+&emsp; **Preview:**
+
+&emsp;<img src="./Trigonometric-Functions/assets/preview.gif" width="400"/>
+
+#
+
 ### [ViteFA_config](./ViteFA_config)
+
+#
 
 ### [WordProc](./WordProc)
 
+
+An attempt to write a word processor using **C++20**, **Qt5** and cmake
+as buildsystem.
+
+#
+
 ### [define_evil](./define_evil)
 
-### [design-patterns](./design-patterns)
+*A macro library for the morally compromised C and C++ programmer*
 
+It's an MIT licensed collection of clean, modular, well documented macro hacks with full unit test coverage.
+Complex macros are useful when pushing the limits of what C/C++ can be.
+#
+
+### [design-patterns](./design-patterns)
 
 ### [introspective](./introspective)
 
