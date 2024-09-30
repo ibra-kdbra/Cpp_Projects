@@ -2,8 +2,10 @@
 
 A simple text-base game
 
-## **HOW TO USE**
+### Usage Compile
 
+```shell
 gcc hangman.c -o hangman
+```
 
-./hangman "(a word or an expression)" (the number of attempts you want in your game)
+`./hangman` "(a word or an expression)" (the number of attempts you want in your game)
