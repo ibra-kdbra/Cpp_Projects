@@ -23,7 +23,6 @@
 - [CPP20_Develop](#cpp20_develop)
 - [CustomizedOperators](#customizedoperators)
 - [define_evil](#define_evil)
-- [Demystifying_Guard](#demystifying_guard)
 - [design-patterns](#design-patterns)
 - [Dump C++](#dump-c)
 - [FileLockSocket](#filelocksocket)
@@ -80,7 +79,7 @@ A collection of classic Atari games implemented in C++:
 3. Tetris - [Learn more](https://en.wikipedia.org/wiki/Tetris)
 #
 
-### [Beneficial-C_programming](./Benfetial-C_programming)
+### [Beneficial-C_programming](./Beneficial-C_programming)
 *Compile and execute C "scripts" in one go!*
 
  A shell script designed to streamline the process of compiling and executing C (and C++) scripts with unparalleled speed. This tool allows users to run C code directly from the command line or via shebang, making it as convenient as running shell scripts. With support for multiple files and customizable compiler options.
