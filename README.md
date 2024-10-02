@@ -4,7 +4,7 @@
 
 ### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
 
-### I hope this repository never stops growing and teaches me new things about this fascinating programming language
+### I hope this repository never stops growing and teach me new things about this fascinating programming language
 
 # Table of Contents
 
@@ -16,36 +16,37 @@
 
 - [Atari Games](#atrai-games)
 - [Beneficial C Programming](#beneficial-c_programming)
-- [canChat](#canchat)
+- [CanChat](#canchat)
 - [Chess-Engine](#chess-engine)
 - [Chess_3D](#chess_3d)
 - [Collatz Conjecture](#collatz-conjecture)
 - [CPP20_Develop](#cpp20_develop)
 - [CustomizedOperators](#customizedoperators)
-- [define_evil](#define_evil)
-- [design-patterns](#design-patterns)
+- [Define_evil](#define_evil)
+- [Design-patterns](#design-patterns)
 - [Dump C++](#dump-c)
 - [FileLockSocket](#filelocksocket)
 - [Hangman-game](#hangman-game)
 - [InjectHook](#injecthook)
-- [introspective](#introspective)
-- [javascript-compiler](#javascript-compiler)
+- [Introspective](#introspective)
+- [Javascript-compiler](#javascript-compiler)
 - [JsonConverter](#jsonconverter)
 - [MarbleMarcher](#marblemarcher)
 - [Matrix_ScreenSaver](#matrix_screenSaver)
-- [miniShell](#minishell)
-- [mothbar](#mothbar)
-- [ofxAsync](#ofxasync)
+- [MiniShell](#minishell)
+- [Mothbar](#mothbar)
+- [OfxAsync](#ofxasync)
 - [OpenGL_examples](#opengl_examples)
+- [PackSend](#packsend)
 - [password_generator](#password_generator)
 - [Pipes_ScreenSaver](#pipes_screenSaver)
+- [POng](#POng)
 - [Random Utility tools](#random_utility_tools)
 - [Regular Expression Convertors](#regular_expression_convertors)
-- [simple_turso](#simple_turso)
+- [Simple_turso](#simple_turso)
 - [Simple-Code](#simple-code)
-- [simplesdl2_game_template](#simplesdl2_game_template)
-- [staticpagegen](#staticpagegen)
-- [support_modules](#support_modules)
+- [Simplesdl2_game_template](#simplesdl2_game_template)
+- [StaticPageGen](#staticpagegen)
 - [SystemMonitor](#systemmonitor)
 - [Template Language Generator](#template_language_generator)
 - [Terminal File Manager](#terminal_file_manager)
@@ -54,7 +55,7 @@
 - [Tokenizer_tok](#tokenizer_tok)
 - [Trigonometric Functions](#trigonometric-functions)
 - [ViteFA_config](#vitefa_config)
-- [volumetric-clouds](#volumetric-clouds)
+- [Volumetric-clouds](#volumetric-clouds)
 - [WordProc](#wordproc)
 
 
@@ -85,7 +86,7 @@ A collection of classic Atari games implemented in C++:
  A shell script designed to streamline the process of compiling and executing C (and C++) scripts with unparalleled speed. This tool allows users to run C code directly from the command line or via shebang, making it as convenient as running shell scripts. With support for multiple files and customizable compiler options.
 #
 
-### [canChat](./canChat)
+### [CanChat](./canChat)
 Feature-complete rooms-based chat for tens of thousands of users. Client plus Server. Built with [Oat++ Web Framework](https://oatpp.io/).
 `Single-Node` `In-Memory` `WebSocket` `TLS`.
 
@@ -123,10 +124,28 @@ Implements custom operators for C++.
 In C++ one can not create new operators such as <> or |&. What you can do however is create a variable named x of newly created type with irrelevant name and overload the operators < and > such that you can write <x> creating a new operators of sorts.
 #
 
-### [Demystifying_Guard](./Demystifying_Guard)
-Demystifying PatchGuard is a comprehensive analysis of Microsoft's security feature called PatchGuard, which is designed to prevent unauthorized modifications to the Windows kernel. The analysis is done through practical engineering, with a focus on understanding PatchGuard's inner workings. 
+### [Define_evil](./define_evil)
+
+*A macro library for the morally compromised C and C++ programmer*
+
+It's an MIT licensed collection of clean, modular, well documented macro hacks with full unit test coverage.
+Complex macros are useful when pushing the limits of what C/C++ can be.
 #
 
+### [Design-patterns](./design-patterns)
+
+[Object Oriented Design](https://en.wikipedia.org/wiki/Object-oriented_analysis_and_design#Object-oriented_design) patterns in C++ based on the the book [Head First Design Patterns: A Brain-Friendly Guide](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124).
+
+#### Implemented design patterns:
+ - Abstract factory pattern
+ - Command pattern
+ - Decorator pattern
+ - Factory method pattern
+ - Observer pattern
+ - Singleton pattern
+ - Strategy pattern
+
+#
 ### [Dump C++](./Dump_c%2B%2B)
 #
 ### [FileLockSocket](./FileLockSocket)
@@ -275,16 +294,6 @@ as buildsystem.
 
 #
 
-### [define_evil](./define_evil)
-
-*A macro library for the morally compromised C and C++ programmer*
-
-It's an MIT licensed collection of clean, modular, well documented macro hacks with full unit test coverage.
-Complex macros are useful when pushing the limits of what C/C++ can be.
-#
-
-### [design-patterns](./design-patterns)
-
 ### [introspective](./introspective)
 
 ### [javascript-compiler](./javascript-compiler)
@@ -302,8 +311,6 @@ Complex macros are useful when pushing the limits of what C/C++ can be.
 ### [simplesdl2_game_template](./simplesdl2_game_template)
 
 ### [staticpagegen](./staticpagegen)
-
-### [support_modules](./support_modules)
 
 ### [volumetric-clouds](./volumetric-clouds)
 

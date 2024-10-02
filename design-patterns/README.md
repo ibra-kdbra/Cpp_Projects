@@ -8,3 +8,13 @@ This directory contains OOD patterns in C++ based on the the book [Head First De
 1. Abstract Factory Pattern: Example sways from the example given in the playlist (that of UI components) or the book (Pizza shop) and introduces a clothes factory for work clothes and day-off clothes.
 
 2. Command Pattern: Example slightly sways from playlist (remote for smart lamp) and introduces an AC remote. Not quite sure about the implementation of this example.
+
+
+### Implemented desgin patterns:
+ - [Abstract factory pattern](./abstract-factory-pattern/)
+ - [Command pattern](./command-pattern/)
+ - [Decorator pattern](./decorator-pattern/)
+ - [Factory method pattern](./factory-method-pattern/)
+ - [Observer pattern](./observer-pattern/)
+ - [Singleton pattern](./singleton-pattern/)
+ - [Strategy pattern](./strategy-pattern/)
