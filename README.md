@@ -78,12 +78,16 @@ A collection of classic Atari games implemented in C++:
 2. Snake - [Learn more](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
 
 3. Tetris - [Learn more](https://en.wikipedia.org/wiki/Tetris)
+
+<a href="#table-of-contents"> Back to TOC ⤴️ </a>
+
 #
 
 ### [Beneficial-C_programming](./Beneficial-C_programming)
 *Compile and execute C "scripts" in one go!*
 
  A shell script designed to streamline the process of compiling and executing C (and C++) scripts with unparalleled speed. This tool allows users to run C code directly from the command line or via shebang, making it as convenient as running shell scripts. With support for multiple files and customizable compiler options.
+ 
 #
 
 ### [CanChat](./canChat)
