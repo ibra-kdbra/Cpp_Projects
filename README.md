@@ -4,7 +4,7 @@
 
 ### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
 
-### I hope this repository never stops growing and teach me new things about this fascinating programming language
+### I hope this repository never stops growing and teaches me new things about this fascinating programming language
 
 # Table of Contents
 
@@ -38,7 +38,7 @@
 - [OfxAsync](#ofxasync)
 - [OpenGL_examples](#opengl_examples)
 - [PackSend](#packsend)
-- [password_generator](#password_generator)
+- [Password_generator](#password_generator)
 - [Pipes_ScreenSaver](#pipes_screenSaver)
 - [POng](#POng)
 - [Random Utility tools](#random_utility_tools)
@@ -147,7 +147,12 @@ Complex macros are useful when pushing the limits of what C/C++ can be.
 
 #
 ### [Dump C++](./Dump_c%2B%2B)
+
+*Dump C++ Itanium [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) from [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) objects*
+
+A tool used to inspect C++ binaries for debug symbols ([Learn more](https://en.wikipedia.org/wiki/Debug_symbol)) and virtual function tables ([Learn more](https://en.wikipedia.org/wiki/Virtual_method_table)) information.
 #
+
 ### [FileLockSocket](./FileLockSocket)
 
 *Transfer files quickly and securely!*
@@ -163,12 +168,36 @@ A text based game, the program takes in 2 parametes, the first one is a word or 
 #
 
 ### [InjectHook](./InjectHook)
+
 A lightweight C++ library designed for function interception within injected DLLs, providing a streamlined approach to modifying application behavior at runtime. Ideal for educational purposes, debugging, and dynamic software analysis.
 #
+
+### [introspective](./introspective)
+
+Introspective is a header file that brings reflection to any class that wants it, regardless of whether the reflected member is a constant, a static variable or a instance member function. It records declaration order, (function) type and address and passes them along unchanged during compile-time, with the ultimate goal of making the interaction with embedded scripting languages like Lua a little less of a hassle.
+#
+
+### [javascript-compiler](./javascript-compiler)
+The goal of the project development was learning the mechanism of compilers. The project contains 5 parts:
+
+1) a lexer;
+
+2) a parser;
+
+3) an interpreter;
+
+4) a compiler;
+
+5) a virtual machine;
+
+The designed programming language is similar to Javascript, but much simpler. Code samples can be found in each part's testcase/* .
+#
+
 ### [JsonConverter](./JsonConverter)
 A C++ Library providing a `std::string` parser for JavaScript Object Notation aka JSON.
 The STL containers are in favor to represent the Json entities: Object, Array and Value.
 #
+
 ### [MarbleMarcher](./MarbleMarcher)
 
 Marble Marcher is a video game demo that uses a fractal physics engine and fully procedural rendering to produce beautiful and unique gameplay unlike anything you've seen before.
@@ -187,6 +216,17 @@ Matrix terminal screen saver made in C language.
 
 #
 
+### [MiniShell](./miniShell)
+#
+
+### [Mothbar](./mothbar)
+Small pieces of code to build a [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD) bar.
+#
+
+### [OfxAsync](./ofxAsync)
+An [openFrameworks](https://openframeworks.cc/) addon compatible with versions 0.9.8 to 0.10.1, designed to simplify multi-threading through a straightforward wrapper around [ofThread](https://openframeworks.cc/documentation/utils/ofThread/).
+#
+
 ### [OpenGL_examples](./OpenGL_examples)
 A group of examples done upon taking a Computer Graphics course to better understand OpenGL and apply some of the techniques read in the litterature.
 
@@ -197,8 +237,16 @@ A group of examples done upon taking a Computer Graphics course to better unders
 &emsp; <img src="./OpenGL_examples/screenshots/clouds_1.png" width="150"> <img src="./OpenGL_examples/screenshots/lod_terrain_2.png" width="150"> <img src="./OpenGL_examples/screenshots/volumetric_light_2.png" width="100">
 #
 
-### [Pipes_ScreenSaver](./Pipes_ScreenSaver)
+### [PackSend](./packsend/)
+A small utility to construct packets from various data sources and output
+them to sockets, serial ports or files.
+#
 
+### [Password_generator](./password-generator)
+A CLI password generator coded in C++.
+#
+
+### [Pipes_ScreenSaver](./Pipes_ScreenSaver)
 
 Pipes terminal screen saver made in C language.
 
@@ -207,6 +255,17 @@ Pipes terminal screen saver made in C language.
 &emsp;<img src="Pipes_ScreenSaver/screenshots/pipes.png" width="400">
 
 #
+
+### [POng](./POng)
+
+Pong ([learn more](https://en.wikipedia.org/wiki/Pong)) clone for Linux written in C++ with SDL 2.0.
+#
+
+&emsp; **Screenchot:**
+
+&emsp; <img src="https://cloud.githubusercontent.com/assets/1498164/5608125/295a3186-9481-11e4-968b-04987a925a93.png" width="400">
+#
+
 ### [Random_Utility_tools](./Random_Utility_tools)
 
 #
@@ -220,11 +279,25 @@ There are three convertors:
 
 #
 
+### [Simple_turso](./simple_turso)
+
+Experimental 3D / game engine technology partially based on the Urho3D codebase.
+#
+
 ### [Simple-Code](./Simple-Code)
 
 A collection of algorithms and data structures made with C++ language.
 
 #
+
+### [Simplesdl2_game_template](./simplesdl2_game_template)
+#
+
+### [StaticPageGen](./staticpagegen)
+
+staticpagegen is a tool used to generate static pages for directory hierarchies
+which uses the simplest possible form for the protocols it supports.
+# 
 
 ### [SystemMonitor](./SystemMonitor)
 
@@ -286,6 +359,9 @@ A small program that lets you visualize multipe trigonometric functions, built i
 
 #
 
+### [Volumetric-clouds](./volumetric-clouds)
+#
+
 ### [WordProc](./WordProc)
 
 
@@ -293,27 +369,6 @@ An attempt to write a word processor using **C++20**, **Qt5** and cmake
 as buildsystem.
 
 #
-
-### [introspective](./introspective)
-
-### [javascript-compiler](./javascript-compiler)
-
-### [miniShell](./miniShell)
-
-### [mothbar](./mothbar)
-
-### [ofxAsync](./ofxAsync)
-
-### [password_generator](./password-generator)
-
-### [simple_turso](./simple_turso)
-
-### [simplesdl2_game_template](./simplesdl2_game_template)
-
-### [staticpagegen](./staticpagegen)
-
-### [volumetric-clouds](./volumetric-clouds)
-
 Update, made two related screen savers with C-programming language(Pipes_ScreenSaver)(Matrix_ScreenSaver), and also trained with some algorithms in the SimpleCode directory, this will be helpful.
 
 Added the Marble Marcher game(MarbleMarcher) which has been made by the Code-Paradoy YouTube channel and changed some things to it.
