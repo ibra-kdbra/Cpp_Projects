@@ -50,7 +50,7 @@
   - [Pipes ScreenSaver](#pipes-screensaver)
   - [POng](#pong)
   - [Random Utility Tools](#random-utility-tools)
-  - [Regular Expression Convertors](#regular-expression-convertors)
+  - [Regular Expression Convertors](#regular_expression_convertors)
   - [Simple Turso](#simple-turso)
   - [Simple Code](#simple-code)
   - [Simplesdl2 Game Template](#simplesdl2-game-template)
@@ -419,6 +419,9 @@ A collection of algorithms and data structures made with C++ language.
 #
 
 ### [Simplesdl2_game_template](./simplesdl2_game_template)
+
+A template for the future game (which I'm working on).
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -520,6 +523,12 @@ A small program that lets you visualize multipe trigonometric functions, built i
 #
 
 ### [Volumetric-clouds](./volumetric-clouds)
+A real-time GPU volumetric clouds renderer via OpenGL, based on <a href="https://advances.realtimerendering.com/s2015/The%20Real-time%20Volumetric%20Cloudscapes%20of%20Horizon%20-%20Zero%20Dawn%20-%20ARTR.pdf">The Real-time Volumetric Cloudscapes of Horizon: Zero Dawn</a> by Andrew Schneider.
+
+&emsp; **Preview:**
+
+&emsp; <img src="./volumetric-clouds/resources/images/showcase.png" alt="Collage of realtime render results from the volumetric clouds renderer" width="400"></img></a>
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
