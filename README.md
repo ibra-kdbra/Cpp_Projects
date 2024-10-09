@@ -1,10 +1,25 @@
 # C++ Projects **PlayGround** #
 
-### I made this repo to make more C++ projects and implement new things I always wanted to try
-
+<!-- ### I made this repo to make more C++ projects and implement new things I always wanted to try -->
+<!-- 
 ### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
+ -->
+<pre align="center">
+I hope this repository never stops growing and teaches me new things about this fascinating programming language
+._._._._._._._._._._._._._._._._._._._._._._._._._._._.
 
-### I hope this repository never stops growing and teaches me new things about this fascinating programming language
+<pre align="left">
+<strong>
+        ________        *    .      .     *   .
+      /   _____  \    .    *     `     .  `   .     *
+     |  /     \   |       .  `  .   *   .   +   .  `  
+     |  |      ¯¯¯ _||__||_   `    .   ,   `   .   *
+     |  |       __ ¯||¯¯||¯   PLAYGROUND  .  *    .  
+      \  \_____/  |       .  `  *   .  +   .  `  *  ,
+       \_________/    .  *   .   `   .  ` *  `  .  
+</strong>
+</pre> ~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~
+</pre>
 # 📚 Table of Contents
 
 <details>
@@ -70,7 +85,7 @@
 
 ---
 ## Overview
-This repository serves as a personal playground for experimenting with various C++ projects. It includes original implementations, as well as forked or cloned repositories from other developers with my own improvements as fits. Each project aims to explore different concepts and features of the C++ programming language.
+This repository serves as a personal playground for experimenting with various C++ projects. It includes original implementations, as well as **forked** or **cloned** repositories from other developers **with my own improvements** as fits. Each project aims to explore different concepts and features of the C++ programming language.
 
 
 ### Side note:
