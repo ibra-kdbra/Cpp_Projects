@@ -1,4 +1,3 @@
-
 BINS = mothbar m_desk m_clock
 LOCATION = /usr/local/bin
 CFLAGS = 
