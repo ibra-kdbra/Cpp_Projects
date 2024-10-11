@@ -1,6 +1,6 @@
 # SFML Multithread Verlet
 
-![image](images/image_1.png)
+![image](images/image.png)
 
 ## Compilation
 
