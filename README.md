@@ -4,38 +4,36 @@
 <!-- 
 ### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
  -->
-<pre align="center">
-I hope this repository never stops growing and teaches me new things about this fascinating programming language
-._._._._._._._._._._._._._._._._._._._._._._._._._._._.
+<pre>
+      I hope this repository never stops growing and teaches me
+        new things about this fascinating programming language
+      ._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
 
-<pre align="left">
 <strong>
-        ________        *    .      .     *   .
-      /   _____  \    .    *     `     .  `   .     *
-     |  /     \   |       .  `  .   *   .   +   .  `  
-     |  |      ¯¯¯ _||__||_   `    .   ,   `   .   *
-     |  |       __ ¯||¯¯||¯   PLAYGROUND  .  *    .  
-      \  \_____/  |       .  `  *   .  +   .  `  *  ,
-       \_________/    .  *   .   `   .  ` *  `  .  
+                  ________        *    .      .     *   .
+                /   _____  \    .    *     `     .  `   .     *
+               |  /     \   |       .  `  .   *   .   +   .  `  
+               |  |      ¯¯¯ _||__||_   `    .   ,   `   .   *
+               |  |       __ ¯||¯¯||¯   PLAYGROUND  .  *    .  
+                \  \_____/  |       .  `  *   .  +   .  `  *  ,
+                 \_________/    .  *   .   `   .  ` *  `  .  
 </strong>
-</pre> ~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~
+      .~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.
+
 </pre>
-# 📚 Table of Contents
 
-<details>
-  <summary><strong>Click to Expand/Collapse Table of Contents</strong></summary>
+<details id="toc">
+<summary>
+   📚 Table of Contents
+</summary>
 
-  - [Overview](#overview)
-  - [Side Note](#side-note)
-  - [Projects Titles](#projects-Titles)
+<img height="10px" />
 
-</details>
+  - [<span style="font-size: 1.5em"> **Overview** </span>](#overview)
+  - [<span style="font-size: 1.5em"> **Side Note** </span>](#side-note)
 
-
-## Projects Titles
-
-<details>
-  <summary><strong>Click to Expand/Collapse Projects List</strong></summary>
+<div style="padding-left: 1.2em">
+<details id="projects-titles"><summary><strong>Projects Titles</strong></summary>
 
   - [Atari Games](#atari_games)
   - [Beneficial C Programming](#beneficial_c_programming)
@@ -82,6 +80,27 @@ I hope this repository never stops growing and teaches me new things about this 
   - [WordProc](#wordproc)
 
 </details>
+
+</div>
+</details>
+
+<style>
+  
+  #toc > summary {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  #projects-titles > summary {
+    font-size: 1.5em;
+    font-weight: normal;
+    padding: 5px;
+    border-radius: 3px;
+  }
+</style>
+
 
 ---
 ## Overview
