@@ -10,6 +10,7 @@
       ._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
 
 <strong>
+         *   .   `   .  ` *  `  .   *   .   `   .   `   .   +   
                   ________        *    .      .     *   .
                 /   _____  \    .    *     `     .  `   .     *
                |  /     \   |       .  `  .   *   .   +   .  `  
@@ -17,6 +18,7 @@
                |  |       __ ¯||¯¯||¯   PLAYGROUND  .  *    .  
                 \  \_____/  |       .  `  *   .  +   .  `  *  ,
                  \_________/    .  *   .   `   .  ` *  `  .  
+        *  .  `  .   *   .   +   .  `   *   .   `   .  ` *  `  .  
 </strong>
       .~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.
 
@@ -27,13 +29,11 @@
    📚 Table of Contents
 </summary>
 
-<img height="10px" />
-
   - [<span style="font-size: 1.5em"> **Overview** </span>](#overview)
   - [<span style="font-size: 1.5em"> **Side Note** </span>](#side-note)
 
 <div style="padding-left: 1.2em">
-<details id="projects-titles"><summary><strong>Projects Titles</strong></summary>
+<details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
 
   - [Atari Games](#atari_games)
   - [Beneficial C Programming](#beneficial_c_programming)
@@ -269,7 +269,7 @@ A lightweight C++ library designed for function interception within injected DLL
 
 #
 
-### [introspective](./introspective)
+### [Introspective](./introspective)
 
 Introspective is a header file that brings reflection to any class that wants it, regardless of whether the reflected member is a constant, a static variable or a instance member function. It records declaration order, (function) type and address and passes them along unchanged during compile-time, with the ultimate goal of making the interaction with embedded scripting languages like Lua a little less of a hassle.
 <div align="right"> 
@@ -278,7 +278,7 @@ Introspective is a header file that brings reflection to any class that wants it
 
 #
 
-### [javascript-compiler](./javascript-compiler)
+### [Javascript-compiler](./javascript-compiler)
 The goal of the project development was learning the mechanism of compilers. The project contains 5 parts:
 
 1) a lexer;
@@ -334,6 +334,20 @@ Matrix terminal screen saver made in C language.
 #
 
 ### [MiniShell](./miniShell)
+
+Minishell is a simplified shell program that emulates a Unix-like shell environment. It is built using C and provides a basic command line interface (CLI) where users can interact with the system, execute commands, and manage environment variables. This project also includes implementations of several built-in commands such as `cd`, `echo`, `env`, and more.
+
+&emsp; **Features:**
+
+  - Command Parsing and Execution
+  - Signal Handling
+  - Heredoc Support
+  - Environment Variable Management
+  - Execution of External Commands
+  - Error Handling
+  - Readline Integration
+  - Compilation and Makefile
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -341,7 +355,16 @@ Matrix terminal screen saver made in C language.
 #
 
 ### [Mothbar](./mothbar)
-Small pieces of code to build a [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD) bar.
+
+A small bar utility written in C for [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD), which displays information such as the current desktop, clock, and volume. It works by creating FIFO pipes to receive data and updates the bar in real-time using XCB for interaction with the X server.
+
+&emsp; **Features:**
+  - Clock Display
+  - Desktop Indicator
+  - Volume Display
+  - FIFO Communication
+  - Real-time Bar Updates
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -415,6 +438,14 @@ Pong ([learn more](https://en.wikipedia.org/wiki/Pong)) clone for Linux written 
 #
 
 ### [Random_Utility_tools](./Random_Utility_tools)
+
+This document provides an overview of several converters used for instrument conversion between different formats such as BNK, IBK, and OPN. Each converter serves a specific purpose in processing sound patches and instrument banks. Below are links to detailed readme files for each converter along with a brief description of their functionality.
+
+&emsp; **Converters:**
+  - OPN Dumper Converter
+  - BNK Patch Converters
+  - CSV Patch Set Converter
+  - IBK to OPL
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -551,10 +582,7 @@ A small program that lets you visualize multipe trigonometric functions, built i
 
 ### [ViteFA_config](./ViteFA_config)
 
-config server and agent for configuration items.
-
-one config server supports more than 100 thousand concurrent connections / agents,
-and the changed configuration items will be pushed to agents within a second.
+ViteFA_config is a highly efficient configuration management system made in **C**. It is designed to handle over 100,000 concurrent agent connections with sub-second propagation of configuration changes to agents. The system uses **MySQL** for storage and relies on **libshmcache** for shared memory management. The shared memory type is configured to **mmap**, and `recycle_valid_entries` must be set to **false** for the cache.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
