@@ -6,7 +6,7 @@
  -->
 <pre>
       I hope this repository never stops growing and teaches me
-        new things about this fascinating programming language
+       new things about this fascinating programming language
       ._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
 
 <strong>
@@ -25,7 +25,7 @@
 </pre>
 
 <details id="toc">
-<summary>
+<summary style="font-weight:bold; font-size:2em; padding:5px">
    📚 Table of Contents
 </summary>
 
@@ -33,7 +33,7 @@
   - [<span style="font-size: 1.5em"> **Side Note** </span>](#side-note)
 
 <div style="padding-left: 1.2em">
-<details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
+<details id="projects-titles"><summary style="font-weight:bold; font-size:1.5em; padding:5px">🧾 Projects Titles</summary>
 
   - [Atari Games](#atari_games)
   - [Beneficial C Programming](#beneficial_c_programming)
@@ -83,23 +83,6 @@
 
 </div>
 </details>
-
-<style>
-  
-  #toc > summary {
-    font-size: 2em;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-  }
-
-  #projects-titles > summary {
-    font-size: 1.5em;
-    font-weight: normal;
-    padding: 5px;
-    border-radius: 3px;
-  }
-</style>
 
 
 ---
@@ -159,6 +142,9 @@ A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game contr
 `A versatile collection of compile-time optimized tools for C++ programming.`
 
 This library uses the latest C++ features available in GCC, Clang and Visual Studio 2019 and 2022.
+
+Co-Cpp19 contains a lot of sublibraries and is splitted into many small headers.
+This aims to enable the "pay only what you use policy" of C++ at compile time.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -204,6 +190,10 @@ In C++ one can not create new operators such as <> or |&. What you can do howeve
 
 It's an MIT licensed collection of clean, modular, well documented macro hacks with full unit test coverage.
 Complex macros are useful when pushing the limits of what C/C++ can be.
+
+**Why?**
+
+Complex macros are useful when pushing the limits of what C/C++ can be. For example, you could use `#define EVIL` macros to construct a domain-specific language that is technically C or C++ (gets compiled by any normal compiler) but looks and feels quite different. An extreme example of this is [Python++](https://github.com/wmww/Python-plus-plus), where many of these ideas originated. `#define EVIL` was created to split out and clean up the reusable bits of Python++.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
