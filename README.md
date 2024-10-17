@@ -457,7 +457,13 @@ There are three convertors:
 
 ### [SFML Multithread Verlet](./SFML_Multithread_verlet/)
 
-A simulation of verlet integration elastic collision in particles system
+Demonstrating a **multithreaded particle simulation** using the **Verlet integration** method for calculating particle motion, with optimized **collision detection** and interaction. It leverages [**SFML**](https://en.wikipedia.org/wiki/Simple_and_Fast_Multimedia_Library) for rendering and handling the GUI.
+
+**Key Features**:
+- **Multithreading**
+- **Verlet Integration**
+- **Optimized Collision Detection**:
+- **SFML (Simple and Fast Multimedia Library)**
 
 &emsp; **Preview:**
 
