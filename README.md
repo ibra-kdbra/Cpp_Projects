@@ -460,7 +460,8 @@ There are three convertors:
 A simulation of verlet integration elastic collision in particles system
 
 &emsp; **Preview:**
-&emsp; ![preview](./SFML_Multithread_verlet/images/image.png)
+
+&emsp; <img src="./SFML_Multithread_verlet/images/image.png" width="400">
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
