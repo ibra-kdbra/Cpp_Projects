@@ -1,7 +1,9 @@
 # Pipes
 
-Pipes terminal screen saver made in C  
-(Also see [matrix](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Matrix_ScreenSaver))
+A *Pipes* terminal screen saver made in C. (See also: [matrix](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Matrix_ScreenSaver))
+
+
+<img src="screenshots/pipes.png" width="800">
 
 ## Config
 

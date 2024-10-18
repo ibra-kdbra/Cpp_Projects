@@ -1,6 +1,8 @@
 # Thread_Pool
 
-A simple async thread pool implementation
+A thread pool is a software design pattern for achieving concurrency of execution in a computer program ([learn more](https://en.wikipedia.org/wiki/Thread_pool)).
+This project is a **simple async thread pool** implementation in C++ language.
+
 
 ## Testing
 

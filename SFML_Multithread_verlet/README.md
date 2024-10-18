@@ -2,7 +2,7 @@
 
 ![Simulation Image](images/image.png)
 
-Demonstrating a **multithreaded particle simulation** using the **Verlet integration** method for calculating particle motion, with optimized **collision detection** and interaction. It leverages **SFML** for rendering and handling the GUI.
+Demonstrates a **multithreaded particle simulation** using the **Verlet integration** method for calculating particle motion, with optimized **collision detection** and interaction. It leverages [**SFML**](https://en.wikipedia.org/wiki/Simple_and_Fast_Multimedia_Library) for rendering and handling the GUI.
 
 ## Key Features
 - **Multithreading**

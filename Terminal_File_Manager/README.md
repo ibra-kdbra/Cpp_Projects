@@ -1,6 +1,6 @@
 # tfm
 
-Terminal file manager in C++20 (and ncurses).
+A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu.org/software/ncurses/) library.
 
 ## Dependenies
 

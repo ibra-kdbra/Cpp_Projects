@@ -1,6 +1,6 @@
 # Mothbar
 
-A small bar utility written in C for FreeBSD, which displays information such as the current desktop, clock, and volume. It works by creating FIFO pipes to receive data and updates the bar in real-time using XCB for interaction with the X server.
+A small bar utility written in C for [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD), which displays information such as the current desktop, clock, and volume. It works by creating FIFO pipes to receive data, and updates the bar in real-time using XCB for interaction with the X server.
 
 ## Features
 
@@ -77,4 +77,4 @@ This will delete the installed binaries from `/usr/local/bin`.
 
 ## Summary
 
-This FreeBSD bar project provides a lightweight status bar that integrates clock, desktop, and volume information. By leveraging FIFO for communication and XCB for desktop monitoring, it ensures efficient real-time updates.
+This FreeBSD bar project provides a lightweight status bar that integrates clock, desktop, and volume information. By leveraging FIFO for communication, and XCB for desktop monitoring, and it ensures efficient real-time updates.

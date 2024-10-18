@@ -1,6 +1,6 @@
 # CppND-Project-SystemMonitor
 
-This repository contains the result of the second project of the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The project concerns a system monitor for the Linux Operating System.
+This project contains the result of the second project of the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The project concerns a system monitor for the Linux Operating System.
 
 ## CppND-System-Monitor Starter Code
 

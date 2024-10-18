@@ -1,7 +1,7 @@
 Pong clone
 =============
 
-Pong clone for Linux written in C++ with SDL 2.0.
+A [Pong]((https://en.wikipedia.org/wiki/Pong)) clone for Linux written in C++ using SDL 2.0.
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/1498164/5608125/295a3186-9481-11e4-968b-04987a925a93.png)
 

@@ -1,9 +1,6 @@
 # Introspective
 
-Introspective is a header file that brings reflection to any class that wants it, regardless of
-whether the reflected member is a constant, a static variable or a instance member function. It records
-declaration order, (function) type and address and passes them along unchanged during compile-time, with the ultimate
-goal of making the interaction with embedded scripting languages like Lua a little less of a hassle.
+Introspective is a header file that brings reflection to any class that wants it, regardless of whether the reflected member is a constant, a static variable, or an instance member function. It records declaration order, (function) type, and address, passing them along unchanged during compile-time, with the ultimate goal of making interaction with embedded scripting languages like Lua a little less of a hassle.
 
 ## Compile-time reflection
 

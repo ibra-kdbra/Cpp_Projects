@@ -1,8 +1,7 @@
-JsonPP
+JsonConverter
 ======
 
-A C++ Library providing a `std::string` parser for JavaScript Object Notation aka JSON.
-The STL containers are in favor to represent the Json entities: Object, Array and Value.
+A C++ library providing a `std::string` parser for JavaScript Object Notation (JSON). The STL containers are used to represent the JSON entities: Object, Array, and Value.
 
 Requirements
 ------------

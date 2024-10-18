@@ -1,6 +1,6 @@
 # Simple_Turso
 
-Experimental 3D / game engine technology partially based on the Urho3D codebase.
+An experimental 3D/game engine technology partially based on the Urho3D codebase.
 
 - OpenGL 3.2 / SDL2
 - Forward+ rendering, currently up to 255 lights in view

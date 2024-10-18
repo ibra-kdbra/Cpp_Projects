@@ -1,6 +1,6 @@
 # Template Language Generator
 
-A small POSIX shell script for generating a C/C++ code structure, build system files, etc.
+A small POSIX shell script for generating C/C++ code structures, build system files, and more.
 
 ## Current Features
 
