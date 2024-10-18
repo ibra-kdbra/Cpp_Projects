@@ -1,6 +1,6 @@
 # Collatz-Conjecture
 
-The Collatz conjecture in mathematics asks whether repeating two simple arithmetic operations will eventually transform every positive integer into one.
+The [Collatz conjecture](https://en.wikipedia.org/wiki/Collatz_conjecture) in mathematics asks whether repeating two simple arithmetic operations will eventually transform every positive integer into one.
 
 It is a simple sequence:
 

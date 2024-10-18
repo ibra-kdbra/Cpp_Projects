@@ -1,6 +1,6 @@
 # Chess-Engine
 
-Chess Engine in C++17.
+A Chess Engine implemented in C++17.
 
 # Dependencies
 

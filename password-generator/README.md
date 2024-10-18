@@ -1,6 +1,6 @@
 # CPP-password-generator
 
-A CLI password generator coded in C++.
+A CLI password generator written in C++.
 
 ## Status: In development
 

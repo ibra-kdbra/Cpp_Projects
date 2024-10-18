@@ -1,17 +1,13 @@
 # Packsend
-A small utility to construct packets from various data sources and output
-them to sockets, serial ports or files.
+A small utility for constructing packets from various data sources and outputting them to sockets, serial ports, or files.
 
 TODO: Documentation
 
 ## Syntax
-The program arguments can be divided into two categories - transmission
-and data parameters. There is also a "-h" or "--help" parameter which
-shows all available parameters.
+The program arguments can be divided into two categories: transmission, and data parameters. There is also a "-h" or "--help" parameter which shows all available parameters.
 
 ## Transmission parameters
-These specify the mode of output - i.e. to a TCP socket, as an UDP datagram
-or to a serial port. Examples:
+These specify the mode of output - i.e. to a TCP socket, as a UDP datagram or to a serial port. Examples:
 
 ### Sending
 

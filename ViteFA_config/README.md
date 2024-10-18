@@ -1,6 +1,6 @@
 # ViteFA_config: Configuration Server and Agent System
 
-ViteFA_config is a highly efficient configuration management system made in **C**. It is designed to handle over 100,000 concurrent agent connections with sub-second propagation of configuration changes to agents. The system uses **MySQL** for storage and relies on **libshmcache** for shared memory management. The shared memory type is configured to **mmap**, and `recycle_valid_entries` must be set to **false** for the cache.
+`ViteFA_config` is a highly efficient configuration management system implemented in **C**. It is designed to handle over 100,000 concurrent agent connections with sub-second propagation of configuration changes. The system uses **MySQL** for storage and relies on **libshmcache** for shared memory management. The shared memory type is configured to **mmap**, and `recycle_valid_entries` must be set to **false** for the cache.
 
 ## Project Overview
 

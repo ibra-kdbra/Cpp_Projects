@@ -17,11 +17,11 @@ Converting regular expressions into finite automata is akin to transforming patt
 
 ## How to Use
 
-Each subdirectory contains its own *README* file with detailed instructions. Below is a quick navigation list of the convertors:
+Each subdirectory contains its own *README* file, with detailed instructions. Below is a quick navigation list of the converters:
 
 
 - Regular Expression to Deterministic Finite Automata [▶️](./RE-to-DFA/)
 - Regular Expression to Non-deterministic Finite Automata [▶️](./RE-to-NFA/)
 - Regular Expression to Epsilon Non-deterministic Finite Automata [▶️](./RE-to-E-NFA/)
 
-Feel free to explore each convertor and enhance your understanding of regular expressions and finite automata!
+Feel free to explore each converter and enhance your understanding of regular expressions and finite automata!

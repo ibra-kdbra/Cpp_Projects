@@ -2,21 +2,17 @@
 
 ## Introduction ##
 
-This is a project which I developed to learn the mechanism of compilers. The project contains 5 parts:
+The goal of the project development was to learn the mechanisms of compilers. The project contains five parts:
 
-1) a lexer;
+1. A lexer
+2. A parser
+3. An interpreter
+4. A compiler
+5. A virtual machine
 
-2) a parser;
+The designed programming language is similar to JavaScript but much simpler. Code samples can be found in each part's test case folder.
 
-3) an interpreter;
-
-4) a compiler;
-
-5) a virtual machine;
-
-The designed programming language is similar to Javascript, but much simpler. Code samples can be found in each part's testcase/* .
-
-Each part can be both compiled to a runnable program, or a library linked by others. To compile a runnable program, goto that part and run command:
+Each part can be both compiled to a runnable program, or a library linked by others. To compile a runnable program, go to that part and run command:
 
 ```sh
 make intergrate # compile the runnable program

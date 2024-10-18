@@ -1,6 +1,6 @@
 # `#define EVIL`
 
-*A macro library for the morally compromised C and C++ programmer*
+*A macro library for the morally compromised C and C++ programmer.*
 
 ## What is this?
 
@@ -8,11 +8,11 @@ There's one thing everyone can agree on, macros in C are a necessary evil. At fi
 
 ## No, actually, what is this?
 
-It's an MIT licensed collection of clean, modular, well documented macro hacks with full unit test coverage.
+It's an MIT-licensed collection of clean, modular, well-documented macro hacks with full unit test coverage.
 
 ## Why?
 
-Complex macros are useful when pushing the limits of what C/C++ can be. For example, you could use `#define EVIL` macros to construct a domain-specific language that is technically C or C++ (gets compiled by any normal compiler) but looks and feels quite different. An extreme example of this is [Python++](https://github.com/wmww/Python-plus-plus), where many of these ideas originated. `#define EVIL` was created to split out and clean up the reusable bits of Python++.
+Complex macros are useful when pushing the limits of what C/C++ can do. For example, you could use `#define EVIL` macros to construct a domain-specific language that is technically C or C++ (compiled by any normal compiler) but looks and feels quite different. An extreme example of this is [Python++](https://github.com/wmww/Python-plus-plus), where many of these ideas originated. `#define EVIL` was created to split out and clean up the reusable bits of Python++.
 
 ## Files
 

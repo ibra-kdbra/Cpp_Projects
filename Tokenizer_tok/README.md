@@ -1,9 +1,7 @@
 Tokenizer
 =========
 
-First, this `Tok` library has nothing to do with the Tok'ra. :-) Instead it is a really simple, dependency-free, stb-style
-single header *source code tokenizer* written in ANSI C. It has a simple to use interface to manipulate the tokens and then
-concatenate them into a string again.
+First, this `Tok` library has nothing to do with the Tok'ra. :-) Instead it is a really simple, dependency-free, single-header *source code tokenizer* written in ANSI C. It features an easy-to-use interface for manipulating tokens and concatenating them back into a string.
 
 ## Table of Contents
 <!-- TOC -->

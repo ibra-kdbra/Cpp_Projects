@@ -1,6 +1,6 @@
 # design-patterns
 
-This directory contains OOD patterns in C++ based on the the book [Head First Design Patterns: A Brain-Friendly Guide](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124).
+This directory contains [Object-Oriented Design](https://en.wikipedia.org/wiki/Object-oriented_analysis_and_design#Object-oriented_design)(OOD) patterns implemented in C++  based on the the book [Head First Design Patterns: A Brain-Friendly Guide](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124).
 
 
 ### Places Where Example Sways from book
@@ -11,10 +11,10 @@ This directory contains OOD patterns in C++ based on the the book [Head First De
 
 
 ### Implemented desgin patterns:
- - [Abstract factory pattern](./abstract-factory-pattern/)
- - [Command pattern](./command-pattern/)
- - [Decorator pattern](./decorator-pattern/)
- - [Factory method pattern](./factory-method-pattern/)
- - [Observer pattern](./observer-pattern/)
- - [Singleton pattern](./singleton-pattern/)
- - [Strategy pattern](./strategy-pattern/)
+ - [Abstract Factory Pattern](./abstract-factory-pattern/)
+ - [Command Pattern](./command-pattern/)
+ - [Decorator Pattern](./decorator-pattern/)
+ - [Factory Method Pattern](./factory-method-pattern/)
+ - [Observer Pattern](./observer-pattern/)
+ - [Singleton Pattern](./singleton-pattern/)
+ - [Strategy Pattern](./strategy-pattern/)

@@ -1,6 +1,6 @@
 # Trigonometric Functions in OpenGL
 
-A small program that lets you visualize multipe trigonometric functions, built in C++ with OpenGL and GLUT. press the letter next to the name of a function to enable/disable it.
+A small program that lets you visualize multiple trigonometric functions, built in C++ using OpenGL and GLUT. press the letter next to the name of a function to enable/disable it.
 
 Trigonometric functions implemented in the program:
 

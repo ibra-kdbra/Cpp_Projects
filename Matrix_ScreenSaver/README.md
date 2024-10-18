@@ -1,7 +1,6 @@
 # Matrix
 
-Matrix terminal screen saver made in C  
-(Also see [pipes](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Pipes_ScreenSaver))
+a *Matrix* terminal screen saver made in C. (See also [pipes](https://github.com/ibra-kdbra/Cpp_Projects/tree/main/Pipes_ScreenSaver))
 
 <img src="screenshots/matrix.png" width="800">
 

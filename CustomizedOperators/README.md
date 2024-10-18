@@ -17,10 +17,7 @@ further information.
 
 ## How it works
 
-In C++ one can not create new operators such as `<>` or `|&`. What you can do
-however is create a variable named x of newly created type with irrelevant name
-and overload the operators `<` and `>` such that you can write `<x>` creating a
-new operators of sorts.
+In C++, one cannot create new operators such as `<>` or `|&`. However, you can create a variable named `x` of a newly created type with an irrelevant name and overload the operators `<` and `>` so that you can write `< x >`, creating new operators of sorts.
 
 ## Features
 
