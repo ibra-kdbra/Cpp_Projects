@@ -4,7 +4,7 @@
 <!-- 
 ### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
  -->
-<pre>
+<pre lang="cpp">
       I hope this repository never stops growing and teaches me
        new things about this fascinating programming language
       ._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
@@ -24,19 +24,20 @@
 
 </pre>
 
-<details id="toc">
-<summary style="font-weight:bold; font-size:2em; padding:5px">
-   📚 Table of Contents
-</summary>
+# 📚 Table of Contents
 
-  - [<span style="font-size: 1.5em"> **Overview** </span>](#overview)
-  - [<span style="font-size: 1.5em"> **Side Note** </span>](#side-note)
+<details>
+<summary> ℹ️ </summary>
 
-<div style="padding-left: 1.2em">
-<details id="projects-titles"><summary style="font-weight:bold; font-size:1.5em; padding:5px">🧾 Projects Titles</summary>
+  &emsp; - [**Overview**](#overview)
 
-  - [Atari Games](#atari_games)
-  - [Beneficial C Programming](#beneficial_c_programming)
+  &emsp; - [**Side Note**](#side-note)
+
+<details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
+<br>
+
+  - [Atari Games](#atari-games)
+  - [Beneficial C Programming](#beneficial-c_programming)
   - [CanChat](#canchat)
   - [Chess-Engine](#chess-engine)
   - [Chess 3D](#chess_3d)
@@ -82,7 +83,6 @@
 
 </details>
 
-</div>
 </details>
 
 
@@ -97,7 +97,7 @@ Projects are organized alphabetically for easy navigation. Each corresponding *R
 
 ## Projects
 
-### [Atrai-Games](./Atari-Games) 
+### [Atari-Games](./Atari-Games) 
 
 A collection of classic Atari games implemented in C++:
 
