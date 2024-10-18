@@ -5,7 +5,7 @@
 ### **This repo** will contain some forked or cloned repos from other users, their credit will be found in every *README* of each directory and it will be edited to my need
  -->
 <pre lang="cpp">
-      I hope this repository never stops growing and teaches me
+      I hope this repository continues to grow and teaches me
        new things about this fascinating programming language
       ._._._._._._._._._._._._._._._._._._._._._._._._._._._._.
 
@@ -88,7 +88,7 @@
 
 ---
 ## Overview
-This repository serves as a personal playground for experimenting with various C++ projects. It includes original implementations, as well as **forked** or **cloned** repositories from other developers **with my own improvements** as fits. Each project aims to explore different concepts and features of the C++ programming language.
+This repository serves as a personal playground for experimenting with various C++ projects. It includes original implementations, as well as **forked** or **cloned** repositories from other developers **with my own improvements** where applicable. Each project aims to explore different concepts and features of the C++ programming language.
 
 
 ### Side note:
@@ -138,13 +138,34 @@ A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game contr
 </div>
 
 #
+
+### [Chess-Engine](./Chess_Engine)
+
+A Chess Engine implemented in C++17.
+<div align="right"> 
+<a href="#projects-titles"> 📚 </a>
+</div>
+
+#
+
+### [Collatz-Conjecture](./Collatz)
+
+[Learn more](https://en.wikipedia.org/wiki/Collatz_conjecture) about the Collatz Conjecture.
+
+A program that attempts to solve the Collatz Conjecture question, which asks whether repeating two simple arithmetic operations will eventually transform every positive integer into one.
+<div align="right"> 
+<a href="#projects-titles"> 📚 </a>
+</div>
+
+#
+
 ### [CPP20_Develop](./CPP20_Develop)
 
 `A versatile collection of compile-time optimized tools for C++ programming.`
 
 This library uses the latest C++ features available in GCC, Clang and Visual Studio 2019 and 2022.
 
-Co-Cpp19 contains a lot of sublibraries and is splitted into many small headers.
+Co-Cpp19 contains numerous sublibraries and is splitted into many small headers.
 This aims to enable the "pay only what you use policy" of C++ at compile time.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -153,32 +174,12 @@ This aims to enable the "pay only what you use policy" of C++ at compile time.
 
 #
 
-### [Chess-Engine](./Chess_Engine)
-
-Chess Engine in C++17.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-
-#
-
-### [Collatz-Conjecture](./Collatz)
-
-[Learn more](https://en.wikipedia.org/wiki/Collatz_conjecture) about Collatz Conjecture.
-
-A program that attempts to solve Collatz-Conjecture question which asks whether repeating two simple arithmetic operations will eventually transform every positive integer into one.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
-
 ### [CustomizedOperators](./CustomizedOperators)
 
 Implements custom operators for C++.
+
 #### Like what?
-In C++ one can not create new operators such as <> or |&. What you can do however is create a variable named x of newly created type with irrelevant name and overload the operators < and > such that you can write < x > creating a new operators of sorts.
+In C++, one cannot create new operators such as `<>` or `|&`. However, you can create a variable named `x` of a newly created type with an irrelevant name and overload the operators `<` and `>` so that you can write `< x >`, creating new operators of sorts.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -187,14 +188,13 @@ In C++ one can not create new operators such as <> or |&. What you can do howeve
 
 ### [Define_evil](./define_evil)
 
-*A macro library for the morally compromised C and C++ programmer*
+*A macro library for the morally compromised C and C++ programmer.*
 
-It's an MIT licensed collection of clean, modular, well documented macro hacks with full unit test coverage.
-Complex macros are useful when pushing the limits of what C/C++ can be.
+It's an MIT-licensed collection of clean, modular, well-documented macro hacks with full unit test coverage.
 
 **Why?**
 
-Complex macros are useful when pushing the limits of what C/C++ can be. For example, you could use `#define EVIL` macros to construct a domain-specific language that is technically C or C++ (gets compiled by any normal compiler) but looks and feels quite different. An extreme example of this is [Python++](https://github.com/wmww/Python-plus-plus), where many of these ideas originated. `#define EVIL` was created to split out and clean up the reusable bits of Python++.
+Complex macros are useful when pushing the limits of what C/C++ can do. For example, you could use `#define EVIL` macros to construct a domain-specific language that is technically C or C++ (compiled by any normal compiler) but looks and feels quite different. An extreme example of this is [Python++](https://github.com/wmww/Python-plus-plus), where many of these ideas originated. `#define EVIL` was created to split out and clean up the reusable bits of Python++.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -203,29 +203,31 @@ Complex macros are useful when pushing the limits of what C/C++ can be. For exam
 
 ### [Design-patterns](./design-patterns)
 
-[Object Oriented Design](https://en.wikipedia.org/wiki/Object-oriented_analysis_and_design#Object-oriented_design) patterns in C++ based on the the book [Head First Design Patterns: A Brain-Friendly Guide](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124).
+[Object-Oriented Design](https://en.wikipedia.org/wiki/Object-oriented_analysis_and_design#Object-oriented_design)(OOD) patterns implemented in C++ based on the book [Head First Design Patterns: A Brain-Friendly Guide](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124).
 
 #### Implemented design patterns:
- - Abstract factory pattern
- - Command pattern
- - Decorator pattern
- - Factory method pattern
- - Observer pattern
- - Singleton pattern
- - Strategy pattern
+ - Abstract Factory Pattern
+ - Command Pattern
+ - Decorator Pattern
+ - Factory Method Pattern
+ - Observer Pattern
+ - Singleton Pattern
+ - Strategy Pattern
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
 
 #
+
 ### [Dump C++](./Dump_c%2B%2B)
 
-*Dump C++ Itanium [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) from [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) objects*
+*Dump C++ Itanium [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) from [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) objects.*
 
 A tool used to inspect C++ binaries for debug symbols ([Learn more](https://en.wikipedia.org/wiki/Debug_symbol)) and virtual function tables ([Learn more](https://en.wikipedia.org/wiki/Virtual_method_table)) information.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
+
 
 #
 
@@ -233,7 +235,7 @@ A tool used to inspect C++ binaries for debug symbols ([Learn more](https://en.w
 
 *Transfer files quickly and securely!*
 
-The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key derivation, employs AES-256-GCM for encryption/decryption, and uses [SHA3-256](https://en.wikipedia.org/wiki/SHA-3) for integrity check.
+The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key derivation, employs AES-256-GCM for encryption/decryption, and uses [SHA3-256](https://en.wikipedia.org/wiki/SHA-3) for integrity checks.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -242,9 +244,9 @@ The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key deri
 
 ### [Hangman-game](./Hangman-game)
 
-**What is hangman game?** [Learn more](https://en.wikipedia.org/wiki/Hangman_(game))
+**What is the Hangman game?** [Learn more](https://en.wikipedia.org/wiki/Hangman_(game))
 
-A text based game, the program takes in 2 parametes, the first one is a word or an expression, the second one is the number of attempts you want in your game.
+A text-based game; the program takes in two parameters: the first is a word or expression, and the second is the number of attempts you want in your game.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -253,7 +255,7 @@ A text based game, the program takes in 2 parametes, the first one is a word or 
 
 ### [InjectHook](./InjectHook)
 
-A lightweight C++ library designed for function interception within injected DLLs, providing a streamlined approach to modifying application behavior at runtime. Ideal for educational purposes, debugging, and dynamic software analysis.
+A lightweight C++ library designed for function interception within injected DLLs, providing a streamlined approach to modifying application behavior at runtime. It is ideal for educational purposes, debugging, and dynamic software analysis.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -262,7 +264,7 @@ A lightweight C++ library designed for function interception within injected DLL
 
 ### [Introspective](./introspective)
 
-Introspective is a header file that brings reflection to any class that wants it, regardless of whether the reflected member is a constant, a static variable or a instance member function. It records declaration order, (function) type and address and passes them along unchanged during compile-time, with the ultimate goal of making the interaction with embedded scripting languages like Lua a little less of a hassle.
+Introspective is a header file that brings reflection to any class that wants it, regardless of whether the reflected member is a constant, a static variable, or an instance member function. It records declaration order, (function) type, and address, passing them along unchanged during compile-time, with the ultimate goal of making interaction with embedded scripting languages like Lua a little less of a hassle.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -270,19 +272,16 @@ Introspective is a header file that brings reflection to any class that wants it
 #
 
 ### [Javascript-compiler](./javascript-compiler)
-The goal of the project development was learning the mechanism of compilers. The project contains 5 parts:
 
-1) a lexer;
+The goal of the project development was to learn the mechanisms of compilers. The project contains five parts:
 
-2) a parser;
+1. A lexer
+2. A parser
+3. An interpreter
+4. A compiler
+5. A virtual machine
 
-3) an interpreter;
-
-4) a compiler;
-
-5) a virtual machine;
-
-The designed programming language is similar to Javascript, but much simpler. Code samples can be found in each part's testcase/* .
+The designed programming language is similar to JavaScript but much simpler. Code samples can be found in each part's test case folder.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -290,8 +289,8 @@ The designed programming language is similar to Javascript, but much simpler. Co
 #
 
 ### [JsonConverter](./JsonConverter)
-A C++ Library providing a `std::string` parser for JavaScript Object Notation aka JSON.
-The STL containers are in favor to represent the Json entities: Object, Array and Value.
+
+A C++ library providing a `std::string` parser for JavaScript Object Notation (JSON). The STL containers are used to represent the JSON entities: Object, Array, and Value.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -300,10 +299,9 @@ The STL containers are in favor to represent the Json entities: Object, Array an
 
 ### [MarbleMarcher](./MarbleMarcher)
 
-Marble Marcher is a video game demo that uses a fractal physics engine and fully procedural rendering to produce beautiful and unique gameplay unlike anything you've seen before.
+Marble Marcher is a video game demo that uses a fractal physics engine, and fully procedural rendering to produce beautiful, and unique gameplay unlike anything you've seen before.
 
-The goal of the game is to reach the flag as quickly as possible.  But be careful not to
-fall off the level or get crushed by the fractal!  There are 24 levels to unlock.
+The goal of the game is to reach the flag as quickly as possible, but be careful not to fall off the level or get crushed by the fractal! There are 24 levels to unlock.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -312,9 +310,9 @@ fall off the level or get crushed by the fractal!  There are 24 levels to unlock
 
 ### [Matrix_ScreenSaver](./Matrix_ScreenSaver)
 
-Matrix terminal screen saver made in C language.
+A *Matrix* terminal screen saver made in C.
 
-&emsp;**Screenshot:**
+&emsp;**Preview:**
 
 &emsp;<img src="Matrix_ScreenSaver/screenshots/matrix.png" width="400">
 
@@ -330,14 +328,14 @@ Minishell is a simplified shell program that emulates a Unix-like shell environm
 
 &emsp; **Features:**
 
-  - Command Parsing and Execution
-  - Signal Handling
-  - Heredoc Support
-  - Environment Variable Management
-  - Execution of External Commands
-  - Error Handling
-  - Readline Integration
-  - Compilation and Makefile
+- Command parsing and execution
+- Signal handling
+- Heredoc support
+- Environment variable management
+- Execution of external commands
+- Error handling
+- Readline integration
+- Compilation and Makefile
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -347,14 +345,14 @@ Minishell is a simplified shell program that emulates a Unix-like shell environm
 
 ### [Mothbar](./mothbar)
 
-A small bar utility written in C for [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD), which displays information such as the current desktop, clock, and volume. It works by creating FIFO pipes to receive data and updates the bar in real-time using XCB for interaction with the X server.
+A small bar utility written in C for [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD), which displays information such as the current desktop, clock, and volume. It works by creating FIFO pipes to receive data, and updates the bar in real-time using XCB for interaction with the X server.
 
 &emsp; **Features:**
-  - Clock Display
-  - Desktop Indicator
-  - Volume Display
-  - FIFO Communication
-  - Real-time Bar Updates
+- Clock display
+- Desktop indicator
+- Volume display
+- FIFO communication
+- Real-time bar updates
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -371,9 +369,9 @@ An [openFrameworks](https://openframeworks.cc/) addon compatible with versions 0
 #
 
 ### [OpenGL_examples](./OpenGL_examples)
-A group of examples done upon taking a Computer Graphics course to better understand OpenGL and apply some of the techniques read in the litterature.
+A collection of examples created while taking a Computer Graphics course to better understand OpenGL and apply techniques learned from the literature.
 
-&emsp; **Screenshots:**
+&emsp; **Preview:**
 
 &emsp;
 <img src="./OpenGL_examples/screenshots/grass_1.png" width="100"> <img src="./OpenGL_examples/screenshots/shadow_mapping_2.png" width="100"> <img src="./OpenGL_examples/screenshots/water_1.png" width="100"> <img src="./OpenGL_examples/screenshots/tree_2.png" width="100"> <br>
@@ -385,8 +383,7 @@ A group of examples done upon taking a Computer Graphics course to better unders
 #
 
 ### [PackSend](./packsend/)
-A small utility to construct packets from various data sources and output
-them to sockets, serial ports or files.
+A small utility for constructing packets from various data sources and outputting them to sockets, serial ports, or files.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -394,7 +391,7 @@ them to sockets, serial ports or files.
 #
 
 ### [Password_generator](./password-generator)
-A CLI password generator coded in C++.
+A CLI password generator written in C++.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -403,9 +400,9 @@ A CLI password generator coded in C++.
 
 ### [Pipes_ScreenSaver](./Pipes_ScreenSaver)
 
-Pipes terminal screen saver made in C language.
+A *Pipes* terminal screen saver made in C.
 
-&emsp;**Screenshot:**
+&emsp;**Preview:**
 
 &emsp;<img src="Pipes_ScreenSaver/screenshots/pipes.png" width="400">
 
@@ -417,9 +414,9 @@ Pipes terminal screen saver made in C language.
 
 ### [POng](./POng)
 
-Pong ([learn more](https://en.wikipedia.org/wiki/Pong)) clone for Linux written in C++ with SDL 2.0.
+A Pong ([learn more](https://en.wikipedia.org/wiki/Pong)) clone for Linux written in C++ using SDL 2.0.
 
-&emsp; **Screenchot:**
+&emsp; **Preview:**
 
 &emsp; <img src="https://cloud.githubusercontent.com/assets/1498164/5608125/295a3186-9481-11e4-968b-04987a925a93.png" width="400">
 <div align="right"> 
@@ -430,21 +427,22 @@ Pong ([learn more](https://en.wikipedia.org/wiki/Pong)) clone for Linux written 
 
 ### [Random_Utility_tools](./Random_Utility_tools)
 
-This document provides an overview of several converters used for instrument conversion between different formats such as BNK, IBK, and OPN. Each converter serves a specific purpose in processing sound patches and instrument banks. Below are links to detailed readme files for each converter along with a brief description of their functionality.
+This subdirectory provides an overview of several converters used for instrument conversion between different formats such as BNK, IBK, and OPN. Each converter serves a specific purpose in processing sound patches and instrument banks.
 
-&emsp; **Converters:**
-  - OPN Dumper Converter
-  - BNK Patch Converters
-  - CSV Patch Set Converter
-  - IBK to OPL
+&emsp; **Implemented converters:**
+- OPN Dumper Converter
+- BNK Patch Converters
+- CSV Patch Set Converter
+- IBK to OPL
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
 
 #
+
 ### [Regular_Expression_Convertors](./RegularExpression_Convertors)
 
-There are three convertors:
+This project includes three converters:
 
 - Regular Expression to Deterministic Finite Automata
 - Regular Expression to Non-deterministic Finite Automata
@@ -457,13 +455,13 @@ There are three convertors:
 
 ### [SFML Multithread Verlet](./SFML_Multithread_verlet/)
 
-Demonstrating a **multithreaded particle simulation** using the **Verlet integration** method for calculating particle motion, with optimized **collision detection** and interaction. It leverages [**SFML**](https://en.wikipedia.org/wiki/Simple_and_Fast_Multimedia_Library) for rendering and handling the GUI.
+Demonstrates a **multithreaded particle simulation** using the **Verlet integration** method for calculating particle motion, with optimized **collision detection** and interaction. It leverages [**SFML**](https://en.wikipedia.org/wiki/Simple_and_Fast_Multimedia_Library) for rendering and handling the GUI.
 
 **Key Features**:
-- **Multithreading**
-- **Verlet Integration**
-- **Optimized Collision Detection**:
-- **SFML (Simple and Fast Multimedia Library)**
+- Multithreading
+- Verlet Integration
+- Optimized Collision Detection
+- SFML (Simple and Fast Multimedia Library)
 
 &emsp; **Preview:**
 
@@ -473,11 +471,12 @@ Demonstrating a **multithreaded particle simulation** using the **Verlet integra
 <a href="#projects-titles"> 📚 </a>
 </div>
 
+
 #
 
 ### [Simple_turso](./simple_turso)
 
-Experimental 3D / game engine technology partially based on the Urho3D codebase.
+An experimental 3D/game engine technology partially based on the Urho3D codebase.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -486,7 +485,7 @@ Experimental 3D / game engine technology partially based on the Urho3D codebase.
 
 ### [Simple-Code](./Simple-Code)
 
-A collection of algorithms and data structures made with C++ language.
+A collection of algorithms and data structures implemented in C++.
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -496,7 +495,7 @@ A collection of algorithms and data structures made with C++ language.
 
 ### [Simplesdl2_game_template](./simplesdl2_game_template)
 
-A template for the future game (which I'm working on).
+A template for a future game that I am currently working on.
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -506,17 +505,16 @@ A template for the future game (which I'm working on).
 
 ### [StaticPageGen](./staticpagegen)
 
-staticpagegen is a tool used to generate static pages for directory hierarchies
-which uses the simplest possible form for the protocols it supports.
+`staticpagegen` is a tool used to generate static pages for directory hierarchies, using the simplest possible form for the protocols it supports.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
 
-# 
+#
 
 ### [SystemMonitor](./SystemMonitor)
 
-This repository contains the result of the second project of the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The project concerns a system monitor for the Linux Operating System, which depends on [ncurses](https://www.gnu.org/software/ncurses/) library.
+This project contains the result of the second project of the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The project involves creating a system monitor for the Linux Operating System, which depends on the [ncurses](https://www.gnu.org/software/ncurses/) library.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -525,7 +523,7 @@ This repository contains the result of the second project of the [Udacity C++ Na
 
 ### [Template_Language_Generator](./Template_Language_Generator)
 
-A small POSIX shell script for generating a C/C++ code structure, build system files, etc.
+A small POSIX shell script for generating C/C++ code structures, build system files, and more.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -534,8 +532,7 @@ A small POSIX shell script for generating a C/C++ code structure, build system f
 
 ### [Terminal_File_Manager](./Terminal_File_Manager)
 
-
-Terminal file manager in C++20 (and [ncurses](https://www.gnu.org/software/ncurses/)).
+A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu.org/software/ncurses/) library.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -544,8 +541,7 @@ Terminal file manager in C++20 (and [ncurses](https://www.gnu.org/software/ncurs
 
 ### [Terminal_Snake](./Terminal_Snake)
 
-`tsnake` is a terminal snake game written in C++ using the [ncurses](https://www.gnu.org/software/ncurses/) library with
-support for maps and interactive resizing.
+`tsnake` is a terminal snake game written in C++ using the [ncurses](https://www.gnu.org/software/ncurses/) library, featuring support for maps and interactive resizing.
 
 &emsp;**Preview:**
 
@@ -559,7 +555,7 @@ support for maps and interactive resizing.
 ### [Thread_Pool](./Thread_Pool)
 
 A thread pool is a software design pattern for achieving concurrency of execution in a computer program ([learn more](https://en.wikipedia.org/wiki/Thread_pool)).
-The project is a simple async thread pool implementation in C++ language.
+This project is a simple async thread pool implementation in C++.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -568,9 +564,7 @@ The project is a simple async thread pool implementation in C++ language.
 
 ### [Tokenizer_tok](./Tokenizer_tok)
 
-A simple, dependency-free, stb-style
-single header *source code tokenizer* written in ANSI C. It has a simple to use interface to manipulate the tokens and then
-concatenate them into a string again.
+A simple, dependency-free, single-header *source code tokenizer* written in ANSI C. It features an easy-to-use interface for manipulating tokens and concatenating them back into a string.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -579,8 +573,7 @@ concatenate them into a string again.
 
 ### [Trigonometric-Functions](./Trigonometric-Functions)
 
-
-A small program that lets you visualize multipe trigonometric functions, built in C++ with OpenGL and GLUT.
+A small program that lets you visualize multiple trigonometric functions, built in C++ using OpenGL and GLUT.
 
 &emsp; **Preview:**
 
@@ -593,7 +586,7 @@ A small program that lets you visualize multipe trigonometric functions, built i
 
 ### [ViteFA_config](./ViteFA_config)
 
-ViteFA_config is a highly efficient configuration management system made in **C**. It is designed to handle over 100,000 concurrent agent connections with sub-second propagation of configuration changes to agents. The system uses **MySQL** for storage and relies on **libshmcache** for shared memory management. The shared memory type is configured to **mmap**, and `recycle_valid_entries` must be set to **false** for the cache.
+`ViteFA_config` is a highly efficient configuration management system implemented in **C**. It is designed to handle over 100,000 concurrent agent connections with sub-second propagation of configuration changes. The system uses **MySQL** for storage and relies on **libshmcache** for shared memory management. The shared memory type is configured to **mmap**, and `recycle_valid_entries` must be set to **false** for the cache.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -601,12 +594,12 @@ ViteFA_config is a highly efficient configuration management system made in **C*
 #
 
 ### [Volumetric-clouds](./volumetric-clouds)
+
 A real-time GPU volumetric clouds renderer via OpenGL, based on <a href="https://advances.realtimerendering.com/s2015/The%20Real-time%20Volumetric%20Cloudscapes%20of%20Horizon%20-%20Zero%20Dawn%20-%20ARTR.pdf">The Real-time Volumetric Cloudscapes of Horizon: Zero Dawn</a> by Andrew Schneider.
 
 &emsp; **Preview:**
 
-&emsp; <img src="./volumetric-clouds/resources/images/showcase.png" alt="Collage of realtime render results from the volumetric clouds renderer" width="400"></img></a>
-
+&emsp; <img src="./volumetric-clouds/resources/images/showcase.png" alt="Collage of real-time render results from the volumetric clouds renderer" width="400">
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -615,11 +608,10 @@ A real-time GPU volumetric clouds renderer via OpenGL, based on <a href="https:/
 
 ### [WordProc](./WordProc)
 
-
-An attempt to write a word processor using **C++20**, **Qt5** and cmake
-as buildsystem.
+An attempt to write a word processor using **C++20**, **Qt5**, and CMake as the build system.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
+
 
 #
