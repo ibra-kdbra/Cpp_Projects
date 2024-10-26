@@ -16,7 +16,7 @@ Currently tested Compilers:
 
 ## Contents
 
-Co-Cpp19 contains a lot of sublibraries and is splitted into many small headers.
+Co-Cpp19 contains numerous sublibraries and is splitted into many small headers.
 This aims to enable the "pay only what you use policy" of C++ at compile time.
 
 * cpp19 - compiler configuration (yours should be somewhat similar)

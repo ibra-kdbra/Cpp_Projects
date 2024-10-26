@@ -1,4 +1,4 @@
-# Template for the Future Game (IS NOT READY! IN PROGRESS!)
+# Template for a Future Game (IS NOT READY! IN PROGRESS!)
 
 ## Dependencies
 
