@@ -15,7 +15,7 @@ cmake --build build
 
 ## Run
 
-Make sure C++ code compiled successfully via run the application
+Make sure C++ code compiled successfully via running the application
 
 ```sh
 ./build/Debug/<app_name>
