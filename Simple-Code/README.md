@@ -20,14 +20,14 @@ Data Structures
 <tr>
 <td>
 <ul>
-<li>Backtracking</li>
-<li>Dynamic Programming</li>
-<li>Graph Theory Algorithms</li>
-<li>Greedy</li>
-<li>Recursion</li>
-<li>Searching</li>
-<li>Sorting</li>
-<li>Tree Algorithms</li>
+<li><a href="./Algorithms/Backtracking/">Backtracking</a></li>
+<li><a href="./Algorithms/Dynamic Programming/">Dynamic Programming</a></li>
+<li><a href="./Algorithms/Graph Theory Algorithms/">Graph Theory Algorithms</a></li>
+<li><a href="./Algorithms/Greedy/">Greedy</a></li>
+<li><a href="./Algorithms/Recursion/">Recursion</a></li>
+<li><a href="./Algorithms/Searching/">Searching</a></li>
+<li><a href="./Algorithms/Sorting/">Sorting</a></li>
+<li><a href="./Algorithms/Tree Algorithms/">Tree Algorithms</a></li>
 </ul>
 </td>
 <td>
@@ -49,3 +49,19 @@ Data Structures
 
 
 </table>
+
+<table>
+<thead>
+<tr>
+<th>Plain Approaches:</th>
+</tr>
+<td>
+<li><a href="./Plain_Approaches/BST/">Binary Search Tree</a></li> <li><a href="./Plain_Approaches/Tree/">Tree</a></li>
+</td>
+</thead>
+
+</table>
+
+## Preview
+
+In [Algorithms](./Algorithms/) folder, there are many presented problems in certain topics (listed above) with their solutions written in C++.
