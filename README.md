@@ -106,6 +106,11 @@ A collection of classic Atari games implemented in C++:
 2. Snake - [Learn more](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
 
 3. Tetris - [Learn more](https://en.wikipedia.org/wiki/Tetris)
+
+&emsp; **Preview:**
+
+&emsp; <img src="./Atari-Games/Snake/Screenshots/5.png" width="200"> <img src="./Atari-Games/Snake/Screenshots/2.png" width="200"> 
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -485,7 +490,8 @@ An experimental 3D/game engine technology partially based on the Urho3D codebase
 
 ### [Simple-Code](./Simple-Code)
 
-A collection of algorithms and data structures implemented in C++.
+A collection of algorithms and data structures implemented in C++ for educational purposes and practical applications.
+
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -496,6 +502,10 @@ A collection of algorithms and data structures implemented in C++.
 ### [Simplesdl2_game_template](./simplesdl2_game_template)
 
 A template for a future game that I am currently working on.
+
+&emsp; **Preview:**
+
+&emsp; <img src="./simplesdl2_game_template/examples/sample.gif" width="300"> 
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -533,6 +543,10 @@ A small POSIX shell script for generating C/C++ code structures, build system fi
 ### [Terminal_File_Manager](./Terminal_File_Manager)
 
 A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu.org/software/ncurses/) library.
+
+&emsp; **Preview:**
+
+&emsp; <img alt="preview" src="./Terminal_File_Manager/screenshot/1.png" width="400"> 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>

@@ -1,67 +1,48 @@
-Simple Code
-===========
+# Simple Code
 
-A collection of algorithms and data structures implemented in C++.
-
+A collection of algorithms and data structures implemented in C++ for educational purposes and practical applications.
 
 ## Contents
+- [Algorithms](#algorithms)
+- [Data Structures](#data-structures)
+- [Plain Approaches](#plain-approaches)
+- [How to Run](#how-to-run)
 
-In the table below is a brief list of impelmented algorithms and data structures:
-<table>
-<thead>
-<tr>
-<th>
-Algorithms
-</th>
-<th>
-Data Structures
-</th>
-</tr>
-<tr>
-<td>
-<ul>
-<li><a href="./Algorithms/Backtracking/">Backtracking</a></li>
-<li><a href="./Algorithms/Dynamic Programming/">Dynamic Programming</a></li>
-<li><a href="./Algorithms/Graph Theory Algorithms/">Graph Theory Algorithms</a></li>
-<li><a href="./Algorithms/Greedy/">Greedy</a></li>
-<li><a href="./Algorithms/Recursion/">Recursion</a></li>
-<li><a href="./Algorithms/Searching/">Searching</a></li>
-<li><a href="./Algorithms/Sorting/">Sorting</a></li>
-<li><a href="./Algorithms/Tree Algorithms/">Tree Algorithms</a></li>
-</ul>
-</td>
-<td>
-<ul>
-<li>Circular Queue</li>
-<li>Heap</li>
-<li>Map</li>
-<li>N-Queens problem</li>
-<li>Queue using stacks</li>
-<li>Singly Linked List</li>
-<li>Stack as Linked List</li>
-<li>Stocks Buy and Sell Problem</li>
-<li>Tree Traversal</li>
-<li>Tree</li>
-<li>Trie</li>
-<li>Vector</li>
-</tr>
-</thead>
+## [Algorithms](./Algorithms/)
+The **Algorithms** directory contains the following categories:
+
+- **Backtracking**
+- **Dynamic Programming**: Covers problems like Knapsack, Coin Change, Minimum Jumps, and more.
+- **Graph Theory**: BFS, DFS, Dijkstra's, Bellman-Ford, Floyd-Warshall, etc.
+- **Greedy**: Features problems like Sliding Window Maximum, Kadane's Algorithm, Connecting Ropes for Minimum Cost, Expedition Problem, and Load Balancer.
+- **Recursion**: Balanced Brackets, Count Inversions, Recursive Multiplication, etc.
+- **Searching**: Binary Search, Linear Search, Jump Search, and A* Search. Also includes matrix-specific search algorithms.
+- **Sorting**: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort, Heap Sort, and Counting Sort.
+- **Tree Algorithms**: Centroid of a Tree, and Lowest Common Ancestor (LCA) in a Binary Search Tree.
 
 
-</table>
+## [Data Structures](./Data%20Structure/)
+Implemented data structures:
+- Linked List
+- Trie
+- Heap
+- Queue
+- Stack
+- Vector
 
-<table>
-<thead>
-<tr>
-<th>Plain Approaches:</th>
-</tr>
-<td>
-<li><a href="./Plain_Approaches/BST/">Binary Search Tree</a></li> <li><a href="./Plain_Approaches/Tree/">Tree</a></li>
-</td>
-</thead>
+## [Plain Approaches](./Plain_Approaches/)
+Straightforward implementations of:
+- Binary Search Tree
+- General Tree
 
-</table>
-
-## Preview
-
-In [Algorithms](./Algorithms/) folder, there are many presented problems in certain topics (listed above) with their solutions written in C++.
+## How to Run
+1. Compile:
+   ```sh
+   g++ -o output_file source_file.cpp
+    ```
+    *Replace* `source_file` *with the actual file name.*
+    
+2. Execute:
+    ```sh
+    ./output_file
+    ```
