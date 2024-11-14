@@ -1,7 +1,3 @@
-Last login: Thu Jun 16 16:54:51 on ttys000
-qpwoeirut@Stanleys-MacBook-Pro-3 machine_learning % ./train.
-zsh: no such file or directory: ./train.
-qpwoeirut@Stanleys-MacBook-Pro-3 machine_learning % ./train.sh
 Compiled train.cpp!
 Learning rate = 0.01
 Epoch #1 of 5
@@ -104,5 +100,4 @@ Running 100000 testing games
 14 1 (0.001)
 Moves: 2795.2825 2850
 Score: 60256.395 61052
-Time: 292.46
-qpwoeirut@Stanleys-MacBook-Pro-3 machine_learning %     
+Time: 292.46     

@@ -1,5 +1,3 @@
-Last login: Tue Jun 21 14:44:37 on ttys001
-qpwoeirut@Stanleys-MacBook-Pro-3 machine_learning % ./train.sh 
 Compiled train.cpp!
 Learning rate = 0.00015
 Epoch #1 of 500
@@ -1925,4 +1923,3 @@ Time: 122.432
 
 Epoch #114 of 500
 ^C
-qpwoeirut@Stanleys-MacBook-Pro-3 machine_learning % 
