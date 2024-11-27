@@ -11,7 +11,7 @@ A collection of algorithms and data structures implemented in C++ for educationa
 ## [Algorithms](./Algorithms/)
 The **Algorithms** directory contains the following categories:
 
-- **Backtracking**
+- **Backtracking**: Covers A* (A_Star) search implemented for [*Four Wheels*](https://www.cs.ucr.edu/~stelo/cs141winter04/prj3/prj3.pdf) problem. Check [this](./Algorithms/Backtracking/README.md) out.
 - **Dynamic Programming**: Covers problems like Knapsack, Coin Change, Minimum Jumps, and more.
 - **Graph Theory**: BFS, DFS, Dijkstra's, Bellman-Ford, Floyd-Warshall, etc.
 - **Greedy**: Features problems like Sliding Window Maximum, Kadane's Algorithm, Connecting Ropes for Minimum Cost, Expedition Problem, and Load Balancer.
