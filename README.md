@@ -26,9 +26,6 @@
 
 # 📚 Table of Contents
 
-<details>
-<summary>（ⅰ）</summary>
-
   &emsp; - [**Overview**](#overview)
 
   &emsp; - [**Side Note**](#side-note)
@@ -36,56 +33,33 @@
 <details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
 <br>
 
-  - [Atari Games](#atari-games)
-  - [Beneficial C Programming](#beneficial-c_programming)
-  - [CanChat](#canchat)
-  - [Chess-Engine](#chess-engine)
-  - [Chess 3D](#chess_3d)
-  - [Collatz Conjecture](#collatz-conjecture)
-  - [CPP20 Develop](#cpp20_develop)
-  - [Customized Operators](#customizedoperators)
-  - [Define Evil](#define_evil)
-  - [Design Patterns](#design-patterns)
-  - [Dump C++](#dump-c)
-  - [FileLockSocket](#filelocksocket)
-  - [Hangman Game](#hangman-game)
-  - [InjectHook](#injecthook)
-  - [Introspective](#introspective)
-  - [Javascript Compiler](#javascript-compiler)
-  - [JsonConverter](#jsonconverter)
-  - [Key to Value](#key-to-value)
-  - [MarbleMarcher](#marblemarcher)
-  - [Matrix ScreenSaver](#matrix_screensaver)
-  - [MiniShell](#minishell)
-  - [Mothbar](#mothbar)
-  - [OfxAsync](#ofxasync)
-  - [OpenGL Examples](#opengl_examples)
-  - [PackSend](#packsend)
-  - [Password Generator](#password_generator)
-  - [Pipes ScreenSaver](#pipes_screensaver)
-  - [POng](#pong)
-  - [Random Utility Tools](#random_utility_tools)
-  - [Regular Expression Convertors](#regular_expression_convertors)
-  - [SFML Multithread Verlet](#sfml-multithread-verlet)
-  - [Simple Turso](#simple_turso)
-  - [Simple Code](#simple-code)
-  - [Simplesdl2 Game Template](#simplesdl2_game_template)
-  - [Static Page Generator](#staticpagegen)
-  - [SystemMonitor](#systemmonitor)
-  - [Template Language Generator](#template_language_generator)
-  - [Terminal File Manager](#terminal_file_manager)
-  - [Terminal Snake](#terminal_snake)
-  - [Thread Pool](#thread_pool)
-  - [Tokenizer_tok](#tokenizer_tok)
-  - [Trigonometric Functions](#trigonometric-functions)
-  - [ViteFA Config](#vitefa_config)
-  - [Volumetric Clouds](#volumetric-clouds)
-  - [WordProc](#wordproc)
+|                                 |                                 |
+|---------------------------------|---------------------------------|
+| [Atari Games](#atari-games)     | [MarbleMarcher](#marblemarcher) |
+| [Beneficial C Programming](#beneficial-c_programming) | [Matrix ScreenSaver](#matrix_screensaver) |
+| [CanChat](#canchat)             | [MiniShell](#minishell)         |
+| [Chess-Engine](#chess-engine)   | [Mothbar](#mothbar)             |
+| [Chess 3D](#chess_3d)           | [OfxAsync](#ofxasync)           |
+| [Collatz Conjecture](#collatz-conjecture) | [OpenGL Examples](#opengl_examples) |
+| [CPP20 Develop](#cpp20_develop) | [PackSend](#packsend)           |
+| [Customized Operators](#customizedoperators) | [Password Generator](#password_generator) |
+| [Define Evil](#define_evil)     | [Pipes ScreenSaver](#pipes_screensaver) |
+| [Design Patterns](#design-patterns) | [POng](#pong) |
+| [Dump C++](#dump-c)             | [Random Utility Tools](#random_utility_tools) |
+| [FileLockSocket](#filelocksocket) | [Regular Expression Convertors](#regular_expression_convertors) |
+| [Hangman Game](#hangman-game)   | [SFML Multithread Verlet](#sfml-multithread-verlet) |
+| [InjectHook](#injecthook)       | [Simple Turso](#simple_turso)  |
+| [Introspective](#introspective) | [Simple Code](#simple-code)     |
+| [Javascript Compiler](#javascript-compiler) | [Simplesdl2 Game Template](#simplesdl2_game_template) |
+| [JsonConverter](#jsonconverter) | [Static Page Generator](#staticpagegen) |
+| [Key to Value](#key-to-value)   | [SystemMonitor](#systemmonitor) |
+| [Terminal File Manager](#terminal_file_manager) | [Template Language Generator](#template_language_generator) |
+| [Terminal Snake](#terminal_snake) | [Thread Pool](#thread_pool)   |
+| [Tokenizer_tok](#tokenizer_tok) | [Trigonometric Functions](#trigonometric-functions) |
+| [ViteFA Config](#vitefa_config) | [Volumetric Clouds](#volumetric-clouds) |
+| [WordProc](#wordproc)           |                                 |
 
 </details>
-
-</details>
-
 
 ---
 ## Overview
@@ -122,6 +96,7 @@ Utilizing only ANSI escape sequences to draw the board.
 
 <div align="center">
 <img src="./Atari-Games/2048_AI/images/expectimax/monotonicity-padded.png" width="400" alt="2048 preview">
+
 <img src="./Atari-Games/Tetris/simple-tetris-color.png" width="200" alt="tetris preview"> <img src="./Atari-Games/Snake/Screenshots/2.png" width="200" alt="snake preview">
 </div>
 
