@@ -102,15 +102,28 @@ Projects are organized alphabetically for easy navigation. Each corresponding *R
 
 A collection of classic Atari games implemented in C++:
 
-1. 2048 - [Learn more](https://en.wikipedia.org/wiki/2048_(video_game))
+1. **2048** -[（ⅰ）](https://en.wikipedia.org/wiki/2048_(video_game))
+  
+    [2048_AI](./Atari-Games/2048_AI/) is a set of AI strategies that play the popular [2048 tile-merging game](https://github.com/gabrielecirulli/2048).
 
-2. Snake - [Learn more](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
+    **Try it on the** [website](https://ibra-kdbra.github.io/JS_game_collections/2048/index.html)
+        
 
-3. Tetris - [Learn more](https://en.wikipedia.org/wiki/Tetris)
+2. **Snake** -[（ⅰ）](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
 
-&emsp; **Preview:**
+    A classic snake game made in C++ using SFML library.
 
-&emsp; <img src="./Atari-Games/Snake/Screenshots/5.png" width="200"> <img src="./Atari-Games/Snake/Screenshots/2.png" width="200"> 
+3. **Tetris** -[（ⅰ）](https://en.wikipedia.org/wiki/Tetris)
+
+    Simple Tetris™ — one of the smallest Tetris implementations in the world!
+Utilizing only ANSI escape sequences to draw the board.
+
+&emsp; **Preview:**    
+
+<div align="center">
+<img src="./Atari-Games/2048_AI/images/expectimax/monotonicity-padded.png" width="400" alt="2048 preview">
+<img src="./Atari-Games/Tetris/simple-tetris-color.png" width="200" alt="tetris preview"> <img src="./Atari-Games/Snake/Screenshots/2.png" width="200" alt="snake preview">
+</div>
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>

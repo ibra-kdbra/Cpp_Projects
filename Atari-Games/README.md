@@ -1,22 +1,23 @@
 # Atari-Games
 
-Atari games with C++
+Atari games written in **C++**.
 
-## Supported systems
+## [2048_AI](./2048_AI/)
 
-The latest version is available for **Windows 7 and above**.
+This project is a set of AI strategies that play the popular [2048 tile-merging game](https://github.com/gabrielecirulli/2048).
+See the [roadmap](/roadmap.md) for details on the project development stages.
 
-## Build using cmake
+<img src="./2048_AI/images/expectimax/monotonicity-padded.png" width="400" alt="2048 preview">
 
-```sh
-cmake -S . -B build
-cmake --build build
-```
+## [Snake](./Snake/)
 
-## Run
+A classic snake game made in C++ using sfml library.
 
-Make sure C++ code compiled successfully via running the application
+<img src="./Snake/Screenshots/5.png" width="200" alt="snake preview"> <img src="./Snake/Screenshots/2.png" width="200" alt="snake preview">
 
-```sh
-./build/Debug/<app_name>
-```
+## [Tetris](./Tetris/)
+
+Simple Tetris™ — one of the smallest Tetris implementations in the world!
+Utilizing only ANSI escape sequences to draw the board.
+
+<img src="./Tetris/simple-tetris-color.png" width="200" alt="tetris preview"> <img src="./Tetris/simple-tetris.png" width="200" alt="tetris preview">
