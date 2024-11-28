@@ -14,6 +14,11 @@ A simple Hangman game created using C++ and SFML.
 - **Font**: `Lindelof-Font.ttf`
 - **Images**: `hangmanwin.png`, `hangman0.png` to `hangman6.png`
 
+## Screenshots
+
+<img src="./screenshots/1.png" width="300" alt="guess"> <img src="./screenshots/2.png" width="300" alt="guess">
+<img src="./screenshots/3.png" width="604" alt="guess">
+
 ## How to Run
 1. Install SFML.
 ```bash

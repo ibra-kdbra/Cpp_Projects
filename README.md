@@ -47,7 +47,7 @@
 | [Design Patterns](#design-patterns) | [POng](#pong) |
 | [Dump C++](#dump-c)             | [Random Utility Tools](#random_utility_tools) |
 | [FileLockSocket](#filelocksocket) | [Regular Expression Convertors](#regular_expression_convertors) |
-| [Hangman Game](#hangman-game)   | [SFML Multithread Verlet](#sfml-multithread-verlet) |
+| [Hangman](#hangman)   | [SFML Multithread Verlet](#sfml-multithread-verlet) |
 | [InjectHook](#injecthook)       | [Simple Turso](#simple_turso)  |
 | [Introspective](#introspective) | [Simple Code](#simple-code)     |
 | [Javascript Compiler](#javascript-compiler) | [Simplesdl2 Game Template](#simplesdl2_game_template) |
@@ -76,18 +76,18 @@ Projects are organized alphabetically for easy navigation. Each corresponding *R
 
 A collection of classic Atari games implemented in C++:
 
-1. **2048** -[（ⅰ）](https://en.wikipedia.org/wiki/2048_(video_game))
+1. **2048** - [**(ⅰ)**](https://en.wikipedia.org/wiki/2048_(video_game))
   
     [2048_AI](./Atari-Games/2048_AI/) is a set of AI strategies that play the popular [2048 tile-merging game](https://github.com/gabrielecirulli/2048).
 
     **Try it on the** [website](https://ibra-kdbra.github.io/JS_game_collections/2048/index.html)
         
 
-2. **Snake** -[（ⅰ）](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
+2. **Snake** - [**(ⅰ)**](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
 
     A classic snake game made in C++ using SFML library.
 
-3. **Tetris** -[（ⅰ）](https://en.wikipedia.org/wiki/Tetris)
+3. **Tetris** - [**(ⅰ)**](https://en.wikipedia.org/wiki/Tetris)
 
     Simple Tetris™ — one of the smallest Tetris implementations in the world!
 Utilizing only ANSI escape sequences to draw the board.
@@ -236,11 +236,24 @@ The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key deri
 
 #
 
-### [Hangman-game](./Hangman-game)
+### [Hangman](./Hangman)
+
+A simple Hangman game created using C++ and SFML.
 
 **What is the Hangman game?** [Learn more](https://en.wikipedia.org/wiki/Hangman_(game))
 
-A text-based game; the program takes in two parameters: the first is a word or expression, and the second is the number of attempts you want in your game.
+**Features:**
+- Word and hint loading from a CSV file.
+- Hangman image updates based on incorrect guesses.
+- Sound effects for win and lose conditions.
+
+
+**Preview:**
+
+&emsp;<img src="./Hangman/screenshots/1.png" width="200" alt="guess"> <img src="./Hangman/screenshots/2.png" width="200" alt="guess">
+
+&emsp;<img src="./Hangman/screenshots/3.png" width="400" alt="guess">
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
