@@ -1,0 +1,12 @@
+1,2,3,4,5,null,6
+
+command case '4' ----------------
+output: Binary tree has been inverted.
+output: Tree Structure (Visual Representation):
+```plaintext
+1 
+    |  3 2 
+    |  6 null 5 4 
+    |  null null null null null null 
+
+```
