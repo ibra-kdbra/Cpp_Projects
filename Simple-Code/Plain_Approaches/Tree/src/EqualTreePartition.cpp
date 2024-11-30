@@ -1,36 +1,37 @@
-/*corner test case when sum of all nodes is 0 (if you will check for root also 
-and it will return always true as sum and sum/2 are same if sum=0)*/
-
 #include "Algorithms.h"
 
 int findTotalSum(TreeNode* root) {
     if (root == NULL)
         return 0;
-
     return root->val + findTotalSum(root->left) + findTotalSum(root->right);
 }
 
 bool checkPartition(TreeNode* root, int totalSum, int& currentSum) {
-    if (root == NULL) return false;
+    if (root == NULL)
+        return false;
 
-    int leftSum = 0, rightSum = 0;
+    currentSum += root->val;
 
-    bool left = checkPartition(root->left, totalSum, leftSum);
-    bool right = checkPartition(root->right, totalSum, rightSum);
-
-    currentSum = root->val + leftSum + rightSum;
-
-    if (currentSum == totalSum / 2)
+    if (currentSum == totalSum / 2) {
         return true;
+    }
 
-    return left || right;
+    bool leftPartition = checkPartition(root->left, totalSum, currentSum);
+    bool rightPartition = checkPartition(root->right, totalSum, currentSum);
+
+    currentSum -= root->val;
+
+    return leftPartition || rightPartition;
 }
 
 bool isPartitionPossible(TreeNode* root) {
     int totalSum = findTotalSum(root);
-    if (totalSum % 2 != 0)
+    
+    if (totalSum % 2 != 0) {
         return false;
+    }
 
     int currentSum = 0;
     return checkPartition(root, totalSum, currentSum);
 }
+
