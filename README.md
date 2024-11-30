@@ -74,7 +74,7 @@ Projects are organized alphabetically for easy navigation. Each corresponding *R
 
 ### [Atari-Games](./Atari-Games) 
 
-A collection of classic Atari games implemented in C++:
+A collection of classic Atari-inspired games, implemented in C++:
 
 1. **2048** - [**(ⅰ)**](https://en.wikipedia.org/wiki/2048_(video_game))
   

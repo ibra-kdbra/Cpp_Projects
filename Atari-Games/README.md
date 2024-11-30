@@ -1,11 +1,13 @@
 # Atari-Games
 
-Atari games written in **C++**.
+A collection of classic Atari-inspired games, implemented in **C++**.
 
 ## [2048_AI](./2048_AI/)
 
 This project is a set of AI strategies that play the popular [2048 tile-merging game](https://github.com/gabrielecirulli/2048).
 See the [roadmap](/roadmap.md) for details on the project development stages.
+
+**Learn about the different AI approaches used to conquer 2048:** Explore the detailed explanations in the [strategies](./2048_AI/strategies/README.md) section.
 
 <img src="./2048_AI/images/expectimax/monotonicity-padded.png" width="400" alt="2048 preview">
 
