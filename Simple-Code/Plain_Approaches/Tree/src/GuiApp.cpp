@@ -10,6 +10,7 @@
 #include <QIODevice>
 #include <sstream>
 #include "Algorithms.h"
+#include "TreeNode.h"
 
 GuiApp::GuiApp(QWidget *parent)
     : QMainWindow(parent), root(nullptr), scene(new QGraphicsScene(this)) {
@@ -57,10 +58,14 @@ GuiApp::GuiApp(QWidget *parent)
         "Equal Tree Partition",
         "Flatten Binary Tree",
         "Invert Binary Tree",
-        "Lowest Common Ancestor (LCA)"
+        "Lowest Common Ancestor (LCA)",
+        "Single Traversal",
+        "Stack-Based Traversal",
+        "Distance Between Nodes",
+        "Sorted Array to BST"
     };
 
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < algorithmNames.size(); ++i) {
         algorithmButtons[i] = new QPushButton(algorithmNames[i], this);
         algorithmButtons[i]->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         algorithmButtons[i]->adjustSize();
@@ -214,11 +219,8 @@ void GuiApp::applyAlgorithm(int choice) {
             break;
         case 5:
             {
-                bool ok1, ok2;
-                int n1 = QInputDialog::getInt(this, "Input", "Enter first node for LCA:", 0, 0, 10000, 1, &ok1);
-                int n2 = QInputDialog::getInt(this, "Input", "Enter second node for LCA:", 0, 0, 10000, 1, &ok2);
-
-                if (ok1 && ok2) {
+                int n1, n2;
+                if (getLCAInput(n1, n2)) {
                     int lca_result_first = findLCA(root, n1, n2);
                     if (lca_result_first != -1) {
                         result = QString("LCA (First Approach): %1").arg(lca_result_first);
@@ -238,6 +240,55 @@ void GuiApp::applyAlgorithm(int choice) {
             }
             break;
 
+        case 6:
+            {
+                int B, C;
+                if (getSingleTraversalInput(B, C)) {
+                    int result_single_traversal = solverSingleTraversal(root, B, C);
+                    result = QString("Single Traversal Result: %1").arg(result_single_traversal);
+                } else {
+                    result = "Invalid input for B or C.";
+                }
+            }
+            break;
+
+        case 7:
+            {
+                TreeNode* secRoot = getSecondTreeInput();
+                if (secRoot) {
+                    int result_stack_traversal = solverWithStacks(root, secRoot);
+                    result = QString("Stack-based Traversal Result: %1").arg(result_stack_traversal);
+                } else {
+                    result = "Invalid second tree root input.";
+                }
+            }
+            break;
+
+        case 8:
+            {
+                int node1, node2;
+                if (getDistanceInput(node1, node2)) {
+                    int distance = distanceBetweenTwoNodes(root, node1, node2);
+                    result = QString("Distance between nodes: %1").arg(distance);
+                } else {
+                    result = "Invalid node input.";
+                }
+            }
+            break;
+
+        case 9:
+            {
+                std::vector<int> sortedArray;
+                if (getSortedArrayInput(sortedArray)) {
+                    TreeNode* bstRoot = sortedArrayToBST(sortedArray);
+                    result = "Sorted array has been converted to a balanced BST.";
+                    root = bstRoot;  // Optionally update the root if needed
+                } else {
+                    result = "Invalid sorted array input.";
+                }
+            }
+            break;
+
         default:
             result = "Invalid choice.";
             break;
@@ -246,6 +297,49 @@ void GuiApp::applyAlgorithm(int choice) {
     outputArea->setText(result);
     drawTree();
 }
+
+// Helper Functions for User Inputs
+
+bool GuiApp::getLCAInput(int &n1, int &n2) {
+    bool ok1, ok2;
+    n1 = QInputDialog::getInt(this, "Input", "Enter first node for LCA:", 0, 0, 10000, 1, &ok1);
+    n2 = QInputDialog::getInt(this, "Input", "Enter second node for LCA:", 0, 0, 10000, 1, &ok2);
+    return ok1 && ok2;
+}
+
+bool GuiApp::getSingleTraversalInput(int &B, int &C) {
+    bool ok1, ok2;
+    B = QInputDialog::getInt(this, "Input", "Enter the first value (B):", 0, 0, 10000, 1, &ok1);
+    C = QInputDialog::getInt(this, "Input", "Enter the second value (C):", 0, 0, 10000, 1, &ok2);
+    return ok1 && ok2;
+}
+
+TreeNode* GuiApp::getSecondTreeInput() {
+    bool ok;
+    int secRootVal = QInputDialog::getInt(this, "Input", "Enter second tree root value:", 0, 0, 10000, 1, &ok);
+    if (ok) {
+        return findNode(root, secRootVal);  // Assuming `findNode` is a function that searches for a node by value.
+    }
+    return nullptr;
+}
+
+
+bool GuiApp::getDistanceInput(int &node1, int &node2) {
+    bool ok1, ok2;
+    node1 = QInputDialog::getInt(this, "Input", "Enter first node:", 0, 0, 10000, 1, &ok1);
+    node2 = QInputDialog::getInt(this, "Input", "Enter second node:", 0, 0, 10000, 1, &ok2);
+    return ok1 && ok2;
+}
+
+bool GuiApp::getSortedArrayInput(std::vector<int> &sortedArray) {
+    QString arrayInput = QInputDialog::getText(this, "Input", "Enter sorted array (comma separated):");
+    QStringList arrStrings = arrayInput.split(",", Qt::SkipEmptyParts);
+    for (const auto& val : arrStrings) {
+        sortedArray.push_back(val.toInt());
+    }
+    return !sortedArray.empty();
+}
+
 
 void GuiApp::clearUI() {
     scene->clear();

@@ -37,8 +37,15 @@ private:
     QPushButton *drawButton;
     QPushButton *algorithmButtons[5];
 
+    // Function declarations for input handling
+    bool getLCAInput(int &n1, int &n2);
+    bool getSingleTraversalInput(int &B, int &C);
+    TreeNode* getSecondTreeInput();
+    bool getDistanceInput(int &node1, int &node2);
+    bool getSortedArrayInput(std::vector<int> &sortedArray);
+
     TreeNode* buildTreeFromInput(const QString &input);
     void clearUI();
 };
 
-#endif 
+#endif // GUI_APP_H

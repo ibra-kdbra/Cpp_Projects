@@ -17,5 +17,6 @@ struct TreeNode {
 };
 
 TreeNode* buildTreeFromFile(const std::string& filename);
+TreeNode* findNode(TreeNode* root, int value);
 
 #endif
