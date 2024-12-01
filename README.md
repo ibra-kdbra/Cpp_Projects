@@ -513,7 +513,7 @@ A collection of algorithms and data structures implemented in C++ for educationa
 
 **Preivew:**
 
-<img src="./Simple-Code/Plain_Approaches/Tree/screenshots/1.png" width="250" alt="draw tree"> <img src="./Simple-Code/Plain_Approaches/Tree/screenshots/2.png" width="250" alt="flatten BT">
+<img src="./Simple-Code/Plain_Approaches/Tree/screenshots/1.png" height="250" alt="draw tree"> <img src="./Simple-Code/Algorithms/Backtracking/screenshots/1.png" height="250" alt="A* Four Wheels">
 
 _Images above showcase the graphical user interface (GUI) of a Binary Tree implementation, as detailed in the [Plain Approaches](./Simple-Code/Plain_Approaches/Tree) section._
 

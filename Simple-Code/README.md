@@ -11,7 +11,14 @@ A collection of algorithms and data structures implemented in C++ for educationa
 ## [Algorithms](./Algorithms/)
 The **Algorithms** directory contains the following categories:
 
-- **Backtracking**: Covers A* (A_Star) search implemented for [*Four Wheels*](https://www.cs.ucr.edu/~stelo/cs141winter04/prj3/prj3.pdf) problem. Check [this](./Algorithms/Backtracking/README.md) out.
+-   ### Backtracking:
+
+    Covers A* (A_Star) search implemented for [*Four Wheels*](https://www.cs.ucr.edu/~stelo/cs141winter04/prj3/prj3.pdf) problem. A detailed explanation is provided [here](./Algorithms/Backtracking/README.md).
+
+    **Preview:**
+
+    <img src="./Algorithms/Backtracking/screenshots/1.png" width="300"> <img src="./Algorithms/Backtracking/screenshots/3.png" width="300">
+
 - **Dynamic Programming**: Covers problems like Knapsack, Coin Change, Minimum Jumps, and more.
 - **Graph Theory**: BFS, DFS, Dijkstra's, Bellman-Ford, Floyd-Warshall, etc.
 - **Greedy**: Features problems like Sliding Window Maximum, Kadane's Algorithm, Connecting Ropes for Minimum Cost, Expedition Problem, and Load Balancer.
@@ -60,6 +67,6 @@ This section features a GUI-based application showcasing various **Binary Tree**
 
 >Note: The program allows tree input via a file. An example input file is provided [here](./Plain_Approaches/Tree/examples/)
 
-**Screenshots:**
+**Preview:**
 
-<img src="./Plain_Approaches/Tree/screenshots/1.png" width="350" alt="draw tree"> <img src="./Plain_Approaches/Tree/screenshots/2.png" width="350" alt="flatten BT">
+<img src="./Plain_Approaches/Tree/screenshots/1.png" width="300" alt="draw tree"> <img src="./Plain_Approaches/Tree/screenshots/2.png" width="300" alt="flatten BT">
