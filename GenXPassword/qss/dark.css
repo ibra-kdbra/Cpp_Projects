@@ -1,0 +1,33 @@
+QWidget {
+    background-color: #292A2D;
+    color: #E8EAED;
+    selection-background-color: green;
+    selection-color: white;
+}
+
+QMenu::item:selected {
+    background-color: #8AB4F8;
+    color: #202124;
+}
+
+QLineEdit {
+    background-color: #202124;
+    padding: 9px 9px 9px 9px;
+    border-radius: 13px 13px 13px 13px;
+}
+
+QSlider::handle:horizontal {
+    background-color: white;
+    border-radius: 7px;
+}
+
+QSpinBox {
+    background-color: #202124;
+}
+
+QToolTip {
+    background-color: #202124;
+    color: #E8EAED;
+    border: 1px solid white;
+    padding: 5px;
+}
