@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../icons/appIcon.ico</file>
+        <file>../icons/qt.svg</file>
+        <file>../icons/dark/check_circle_outline_black_24dp.svg</file>
+        <file>../icons/dark/close_black_24dp.svg</file>
+        <file>../icons/dark/content_copy_black_24dp.svg</file>
+        <file>../icons/dark/content_cut_black_24dp.svg</file>
+        <file>../icons/dark/copyright_black_24dp.svg</file>
+        <file>../icons/dark/done_black_24dp.svg</file>
+        <file>../icons/dark/exit_to_app_black_24dp.svg</file>
+        <file>../icons/dark/help_outline_black_24dp.svg</file>
+        <file>../icons/dark/highlight_off_black_24dp.svg</file>
+        <file>../icons/dark/info_outline_black_24dp.svg</file>
+        <file>../icons/dark/lock_outline_black_24dp.svg</file>
+        <file>../icons/dark/menu_black_24dp.svg</file>
+        <file>../icons/dark/minimize_black_24dp.svg</file>
+        <file>../icons/dark/palette_black_24dp.svg</file>
+        <file>../icons/dark/refresh_black_24dp.svg</file>
+        <file>../icons/dark/shortcut_black_24dp.svg</file>
+        <file>../icons/dark/translate_black_24dp.svg</file>
+        <file>../icons/dark/visibility_black_24dp.svg</file>
+        <file>../icons/dark/visibility_off_black_24dp.svg</file>
+        <file>../icons/dark/warning_amber_black_24dp.svg</file>
+        <file>../icons/light/check_circle_outline_white_24dp.svg</file>
+        <file>../icons/light/close_white_24dp.svg</file>
+        <file>../icons/light/content_copy_white_24dp.svg</file>
+        <file>../icons/light/content_cut_white_24dp.svg</file>
+        <file>../icons/light/copyright_white_24dp.svg</file>
+        <file>../icons/light/crop_square_white_24dp.svg</file>
+        <file>../icons/light/done_white_24dp.svg</file>
+        <file>../icons/light/exit_to_app_white_24dp.svg</file>
+        <file>../icons/light/help_outline_white_24dp.svg</file>
+        <file>../icons/light/highlight_off_white_24dp.svg</file>
+        <file>../icons/light/info_outline_white_24dp.svg</file>
+        <file>../icons/light/lock_outline_white_24dp.svg</file>
+        <file>../icons/light/menu_white_24dp.svg</file>
+        <file>../icons/light/minimize_white_24dp.svg</file>
+        <file>../icons/light/palette_white_24dp.svg</file>
+        <file>../icons/light/refresh_white_24dp.svg</file>
+        <file>../icons/light/shortcut_white_24dp.svg</file>
+        <file>../icons/light/translate_white_24dp.svg</file>
+        <file>../icons/light/visibility_off_white_24dp.svg</file>
+        <file>../icons/light/visibility_white_24dp.svg</file>
+        <file>../icons/light/warning_amber_white_24dp.svg</file>
+    </qresource>
+</RCC>
