@@ -3,6 +3,19 @@
 
 #include "TreeNode.h"
 
+// Single traversal algorithm
+int solverSingleTraversal(TreeNode* A, int B, int C);
+
+// Stack-based traversal algorithm
+int solverWithStacks(TreeNode* A, TreeNode* B);
+
+// Distance between nodes in a binary tree
+int distanceBetweenRootAndNode(TreeNode* A, int key);
+int distanceBetweenTwoNodes(TreeNode* A, int B, int C);
+
+// Convert sorted array to balanced BST
+TreeNode* sortedArrayToBST(const std::vector<int>& A);
+
 // Diameter of Binary Tree
 int solveDiameter(TreeNode* root);
 

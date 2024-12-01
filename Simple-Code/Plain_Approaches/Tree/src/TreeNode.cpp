@@ -54,3 +54,20 @@ TreeNode* buildTreeFromFile(const std::string& filename) {
     file.close();
     return root;
 }
+
+TreeNode* findNode(TreeNode* root, int value) {
+    if (root == nullptr) {
+        return nullptr;
+    }
+
+    if (root->val == value) {
+        return root;
+    }
+
+    TreeNode* leftSearch = findNode(root->left, value);
+    if (leftSearch != nullptr) {
+        return leftSearch;
+    }
+
+    return findNode(root->right, value);
+}
