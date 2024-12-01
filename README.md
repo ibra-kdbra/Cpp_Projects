@@ -33,31 +33,30 @@
 <details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
 <br>
 
-|                                 |                                 |
-|---------------------------------|---------------------------------|
-| [Atari Games](#atari-games)     | [MarbleMarcher](#marblemarcher) |
-| [Beneficial C Programming](#beneficial-c_programming) | [Matrix ScreenSaver](#matrix_screensaver) |
-| [CanChat](#canchat)             | [MiniShell](#minishell)         |
-| [Chess-Engine](#chess-engine)   | [Mothbar](#mothbar)             |
-| [Chess 3D](#chess_3d)           | [OfxAsync](#ofxasync)           |
-| [Collatz Conjecture](#collatz-conjecture) | [OpenGL Examples](#opengl_examples) |
-| [CPP20 Develop](#cpp20_develop) | [PackSend](#packsend)           |
-| [Customized Operators](#customizedoperators) | [Password Generator](#password_generator) |
-| [Define Evil](#define_evil)     | [Pipes ScreenSaver](#pipes_screensaver) |
-| [Design Patterns](#design-patterns) | [POng](#pong) |
-| [Dump C++](#dump-c)             | [Random Utility Tools](#random_utility_tools) |
-| [FileLockSocket](#filelocksocket) | [Regular Expression Convertors](#regular_expression_convertors) |
-| [Hangman](#hangman)   | [SFML Multithread Verlet](#sfml-multithread-verlet) |
-| [InjectHook](#injecthook)       | [Simple Turso](#simple_turso)  |
-| [Introspective](#introspective) | [Simple Code](#simple-code)     |
-| [Javascript Compiler](#javascript-compiler) | [Simplesdl2 Game Template](#simplesdl2_game_template) |
-| [JsonConverter](#jsonconverter) | [Static Page Generator](#staticpagegen) |
-| [Key to Value](#key-to-value)   | [SystemMonitor](#systemmonitor) |
-| [Terminal File Manager](#terminal_file_manager) | [Template Language Generator](#template_language_generator) |
-| [Terminal Snake](#terminal_snake) | [Thread Pool](#thread_pool)   |
-| [Tokenizer_tok](#tokenizer_tok) | [Trigonometric Functions](#trigonometric-functions) |
-| [ViteFA Config](#vitefa_config) | [Volumetric Clouds](#volumetric-clouds) |
-| [WordProc](#wordproc)           |                                 |
+| A-M                                                   | N-Z                                                             |
+|-------------------------------------------------------|-----------------------------------------------------------------|
+| [Atari Games](#atari-games)                           | [OfxAsync](#ofxasync)                                           |
+| [Beneficial C Programming](#beneficial-c_programming) | [OpenGL Examples](#opengl_examples)                             |
+| [Chess 3D](#chess_3d)                                 | [PackSend](#packsend)                                           |
+| [Chess-Engine](#chess-engine)                         | [Pipes ScreenSaver](#pipes_screensaver)                         |
+| [Collatz Conjecture](#collatz-conjecture)             | [POng](#pong)                                                   |
+| [CPP20 Develop](#cpp20_develop)                       | [Random Utility Tools](#random_utility_tools)                   |
+| [Customized Operators](#customizedoperators)          | [Regular Expression Convertors](#regular_expression_convertors) |
+| [Define Evil](#define_evil)                           | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
+| [Design Patterns](#design-patterns)                   | [Simple Code](#simple-code)                                     |
+| [Dump C++](#dump-c)                                   | [Simple Turso](#simple_turso)                                   |
+| [FileLockSocket](#filelocksocket)                     | [Simplesdl2 Game Template](#simplesdl2_game_template)           |
+| [GenXPassword](#genxpassword)                         | [Static Page Generator](#staticpagegen)                         |
+| [Hangman](#hangman)                                   | [SystemMonitor](#systemmonitor)                                 |
+| [InjectHook](#injecthook)                             | [Template Language Generator](#template_language_generator)     |
+| [Introspective](#introspective)                       | [Thread Pool](#thread_pool)                                     |
+| [Javascript Compiler](#javascript-compiler)           | [Trigonometric Functions](#trigonometric-functions)             |
+| [JsonConverter](#jsonconverter)                       | [Volumetric Clouds](#volumetric-clouds)                         |
+| [Key to Value](#key-to-value)                         | [ViteFA Config](#vitefa_config)                                 |
+| [MarbleMarcher](#marblemarcher)                       | [WordProc](#wordproc)                                           |
+| [Matrix ScreenSaver](#matrix_screensaver)             |                                                                 |
+| [MiniShell](#minishell)                               |                                                                 |
+| [Mothbar](#mothbar)                                   |                                                                 |
 
 </details>
 
@@ -116,14 +115,6 @@ Utilizing only ANSI escape sequences to draw the board.
 
 #
 
-### [CanChat](./canChat)
-Feature-complete rooms-based chat for tens of thousands of users. Client plus Server. Built with [Oat++ Web Framework](https://oatpp.io/).
-`Single-Node` `In-Memory` `WebSocket` `TLS`.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
 ### [Chess_3D](./Chess_3D)
 
 A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game controls.
@@ -236,6 +227,14 @@ The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key deri
 
 #
 
+### [GenXPassword](./GenXPassword)
+
+A password generator
+<div align="right"> 
+<a href="#projects-titles"> 📚 </a>
+</div>
+
+#
 ### [Hangman](./Hangman)
 
 A simple Hangman game created using C++ and SFML.
@@ -403,14 +402,6 @@ A collection of examples created while taking a Computer Graphics course to bett
 
 ### [PackSend](./packsend/)
 A small utility for constructing packets from various data sources and outputting them to sockets, serial ports, or files.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
-
-### [Password_generator](./password-generator)
-A CLI password generator written in C++.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
