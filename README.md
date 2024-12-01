@@ -506,6 +506,16 @@ An experimental 3D/game engine technology partially based on the Urho3D codebase
 
 A collection of algorithms and data structures implemented in C++ for educational purposes and practical applications.
 
+**Brief View of Contents:**
+- ALgorithms
+- Data Structures
+- Plain Approaches
+
+**Preivew:**
+
+<img src="./Simple-Code/Plain_Approaches/Tree/screenshots/1.png" width="250" alt="draw tree"> <img src="./Simple-Code/Plain_Approaches/Tree/screenshots/2.png" width="250" alt="flatten BT">
+
+_Images above showcase the graphical user interface (GUI) of a Binary Tree implementation, as detailed in the [Plain Approaches](./Simple-Code/Plain_Approaches/Tree) section._
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>

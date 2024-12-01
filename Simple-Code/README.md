@@ -22,7 +22,7 @@ The **Algorithms** directory contains the following categories:
 
 
 ## [Data Structures](./Data%20Structure/)
-Implemented data structures:
+Implemented data structures in various ways:
 - Linked List
 - Trie
 - Heap
@@ -30,12 +30,7 @@ Implemented data structures:
 - Stack
 - Vector
 
-## [Plain Approaches](./Plain_Approaches/)
-Straightforward implementations of:
-- Binary Search Tree
-- General Tree
-
-## How to Run
+### How to Run
 1. Compile:
    ```sh
    g++ -o output_file source_file.cpp
@@ -46,3 +41,25 @@ Straightforward implementations of:
     ```sh
     ./output_file
     ```
+
+## [Plain Approaches](./Plain_Approaches/)
+
+### [Binary Tree Algorithms ](./Plain_Approaches/Tree/)
+
+This section features a GUI-based application showcasing various **Binary Tree** algorithms. Users can visually interact with the tree structure and execute the following algorithms:
+
+- Single traversal
+- Stack-based traversal
+- Ditance between nodes in a Binary Tree
+- Convert sorted array to a balanced Binary Search Tree
+- Diameter of a Binary Tree
+- Equal tree partition
+- Flatten Binary Tree
+- Invert Binary Tree
+- Find Lowest Common Ancestor
+
+>Note: The program allows tree input via a file. An example input file is provided [here](./Plain_Approaches/Tree/examples/)
+
+**Screenshots:**
+
+<img src="./Plain_Approaches/Tree/screenshots/1.png" width="350" alt="draw tree"> <img src="./Plain_Approaches/Tree/screenshots/2.png" width="350" alt="flatten BT">
