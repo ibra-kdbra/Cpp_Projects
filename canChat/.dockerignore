@@ -1,5 +1,0 @@
-.git/
-.idea/
-**/cmake-build-debug/
-**/cmake-build-release/
-**/build/
