@@ -515,7 +515,7 @@ A collection of algorithms and data structures implemented in C++ for educationa
 
 <img src="./Simple-Code/Plain_Approaches/Tree/screenshots/1.png" height="250" alt="draw tree"> <img src="./Simple-Code/Algorithms/Backtracking/screenshots/1.png" height="250" alt="A* Four Wheels">
 
-_Images above showcase the graphical user interface (GUI) of a Binary Tree implementation, as detailed in the [Plain Approaches](./Simple-Code/Plain_Approaches/Tree) section._
+_Images above showcase the GUI of a **Binary Tree** implementation, as detailed in the [Plain Approaches](./Simple-Code/Plain_Approaches/Tree) section, as well as **A\*** implementation on Four Wheels problem as detailed in the [Algorithms](./Simple-Code/Algorithms/Backtracking/) section._
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
