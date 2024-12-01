@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     }
 
     QTranslator translator;
-    const QStringList languages{ "en.qm", "es.qm", "fr.qm", "ja.qm" };
+    const QStringList languages{ "en.qm", "es.qm", "fr.qm", "ja.qm", "ar.qm"};
     int indexLanguage{ settings.value("Settings/IndexLanguage").toInt() };
     if (indexLanguage >= 0 && indexLanguage < languages.size()) {
         if (!indexLanguage);

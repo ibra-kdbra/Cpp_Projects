@@ -34,7 +34,8 @@ RESOURCES += \
 TRANSLATIONS += \
     i18n/es.ts \
     i18n/ja.ts \
-    i18n/fr.ts
+    i18n/fr.ts \
+    i18n/ar.ts
 
 
 # Set the output directory for the final executable
