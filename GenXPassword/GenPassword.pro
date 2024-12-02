@@ -31,6 +31,13 @@ RESOURCES += \
     resources/icons.qrc \
     resources/qss.qrc
 
+TRANSLATIONS += \
+    i18n/es.ts \
+    i18n/ja.ts \
+    i18n/fr.ts \
+    i18n/ar.ts
+
+
 # Set the output directory for the final executable
 DESTDIR = build/bin
 

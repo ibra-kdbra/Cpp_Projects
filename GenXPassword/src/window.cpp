@@ -156,7 +156,10 @@ void Window::createMenus()
 void Window::createActions()
 {
     languageActionList ={ new QAction(tr("[en] English"), languagesMenu),
-                          new QAction(tr("[es] Español"), languagesMenu) };
+                          new QAction(tr("[es] Español"), languagesMenu),
+                          new QAction(tr("[fr] French"), languagesMenu),
+                          new QAction(tr("[ja] Japenese"), languagesMenu),
+                          new QAction(tr("[ar] Arabic"), languagesMenu),};
 
     themeActionList ={ new QAction(tr("Light"), themesMenu),
            new QAction(tr("Dark"), themesMenu) };
