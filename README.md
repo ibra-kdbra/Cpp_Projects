@@ -37,19 +37,19 @@
 |-------------------------------------------------------|-----------------------------------------------------------------|
 | [Atari Games](#atari-games)                           | [OfxAsync](#ofxasync)                                           |
 | [Beneficial C Programming](#beneficial-c_programming) | [OpenGL Examples](#opengl_examples)                             |
-| [Chess 3D](#chess_3d)                                 | [PackSend](#packsend)                                           |
-| [Chess-Engine](#chess-engine)                         | [Pipes ScreenSaver](#pipes_screensaver)                         |
-| [Collatz Conjecture](#collatz-conjecture)             | [POng](#pong)                                                   |
-| [CPP20 Develop](#cpp20_develop)                       | [Random Utility Tools](#random_utility_tools)                   |
-| [Customized Operators](#customizedoperators)          | [Regular Expression Convertors](#regular_expression_convertors) |
-| [Define Evil](#define_evil)                           | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
-| [Design Patterns](#design-patterns)                   | [Simple Code](#simple-code)                                     |
-| [Dump C++](#dump-c)                                   | [Simple Turso](#simple_turso)                                   |
-| [FileLockSocket](#filelocksocket)                     | [Simplesdl2 Game Template](#simplesdl2_game_template)           |
-| [GenXPassword](#genxpassword)                         | [Static Page Generator](#staticpagegen)                         |
-| [Hangman](#hangman)                                   | [SystemMonitor](#systemmonitor)                                 |
-| [InjectHook](#injecthook)                             | [Template Language Generator](#template_language_generator)     |
-| [Introspective](#introspective)                       | [Thread Pool](#thread_pool)                                     |
+| [Chess 3D](#chess_3d)                                 | [Pipes ScreenSaver](#pipes_screensaver)                         |
+| [Chess-Engine](#chess-engine)                         | [POng](#pong)                                                   |
+| [Collatz Conjecture](#collatz-conjecture)             | [Random Utility Tools](#random_utility_tools)                   |
+| [CPP20 Develop](#cpp20_develop)                       | [Regular Expression Convertors](#regular_expression_convertors) |
+| [Customized Operators](#customizedoperators)          | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
+| [Define Evil](#define_evil)                           | [Simple Code](#simple-code)                                     |
+| [Design Patterns](#design-patterns)                   | [Simple Turso](#simple_turso)                                   |
+| [Dump C++](#dump-c)                                   | [Simplesdl2 Game Template](#simplesdl2_game_template)           |
+| [FileLockSocket](#filelocksocket)                     | [Static Page Generator](#staticpagegen)                         |
+| [GenXPassword](#genxpassword)                         | [SystemMonitor](#systemmonitor)                                 |
+| [Hangman](#hangman)                                   | [Template Language Generator](#template_language_generator)     |
+| [InjectHook](#injecthook)                             | [Thread Pool](#thread_pool)                                     |
+| [Introspective](#introspective)                       | [TokenizerTok](#tokenizer_tok)                                  |
 | [Javascript Compiler](#javascript-compiler)           | [Trigonometric Functions](#trigonometric-functions)             |
 | [JsonConverter](#jsonconverter)                       | [Volumetric Clouds](#volumetric-clouds)                         |
 | [Key to Value](#key-to-value)                         | [ViteFA Config](#vitefa_config)                                 |
@@ -229,7 +229,17 @@ The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key deri
 
 ### [GenXPassword](./GenXPassword)
 
-A password generator
+Shuffled random and customizable password generator.
+
+#### Features
+* Support for languages: Arabic, English, Spanish, French, Japenese.
+* Generates passwords of variable length, from 1 to 512 characters.
+* Support for custom characters.
+* TrayIcon Available
+* Modular source code
+* Cross-Platform
+  - Windows, macOS and Linux.
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -400,14 +410,6 @@ A collection of examples created while taking a Computer Graphics course to bett
 
 #
 
-### [PackSend](./packsend/)
-A small utility for constructing packets from various data sources and outputting them to sockets, serial ports, or files.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
-
 ### [Pipes_ScreenSaver](./Pipes_ScreenSaver)
 
 A *Pipes* terminal screen saver made in C.
@@ -562,19 +564,6 @@ A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu
 &emsp; **Preview:**
 
 &emsp; <img alt="preview" src="./Terminal_File_Manager/screenshot/1.png" width="400"> 
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
-
-### [Terminal_Snake](./Terminal_Snake)
-
-`tsnake` is a terminal snake game written in C++ using the [ncurses](https://www.gnu.org/software/ncurses/) library, featuring support for maps and interactive resizing.
-
-&emsp;**Preview:**
-
-&emsp;<img src="Terminal_Snake/img/tsnake.gif" width="400">
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
