@@ -4,125 +4,150 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="65"/>
+        <location filename="../src/main.cpp" line="62"/>
         <source>GenPassword is now running</source>
-        <translation>GenPasswordは現在実行中です</translation>
+        <translation>GenXPasswordは実行中です</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="66"/>
+        <location filename="../src/main.cpp" line="63"/>
+        <source>The application is already running.
+Another instance cannot be started.</source>
+        <translation>アプリケーションはすでに実行中です。
+別のインスタンスを起動できません。</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="76"/>
+        <source>The theme index specified in the configuration file is invalid. 
+Please check the value and try again.</source>
+        <translation>構成ファイルに指定されたテーマインデックスは無効です。  
+値を確認して再度お試しください。</translation>
+    </message>
+    <message>
         <source>The application is already running.
         Another instance cannot be started.</source>
-        <translation>アプリケーションはすでに実行中です。
+        <translation type="vanished">アプリケーションはすでに実行中です。
         別のインスタンスを開始することはできません。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="78"/>
+        <location filename="../src/main.cpp" line="75"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="79"/>
         <source>The theme index specified in the configuration file is invalid. 
         Please check the value and try again.</source>
-        <translation>設定ファイルに指定されたテーマインデックスが無効です。 
+        <translation type="vanished">設定ファイルに指定されたテーマインデックスが無効です。 
         値を確認して再試行してください。</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="39"/>
+        <location filename="../src/passwordgenerator.cpp" line="39"/>
         <source>Numeric characters</source>
-        <translation>数字文字</translation>
+        <translation>数字</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="40"/>
+        <location filename="../src/passwordgenerator.cpp" line="40"/>
         <source>Symbols characters</source>
-        <translation>記号文字</translation>
+        <translation>約物</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="41"/>
+        <location filename="../src/passwordgenerator.cpp" line="41"/>
         <source>Lowercase letters</source>
         <translation>小文字</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="42"/>
+        <location filename="../src/passwordgenerator.cpp" line="42"/>
         <source>Uppercase letters</source>
         <translation>大文字</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="52"/>
+        <location filename="../src/passwordgenerator.cpp" line="52"/>
         <source>Your password will be generated here</source>
-        <translation>ここでパスワードが生成されます</translation>
+        <translation>ここでパスワードが作成されます</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="60"/>
+        <location filename="../src/passwordgenerator.cpp" line="60"/>
         <source>Generate a new password</source>
-        <translation>新しいパスワードを生成</translation>
+        <translation>新しいパスワードを作成する</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="63"/>
+        <location filename="../src/passwordgenerator.cpp" line="63"/>
         <source>Copy the password to the clipboard</source>
         <translation>パスワードをクリップボードにコピー</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="72"/>
+        <location filename="../src/passwordgenerator.cpp" line="72"/>
         <source>Contain the numbers: 0-9</source>
         <translation>数字を含む: 0-9</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="76"/>
+        <location filename="../src/passwordgenerator.cpp" line="76"/>
+        <source>Contain special symbols:
+!&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</source>
+        <translation>約物を含む: 
+!&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</translation>
+    </message>
+    <message>
+        <location filename="../src/passwordgenerator.cpp" line="252"/>
+        <source>No characters have been selected for the password. 
+Please select at least one character.</source>
+        <translation>パスワードに選択された文字がありません。  
+少なくとも1つの文字を選択してください。</translation>
+    </message>
+    <message>
         <source>Contain special symbols:
         !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</source>
-        <translation>特殊記号を含む: 
+        <translation type="vanished">特殊記号を含む: 
         !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="80"/>
+        <location filename="../src/passwordgenerator.cpp" line="80"/>
         <source>Contain lowercase letters: a-z</source>
         <translation>小文字を含む: a-z</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="84"/>
+        <location filename="../src/passwordgenerator.cpp" line="84"/>
         <source>Contain uppercase letters: A-Z</source>
         <translation>大文字を含む: A-Z</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="86"/>
+        <location filename="../src/passwordgenerator.cpp" line="86"/>
         <source>Characters to add</source>
         <translation>追加する文字</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="89"/>
+        <location filename="../src/passwordgenerator.cpp" line="89"/>
         <source>Characters to remove</source>
-        <translation>削除する文字</translation>
+        <translatorcomment>translates to &quot;excluded chafacters&quot;</translatorcomment>
+        <translation>除外される文字</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="119"/>
+        <location filename="../src/passwordgenerator.cpp" line="119"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="120"/>
+        <location filename="../src/passwordgenerator.cpp" line="120"/>
         <source>Remove</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="257"/>
+        <location filename="../src/passwordgenerator.cpp" line="251"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="258"/>
         <source>No characters have been selected for the password. 
         Please select at least one character.</source>
-        <translation>パスワードに選択された文字がありません。 
+        <translation type="vanished">パスワードに選択された文字がありません。 
         少なくとも1つの文字を選択してください。</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="268"/>
+        <location filename="../src/passwordgenerator.cpp" line="262"/>
         <source>Hide Password</source>
         <translation>パスワードを隠す</translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="272"/>
+        <location filename="../src/passwordgenerator.cpp" line="266"/>
         <source>Show Password</source>
         <translation>パスワードを表示</translation>
     </message>
@@ -130,176 +155,216 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../window.cpp" line="150"/>
+        <location filename="../src/window.cpp" line="150"/>
         <source>&amp;Languages</source>
         <translation>言語</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="151"/>
+        <location filename="../src/window.cpp" line="151"/>
         <source>&amp;Themes</source>
         <translation>&amp;テーマ</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="152"/>
+        <location filename="../src/window.cpp" line="152"/>
         <source>&amp;Shortcuts</source>
         <translation>&amp;ショートカット</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="153"/>
+        <location filename="../src/window.cpp" line="153"/>
         <source>&amp;Help</source>
         <translation>&amp;ヘルプ</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="158"/>
+        <location filename="../src/window.cpp" line="158"/>
         <source>[en] English</source>
         <translation>[en] 英語</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="159"/>
         <source>[es] Español</source>
-        <translation>[en] スペイン語</translation>
+        <translation>[es] スペイン語</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="160"/>
         <source>[fr] Français</source>
-        <translation>[fr] フランス語</translation>
+        <translation type="vanished">[fr] フランス語</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="161"/>
         <source>[ja] 日本語  </source>
-        <translation>[ja] 日本語</translation>
+        <translation type="vanished">[ja] 日本語</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="160"/>
+        <source>[fr] French</source>
+        <translation>フランス語</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="161"/>
+        <source>[ja] Japenese</source>
+        <translation>日本語</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="162"/>
+        <source>[ar] Arabic</source>
+        <translation>アラビア語</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="164"/>
         <source>Light</source>
         <translation>ライト</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>Dark</source>
         <translation>ダーク</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="168"/>
+        <location filename="../src/window.cpp" line="171"/>
         <source>&amp;Custom Title Bar</source>
-        <translation>&amp;カスタムタイトルバー</translation>
+        <translation>カスタムタイトルバー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="170"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>&amp;About %1</source>
-        <translation>&amp;について %1</translation>
-
+        <translation>&amp;GenXPasswordについて %1</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="171"/>
+        <location filename="../src/window.cpp" line="174"/>
         <source>&amp;Credits</source>
-        <translation>&amp;クレジット</translation>
+        <translation>クレジット(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="175"/>
         <source>About &amp;Qt</source>
         <translation>&amp;Qtについて</translation>
-
     </message>
     <message>
-        <location filename="../window.cpp" line="174"/>
+        <location filename="../src/window.cpp" line="177"/>
         <source>E&amp;xit</source>
-        <translation>終了</translation>
+        <translation>終了(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="182"/>
+        <location filename="../src/window.cpp" line="185"/>
         <source>&amp;Generate Password</source>
-        <translation>&amp;パスワード生成</translation>
+        <translation>パスワードを生成する(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="185"/>
+        <location filename="../src/window.cpp" line="188"/>
         <source>Cut Password</source>
-        <translation>パスワードをカット</translation>
+        <translation>パスワードを切り取る</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="189"/>
+        <location filename="../src/window.cpp" line="192"/>
         <source>&amp;Copy Password</source>
-        <translation>&amp;パスワードをコピー</translation>
+        <translatorcomment>japanese programs usually use latin letters specified in brackets for shortcuts</translatorcomment>
+        <translation>パスワードをコピー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="257"/>
+        <location filename="../src/window.cpp" line="260"/>
         <source>Show %1</source>
-        <translation>を表示 %1</translation>
+        <translation>表示 %1</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="258"/>
+        <location filename="../src/window.cpp" line="261"/>
         <source>New+Copy Password</source>
         <translation>新しい+パスワードをコピー</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="350"/>
+        <location filename="../src/window.cpp" line="357"/>
         <source>Restart Required</source>
-        <translation>再起動が必要です</translation>
+        <translation>再起動が必要です。</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="351"/>
+        <location filename="../src/window.cpp" line="358"/>
+        <source>You will need to restart in order to use your new language setting
+Your password will be lost if you do not save it before restarting.</source>
+        <translation>新しい言語設定を使用するには再起動が必要です。
+再起動前にパスワードを保存しなければ失われます！</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="378"/>
+        <source>Error: &quot;enum QProcess::ProcessError&quot;
+Value error: %1
+The program can still be used
+but cannot be restarted due to an error.
+
+Do you want copy this error in your clipboad?</source>
+        <translation>エラー: &quot;enum QProcess::ProcessError&quot;
+値エラー: %1
+プログラムは引き続き使用できますが、エラーにより再起動できません。
+
+このエラーをクリップボードにコピーしますか？</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="422"/>
+        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator that helps you create random and customizable passwords. The program adds or removes characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase letters, Uppercase letters&lt;/li&gt;&lt;li&gt;Adds the letters that the user has specified&lt;/li&gt;&lt;li&gt;Removes the letters that the user has specified&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2024 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program comes with NO WARRANTY OF ANY KIND.&lt;br&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</source>
+        <translatorcomment>no.3 literally translates to: &quot;use charachters specified by the user&quot;, no.4: &quot;exclude charachters specified by the user&quot;</translatorcomment>
+        <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;バージョン: %2&lt;/p&gt;&lt;p&gt;%1はランダムでカスタマイズ可能なパスワードを作成するための無料のパスワードジェネレーターです。プログラムは次の順序で文字を追加または削除します:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;数字、約物、小文字、大文字&lt;/li&gt;&lt;li&gt;ユーザーに文字を特定されたを使う&lt;/li&gt;&lt;li&gt;ユーザーに文字を特定されたを除く&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;問題や貢献については、&lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHubリポジトリ&lt;/a&gt;を訪問してください&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;このプログラムは保証なしで提供されます。&lt;br&gt;詳細については、&lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU一般公衆ライセンス&lt;/a&gt;をご覧ください。&lt;/p&gt;&lt;/div&gt; {1&gt;?} {1&lt;?} {1&gt;?} {2&lt;?} {1 ?} {0097C?} {2024 ?} {3.0.?} {0097C?}</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="449"/>
+        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Created by &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Contributors:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=https://fonts.google.com/icons style=color:#0097CF&gt;Material Icons&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</source>
+        <translatorcomment>&quot;contributors&quot; replaced with &quot;components&quot; in japanese version, seen similar context in Kate &quot;About&quot; section japanese version.</translatorcomment>
+        <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt; 作者:&lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;コンポーネント:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=https://fonts.google.com/icons style=color:#0097CF&gt;Material Icons&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</translation>
+    </message>
+    <message>
         <source>You will need to restart in order to use your new language setting
         Your password will be lost if you do not save it before restarting.</source>
-        <translation>新しい言語設定を使用するには再起動が必要です。
+        <translation type="vanished">新しい言語設定を使用するには再起動が必要です。
         再起動前にパスワードを保存しないと失われます。</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="355"/>
+        <location filename="../src/window.cpp" line="362"/>
         <source>Restart Now</source>
         <translation>今すぐ再起動</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="357"/>
+        <location filename="../src/window.cpp" line="364"/>
         <source>Restart Later</source>
         <translation>後で再起動</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="370"/>
+        <location filename="../src/window.cpp" line="377"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="371"/>
         <source>Error: &quot;enum QProcess::ProcessError&quot;
         Value error: %1
         The program can still be used
         but cannot be restarted due to an error.
         Do you want copy this error in your clipboad?</source>
-        <translation>エラー: &quot;enum QProcess::ProcessError&quot;
+        <translation type="vanished">エラー: &quot;enum QProcess::ProcessError&quot;
         値エラー: %1
         プログラムは引き続き使用できますが、エラーにより再起動できません。
 
         このエラーをクリップボードにコピーしますか？</translation>
-
     </message>
     <message>
-        <location filename="../window.cpp" line="377"/>
+        <location filename="../src/window.cpp" line="384"/>
         <source>Copy to clipboard</source>
         <translation>クリップボードにコピー</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="379"/>
+        <location filename="../src/window.cpp" line="386"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="415"/>
         <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator that helps you create random and customizable passwords. The program adds or removes characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase letters, Uppercase letters&lt;/li&gt;&lt;li&gt;Adds the letters that the user has specified&lt;/li&gt;&lt;li&gt;Removes the letters that the user has specified&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program comes with NO WARRANTY OF ANY KIND.&lt;br&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</source>
-        <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;バージョン: %2&lt;/p&gt;&lt;p&gt;%1はランダムでカスタマイズ可能なパスワードを作成するための無料のパスワードジェネレーターです。プログラムは次の順序で文字を追加または削除します:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;数字、記号、小文字、大文字&lt;/li&gt;&lt;li&gt;ユーザーが指定した文字を追加&lt;/li&gt;&lt;li&gt;ユーザーが指定した文字を削除&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;問題や貢献については、&lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHubリポジトリ&lt;/a&gt;を訪問してください&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;このプログラムは保証なしで提供されます。&lt;br&gt;詳細については、&lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU一般公衆ライセンス&lt;/a&gt;をご覧ください。&lt;/p&gt;&lt;/div&gt;</translation>
+        <translation type="vanished">&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;バージョン: %2&lt;/p&gt;&lt;p&gt;%1はランダムでカスタマイズ可能なパスワードを作成するための無料のパスワードジェネレーターです。プログラムは次の順序で文字を追加または削除します:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;数字、記号、小文字、大文字&lt;/li&gt;&lt;li&gt;ユーザーが指定した文字を追加&lt;/li&gt;&lt;li&gt;ユーザーが指定した文字を削除&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;問題や貢献については、&lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHubリポジトリ&lt;/a&gt;を訪問してください&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;このプログラムは保証なしで提供されます。&lt;br&gt;詳細については、&lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU一般公衆ライセンス&lt;/a&gt;をご覧ください。&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="436"/>
+        <location filename="../src/window.cpp" line="443"/>
         <source>About %1</source>
-        <translation>について %1</translation>
+        <translatorcomment>literally translates to: About GenXPassword</translatorcomment>
+        <translation>GenXPasswordについて %1</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="442"/>
         <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Created by &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;This password generator provides customizable options for creating secure passwords. Feel free to use and share it under the GNU General Public License v3.0.&lt;/p&gt;&lt;/div&gt;</source>
-        <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;作成者: &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;このパスワードジェネレーターは、安全なパスワードを作成するためのカスタマイズ可能なオプションを提供します。GNU一般公衆ライセンスv3.0の下で自由に使用および共有できます。&lt;/p&gt;&lt;/div&gt;</translation>
-
+        <translation type="vanished">&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;作成者: &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;このパスワードジェネレーターは、安全なパスワードを作成するためのカスタマイズ可能なオプションを提供します。GNU一般公衆ライセンスv3.0の下で自由に使用および共有できます。&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="455"/>
+        <location filename="../src/window.cpp" line="458"/>
         <source>Credits</source>
         <translation>クレジット</translation>
     </message>
