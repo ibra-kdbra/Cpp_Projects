@@ -160,12 +160,12 @@ Por favor, seleccione al menos un carácter.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="161"/>
+        <location filename="../window.cpp" line="164"/>
         <source>Light</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="162"/>
+        <location filename="../window.cpp" line="165"/>
         <source>Dark</source>
         <translation></translation>
     </message>
