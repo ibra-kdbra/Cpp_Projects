@@ -33,30 +33,22 @@
 <details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
 <br>
 
-| A-M                                                   | N-Z                                                             |
-|-------------------------------------------------------|-----------------------------------------------------------------|
-| [Atari Games](#atari-games)                           | [OfxAsync](#ofxasync)                                           |
-| [Beneficial C Programming](#beneficial-c_programming) | [OpenGL Examples](#opengl_examples)                             |
-| [Chess 3D](#chess_3d)                                 | [Pipes ScreenSaver](#pipes_screensaver)                         |
-| [Chess-Engine](#chess-engine)                         | [POng](#pong)                                                   |
-| [Collatz Conjecture](#collatz-conjecture)             | [Random Utility Tools](#random_utility_tools)                   |
-| [CPP20 Develop](#cpp20_develop)                       | [Regular Expression Convertors](#regular_expression_convertors) |
-| [Customized Operators](#customizedoperators)          | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
-| [Define Evil](#define_evil)                           | [Simple Code](#simple-code)                                     |
-| [Design Patterns](#design-patterns)                   | [Simple Turso](#simple_turso)                                   |
-| [Dump C++](#dump-c)                                   | [Simplesdl2 Game Template](#simplesdl2_game_template)           |
-| [FileLockSocket](#filelocksocket)                     | [Static Page Generator](#staticpagegen)                         |
-| [GenXPassword](#genxpassword)                         | [SystemMonitor](#systemmonitor)                                 |
-| [Hangman](#hangman)                                   | [Template Language Generator](#template_language_generator)     |
-| [InjectHook](#injecthook)                             | [Thread Pool](#thread_pool)                                     |
-| [Introspective](#introspective)                       | [TokenizerTok](#tokenizer_tok)                                  |
-| [Javascript Compiler](#javascript-compiler)           | [Trigonometric Functions](#trigonometric-functions)             |
-| [JsonConverter](#jsonconverter)                       | [Volumetric Clouds](#volumetric-clouds)                         |
-| [Key to Value](#key-to-value)                         | [ViteFA Config](#vitefa_config)                                 |
-| [MarbleMarcher](#marblemarcher)                       | [WordProc](#wordproc)                                           |
-| [Matrix ScreenSaver](#matrix_screensaver)             |                                                                 |
-| [MiniShell](#minishell)                               |                                                                 |
-| [Mothbar](#mothbar)                                   |                                                                 |
+| A-I                                                   | I-R                                           | S-Z                                                             |
+|:------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------|
+| [Atari Games](#atari-games)                           | [Introspective](#introspective)               | [Regular Expression Convertors](#regular_expression_convertors) |
+| [Beneficial C Programming](#beneficial-c_programming) | [Javascript Compiler](#javascript-compiler)   | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
+| [Chess 3D](#chess_3d)                                 | [JsonConverter](#jsonconverter)               | [Simple Code](#simple-code)                                     |
+| [Chess-Engine](#chess-engine)                         | [Key to Value](#key-to-value)                 | [Simple Turso](#simple_turso)                                   |
+| [Collatz Conjecture](#collatz-conjecture)             | [MarbleMarcher](#marblemarcher)               | [Simplesdl2 Game Template](#simplesdl2_game_template)           |
+| [CPP20 Develop](#cpp20_develop)                       | [Matrix ScreenSaver](#matrix_screensaver)     | [Static Page Generator](#staticpagegen)                         |
+| [Customized Operators](#customizedoperators)          | [MiniShell](#minishell)                       | [SystemMonitor](#systemmonitor)                                 |
+| [Define Evil](#define_evil)                           | [Mojan](#mojan)                               | [Template Language Generator](#template_language_generator)     |
+| [Design Patterns](#design-patterns)                   | [Mothbar](#mothbar)                           | [Thread Pool](#thread_pool)                                     |
+| [Dump C++](#dump-c)                                   | [OfxAsync](#ofxasync)                         | [TokenizerTok](#tokenizer_tok)                                  |
+| [FileLockSocket](#filelocksocket)                     | [OpenGL Examples](#opengl_examples)           | [Trigonometric Functions](#trigonometric-functions)             |
+| [GenXPassword](#genxpassword)                         | [Pipes ScreenSaver](#pipes_screensaver)       | [Volumetric Clouds](#volumetric-clouds)                         |
+| [Hangman](#hangman)                                   | [POng](#pong)                                 | [ViteFA Config](#vitefa_config)                                 |
+| [InjectHook](#injecthook)                             | [Random Utility Tools](#random_utility_tools) | [WordProc](#wordproc)                                           |
 
 </details>
 
@@ -364,6 +356,16 @@ Minishell is a simplified shell program that emulates a Unix-like shell environm
 - Error handling
 - Readline integration
 - Compilation and Makefile
+
+<div align="right"> 
+<a href="#projects-titles"> 📚 </a>
+</div>
+
+#
+
+### [Mojan](./Mojan/)
+
+A simple, minimal & performant text editor written in C with only C's Standard Library.
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
