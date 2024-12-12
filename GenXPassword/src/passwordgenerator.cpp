@@ -41,6 +41,9 @@ void PasswordGenerator::createWidgets()
     lowercaseSwitch = new SwitchButton(QObject::tr("Lowercase letters"), currentIndexTheme);
     uppercaseSwitch = new SwitchButton(QObject::tr("Uppercase letters"), currentIndexTheme);
 
+    qDebug() << QObject::tr("Numeric characters");
+    qDebug() << numericSwitch->text();
+
     addCharsLineEdit = new QLineEdit;
     removeCharLineEdit = new QLineEdit;
 }
