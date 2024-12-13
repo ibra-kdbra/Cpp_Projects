@@ -23,21 +23,9 @@ Please check the value and try again.</source>
 値を確認して再度お試しください。</translation>
     </message>
     <message>
-        <source>The application is already running.
-        Another instance cannot be started.</source>
-        <translation type="vanished">アプリケーションはすでに実行中です。
-        別のインスタンスを開始することはできません。</translation>
-    </message>
-    <message>
         <location filename="../src/main.cpp" line="75"/>
         <source>Error</source>
         <translation>エラー</translation>
-    </message>
-    <message>
-        <source>The theme index specified in the configuration file is invalid. 
-        Please check the value and try again.</source>
-        <translation type="vanished">設定ファイルに指定されたテーマインデックスが無効です。 
-        値を確認して再試行してください。</translation>
     </message>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="39"/>
@@ -94,12 +82,6 @@ Please select at least one character.</source>
 少なくとも1つの文字を選択してください。</translation>
     </message>
     <message>
-        <source>Contain special symbols:
-        !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</source>
-        <translation type="vanished">特殊記号を含む: 
-        !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</translation>
-    </message>
-    <message>
         <location filename="../src/passwordgenerator.cpp" line="80"/>
         <source>Contain lowercase letters: a-z</source>
         <translation>小文字を含む: a-z</translation>
@@ -136,12 +118,6 @@ Please select at least one character.</source>
         <translation>情報</translation>
     </message>
     <message>
-        <source>No characters have been selected for the password. 
-        Please select at least one character.</source>
-        <translation type="vanished">パスワードに選択された文字がありません。 
-        少なくとも1つの文字を選択してください。</translation>
-    </message>
-    <message>
         <location filename="../src/passwordgenerator.cpp" line="262"/>
         <source>Hide Password</source>
         <translation>パスワードを隠す</translation>
@@ -157,22 +133,22 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/window.cpp" line="150"/>
         <source>&amp;Languages</source>
-        <translation>言語</translation>
+        <translation>言語[&amp;L]</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="151"/>
         <source>&amp;Themes</source>
-        <translation>&amp;テーマ</translation>
+        <translation>テーマ[&amp;T]</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="152"/>
         <source>&amp;Shortcuts</source>
-        <translation>&amp;ショートカット</translation>
+        <translation>ショートカット[&amp;S]</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="153"/>
         <source>&amp;Help</source>
-        <translation>&amp;ヘルプ</translation>
+        <translation>ヘルプ[&amp;H]</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="158"/>
@@ -182,20 +158,12 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/window.cpp" line="159"/>
         <source>[es] Español</source>
-        <translation>[es] スペイン語</translation>
-    </message>
-    <message>
-        <source>[fr] Français</source>
-        <translation type="vanished">[fr] フランス語</translation>
-    </message>
-    <message>
-        <source>[ja] 日本語  </source>
-        <translation type="vanished">[ja] 日本語</translation>
+        <translation>[es] Español</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
         <source>[fr] French</source>
-        <translation>フランス語</translation>
+        <translation>[fr] Français</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="161"/>
@@ -205,7 +173,7 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>[ar] Arabic</source>
-        <translation>アラビア語</translation>
+        <translation>[ar] العربية</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="164"/>
@@ -225,7 +193,7 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <source>&amp;About %1</source>
-        <translation>&amp;GenXPasswordについて %1</translation>
+        <translation>%1について[&amp;A]</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="174"/>
@@ -261,7 +229,7 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/window.cpp" line="260"/>
         <source>Show %1</source>
-        <translation>表示 %1</translation>
+        <translation>%1を表示する</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="261"/>
@@ -307,12 +275,6 @@ Do you want copy this error in your clipboad?</source>
         <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt; 作者:&lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;コンポーネント:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=https://fonts.google.com/icons style=color:#0097CF&gt;Material Icons&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <source>You will need to restart in order to use your new language setting
-        Your password will be lost if you do not save it before restarting.</source>
-        <translation type="vanished">新しい言語設定を使用するには再起動が必要です。
-        再起動前にパスワードを保存しないと失われます。</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="362"/>
         <source>Restart Now</source>
         <translation>今すぐ再起動</translation>
@@ -328,18 +290,6 @@ Do you want copy this error in your clipboad?</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <source>Error: &quot;enum QProcess::ProcessError&quot;
-        Value error: %1
-        The program can still be used
-        but cannot be restarted due to an error.
-        Do you want copy this error in your clipboad?</source>
-        <translation type="vanished">エラー: &quot;enum QProcess::ProcessError&quot;
-        値エラー: %1
-        プログラムは引き続き使用できますが、エラーにより再起動できません。
-
-        このエラーをクリップボードにコピーしますか？</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="384"/>
         <source>Copy to clipboard</source>
         <translation>クリップボードにコピー</translation>
@@ -350,18 +300,10 @@ Do you want copy this error in your clipboad?</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator that helps you create random and customizable passwords. The program adds or removes characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase letters, Uppercase letters&lt;/li&gt;&lt;li&gt;Adds the letters that the user has specified&lt;/li&gt;&lt;li&gt;Removes the letters that the user has specified&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program comes with NO WARRANTY OF ANY KIND.&lt;br&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="vanished">&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;バージョン: %2&lt;/p&gt;&lt;p&gt;%1はランダムでカスタマイズ可能なパスワードを作成するための無料のパスワードジェネレーターです。プログラムは次の順序で文字を追加または削除します:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;数字、記号、小文字、大文字&lt;/li&gt;&lt;li&gt;ユーザーが指定した文字を追加&lt;/li&gt;&lt;li&gt;ユーザーが指定した文字を削除&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;問題や貢献については、&lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHubリポジトリ&lt;/a&gt;を訪問してください&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;このプログラムは保証なしで提供されます。&lt;br&gt;詳細については、&lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU一般公衆ライセンス&lt;/a&gt;をご覧ください。&lt;/p&gt;&lt;/div&gt;</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="443"/>
         <source>About %1</source>
         <translatorcomment>literally translates to: About GenXPassword</translatorcomment>
-        <translation>GenXPasswordについて %1</translation>
-    </message>
-    <message>
-        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Created by &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;This password generator provides customizable options for creating secure passwords. Feel free to use and share it under the GNU General Public License v3.0.&lt;/p&gt;&lt;/div&gt;</source>
-        <translation type="vanished">&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;作成者: &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;このパスワードジェネレーターは、安全なパスワードを作成するためのカスタマイズ可能なオプションを提供します。GNU一般公衆ライセンスv3.0の下で自由に使用および共有できます。&lt;/p&gt;&lt;/div&gt;</translation>
+        <translation>%1について</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="458"/>
