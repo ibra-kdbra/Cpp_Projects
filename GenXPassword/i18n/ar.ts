@@ -1,298 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ar" sourcelanguage="en">
+<TS version="2.1">
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="65"/>
+        <location filename="../src/main.cpp" line="62"/>
         <source>GenPassword is now running</source>
-        <translation>تم تشغيل GenPassword الآن</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="66"/>
+        <location filename="../src/main.cpp" line="63"/>
         <source>The application is already running.
 Another instance cannot be started.</source>
-        <translation>التطبيق قيد التشغيل بالفعل.
-لا يمكن بدء نسخة أخرى.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="78"/>
+        <location filename="../src/main.cpp" line="75"/>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="79"/>
+        <location filename="../src/main.cpp" line="76"/>
         <source>The theme index specified in the configuration file is invalid. 
 Please check the value and try again.</source>
-        <translation>فهرس السمة المحدد في ملف التكوين غير صالح.
-يرجى التحقق من القيمة والمحاولة مرة أخرى.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="39"/>
+        <location filename="../src/passwordgenerator.cpp" line="39"/>
         <source>Numeric characters</source>
-        <translation>الأحرف الرقمية</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="40"/>
+        <location filename="../src/passwordgenerator.cpp" line="40"/>
         <source>Symbols characters</source>
-        <translation>أحرف الرموز</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="41"/>
+        <location filename="../src/passwordgenerator.cpp" line="41"/>
         <source>Lowercase letters</source>
-        <translation>الحروف الصغيرة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="42"/>
+        <location filename="../src/passwordgenerator.cpp" line="42"/>
         <source>Uppercase letters</source>
-        <translation>الحروف الكبيرة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="52"/>
+        <location filename="../src/passwordgenerator.cpp" line="52"/>
         <source>Your password will be generated here</source>
-        <translation>سيتم إنشاء كلمة المرور الخاصة بك هنا</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="60"/>
+        <location filename="../src/passwordgenerator.cpp" line="60"/>
         <source>Generate a new password</source>
-        <translation>إنشاء كلمة مرور جديدة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="63"/>
+        <location filename="../src/passwordgenerator.cpp" line="63"/>
         <source>Copy the password to the clipboard</source>
-        <translation>نسخ كلمة المرور إلى الحافظة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="72"/>
+        <location filename="../src/passwordgenerator.cpp" line="72"/>
         <source>Contain the numbers: 0-9</source>
-        <translation>تحتوي على الأرقام: 0-9</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="76"/>
+        <location filename="../src/passwordgenerator.cpp" line="76"/>
         <source>Contain special symbols:
 !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</source>
-        <translation>تحتوي على الرموز الخاصة:
-!&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="80"/>
+        <location filename="../src/passwordgenerator.cpp" line="80"/>
         <source>Contain lowercase letters: a-z</source>
-        <translation>تحتوي على الحروف الصغيرة: a-z</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="84"/>
+        <location filename="../src/passwordgenerator.cpp" line="84"/>
         <source>Contain uppercase letters: A-Z</source>
-        <translation>تحتوي على الحروف الكبيرة: A-Z</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="86"/>
+        <location filename="../src/passwordgenerator.cpp" line="86"/>
         <source>Characters to add</source>
-        <translation>الأحرف لإضافتها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="89"/>
+        <location filename="../src/passwordgenerator.cpp" line="89"/>
         <source>Characters to remove</source>
-        <translation>الأحرف لإزالتها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="119"/>
+        <location filename="../src/passwordgenerator.cpp" line="119"/>
         <source>Add</source>
-        <translation>إضافة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="120"/>
+        <location filename="../src/passwordgenerator.cpp" line="120"/>
         <source>Remove</source>
-        <translation>إزالة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="257"/>
+        <location filename="../src/passwordgenerator.cpp" line="251"/>
         <source>Information</source>
-        <translation>معلومات</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="258"/>
+        <location filename="../src/passwordgenerator.cpp" line="252"/>
         <source>No characters have been selected for the password. 
 Please select at least one character.</source>
-        <translation>لم يتم اختيار أي أحرف لكلمة المرور.
-يرجى اختيار حرف واحد على الأقل.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="268"/>
+        <location filename="../src/passwordgenerator.cpp" line="262"/>
         <source>Hide Password</source>
-        <translation>إخفاء كلمة المرور</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../passwordgenerator.cpp" line="272"/>
+        <location filename="../src/passwordgenerator.cpp" line="266"/>
         <source>Show Password</source>
-        <translation>عرض كلمة المرور</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Window</name>
     <message>
-        <location filename="../window.cpp" line="150"/>
+        <location filename="../src/window.cpp" line="150"/>
         <source>&amp;Languages</source>
-        <translation>&amp;اللغات</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="151"/>
+        <location filename="../src/window.cpp" line="151"/>
         <source>&amp;Themes</source>
-        <translation>&amp;الثيمات</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="152"/>
+        <location filename="../src/window.cpp" line="152"/>
         <source>&amp;Shortcuts</source>
-        <translation>&amp;الاختصارات</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="153"/>
+        <location filename="../src/window.cpp" line="153"/>
         <source>&amp;Help</source>
-        <translation>&amp;مساعدة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="158"/>
+        <location filename="../src/window.cpp" line="158"/>
         <source>[en] English</source>
-        <translation>[en] الإنجليزية</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="159"/>
         <source>[es] Español</source>
-        <translation>[es] الإسبانية</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>[fr] French</source>
-        <translation>[fr] الفرنسية</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="161"/>
         <source>[ja] Japenese</source>
-        <translation>[ja] اليابانية</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="162"/>
         <source>[ar] Arabic</source>
-        <translation>[ar] العربية</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="164"/>
+        <location filename="../src/window.cpp" line="164"/>
         <source>Light</source>
-        <translation>فاتح</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="165"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>Dark</source>
-        <translation>داكن</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="168"/>
+        <location filename="../src/window.cpp" line="171"/>
         <source>&amp;Custom Title Bar</source>
-        <translation>&amp;شريط العنوان المخصص</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="170"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>&amp;About %1</source>
-        <translation>&amp;حول %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="171"/>
+        <location filename="../src/window.cpp" line="174"/>
         <source>&amp;Credits</source>
-        <translation>&amp;الاعتمادات</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="175"/>
         <source>About &amp;Qt</source>
-        <translation>حول &amp;Qt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="174"/>
+        <location filename="../src/window.cpp" line="177"/>
         <source>E&amp;xit</source>
-        <translation>خروج</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="182"/>
+        <location filename="../src/window.cpp" line="185"/>
         <source>&amp;Generate Password</source>
-        <translation>&amp;إنشاء كلمة مرور</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="185"/>
+        <location filename="../src/window.cpp" line="188"/>
         <source>Cut Password</source>
-        <translation>قص كلمة المرور</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="189"/>
+        <location filename="../src/window.cpp" line="192"/>
         <source>&amp;Copy Password</source>
-        <translation>&amp;نسخ كلمة المرور</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="257"/>
+        <location filename="../src/window.cpp" line="260"/>
         <source>Show %1</source>
-        <translation>عرض %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="258"/>
+        <location filename="../src/window.cpp" line="261"/>
         <source>New+Copy Password</source>
-        <translation>جديد+نسخ كلمة المرور</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="350"/>
+        <location filename="../src/window.cpp" line="357"/>
         <source>Restart Required</source>
-        <translation>إعادة تشغيل مطلوبة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="351"/>
+        <location filename="../src/window.cpp" line="358"/>
         <source>You will need to restart in order to use your new language setting
 Your password will be lost if you do not save it before restarting.</source>
-        <translation>ستحتاج إلى إعادة التشغيل لاستخدام إعداد اللغة الجديد
-سيتم فقدان كلمة المرور إذا لم تقم بحفظها قبل إعادة التشغيل.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="357"/>
+        <location filename="../src/window.cpp" line="362"/>
         <source>Restart Now</source>
-        <translation>إعادة التشغيل الآن</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="358"/>
+        <location filename="../src/window.cpp" line="364"/>
         <source>Restart Later</source>
-        <translation>إعادة التشغيل لاحقاً</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="368"/>
+        <location filename="../src/window.cpp" line="377"/>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="369"/>
+        <location filename="../src/window.cpp" line="378"/>
         <source>Error: &quot;enum QProcess::ProcessError&quot;
-Error Value: %1
-The program will continue working, but it cannot restart due to the error.
+Value error: %1
+The program can still be used
+but cannot be restarted due to an error.
 
-Would you like to copy this error to clipboard?</source>
-        <translation>خطأ: &quot;enum QProcess::ProcessError&quot;
-قيمة الخطأ: %1
-سيستمر البرنامج في العمل، لكنه لا يمكنه إعادة التشغيل بسبب الخطأ.
-
-هل ترغب في نسخ هذا الخطأ إلى الحافظة؟</translation>
+Do you want copy this error in your clipboad?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="377"/>
+        <location filename="../src/window.cpp" line="384"/>
         <source>Copy to clipboard</source>
-        <translation>نسخ إلى الحافظة</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="382"/>
+        <location filename="../src/window.cpp" line="386"/>
         <source>No</source>
-        <translation>لا</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="452"/>
-        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator to create random customizable passwords. The program works by adding/removing characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase, Uppercase&lt;/li&gt;&lt;li&gt;User specified characters to add&lt;/li&gt;&lt;li&gt;User specified characters to remove&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program is provided as-is without warranty. For more information, see the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</source>
-        <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;الإصدار: %2&lt;/p&gt;&lt;p&gt;%1 هو مولد كلمات مرور مجاني لإنشاء كلمات مرور عشوائية وقابلة للتخصيص. يعمل البرنامج عن طريق إضافة/إزالة الأحرف بالترتيب التالي:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;الأرقام، الرموز، الحروف الصغيرة، الحروف الكبيرة&lt;/li&gt;&lt;li&gt;الأحرف التي يحددها المستخدم لإضافتها&lt;/li&gt;&lt;li&gt;الأحرف التي يحددها المستخدم لإزالتها&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;لأي مشاكل أو مساهمات، قم بزيارة &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;مستودع GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;حقوق الطبع والنشر © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;يتم تقديم هذا البرنامج كما هو دون أي ضمان. لمزيد من المعلومات، راجع &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;ترخيص GNU العام&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;</translation>
+        <location filename="../src/window.cpp" line="422"/>
+        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator that helps you create random and customizable passwords. The program adds or removes characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase letters, Uppercase letters&lt;/li&gt;&lt;li&gt;Adds the letters that the user has specified&lt;/li&gt;&lt;li&gt;Removes the letters that the user has specified&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2024 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program comes with NO WARRANTY OF ANY KIND.&lt;br&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../window.cpp" line="454"/>
-        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Created by: &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;This password generator provides customizable options for creating secure passwords. It is free to use and share under the GNU General Public License v3.0.&lt;/p&gt;&lt;/div&gt;</source>
-        <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;تم الإنشاء بواسطة: &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;يوفر مولد كلمة المرور هذا خيارات قابلة للتخصيص لإنشاء كلمات مرور آمنة. وهو مجاني للاستخدام والمشاركة بموجب ترخيص GNU العام v3.0.&lt;/p&gt;&lt;/div&gt;</translation>
+        <location filename="../src/window.cpp" line="443"/>
+        <source>About %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="449"/>
+        <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Created by &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Contributors:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=https://fonts.google.com/icons style=color:#0097CF&gt;Material Icons&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="458"/>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

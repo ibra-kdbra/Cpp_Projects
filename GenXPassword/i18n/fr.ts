@@ -150,104 +150,119 @@ Veuillez vérifier la valeur et réessayer.</translation>
         <translation>&amp;Aide</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="158"/>
-        <source>[en] English</source>
-        <translation>[en] Anglais</translation>
+    <location filename="../src/window.cpp" line="158"/>
+    <source>[en] English</source>
+    <translation>[en] English</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
-        <source>[es] Español</source>
-        <translation>[es] Espagnol</translation>
+        <source>[es] Spanish</source>
+        <translation>[es] Español</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="160"/>
+        <source>[fr] French</source>
+        <translation>[fr] Français</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="161"/>
+        <source>[ja] Japenese</source>
+        <translation>[ja] 日本語</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="162"/>
+        <source>[ar] Arabic</source>
+        <translation>[ar] العربية</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="164"/>
         <source>Light</source>
         <translation>Clair</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>Dark</source>
         <translation>Sombre</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="168"/>
+        <location filename="../src/window.cpp" line="171"/>
         <source>&amp;Custom Title Bar</source>
         <translation>&amp;Barre de titre personnalisée</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="170"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>&amp;About %1</source>
         <translation>&amp;À propos de %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="171"/>
+        <location filename="../src/window.cpp" line="174"/>
         <source>&amp;Credits</source>
         <translation>&amp;Crédits</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="175"/>
         <source>About &amp;Qt</source>
         <translation>À propos de &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="174"/>
+        <location filename="../src/window.cpp" line="177"/>
         <source>E&amp;xit</source>
         <translation>&amp;Quitter</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="182"/>
+        <location filename="../src/window.cpp" line="185"/>
         <source>&amp;Generate Password</source>
         <translation>&amp;Générer un mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="185"/>
+        <location filename="../src/window.cpp" line="188"/>
         <source>Cut Password</source>
         <translation>Couper le mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="189"/>
+        <location filename="../src/window.cpp" line="192"/>
         <source>&amp;Copy Password</source>
         <translation>&amp;Copier le mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="257"/>
+        <location filename="../src/window.cpp" line="260"/>
         <source>Show %1</source>
         <translation>Afficher %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="258"/>
+        <location filename="../src/window.cpp" line="261"/>
         <source>New+Copy Password</source>
         <translation>Nouveau+Copier le mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="354"/>
+        <location filename="../src/window.cpp" line="357"/>
         <source>Restart Required</source>
         <translation>Redémarrage requis</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="355"/>
+        <location filename="../src/window.cpp" line="358"/>
         <source>You will need to restart in order to use your new language setting
 Your password will be lost if you do not save it before restarting.</source>
         <translation>Vous devez redémarrer pour appliquer votre nouveau paramètre de langue.
 Votre mot de passe sera perdu si vous ne le sauvegardez pas avant de redémarrer.</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="359"/>
+        <location filename="../src/window.cpp" line="362"/>
         <source>Restart Now</source>
         <translation>Redémarrer maintenant</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="361"/>
+        <location filename="../src/window.cpp" line="364"/>
         <source>Restart Later</source>
         <translation>Redémarrer plus tard</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="374"/>
+        <location filename="../src/window.cpp" line="377"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="375"/>
+        <location filename="../src/window.cpp" line="378"/>
         <source>Error: &quot;enum QProcess::ProcessError&quot;
 Value error: %1
 The program can still be used
@@ -262,32 +277,32 @@ mais ne peut pas être redémarré en raison d'une erreur.
 Voulez-vous copier cette erreur dans votre presse-papiers ?</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="381"/>
+        <location filename="../src/window.cpp" line="384"/>
         <source>Copy to clipboard</source>
         <translation>Copier dans le presse-papiers</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="383"/>
+        <location filename="../src/window.cpp" line="386"/>
         <source>No</source>
         <translation>Non</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="419"/>
+        <location filename="../src/window.cpp" line="422"/>
         <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator that helps you create random and customizable passwords. The program adds or removes characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase letters, Uppercase letters&lt;/li&gt;&lt;li&gt;Adds the letters that the user has specified&lt;/li&gt;&lt;li&gt;Removes the letters that the user has specified&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2024 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program comes with NO WARRANTY OF ANY KIND.&lt;br&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version : %2&lt;/p&gt;&lt;p&gt;%1 est un générateur de mots de passe gratuit qui vous aide à créer des mots de passe aléatoires et personnalisables. Le programme ajoute ou supprime des caractères dans l'ordre suivant :&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Chiffres, symboles, lettres minuscules, lettres majuscules&lt;/li&gt;&lt;li&gt;Ajoute les lettres spécifiées par l'utilisateur&lt;/li&gt;&lt;li&gt;Supprime les lettres spécifiées par l'utilisateur&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Pour signaler des problèmes ou contribuer, visitez le &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;dépôt GitHub&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2024 - ibra-kdbra&lt;/p&gt;&lt;p&gt;Ce programme est fourni SANS AUCUNE GARANTIE DE QUELQUE NATURE QUE CE SOIT.&lt;br&gt;Consultez la &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;licence publique générale GNU&lt;/a&gt; pour plus de détails.&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="440"/>
+        <location filename="../src/window.cpp" line="443"/>
         <source>About %1</source>
         <translation>À propos de %1</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="446"/>
+        <location filename="../src/window.cpp" line="449"/>
         <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Created by &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;This password generator provides customizable options for creating secure passwords. Feel free to use and share it under the GNU General Public License v3.0.&lt;/p&gt;&lt;/div&gt;</source>
         <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Créé par &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Ce générateur de mots de passe offre des options personnalisables pour créer des mots de passe sécurisés. N'hésitez pas à l'utiliser et à le partager sous la licence publique générale GNU v3.0.&lt;/p&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="455"/>
+        <location filename="../src/window.cpp" line="458"/>
         <source>Credits</source>
         <translation>Crédits</translation>
     </message>
