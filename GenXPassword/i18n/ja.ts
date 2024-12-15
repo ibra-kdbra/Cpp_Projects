@@ -20,7 +20,7 @@ Another instance cannot be started.</source>
         <source>The theme index specified in the configuration file is invalid. 
 Please check the value and try again.</source>
         <translation>構成ファイルに指定されたテーマインデックスは無効です。  
-値を確認して再度お試しください。</translation>
+値を確認してもう一度試してください。</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="75"/>

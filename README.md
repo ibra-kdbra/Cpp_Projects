@@ -367,6 +367,16 @@ Minishell is a simplified shell program that emulates a Unix-like shell environm
 
 A simple, minimal & performant text editor written in C with only C's Standard Library.
 
+With **Syntax highlighting** supported for:
+
+- C/C++
+- JavaScript
+- Python
+- SQL
+
+**Preview:**
+
+<img src="./Mojan/img/captured.png" width="400" alt="mojan">
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
