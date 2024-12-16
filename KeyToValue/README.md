@@ -1,18 +1,18 @@
 # About:
-k2v(key-to-value) is a very very simple config file format.       
+k2v (key-to-value) is a very very simple config file format.       
 It's simple, rigid, without super cow power, and maybe stupid.      
 It only designed for one purpose:      
 - Get the `value` of the `key`.
 
 ## Why:
-K2V looks like TOML(Tom's Obvious, Minimal Language).      
+K2V looks like TOML (Tom's Obvious, Minimal Language).      
 TOML prioritizes humans, but K2V only prioritizes the developer.      
 TOML is very powerful, but K2V is simple, and it's good enough in many scenarios.      
 libk2v only contain 1000- lines of code, while tomlc99 have 2000+.      
 
 ## K2V standard:
 ```
- * We will always use a (char *)key to get the value.
+ * We will always use a (char *) key to get the value.
  * The comment line starts with `#`, and `#` should be the first character of the line.
  * All the value should be wrapped by `"`, and do not use `'`.
  * Don't nest `""` within the value, you can use `''` if you really need.
@@ -111,7 +111,7 @@ extern bool k2v_stop_at_warning;
 extern bool k2v_show_warning;
 ```
 ## Benchmarking:
-K2V is designed only for small config files, it need not to be very fast for large config files.      
+K2V is designed only for small config files, it needs not to be very fast for large config files.      
 Here is a 23 lines config test, it only takes <0.02s on my Nothing Phone(2).      
 ```log
 ~/libk2v # time ./testk2v

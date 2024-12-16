@@ -26,9 +26,6 @@
 
 # 📚 Table of Contents
 
-<details>
-<summary> ℹ️ </summary>
-
   &emsp; - [**Overview**](#overview)
 
   &emsp; - [**Side Note**](#side-note)
@@ -36,55 +33,24 @@
 <details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
 <br>
 
-  - [Atari Games](#atari-games)
-  - [Beneficial C Programming](#beneficial-c_programming)
-  - [CanChat](#canchat)
-  - [Chess-Engine](#chess-engine)
-  - [Chess 3D](#chess_3d)
-  - [Collatz Conjecture](#collatz-conjecture)
-  - [CPP20 Develop](#cpp20_develop)
-  - [Customized Operators](#customizedoperators)
-  - [Define Evil](#define_evil)
-  - [Design Patterns](#design-patterns)
-  - [Dump C++](#dump-c)
-  - [FileLockSocket](#filelocksocket)
-  - [Hangman Game](#hangman-game)
-  - [InjectHook](#injecthook)
-  - [Introspective](#introspective)
-  - [Javascript Compiler](#javascript-compiler)
-  - [JsonConverter](#jsonconverter)
-  - [MarbleMarcher](#marblemarcher)
-  - [Matrix ScreenSaver](#matrix_screensaver)
-  - [MiniShell](#minishell)
-  - [Mothbar](#mothbar)
-  - [OfxAsync](#ofxasync)
-  - [OpenGL Examples](#opengl_examples)
-  - [PackSend](#packsend)
-  - [Password Generator](#password_generator)
-  - [Pipes ScreenSaver](#pipes_screensaver)
-  - [POng](#pong)
-  - [Random Utility Tools](#random_utility_tools)
-  - [Regular Expression Convertors](#regular_expression_convertors)
-  - [SFML Multithread Verlet](#sfml-multithread-verlet)
-  - [Simple Turso](#simple_turso)
-  - [Simple Code](#simple-code)
-  - [Simplesdl2 Game Template](#simplesdl2_game_template)
-  - [Static Page Generator](#staticpagegen)
-  - [SystemMonitor](#systemmonitor)
-  - [Template Language Generator](#template_language_generator)
-  - [Terminal File Manager](#terminal_file_manager)
-  - [Terminal Snake](#terminal_snake)
-  - [Thread Pool](#thread_pool)
-  - [Tokenizer_tok](#tokenizer_tok)
-  - [Trigonometric Functions](#trigonometric-functions)
-  - [ViteFA Config](#vitefa_config)
-  - [Volumetric Clouds](#volumetric-clouds)
-  - [WordProc](#wordproc)
+| A-I                                                   | I-R                                           | S-Z                                                             |
+|:------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------|
+| [Atari Games](#atari-games)                           | [Introspective](#introspective)               | [Regular Expression Convertors](#regular_expression_convertors) |
+| [Beneficial C Programming](#beneficial-c_programming) | [Javascript Compiler](#javascript-compiler)   | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
+| [Chess 3D](#chess_3d)                                 | [JsonConverter](#jsonconverter)               | [Simple Code](#simple-code)                                     |
+| [Chess-Engine](#chess-engine)                         | [Key to Value](#key-to-value)                 | [Simple Turso](#simple_turso)                                   |
+| [Collatz Conjecture](#collatz-conjecture)             | [MarbleMarcher](#marblemarcher)               | [Simplesdl2 Game Template](#simplesdl2_game_template)           |
+| [CPP20 Develop](#cpp20_develop)                       | [Matrix ScreenSaver](#matrix_screensaver)     | [Static Page Generator](#staticpagegen)                         |
+| [Customized Operators](#customizedoperators)          | [MiniShell](#minishell)                       | [SystemMonitor](#systemmonitor)                                 |
+| [Define Evil](#define_evil)                           | [Mojan](#mojan)                               | [Template Language Generator](#template_language_generator)     |
+| [Design Patterns](#design-patterns)                   | [Mothbar](#mothbar)                           | [Thread Pool](#thread_pool)                                     |
+| [Dump C++](#dump-c)                                   | [OfxAsync](#ofxasync)                         | [TokenizerTok](#tokenizer_tok)                                  |
+| [FileLockSocket](#filelocksocket)                     | [OpenGL Examples](#opengl_examples)           | [Trigonometric Functions](#trigonometric-functions)             |
+| [GenXPassword](#genxpassword)                         | [Pipes ScreenSaver](#pipes_screensaver)       | [Volumetric Clouds](#volumetric-clouds)                         |
+| [Hangman](#hangman)                                   | [POng](#pong)                                 | [ViteFA Config](#vitefa_config)                                 |
+| [InjectHook](#injecthook)                             | [Random Utility Tools](#random_utility_tools) | [WordProc](#wordproc)                                           |
 
 </details>
-
-</details>
-
 
 ---
 ## Overview
@@ -99,13 +65,32 @@ Projects are organized alphabetically for easy navigation. Each corresponding *R
 
 ### [Atari-Games](./Atari-Games) 
 
-A collection of classic Atari games implemented in C++:
+A collection of classic Atari-inspired games, implemented in C++:
 
-1. 2048 - [Learn more](https://en.wikipedia.org/wiki/2048_(video_game))
+1. **2048** - [**(ⅰ)**](https://en.wikipedia.org/wiki/2048_(video_game))
+  
+    [2048_AI](./Atari-Games/2048_AI/) is a set of AI strategies that play the popular [2048 tile-merging game](https://github.com/gabrielecirulli/2048).
 
-2. Snake - [Learn more](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
+    **Try it on the** [website](https://ibra-kdbra.github.io/JS_game_collections/2048/index.html)
+        
 
-3. Tetris - [Learn more](https://en.wikipedia.org/wiki/Tetris)
+2. **Snake** - [**(ⅰ)**](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
+
+    A classic snake game made in C++ using SFML library.
+
+3. **Tetris** - [**(ⅰ)**](https://en.wikipedia.org/wiki/Tetris)
+
+    Simple Tetris™ — one of the smallest Tetris implementations in the world!
+Utilizing only ANSI escape sequences to draw the board.
+
+&emsp; **Preview:**    
+
+<div align="center">
+<img src="./Atari-Games/2048_AI/images/expectimax/monotonicity-padded.png" width="400" alt="2048 preview">
+
+<img src="./Atari-Games/Tetris/simple-tetris-color.png" width="200" alt="tetris preview"> <img src="./Atari-Games/Snake/Screenshots/2.png" width="200" alt="snake preview">
+</div>
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -122,14 +107,6 @@ A collection of classic Atari games implemented in C++:
 
 #
 
-### [CanChat](./canChat)
-Feature-complete rooms-based chat for tens of thousands of users. Client plus Server. Built with [Oat++ Web Framework](https://oatpp.io/).
-`Single-Node` `In-Memory` `WebSocket` `TLS`.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
 ### [Chess_3D](./Chess_3D)
 
 A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game controls.
@@ -242,11 +219,42 @@ The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key deri
 
 #
 
-### [Hangman-game](./Hangman-game)
+### [GenXPassword](./GenXPassword)
+
+Shuffled random and customizable password generator.
+
+#### Features
+* Support for languages: Arabic, English, Spanish, French, Japenese.
+* Generates passwords of variable length, from 1 to 512 characters.
+* Support for custom characters.
+* TrayIcon Available
+* Modular source code
+* Cross-Platform
+  - Windows, macOS and Linux.
+
+<div align="right"> 
+<a href="#projects-titles"> 📚 </a>
+</div>
+
+#
+### [Hangman](./Hangman)
+
+A simple Hangman game created using C++ and SFML.
 
 **What is the Hangman game?** [Learn more](https://en.wikipedia.org/wiki/Hangman_(game))
 
-A text-based game; the program takes in two parameters: the first is a word or expression, and the second is the number of attempts you want in your game.
+**Features:**
+- Word and hint loading from a CSV file.
+- Hangman image updates based on incorrect guesses.
+- Sound effects for win and lose conditions.
+
+
+**Preview:**
+
+&emsp;<img src="./Hangman/screenshots/1.png" width="200" alt="guess"> <img src="./Hangman/screenshots/2.png" width="200" alt="guess">
+
+&emsp;<img src="./Hangman/screenshots/3.png" width="400" alt="guess">
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -291,6 +299,18 @@ The designed programming language is similar to JavaScript but much simpler. Cod
 ### [JsonConverter](./JsonConverter)
 
 A C++ library providing a `std::string` parser for JavaScript Object Notation (JSON). The STL containers are used to represent the JSON entities: Object, Array, and Value.
+<div align="right"> 
+<a href="#projects-titles"> 📚 </a>
+</div>
+
+#
+
+### [Key to Value](./KeyToValue/)
+
+k2v (key-to-value) is a very very simple config file format.
+It's simple, rigid, without super cow power, and maybe stupid.
+It only designed for one purpose:    
+- Get the `value` of the `key`.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -343,6 +363,26 @@ Minishell is a simplified shell program that emulates a Unix-like shell environm
 
 #
 
+### [Mojan](./Mojan/)
+
+A simple, minimal & performant text editor written in C with only C's Standard Library.
+
+With **Syntax highlighting** supported for:
+
+- C/C++
+- JavaScript
+- Python
+- SQL
+
+**Preview:**
+
+<img src="./Mojan/img/captured.png" width="400" alt="mojan">
+<div align="right"> 
+<a href="#projects-titles"> 📚 </a>
+</div>
+
+#
+
 ### [Mothbar](./mothbar)
 
 A small bar utility written in C for [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD), which displays information such as the current desktop, clock, and volume. It works by creating FIFO pipes to receive data, and updates the bar in real-time using XCB for interaction with the X server.
@@ -376,22 +416,6 @@ A collection of examples created while taking a Computer Graphics course to bett
 &emsp;
 <img src="./OpenGL_examples/screenshots/grass_1.png" width="100"> <img src="./OpenGL_examples/screenshots/shadow_mapping_2.png" width="100"> <img src="./OpenGL_examples/screenshots/water_1.png" width="100"> <img src="./OpenGL_examples/screenshots/tree_2.png" width="100"> <br>
 &emsp; <img src="./OpenGL_examples/screenshots/clouds_1.png" width="150"> <img src="./OpenGL_examples/screenshots/lod_terrain_2.png" width="150"> <img src="./OpenGL_examples/screenshots/volumetric_light_2.png" width="100">
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
-
-### [PackSend](./packsend/)
-A small utility for constructing packets from various data sources and outputting them to sockets, serial ports, or files.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
-
-### [Password_generator](./password-generator)
-A CLI password generator written in C++.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -485,7 +509,18 @@ An experimental 3D/game engine technology partially based on the Urho3D codebase
 
 ### [Simple-Code](./Simple-Code)
 
-A collection of algorithms and data structures implemented in C++.
+A collection of algorithms and data structures implemented in C++ for educational purposes and practical applications.
+
+**Brief View of Contents:**
+- ALgorithms
+- Data Structures
+- Plain Approaches
+
+**Preivew:**
+
+<img src="./Simple-Code/Plain_Approaches/Tree/screenshots/1.png" height="250" alt="draw tree"> <img src="./Simple-Code/Algorithms/Backtracking/screenshots/1.png" height="250" alt="A* Four Wheels">
+
+_Images above showcase the GUI of a **Binary Tree** implementation, as detailed in the [Plain Approaches](./Simple-Code/Plain_Approaches/Tree) section, as well as **A\*** implementation on Four Wheels problem as detailed in the [Algorithms](./Simple-Code/Algorithms/Backtracking/) section._
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -496,6 +531,10 @@ A collection of algorithms and data structures implemented in C++.
 ### [Simplesdl2_game_template](./simplesdl2_game_template)
 
 A template for a future game that I am currently working on.
+
+&emsp; **Preview:**
+
+&emsp; <img src="./simplesdl2_game_template/examples/sample.gif" width="300"> 
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -533,19 +572,10 @@ A small POSIX shell script for generating C/C++ code structures, build system fi
 ### [Terminal_File_Manager](./Terminal_File_Manager)
 
 A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu.org/software/ncurses/) library.
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
 
-#
+&emsp; **Preview:**
 
-### [Terminal_Snake](./Terminal_Snake)
-
-`tsnake` is a terminal snake game written in C++ using the [ncurses](https://www.gnu.org/software/ncurses/) library, featuring support for maps and interactive resizing.
-
-&emsp;**Preview:**
-
-&emsp;<img src="Terminal_Snake/img/tsnake.gif" width="400">
+&emsp; <img alt="preview" src="./Terminal_File_Manager/screenshot/1.png" width="400"> 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
