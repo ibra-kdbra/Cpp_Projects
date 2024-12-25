@@ -35,7 +35,7 @@ Please check the value and try again.</source>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="40"/>
         <source>Symbols characters</source>
-        <translation>約物</translation>
+        <translation>記号</translation>
     </message>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="41"/>
@@ -78,7 +78,7 @@ Please check the value and try again.</source>
         <location filename="../src/passwordgenerator.cpp" line="252"/>
         <source>No characters have been selected for the password. 
 Please select at least one character.</source>
-        <translation>パスワードに選択された文字がありません。  
+        <translation>パスワード作成に選択された文字がありません。  
 少なくとも1つの文字を選択してください。</translation>
     </message>
     <message>
@@ -245,7 +245,7 @@ Please select at least one character.</source>
         <location filename="../src/window.cpp" line="358"/>
         <source>You will need to restart in order to use your new language setting
 Your password will be lost if you do not save it before restarting.</source>
-        <translation>新しい言語設定を使用するには再起動が必要です。
+        <translation>新しい言語設定を適用するには再起動が必要です。
 再起動前にパスワードを保存しなければ失われます！</translation>
     </message>
     <message>
@@ -258,7 +258,7 @@ but cannot be restarted due to an error.
 Do you want copy this error in your clipboad?</source>
         <translation>エラー: &quot;enum QProcess::ProcessError&quot;
 値エラー: %1
-プログラムは引き続き使用できますが、エラーにより再起動できません。
+プログラムはエラーにより再起動できませんが、引き続き使用できます。
 
 このエラーをクリップボードにコピーしますか？</translation>
     </message>
