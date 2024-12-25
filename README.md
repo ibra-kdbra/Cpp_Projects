@@ -33,7 +33,7 @@
 <details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
 <br>
 
-| A-I                                                   | I-R                                           | S-Z                                                             |
+| A-I                                                   | I-R                                           | R-Z                                                             |
 |:------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------|
 | [Atari Games](#atari-games)                           | [Introspective](#introspective)               | [Regular Expression Convertors](#regular_expression_convertors) |
 | [Beneficial C Programming](#beneficial-c_programming) | [Javascript Compiler](#javascript-compiler)   | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
@@ -178,18 +178,12 @@ Complex macros are useful when pushing the limits of what C/C++ can do. For exam
 
 #
 
-### [Design-patterns](./design-patterns)
+### [Design-patterns](./Design-Patterns)
 
-[Object-Oriented Design](https://en.wikipedia.org/wiki/Object-oriented_analysis_and_design#Object-oriented_design)(OOD) patterns implemented in C++ based on the book [Head First Design Patterns: A Brain-Friendly Guide](https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124).
+> _UNDER CONSTRUCTION_
 
-#### Implemented design patterns:
- - Abstract Factory Pattern
- - Command Pattern
- - Decorator Pattern
- - Factory Method Pattern
- - Observer Pattern
- - Singleton Pattern
- - Strategy Pattern
+<img src="https://wiki.archiveteam.org/images/8/8b/Underconstruction.gif" width="200" alt="under constructon sign">
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
