@@ -97,10 +97,15 @@ Utilizing only ANSI escape sequences to draw the board.
 
 #
 
-### [Beneficial C-programming](./Beneficial-C_programming)
+### [Beneficial C-Programming](./Beneficial-C_programming)
 *Compile and execute C "scripts" in one go!*
 
  A shell script designed to streamline the process of compiling and executing C (and C++) scripts with unparalleled speed. This tool allows users to run C code directly from the command line or via shebang, making it as convenient as running shell scripts. With support for multiple files and customizable compiler options.
+
+&emsp; **Preview:**  
+
+&emsp; <img alt="demo" width="400" src="./Beneficial-C_programming/demo.gif">
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -110,6 +115,12 @@ Utilizing only ANSI escape sequences to draw the board.
 ### [Chess 3D](./Chess_3D)
 
 A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game controls.
+
+&emsp; **Preview:**  
+
+&emsp; <img alt="chess3d" width="400" src="./Chess_3D/images/screenshot.png">
+
+
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
 </div>
@@ -163,7 +174,7 @@ In C++, one cannot create new operators such as `<>` or `|&`. However, you can c
 
 #
 
-### [Define evil](./define_evil)
+### [Define Evil](./define_evil)
 
 *A macro library for the morally compromised C and C++ programmer.*
 
