@@ -68,13 +68,12 @@ sudo install -Dm 755 c ~/.bin/c
 echo 'PATH=$PATH:$HOME/.bin' >> ~/.bashrc
 ```
 
-Note: if you install it somewhere other than `/usr/bin/c`, then your shebang
-will be different. For example it may be something more similar to
-`#!/home/ryan/.bin/c`.
+> [!NOTE] 
+> If you install it somewhere other than `/usr/bin/c`, then your shebang will be different. For example it may be something more similar to `#!/home/ryan/.bin/c`.
 
 ## Okay, how do I use it?
 
-c will use whatever `$CC` is set to. You can change this with:
+`c` will use whatever `$CC` is set to. You can change this with:
 
 ```bash
 export CC=clang
@@ -144,7 +143,7 @@ The default cache path is set to `$TMPDIR/c.cache`. You can change this with:
 export C_CACHE_PATH="/tmp/the_cache"
 ```
 
-##s Contributing
+## Contributing
 
 Feel free to submit any ideas, questions, or problems by reporting an issue.
 Or, if you're feeling a bit brave, submit a pull request. :grimacing:
@@ -196,6 +195,4 @@ brew: `brew install c`
 
 ## Credits
 Thanks for [ryanmjacobs](https://github.com/ryanmjacobs)!
-Basically, you can do whatever you want provided that you include
-the LICENSE notice in any copy of the source. Also, I am not liable
-if the script breaks anything.
+Basically, you can do whatever you want provided that you include the LICENSE notice in any copy of the source. Also, I am not liable if the script breaks anything.
