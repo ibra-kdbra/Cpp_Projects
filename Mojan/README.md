@@ -1,6 +1,6 @@
 # Mojan Text Editor
 
-A simple, minimal & performant text editor written in C with only C's Standard Library.
+A simple, minimal & performant text editor written in C with C's Standard Library and `glib`.
 
 ![Screenshot](./img/captured.png)
 
