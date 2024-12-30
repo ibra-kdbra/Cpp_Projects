@@ -36,16 +36,16 @@
 | A-I                                                   | I-R                                           | R-Z                                                             |
 |:------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------|
 | [Atari Games](#atari-games)                           | [Introspective](#introspective)               | [Regular Expression Convertors](#regular-expression-convertors) |
-| [Beneficial C Programming](#beneficial-c_programming) | [Javascript Compiler](#javascript-compiler)   | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
-| [Chess 3D](#chess-3d)                                 | [JsonConverter](#jsonconverter)               | [Simple Code](#simple-code)                                     |
+| [Beneficial C Programming](#beneficial-c-programming) | [Javascript Compiler](#javascript-compiler)   | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
+| [Chess 3D](#chess-3d)                                 | [Json Converter](#json-converter)               | [Simple Code](#simple-code)                                     |
 | [Chess Engine](#chess-engine)                         | [Key to Value](#key-to-value)                 | [Simple Turso](#simple-turso)                                   |
-| [Collatz Conjecture](#collatz-conjecture)             | [MarbleMarcher](#marblemarcher)               | [Simplesdl2 Game Template](#simplesdl2-game-template)           |
-| [CPP20 Develop](#cpp20-develop)                       | [Matrix ScreenSaver](#matrix-screensaver)     | [Static Page Generator](#staticpagegen)                         |
-| [Customized Operators](#customizedoperators)          | [MiniShell](#minishell)                       | [SystemMonitor](#systemmonitor)                                 |
+| [Collatz Conjecture](#collatz-conjecture)             | [Marble Marcher](#marble-marcher)               | [Simplesdl2 Game Template](#simplesdl2-game-template)           |
+| [CPP20 Develop](#cpp20-develop)                       | [Matrix ScreenSaver](#matrix-screensaver)     | [StaticPageGen](#staticpagegen)                         |
+| [Customized Operators](#customized-operators)          | [MiniShell](#minishell)                       | [System Monitor](#system-monitor)                                 |
 | [Define Evil](#define-evil)                           | [Mojan](#mojan)                               | [Template Language Generator](#template-language-generator)     |
 | [Design Patterns](#design-patterns)                   | [Mothbar](#mothbar)                           | [Thread Pool](#thread-pool)                                     |
-| [Dump C++](#dump-c)                                   | [OfxAsync](#ofxasync)                         | [TokenizerTok](#tokenizer-tok)                                  |
-| [FileLockSocket](#filelocksocket)                     | [OpenGL Examples](#opengl-examples)           | [Trigonometric Functions](#trigonometric-functions)             |
+| [Dump C++](#dump-c)                                   | [OfxAsync](#ofxasync)                         | [Tokenizer Tok](#tokenizer-tok)                                  |
+| [File Lock Socket](#file-lock-socket)                     | [OpenGL Examples](#opengl-examples)           | [Trigonometric Functions](#trigonometric-functions)             |
 | [GenXPassword](#genxpassword)                         | [Pipes ScreenSaver](#pipes-screensaver)       | [Volumetric Clouds](#volumetric-clouds)                         |
 | [Hangman](#hangman)                                   | [POng](#pong)                                 | [ViteFA Config](#vitefa-config)                                 |
 | [InjectHook](#injecthook)                             | [Random Utility Tools](#random-utility-tools) | [WordProc](#wordproc)                                           |
@@ -151,7 +151,7 @@ This aims to enable the "pay only what you use policy" of C++ at compile time.
 
 #
 
-### [CustomizedOperators](./CustomizedOperators)
+### [Customized Operators](./CustomizedOperators)
 
 Implements custom operators for C++.
 
@@ -202,7 +202,7 @@ A tool used to inspect C++ binaries for debug symbols ([Learn more](https://en.w
 
 #
 
-### [FileLockSocket](./FileLockSocket)
+### [File Lock Socket](./FileLockSocket)
 
 *Transfer files quickly and securely!*
 
@@ -290,7 +290,7 @@ The designed programming language is similar to JavaScript but much simpler. Cod
 
 #
 
-### [JsonConverter](./JsonConverter)
+### [Json Converter](./JsonConverter)
 
 A C++ library providing a `std::string` parser for JavaScript Object Notation (JSON). The STL containers are used to represent the JSON entities: Object, Array, and Value.
 <div align="right"> 
@@ -311,7 +311,7 @@ It only designed for one purpose:
 
 #
 
-### [MarbleMarcher](./MarbleMarcher)
+### [Marble Marcher](./MarbleMarcher)
 
 Marble Marcher is a video game demo that uses a fractal physics engine, and fully procedural rendering to produce beautiful, and unique gameplay unlike anything you've seen before.
 
@@ -545,7 +545,7 @@ A template for a future game that I am currently working on.
 
 #
 
-### [SystemMonitor](./SystemMonitor)
+### [System Monitor](./SystemMonitor)
 
 This project contains the result of the second project of the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The project involves creating a system monitor for the Linux Operating System, which depends on the [ncurses](https://www.gnu.org/software/ncurses/) library.
 <div align="right"> 
