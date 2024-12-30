@@ -35,20 +35,20 @@
 
 | A-I                                                   | I-R                                           | R-Z                                                             |
 |:------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------|
-| [Atari Games](#atari-games)                           | [Introspective](#introspective)               | [Regular Expression Convertors](#regular_expression_convertors) |
+| [Atari Games](#atari-games)                           | [Introspective](#introspective)               | [Regular Expression Convertors](#regular-expression-convertors) |
 | [Beneficial C Programming](#beneficial-c_programming) | [Javascript Compiler](#javascript-compiler)   | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
-| [Chess 3D](#chess_3d)                                 | [JsonConverter](#jsonconverter)               | [Simple Code](#simple-code)                                     |
-| [Chess-Engine](#chess-engine)                         | [Key to Value](#key-to-value)                 | [Simple Turso](#simple_turso)                                   |
-| [Collatz Conjecture](#collatz-conjecture)             | [MarbleMarcher](#marblemarcher)               | [Simplesdl2 Game Template](#simplesdl2_game_template)           |
-| [CPP20 Develop](#cpp20_develop)                       | [Matrix ScreenSaver](#matrix_screensaver)     | [Static Page Generator](#staticpagegen)                         |
+| [Chess 3D](#chess-3d)                                 | [JsonConverter](#jsonconverter)               | [Simple Code](#simple-code)                                     |
+| [Chess Engine](#chess-engine)                         | [Key to Value](#key-to-value)                 | [Simple Turso](#simple-turso)                                   |
+| [Collatz Conjecture](#collatz-conjecture)             | [MarbleMarcher](#marblemarcher)               | [Simplesdl2 Game Template](#simplesdl2-game-template)           |
+| [CPP20 Develop](#cpp20-develop)                       | [Matrix ScreenSaver](#matrix-screensaver)     | [Static Page Generator](#staticpagegen)                         |
 | [Customized Operators](#customizedoperators)          | [MiniShell](#minishell)                       | [SystemMonitor](#systemmonitor)                                 |
-| [Define Evil](#define_evil)                           | [Mojan](#mojan)                               | [Template Language Generator](#template_language_generator)     |
-| [Design Patterns](#design-patterns)                   | [Mothbar](#mothbar)                           | [Thread Pool](#thread_pool)                                     |
-| [Dump C++](#dump-c)                                   | [OfxAsync](#ofxasync)                         | [TokenizerTok](#tokenizer_tok)                                  |
-| [FileLockSocket](#filelocksocket)                     | [OpenGL Examples](#opengl_examples)           | [Trigonometric Functions](#trigonometric-functions)             |
-| [GenXPassword](#genxpassword)                         | [Pipes ScreenSaver](#pipes_screensaver)       | [Volumetric Clouds](#volumetric-clouds)                         |
-| [Hangman](#hangman)                                   | [POng](#pong)                                 | [ViteFA Config](#vitefa_config)                                 |
-| [InjectHook](#injecthook)                             | [Random Utility Tools](#random_utility_tools) | [WordProc](#wordproc)                                           |
+| [Define Evil](#define-evil)                           | [Mojan](#mojan)                               | [Template Language Generator](#template-language-generator)     |
+| [Design Patterns](#design-patterns)                   | [Mothbar](#mothbar)                           | [Thread Pool](#thread-pool)                                     |
+| [Dump C++](#dump-c)                                   | [OfxAsync](#ofxasync)                         | [TokenizerTok](#tokenizer-tok)                                  |
+| [FileLockSocket](#filelocksocket)                     | [OpenGL Examples](#opengl-examples)           | [Trigonometric Functions](#trigonometric-functions)             |
+| [GenXPassword](#genxpassword)                         | [Pipes ScreenSaver](#pipes-screensaver)       | [Volumetric Clouds](#volumetric-clouds)                         |
+| [Hangman](#hangman)                                   | [POng](#pong)                                 | [ViteFA Config](#vitefa-config)                                 |
+| [InjectHook](#injecthook)                             | [Random Utility Tools](#random-utility-tools) | [WordProc](#wordproc)                                           |
 
 </details>
 
@@ -63,7 +63,7 @@ Projects are organized alphabetically for easy navigation. Each corresponding *R
 
 ## Projects
 
-### [Atari-Games](./Atari-Games) 
+### [Atari Games](./Atari-Games) 
 
 A collection of classic Atari-inspired games, implemented in C++:
 
@@ -97,7 +97,7 @@ Utilizing only ANSI escape sequences to draw the board.
 
 #
 
-### [Beneficial-C_programming](./Beneficial-C_programming)
+### [Beneficial C-programming](./Beneficial-C_programming)
 *Compile and execute C "scripts" in one go!*
 
  A shell script designed to streamline the process of compiling and executing C (and C++) scripts with unparalleled speed. This tool allows users to run C code directly from the command line or via shebang, making it as convenient as running shell scripts. With support for multiple files and customizable compiler options.
@@ -107,7 +107,7 @@ Utilizing only ANSI escape sequences to draw the board.
 
 #
 
-### [Chess_3D](./Chess_3D)
+### [Chess 3D](./Chess_3D)
 
 A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game controls.
 <div align="right"> 
@@ -116,7 +116,7 @@ A simple 3D chess game that depends on GLFW and GLM, with U-R-C-F for game contr
 
 #
 
-### [Chess-Engine](./Chess_Engine)
+### [Chess Engine](./Chess_Engine)
 
 A Chess Engine implemented in C++17.
 <div align="right"> 
@@ -125,7 +125,7 @@ A Chess Engine implemented in C++17.
 
 #
 
-### [Collatz-Conjecture](./Collatz)
+### [Collatz Conjecture](./Collatz)
 
 [Learn more](https://en.wikipedia.org/wiki/Collatz_conjecture) about the Collatz Conjecture.
 
@@ -136,7 +136,7 @@ A program that attempts to solve the Collatz Conjecture question, which asks whe
 
 #
 
-### [CPP20_Develop](./CPP20_Develop)
+### [CPP20 Develop](./CPP20_Develop)
 
 `A versatile collection of compile-time optimized tools for C++ programming.`
 
@@ -163,7 +163,7 @@ In C++, one cannot create new operators such as `<>` or `|&`. However, you can c
 
 #
 
-### [Define_evil](./define_evil)
+### [Define evil](./define_evil)
 
 *A macro library for the morally compromised C and C++ programmer.*
 
@@ -178,7 +178,7 @@ Complex macros are useful when pushing the limits of what C/C++ can do. For exam
 
 #
 
-### [Design-patterns](./Design-Patterns)
+### [Design Patterns](./Design-Patterns)
 
 > _UNDER CONSTRUCTION_
 
@@ -273,7 +273,7 @@ Introspective is a header file that brings reflection to any class that wants it
 
 #
 
-### [Javascript-compiler](./javascript-compiler)
+### [Javascript Compiler](./javascript-compiler)
 
 The goal of the project development was to learn the mechanisms of compilers. The project contains five parts:
 
@@ -322,7 +322,7 @@ The goal of the game is to reach the flag as quickly as possible, but be careful
 
 #
 
-### [Matrix_ScreenSaver](./Matrix_ScreenSaver)
+### [Matrix ScreenSaver](./Matrix_ScreenSaver)
 
 A *Matrix* terminal screen saver made in C.
 
@@ -359,7 +359,7 @@ Minishell is a simplified shell program that emulates a Unix-like shell environm
 
 ### [Mojan](./Mojan/)
 
-A simple, minimal & performant text editor written in C with only C's Standard Library.
+A simple, minimal & performant text editor written in C with C's Standard Library and `glib`.
 
 With **Syntax highlighting** supported for:
 
@@ -402,7 +402,7 @@ An [openFrameworks](https://openframeworks.cc/) addon compatible with versions 0
 
 #
 
-### [OpenGL_examples](./OpenGL_examples)
+### [OpenGL Examples](./OpenGL_examples)
 A collection of examples created while taking a Computer Graphics course to better understand OpenGL and apply techniques learned from the literature.
 
 &emsp; **Preview:**
@@ -416,7 +416,7 @@ A collection of examples created while taking a Computer Graphics course to bett
 
 #
 
-### [Pipes_ScreenSaver](./Pipes_ScreenSaver)
+### [Pipes ScreenSaver](./Pipes_ScreenSaver)
 
 A *Pipes* terminal screen saver made in C.
 
@@ -443,7 +443,7 @@ A Pong ([learn more](https://en.wikipedia.org/wiki/Pong)) clone for Linux writte
 
 #
 
-### [Random_Utility_tools](./Random_Utility_tools)
+### [Random Utility Tools](./Random_Utility_tools)
 
 This subdirectory provides an overview of several converters used for instrument conversion between different formats such as BNK, IBK, and OPN. Each converter serves a specific purpose in processing sound patches and instrument banks.
 
@@ -458,7 +458,7 @@ This subdirectory provides an overview of several converters used for instrument
 
 #
 
-### [Regular_Expression_Convertors](./RegularExpression_Convertors)
+### [Regular Expression Convertors](./RegularExpression_Convertors)
 
 This project includes three converters:
 
@@ -492,7 +492,7 @@ Demonstrates a **multithreaded particle simulation** using the **Verlet integrat
 
 #
 
-### [Simple_turso](./simple_turso)
+### [Simple Turso](./simple_turso)
 
 An experimental 3D/game engine technology partially based on the Urho3D codebase.
 <div align="right"> 
@@ -501,7 +501,7 @@ An experimental 3D/game engine technology partially based on the Urho3D codebase
 
 #
 
-### [Simple-Code](./Simple-Code)
+### [Simple Code](./Simple-Code)
 
 A collection of algorithms and data structures implemented in C++ for educational purposes and practical applications.
 
@@ -522,7 +522,7 @@ _Images above showcase the GUI of a **Binary Tree** implementation, as detailed 
 
 #
 
-### [Simplesdl2_game_template](./simplesdl2_game_template)
+### [Simplesdl2 Game Template](./simplesdl2_game_template)
 
 A template for a future game that I am currently working on.
 
@@ -554,7 +554,7 @@ This project contains the result of the second project of the [Udacity C++ Nanod
 
 #
 
-### [Template_Language_Generator](./Template_Language_Generator)
+### [Template Language Generator](./Template_Language_Generator)
 
 A small POSIX shell script for generating C/C++ code structures, build system files, and more.
 <div align="right"> 
@@ -563,7 +563,7 @@ A small POSIX shell script for generating C/C++ code structures, build system fi
 
 #
 
-### [Terminal_File_Manager](./Terminal_File_Manager)
+### [Terminal File Manager](./Terminal_File_Manager)
 
 A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu.org/software/ncurses/) library.
 
@@ -576,7 +576,7 @@ A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu
 
 #
 
-### [Thread_Pool](./Thread_Pool)
+### [Thread Pool](./Thread_Pool)
 
 A thread pool is a software design pattern for achieving concurrency of execution in a computer program ([learn more](https://en.wikipedia.org/wiki/Thread_pool)).
 This project is a simple async thread pool implementation in C++.
@@ -586,7 +586,7 @@ This project is a simple async thread pool implementation in C++.
 
 #
 
-### [Tokenizer_tok](./Tokenizer_tok)
+### [Tokenizer Tok](./Tokenizer_tok)
 
 A simple, dependency-free, single-header *source code tokenizer* written in ANSI C. It features an easy-to-use interface for manipulating tokens and concatenating them back into a string.
 <div align="right"> 
@@ -595,7 +595,7 @@ A simple, dependency-free, single-header *source code tokenizer* written in ANSI
 
 #
 
-### [Trigonometric-Functions](./Trigonometric-Functions)
+### [Trigonometric Functions](./Trigonometric-Functions)
 
 A small program that lets you visualize multiple trigonometric functions, built in C++ using OpenGL and GLUT.
 
@@ -608,7 +608,7 @@ A small program that lets you visualize multiple trigonometric functions, built 
 
 #
 
-### [ViteFA_config](./ViteFA_config)
+### [ViteFA Config](./ViteFA_config)
 
 `ViteFA_config` is a highly efficient configuration management system implemented in **C**. It is designed to handle over 100,000 concurrent agent connections with sub-second propagation of configuration changes. The system uses **MySQL** for storage and relies on **libshmcache** for shared memory management. The shared memory type is configured to **mmap**, and `recycle_valid_entries` must be set to **false** for the cache.
 <div align="right"> 
@@ -617,7 +617,7 @@ A small program that lets you visualize multiple trigonometric functions, built 
 
 #
 
-### [Volumetric-clouds](./volumetric-clouds)
+### [Volumetric Clouds](./volumetric-clouds)
 
 A real-time GPU volumetric clouds renderer via OpenGL, based on <a href="https://advances.realtimerendering.com/s2015/The%20Real-time%20Volumetric%20Cloudscapes%20of%20Horizon%20-%20Zero%20Dawn%20-%20ARTR.pdf">The Real-time Volumetric Cloudscapes of Horizon: Zero Dawn</a> by Andrew Schneider.
 
