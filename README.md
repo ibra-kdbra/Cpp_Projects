@@ -30,36 +30,99 @@
 
   &emsp; - [**Side Note**](#side-note)
 
-<details id="projects-titles"><summary><strong>🧾 Projects Titles</strong></summary>
-<br>
+<details id="projects-titles">
+  <summary><strong>🧾 Projects Titles</strong></summary>
+  <br>
 
-| A-I                                                   | I-R                                           | R-Z                                                             |
-|:------------------------------------------------------|-----------------------------------------------|-----------------------------------------------------------------|
-| [Atari Games](#atari-games)                           | [Introspective](#introspective)               | [Regular Expression Convertors](#regular-expression-convertors) |
-| [Beneficial C Programming](#beneficial-c-programming) | [Javascript Compiler](#javascript-compiler)   | [SFML Multithread Verlet](#sfml-multithread-verlet)             |
-| [Chess 3D](#chess-3d)                                 | [Json Converter](#json-converter)               | [Simple Code](#simple-code)                                     |
-| [Chess Engine](#chess-engine)                         | [Key to Value](#key-to-value)                 | [Simple Turso](#simple-turso)                                   |
-| [Collatz Conjecture](#collatz-conjecture)             | [Marble Marcher](#marble-marcher)               | [Simplesdl2 Game Template](#simplesdl2-game-template)           |
-| [CPP20 Develop](#cpp20-develop)                       | [Matrix ScreenSaver](#matrix-screensaver)     | [StaticPageGen](#staticpagegen)                         |
-| [Customized Operators](#customized-operators)          | [MiniShell](#minishell)                       | [System Monitor](#system-monitor)                                 |
-| [Define Evil](#define-evil)                           | [Mojan](#mojan)                               | [Template Language Generator](#template-language-generator)     |
-| [Design Patterns](#design-patterns)                   | [Mothbar](#mothbar)                           | [Thread Pool](#thread-pool)                                     |
-| [Dump C++](#dump-c)                                   | [OfxAsync](#ofxasync)                         | [Tokenizer Tok](#tokenizer-tok)                                  |
-| [File Lock Socket](#file-lock-socket)                     | [OpenGL Examples](#opengl-examples)           | [Trigonometric Functions](#trigonometric-functions)             |
-| [GenXPassword](#genxpassword)                         | [Pipes ScreenSaver](#pipes-screensaver)       | [Volumetric Clouds](#volumetric-clouds)                         |
-| [Hangman](#hangman)                                   | [POng](#pong)                                 | [ViteFA Config](#vitefa-config)                                 |
-| [InjectHook](#injecthook)                             | [Random Utility Tools](#random-utility-tools) | [WordProc](#wordproc)                                           |
+  <table style="width:100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <thead>
+      <tr style="">
+        <th style="padding:4px 8px; text-align:center; word-wrap:break-word; font-weight:bold; border: 1px solid #ddd;">A-I</th>
+        <th style="padding:4px 8px; text-align:center; word-wrap:break-word; font-weight:bold; border: 1px solid #ddd;">I-R</th>
+        <th style="padding:4px 8px; text-align:center; word-wrap:break-word; font-weight:bold; border: 1px solid #ddd;">R-Z</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#atari-games">Atari Games</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#introspective">Introspective</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#regular-expression-convertors">Regular Expression Convertors</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#beneficial-c-programming">Beneficial C Programming</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#js-compiler">JS Compiler</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#sfml-multithread-verlet">SFML Multithread Verlet</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#chess-3d">Chess 3D</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#json-converter">Json Converter</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#simple-code">Simple Code</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#chess-engine">Chess Engine</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#key-to-value">Key to Value</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#simple-turso">Simple Turso</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#collatz-conjecture">Collatz Conjecture</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#marble-marcher">Marble Marcher</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#simplesdl2-game-template">Simplesdl2 Game Template</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#cpp20-develop">CPP20 Develop</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#matrix-screensaver">Matrix ScreenSaver</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#staticpagegen">StaticPageGen</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#customized-operators">Customized Operators</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#minishell">MiniShell</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#system-monitor">System Monitor</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#define-evil">Define Evil</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#mojan">Mojan</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#template-language-generator">Template Language Generator</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#design-patterns">Design Patterns</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#ofxasync">OfxAsync</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#thread-pool">Thread Pool</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#dump-c">Dump C++</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#tokenizer-tok">Tokenizer Tok</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#opengl-examples">OpenGL Examples</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#file-lock-socket">File Lock Socket</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#trigonometric-functions">Trigonometric Functions</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#volumetric-clouds">Volumetric Clouds</a></td>
+      </tr>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#genxpassword">GenXPassword</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#pipes-screensaver">Pipes ScreenSaver</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#vitefa-config">ViteFA Config</a></td>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#hangman">Hangman</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#pong">POng</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#wordproc">WordProc</a></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#injecthook">InjectHook</a></td>
+        <td style="padding:4px 8px; text-align:center; word-wrap:break-word; border: 1px solid #ddd;"><a href="#random-utility-tools">Random Utility Tools</a></td>
+      </tr>
+    </tbody>
+  </table>
 
 </details>
 
----
 ## Overview
 This repository serves as a personal playground for experimenting with various C++ projects. It includes original implementations, as well as **forked** or **cloned** repositories from other developers **with my own improvements** where applicable. Each project aims to explore different concepts and features of the C++ programming language.
 
 
 ### Side note:
 Projects are organized alphabetically for easy navigation. Each corresponding *README* file provides specific details, usage instructions, and credits for any borrowed code.
-#
 
 ## Projects
 
@@ -85,7 +148,7 @@ Utilizing only ANSI escape sequences to draw the board.
 
 &emsp; **Preview:**    
 
-<div align="center">
+<div align="center" word-wrap: break-word;>
 <img src="./Atari-Games/2048_AI/images/expectimax/monotonicity-padded.png" width="400" alt="2048 preview">
 
 <img src="./Atari-Games/Tetris/simple-tetris-color.png" width="200" alt="tetris preview"> <img src="./Atari-Games/Snake/Screenshots/2.png" width="200" alt="snake preview">
@@ -284,7 +347,7 @@ Introspective is a header file that brings reflection to any class that wants it
 
 #
 
-### [Javascript Compiler](./javascript-compiler)
+### [JS Compiler](./JS-compiler)
 
 The goal of the project development was to learn the mechanisms of compilers. The project contains five parts:
 
