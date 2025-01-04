@@ -4,7 +4,8 @@ A simple, minimal & performant text editor written in C with C's Standard Librar
 
 ![Screenshot](./img/captured.png)
 
-_**Note**: This project is undergoing refactoring at the moment._
+> [!NOTE]
+> This project is undergoing refactoring at the moment.
 
 ## Syntax highlighting supported for
 
@@ -42,4 +43,4 @@ mojan [FILE]
 - Undo & redo
 - Text replace
 - Colored bracket pair
-- Syntax highlightng for other languages like Cpp, Java, TS, Julia, C#, many more...
+- Syntax highlighting for other languages like Cpp, Java, TS, Julia, C#, many more...

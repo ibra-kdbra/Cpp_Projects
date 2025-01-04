@@ -20,10 +20,11 @@ This project features a GUI-based application showcasing various **Binary Tree**
 - **Invert Binary Tree:** Produces a mirror image of the binary tree.
 - **Find Lowest Common Ancestor (LCA):** Includes two different approaches to locate the LCA of two nodes.
 
->Note: The program allows tree input via a file. An example input file is provided [here](./Plain_Approaches/Tree/examples/)
+> [!NOTE]
+> The program allows tree input via file. An example input file is provided [here](./Plain_Approaches/Tree/examples/)
 
 <!-- 
-TODO algorithms overivew section
+TODO algorithms overview section
  -->
  
 ## Screenshots
