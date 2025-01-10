@@ -124,6 +124,10 @@ This repository serves as a personal playground for experimenting with various C
 ### Side note:
 Projects are organized alphabetically for easy navigation. Each corresponding *README* file provides specific details, usage instructions, and credits for any borrowed code.
 
+<!-- 
+ TODO: add contribution section "how to contribute"
+ -->
+
 ## Projects
 
 ### [Atari Games](./Atari-Games) 
@@ -216,7 +220,7 @@ A program that attempts to solve the Collatz Conjecture question, which asks whe
 
 This library uses the latest C++ features available in GCC, Clang and Visual Studio 2019 and 2022.
 
-Co-Cpp19 contains numerous sublibraries and is splitted into many small headers.
+Co-Cpp19 contains numerous sublibraries and is split into many small headers.
 This aims to enable the "pay only what you use policy" of C++ at compile time.
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
@@ -292,7 +296,7 @@ The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key deri
 Shuffled random and customizable password generator.
 
 #### Features
-* Support for languages: Arabic, English, Spanish, French, Japenese.
+* Support for languages: Arabic, English, Spanish, French, Japanese.
 * Generates passwords of variable length, from 1 to 512 characters.
 * Support for custom characters.
 * TrayIcon Available
@@ -451,23 +455,6 @@ With **Syntax highlighting** supported for:
 
 #
 
-### [Mothbar](./mothbar)
-
-A small bar utility written in C for [FreeBSD](https://en.wikipedia.org/wiki/FreeBSD), which displays information such as the current desktop, clock, and volume. It works by creating FIFO pipes to receive data, and updates the bar in real-time using XCB for interaction with the X server.
-
-&emsp; **Features:**
-- Clock display
-- Desktop indicator
-- Volume display
-- FIFO communication
-- Real-time bar updates
-
-<div align="right"> 
-<a href="#projects-titles"> 📚 </a>
-</div>
-
-#
-
 ### [OfxAsync](./ofxAsync)
 An [openFrameworks](https://openframeworks.cc/) addon compatible with versions 0.9.8 to 0.10.1, designed to simplify multi-threading through a straightforward wrapper around [ofThread](https://openframeworks.cc/documentation/utils/ofThread/).
 <div align="right"> 
@@ -584,7 +571,7 @@ A collection of algorithms and data structures implemented in C++ for educationa
 - Data Structures
 - Plain Approaches
 
-**Preivew:**
+**Preview:**
 
 <img src="./Simple-Code/Plain_Approaches/Tree/screenshots/1.png" height="250" alt="draw tree"> <img src="./Simple-Code/Algorithms/Backtracking/screenshots/1.png" height="250" alt="A* Four Wheels">
 

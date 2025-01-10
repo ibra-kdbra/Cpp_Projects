@@ -16,7 +16,7 @@ Currently tested Compilers:
 
 ## Contents
 
-Co-Cpp19 contains numerous sublibraries and is splitted into many small headers.
+Co-Cpp19 contains numerous sublibraries and is split into many small headers.
 This aims to enable the "pay only what you use policy" of C++ at compile time.
 
 * cpp19 - compiler configuration (yours should be somewhat similar)
@@ -29,7 +29,7 @@ This aims to enable the "pay only what you use policy" of C++ at compile time.
 * tuple19 - faster to compile `std::tuple` replacement
 * optional19 - continuable optional and packed optional
 * variant19 - faster compile and runtime `std::variant` replacement
-* partial19 - densly packed and heap managed `tuple<optional<>>`
+* partial19 - densely packed and heap managed `tuple<optional<>>`
 * serialize19 - customizable binary serialisation and deserialisation
 
 Work in progress libraries, with less tests:

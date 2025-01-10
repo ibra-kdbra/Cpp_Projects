@@ -9,14 +9,16 @@
 
 <p align="center"><i>Shuffled random and customizable password generator.</i></p>
 
+<!-- 
 <div align="center">
   
   ![image]()
   ![image]()
 </div>
-
+ -->
+ 
 ## Features
-* Support for languages: English, Spanish, French, Japenese.
+* Support for languages: Arabic, English, Spanish, French, Japanese.
 * Generates passwords of variable length, from 1 to 512 characters.
 * Support for custom characters.
 * TrayIcon Available
@@ -25,9 +27,9 @@
   - Windows, macOS and Linux.
 
 ## Requirements
-Windows: No requirements<br>
-Linux: Any X11/Xorg-based windowing system, QT-6<br>
-macOS: Unknown.
+**Windows:** No requirements<br>
+**Linux:** Any X11/Xorg-based windowing system, QT-6<br>
+**MacOS:** Unknown.
 
 ## Usage & build
 
