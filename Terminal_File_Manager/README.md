@@ -8,7 +8,7 @@ A terminal file manager implemented in C++20 using the [ncurses](https://www.gnu
 
 *The screenshot above demonstrates how the terminal file manager (TFM) operates within directories. It displays a preview of a file on the right side, and if you select a directory, it shows the files contained within that directory and so on.*
 
-## Dependenies
+## Dependencies
 
 - [cmake](https://cmake.org)
 - [ncurses](https://invisible-island.net/ncurses)

@@ -7,7 +7,7 @@ This a collection of examples created while taking a Computer Graphics course to
 Contents of this directory:
 
 - **Triangle:** hello world program, tests the display and the buffers
-- **Rotating cube:** Add movement in the scene and transormation matrices
+- **Rotating cube:** Add movement in the scene and transformation matrices
 - **Mouse control:** Ability to move an object with the mouse similarly to an arcball camera
 - **Texture plane:** Tests textures, both from an image and generated
 - **Sphere light:** Different lightings on a sphere: Flat Goureaud and Phong with interacitvity to select the lighting type

@@ -62,7 +62,7 @@ bool InstallHook(void* targetFunction, void* hookFunction, HookType type);
 
 __declspec(naked) void MyNakedFunction() { // Just an example
     const continueAddress = 0x12345678;
-    const endFunctionAdress = 0x12345123;
+    const endFunctionAddress = 0x12345123;
     __asm {
         // Restore the overwritten assembly here
         mov eax, dword ptr ds:[ebp-0214h]
@@ -81,7 +81,7 @@ __declspec(naked) void MyNakedFunction() { // Just an example
         test eax, eax
         je canContinue
 
-        jmp endFunctionAdress      
+        jmp endFunctionAddress      
 
     canContinue:
         // Continue the normal execution flow

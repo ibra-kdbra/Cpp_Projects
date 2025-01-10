@@ -13,9 +13,9 @@ Transfer files quickly and securely.
 1) Navigate to the project directory in your terminal.
 2) Execute the command ``make all`` or simply ``make``. This will compile and link your files, producing the two executable ``ufsend`` and ``ufreceive``.
 3) If you want to clean up the build artifacts later, use ``make clean``.
-4) Run following commands *first on Reciever* and then Sender.
+4) Run following commands *first on Receiver* and then Sender.
 
-### Reciever's Terminal
+### Receiver's Terminal
 
 ```shell
 ./ufrec <input file> [-d <Port>] [-l]
@@ -30,7 +30,7 @@ Transfer files quickly and securely.
 ## Few Solutions to a bad day
 
 1) ``make`` tool with ``g++`` or ``openssl`` libraries might not be installed.
-2) Executible permission might not be set for the binaries. Use ```chmod +ux <executable>``` to add executable permissions to owner.
+2) Executable permission might not be set for the binaries. Use ```chmod +ux <executable>``` to add executable permissions to owner.
 3) Running sender before receiver.
 4) Not having permissions to write in the parent directory. Again ``chmod`` will come to your rescue.
-5) Network might not capable of reaching the reciever. Check with ``ping``.
+5) Network might not capable of reaching the receiver. Check with ``ping``.

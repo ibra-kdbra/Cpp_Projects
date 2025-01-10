@@ -57,7 +57,7 @@ This section features a GUI-based application showcasing various **Binary Tree**
 
 - Single traversal
 - Stack-based traversal
-- Ditance between nodes in a Binary Tree
+- Distance between nodes in a Binary Tree
 - Convert sorted array to a balanced Binary Search Tree
 - Diameter of a Binary Tree
 - Equal tree partition

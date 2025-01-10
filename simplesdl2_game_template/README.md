@@ -37,7 +37,7 @@ make
 2. Need to Use OpenCV !?
 3. Complete moving logic
 4. Remove dragging option
-5. Add Base-object that produse new objects (instead of creating new object by pressing the key)
+5. Add Base-object that produces new objects (instead of creating new object by pressing the key)
 6. More and more
 
 ### Example

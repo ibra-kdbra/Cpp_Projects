@@ -246,7 +246,7 @@ methods and works similar to `std::optional`. `MatchResult` works with
 references, using `std::reference_wrapper` is not necessary.
 
 Examples:
-
+```cpp
     #include <iostream>
     #include "mage-hand/match.h"
 
@@ -260,7 +260,7 @@ Examples:
     assert(!(match(0) |when| 1 |then| [&] { return "one"; }));
 
     // if one doesn't use an otherwise statement the result type must be
-    // dereferenced explicitely
+    // dereferenced explicitly
     assert("zero"s == *(match(0) |when| 0 |then| [&] { return "zero"; }));
 
     // if an otherwise statement is present no dereferencing is necessary
@@ -281,7 +281,7 @@ Examples:
     match(x)
         |when| "x" |then| [&] { std::cout << ":-)" << std::endl; }
         |otherwise| [&] { std::cout << ":-(" << std::endl; };
-
+```
 ## Caveats
 
 - The left hand side and right hand side will have the precedence of the

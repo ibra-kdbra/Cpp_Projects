@@ -4,28 +4,24 @@ Tokenizer
 First, this `Tok` library has nothing to do with the Tok'ra. :-) Instead it is a really simple, dependency-free, single-header *source code tokenizer* written in ANSI C. It features an easy-to-use interface for manipulating tokens and concatenating them back into a string.
 
 ## Table of Contents
-<!-- TOC -->
 
-- [Tokenizer](#tokenizer)
-    - [Table of Contents](#table-of-contents)
-    - [Usage](#usage)
-    - [Language Rules](#language-rules)
-    - [Tokens](#tokens)
-    - [API](#api)
-        - [Tokenizer](#tokenizer)
-        - [Detokenizer](#detokenizer)
-        - [String Length](#string-length)
-        - [Delete](#delete)
-        - [Insert](#insert)
-        - [Replace](#replace)
-        - [Append](#append)
-        - [Find](#find)
-        - [Find Parenthesis Correctly](#find-parenthesis-correctly)
-        - [Match Pattern](#match-pattern)
-        - [Free](#free)
-        - [Debugging](#debugging)
+- [Usage](#usage)
+- [Language Rules](#language-rules)
+- [Tokens](#tokens)
+- [API](#api)
+    - [Tokenizer](#tokenizer)
+    - [Detokenizer](#detokenizer)
+    - [String Length](#string-length)
+    - [Delete](#delete)
+    - [Insert](#insert)
+    - [Replace](#replace)
+    - [Append](#append)
+    - [Find](#find)
+    - [Find Parenthesis Correctly](#find-parenthesis-correctly)
+    - [Match Pattern](#match-pattern)
+    - [Free](#free)
+    - [Debugging](#debugging)
 
-<!-- /TOC -->
 
 Usage
 -----
@@ -234,7 +230,7 @@ or both. This function does not care about parenthesis.
 | `type`   | One of the `TOK_*` type enums or `-1` (any token)              |
 | `str`    | A zero terminated UTF-8 string or `NULL` (any string)          |
 
-Returns the index of the first occurance of the token or -1 if not found.
+Returns the index of the first occurrence of the token or -1 if not found.
 
 ### Find Parenthesis Correctly
 
@@ -253,7 +249,7 @@ or both. It differs from `tok_find()` in a way that it considers parenthesis. Fo
 | `type`   | One of the `TOK_*` type enums or `-1` (any token)              |
 | `str`    | A zero terminated UTF-8 string or `NULL` (any string)          |
 
-Returns the index of the first occurance of the token at the same parenthesis level or -1 if not found.
+Returns the index of the first occurrence of the token at the same parenthesis level or -1 if not found.
 
 ### Match Pattern
 
