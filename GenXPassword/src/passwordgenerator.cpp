@@ -184,7 +184,7 @@ void PasswordGenerator::connectSignals()
     connect(passwordLengthSpinBox, &QSpinBox::valueChanged,
             this, [this] (int value) { passwordLengthSlider->setValue(value); });
 
-    connect(this, &Window::newAndCopyPassowrdSignal,
+    connect(this, &Window::newAndCopyPasswordSignal,
             this, [this] { generatePassword(); copyPasswordToClipboard(false); });
 
     connect(this, &Window::saveSettingsSignal, this, [this] {

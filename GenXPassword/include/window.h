@@ -26,7 +26,7 @@ signals:
 
     void saveSettingsSignal();
 
-    void newAndCopyPassowrdSignal();
+    void newAndCopyPasswordSignal();
 
 protected:
     virtual void closeEvent(QCloseEvent *const event) override;
@@ -79,7 +79,7 @@ private:
         *customTitleBarAction,
         *aboutAction, *creditsAction, *aboutQtAction,
         *exitAction,
-        *showProgramAction, *newAndCopyPassowrdAction;
+        *showProgramAction, *newAndCopyPasswordAction;
 };
 
 #endif // WINDOW_H
