@@ -29,6 +29,7 @@ Please check the value and try again.</source>
     </message>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="39"/>
+        <location filename="../src/passwordgenerator.cpp" line="44"/>
         <source>Numeric characters</source>
         <translation>数字</translation>
     </message>
@@ -48,82 +49,82 @@ Please check the value and try again.</source>
         <translation>大文字</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="52"/>
+        <location filename="../src/passwordgenerator.cpp" line="55"/>
         <source>Your password will be generated here</source>
         <translation>ここでパスワードが作成されます</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="60"/>
+        <location filename="../src/passwordgenerator.cpp" line="63"/>
         <source>Generate a new password</source>
         <translation>新しいパスワードを作成する</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="63"/>
+        <location filename="../src/passwordgenerator.cpp" line="66"/>
         <source>Copy the password to the clipboard</source>
         <translation>パスワードをクリップボードにコピー</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="72"/>
+        <location filename="../src/passwordgenerator.cpp" line="75"/>
         <source>Contain the numbers: 0-9</source>
         <translation>数字を含む: 0-9</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="76"/>
+        <location filename="../src/passwordgenerator.cpp" line="79"/>
         <source>Contain special symbols:
 !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</source>
         <translation>約物を含む: 
 !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="252"/>
+        <location filename="../src/passwordgenerator.cpp" line="255"/>
         <source>No characters have been selected for the password. 
 Please select at least one character.</source>
         <translation>パスワード作成に選択された文字がありません。  
 少なくとも1つの文字を選択してください。</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="80"/>
+        <location filename="../src/passwordgenerator.cpp" line="83"/>
         <source>Contain lowercase letters: a-z</source>
         <translation>小文字を含む: a-z</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="84"/>
+        <location filename="../src/passwordgenerator.cpp" line="87"/>
         <source>Contain uppercase letters: A-Z</source>
         <translation>大文字を含む: A-Z</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="86"/>
+        <location filename="../src/passwordgenerator.cpp" line="89"/>
         <source>Characters to add</source>
         <translation>追加する文字</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="89"/>
+        <location filename="../src/passwordgenerator.cpp" line="92"/>
         <source>Characters to remove</source>
         <translatorcomment>translates to &quot;excluded chafacters&quot;</translatorcomment>
         <translation>除外される文字</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="119"/>
+        <location filename="../src/passwordgenerator.cpp" line="122"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="120"/>
+        <location filename="../src/passwordgenerator.cpp" line="123"/>
         <source>Remove</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="251"/>
+        <location filename="../src/passwordgenerator.cpp" line="254"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="262"/>
+        <location filename="../src/passwordgenerator.cpp" line="265"/>
         <source>Hide Password</source>
         <translation>パスワードを隠す</translation>
     </message>
     <message>
-        <location filename="../src/passwordgenerator.cpp" line="266"/>
+        <location filename="../src/passwordgenerator.cpp" line="269"/>
         <source>Show Password</source>
         <translation>パスワードを表示</translation>
     </message>
@@ -153,7 +154,7 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>[en] English</source>
-        <translation>[en] 英語</translation>
+        <translation>[en] English</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="159"/>
@@ -164,11 +165,6 @@ Please select at least one character.</source>
         <location filename="../src/window.cpp" line="160"/>
         <source>[fr] French</source>
         <translation>[fr] Français</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="161"/>
-        <source>[ja] Japenese</source>
-        <translation>日本語</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
@@ -249,23 +245,9 @@ Your password will be lost if you do not save it before restarting.</source>
 再起動前にパスワードを保存しなければ失われます！</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="378"/>
-        <source>Error: &quot;enum QProcess::ProcessError&quot;
-Value error: %1
-The program can still be used
-but cannot be restarted due to an error.
-
-Do you want copy this error in your clipboad?</source>
-        <translation>エラー: &quot;enum QProcess::ProcessError&quot;
-値エラー: %1
-プログラムはエラーにより再起動できませんが、引き続き使用できます。
-
-このエラーをクリップボードにコピーしますか？</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="422"/>
         <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator that helps you create random and customizable passwords. The program adds or removes characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase letters, Uppercase letters&lt;/li&gt;&lt;li&gt;Adds the letters that the user has specified&lt;/li&gt;&lt;li&gt;Removes the letters that the user has specified&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2024 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program comes with NO WARRANTY OF ANY KIND.&lt;br&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</source>
-        <translatorcomment>no.3 literally translates to: &quot;use charachters specified by the user&quot;, no.4: &quot;exclude charachters specified by the user&quot;</translatorcomment>
+        <translatorcomment>no.3 literally translates to: &quot;use characters specified by the user&quot;, no.4: &quot;exclude characters specified by the user&quot;</translatorcomment>
         <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;バージョン: %2&lt;/p&gt;&lt;p&gt;%1はランダムでカスタマイズ可能なパスワードを作成するための無料のパスワードジェネレーターです。プログラムは次の順序で文字を追加または削除します:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;数字、約物、小文字、大文字&lt;/li&gt;&lt;li&gt;ユーザーに文字を特定されたを使う&lt;/li&gt;&lt;li&gt;ユーザーに文字を特定されたを除く&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;問題や貢献については、&lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHubリポジトリ&lt;/a&gt;を訪問してください&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;このプログラムは保証なしで提供されます。&lt;br&gt;詳細については、&lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU一般公衆ライセンス&lt;/a&gt;をご覧ください。&lt;/p&gt;&lt;/div&gt; {1&gt;?} {1&lt;?} {1&gt;?} {2&lt;?} {1 ?} {0097C?} {2024 ?} {3.0.?} {0097C?}</translation>
     </message>
     <message>
@@ -280,6 +262,11 @@ Do you want copy this error in your clipboad?</source>
         <translation>今すぐ再起動</translation>
     </message>
     <message>
+        <location filename="../src/window.cpp" line="161"/>
+        <source>[ja] Japanese</source>
+        <translation>[ja] 日本語</translation>
+    </message>
+    <message>
         <location filename="../src/window.cpp" line="364"/>
         <source>Restart Later</source>
         <translation>後で再起動</translation>
@@ -288,6 +275,20 @@ Do you want copy this error in your clipboad?</source>
         <location filename="../src/window.cpp" line="377"/>
         <source>Error</source>
         <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="378"/>
+        <source>Error: &quot;enum QProcess::ProcessError&quot;
+Value error: %1
+The program can still be used
+but cannot be restarted due to an error.
+
+Do you want copy this error in your clipboard?</source>
+        <translation>エラー: &quot;enum QProcess::ProcessError&quot;
+値エラー: %1
+プログラムはエラーにより再起動できませんが、引き続き使用できます。
+
+このエラーをクリップボードにコピーしますか？</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="384"/>
