@@ -149,7 +149,8 @@ void SwitchButton::paintEvent(QPaintEvent *const)
         /* DRAW TEXT */
         if (!text().isEmpty()) {
             p.setPen(palette().color(QPalette::Active, QPalette::ButtonText));
-            p.drawText(textRect(), Qt::AlignLeft | Qt::AlignVCenter, text());
+            // Added Qt::TextHideMnemonic to prevent & from being interpreted as a mnemonic
+            p.drawText(textRect(), Qt::AlignLeft | Qt::AlignVCenter | Qt::TextHideMnemonic, text());
         }
     } else {
         /* DRAW TRACK */
@@ -161,7 +162,8 @@ void SwitchButton::paintEvent(QPaintEvent *const)
         p.setOpacity(1.0);
         if (isChecked())
             trackRect.setX(trackRect.x() + trackMargin.left() + trackMargin.right() + 2);
-        else trackRect.setX(trackRect.x() - trackMargin.left() - trackMargin.right() - 2);
+        else 
+            trackRect.setX(trackRect.x() - trackMargin.left() - trackMargin.right() - 2);
         if (!shadowPixmap.isNull())
             p.drawPixmap(trackRect.center() - QPointF(THUMB_RADIUS, THUMB_RADIUS - 1.0), shadowPixmap);
         p.setBrush(thumbDisabledColor);
@@ -171,7 +173,8 @@ void SwitchButton::paintEvent(QPaintEvent *const)
         if (!text().isEmpty()) {
             p.setOpacity(disabledTextOpacity);
             p.setPen(palette().color(QPalette::Disabled, QPalette::ButtonText));
-            p.drawText(textRect(), Qt::AlignLeft | Qt::AlignVCenter, text());
+            // Added Qt::TextHideMnemonic to prevent & from being interpreted as a mnemonic
+            p.drawText(textRect(), Qt::AlignLeft | Qt::AlignVCenter | Qt::TextHideMnemonic, text());
         }
     }
 }
