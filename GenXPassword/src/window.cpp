@@ -12,6 +12,7 @@
 #include <QProcess>
 #include <QClipboard>
 #include <QFile>
+#include <QDebug>
 
 Window::Window(QWidget *const parent)
     : FramelessWindow{ parent },
@@ -38,15 +39,23 @@ Window::Window(QWidget *const parent)
 
 void Window::closeEvent(QCloseEvent *const event)
 {
+    qDebug() << "Close event triggered";
     saveSettings();
     if (QSystemTrayIcon::isSystemTrayAvailable()) {
-        if (!event->spontaneous() && !sender()->isWidgetType())
-            QApplication::postEvent(qApp, new QEvent(QEvent::Quit));
-        else {
-            hide();
-            event->ignore();
-        }
-    } else event->accept();
+        hide();
+        event->ignore();
+        qDebug() << "Window hidden and event ignored";
+
+        myTrayIcon->showMessage(
+            "GenXPassword",
+            "GenXPassword has been minimized to the tray. To quit the application, right-click the tray icon and select 'Quit'.",
+            QSystemTrayIcon::Information,
+            3000
+        );
+    } else {
+        qDebug() << "Quitting application";
+        QApplication::quit();
+    }
 }
 
 qsizetype Window::getCurrentIndexTheme()
@@ -255,10 +264,29 @@ void Window::configurateTitleBar()
 
 void Window::createTrayIcon()
 {
-    myTrayIcon = new QSystemTrayIcon(APP_ICON_LIGHT, this);
+    
+    if (!myTrayIcon) {
+        myTrayIcon = new QSystemTrayIcon(this);
+    }
+
+    myTrayIcon->setIcon(QIcon(":/icons/appIcon.ico"));
+
+    myTrayIcon->setToolTip(appName);
+
     myTrayIconMenu = new QMenu(this);
-    showProgramAction = new QAction(tr("Show %1").arg(appName), myTrayIcon);
-    newAndCopyPassowrdAction = new QAction(tr("New+Copy Password"), myTrayIcon);
+
+    showProgramAction = new QAction(tr("Show %1").arg(appName), this);
+    newAndCopyPassowrdAction = new QAction(tr("New+Copy Password"), this);
+    exitAction = new QAction(tr("Quit"), this);
+
+    myTrayIconMenu->addAction(showProgramAction);
+    myTrayIconMenu->addSeparator();
+    myTrayIconMenu->addAction(newAndCopyPassowrdAction);
+    myTrayIconMenu->addSeparator();
+    myTrayIconMenu->addAction(exitAction);
+
+    myTrayIcon->setContextMenu(myTrayIconMenu);
+    configurateTrayIcon();
 }
 
 void Window::configurateTrayIcon()
@@ -281,6 +309,7 @@ void Window::configurateTrayIcon()
         }
     });
     connect(newAndCopyPassowrdAction, &QAction::triggered, this, [this] { emit newAndCopyPassowrdSignal(); });
+    connect(exitAction, &QAction::triggered, qApp, &QApplication::quit); // Ensure exitAction quits the app
 }
 
 void Window::iconActivated(QSystemTrayIcon::ActivationReason reason)
