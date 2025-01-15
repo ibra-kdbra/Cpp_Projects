@@ -276,12 +276,12 @@ void Window::createTrayIcon()
     myTrayIconMenu = new QMenu(this);
 
     showProgramAction = new QAction(tr("Show %1").arg(appName), this);
-    newAndCopyPassowrdAction = new QAction(tr("New+Copy Password"), this);
+    newAndCopyPasswordAction = new QAction(tr("New+Copy Password"), this);
     exitAction = new QAction(tr("Quit"), this);
 
     myTrayIconMenu->addAction(showProgramAction);
     myTrayIconMenu->addSeparator();
-    myTrayIconMenu->addAction(newAndCopyPassowrdAction);
+    myTrayIconMenu->addAction(newAndCopyPasswordAction);
     myTrayIconMenu->addSeparator();
     myTrayIconMenu->addAction(exitAction);
 
@@ -310,7 +310,7 @@ void Window::configurateTrayIcon()
             showNormal();
         }
     });
-    connect(newAndCopyPassowrdAction, &QAction::triggered, this, [this] { emit newAndCopyPassowrdSignal(); });
+    connect(newAndCopyPasswordAction, &QAction::triggered, this, [this] { emit newAndCopyPasswordSignal(); });
     connect(exitAction, &QAction::triggered, qApp, &QApplication::quit); // Ensure exitAction quits the app
 }
 
