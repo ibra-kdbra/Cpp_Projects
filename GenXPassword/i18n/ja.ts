@@ -72,7 +72,7 @@ Please check the value and try again.</source>
         <location filename="../src/passwordgenerator.cpp" line="79"/>
         <source>Contain special symbols:
 !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</source>
-        <translation>約物を含む: 
+        <translation>記号を含む: 
 !&quot;#$%&amp;&apos;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</translation>
     </message>
     <message>
@@ -85,12 +85,12 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="83"/>
         <source>Contain lowercase letters: a-z</source>
-        <translation>小文字を含む: a-z</translation>
+        <translation>英小文字を含む: a-z</translation>
     </message>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="87"/>
         <source>Contain uppercase letters: A-Z</source>
-        <translation>大文字を含む: A-Z</translation>
+        <translation>英大文字を含む: A-Z</translation>
     </message>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="89"/>
@@ -121,7 +121,7 @@ Please select at least one character.</source>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="265"/>
         <source>Hide Password</source>
-        <translation>パスワードを隠す</translation>
+        <translation>パスワードを非表示</translation>
     </message>
     <message>
         <location filename="../src/passwordgenerator.cpp" line="269"/>
