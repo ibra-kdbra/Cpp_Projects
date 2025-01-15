@@ -296,13 +296,19 @@ The project utilizes [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for key deri
 Shuffled random and customizable password generator.
 
 #### Features
-* Support for languages: Arabic, English, Spanish, French, Japanese.
+* Support for languages: Arabic, English, French, Japanese, Spanish.
 * Generates passwords of variable length, from 1 to 512 characters.
 * Support for custom characters.
 * TrayIcon Available
 * Modular source code
 * Cross-Platform
-  - Windows, macOS and Linux.
+  - Windows, MacOS and Linux.
+
+**Preview:**
+<div align="center">
+  
+  <img alt="light" width="200" src="./GenXPassword/screenshots/1.png"> <img alt="dark" width="200" src="./GenXPassword/screenshots/2.png">
+</div>
 
 <div align="right"> 
 <a href="#projects-titles"> 📚 </a>
