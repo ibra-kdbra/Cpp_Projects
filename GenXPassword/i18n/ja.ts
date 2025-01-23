@@ -132,152 +132,159 @@ Please select at least one character.</source>
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="150"/>
+        <location filename="../src/window.cpp" line="159"/>
         <source>&amp;Languages</source>
         <translation>言語[&amp;L]</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="151"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>&amp;Themes</source>
         <translation>テーマ[&amp;T]</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="152"/>
+        <location filename="../src/window.cpp" line="161"/>
         <source>&amp;Shortcuts</source>
         <translation>ショートカット[&amp;S]</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="153"/>
+        <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Help</source>
         <translation>ヘルプ[&amp;H]</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="158"/>
+        <location filename="../src/window.cpp" line="167"/>
         <source>[en] English</source>
         <translation>[en] English</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="168"/>
         <source>[es] Español</source>
         <translation>[es] Español</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="169"/>
         <source>[fr] French</source>
         <translation>[fr] Français</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="171"/>
         <source>[ar] Arabic</source>
         <translation>[ar] العربية</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="164"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>Light</source>
-        <translation>ライト</translation>
+        <translation>ライト(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="165"/>
+        <location filename="../src/window.cpp" line="174"/>
         <source>Dark</source>
-        <translation>ダーク</translation>
+        <translation>ダーク(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="171"/>
+        <location filename="../src/window.cpp" line="180"/>
         <source>&amp;Custom Title Bar</source>
         <translation>カスタムタイトルバー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="173"/>
+        <location filename="../src/window.cpp" line="182"/>
         <source>&amp;About %1</source>
         <translation>%1について[&amp;A]</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="174"/>
+        <location filename="../src/window.cpp" line="183"/>
         <source>&amp;Credits</source>
         <translation>クレジット(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="184"/>
         <source>About &amp;Qt</source>
         <translation>&amp;Qtについて</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="177"/>
+        <location filename="../src/window.cpp" line="186"/>
         <source>E&amp;xit</source>
         <translation>終了(&amp;X)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="185"/>
+        <location filename="../src/window.cpp" line="194"/>
         <source>&amp;Generate Password</source>
         <translation>パスワードを生成する(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="188"/>
+        <location filename="../src/window.cpp" line="197"/>
         <source>Cut Password</source>
-        <translation>パスワードを切り取る</translation>
+        <translation>パスワードを切り取る(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="192"/>
+        <location filename="../src/window.cpp" line="201"/>
         <source>&amp;Copy Password</source>
         <translatorcomment>japanese programs usually use latin letters specified in brackets for shortcuts</translatorcomment>
         <translation>パスワードをコピー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="260"/>
+        <location filename="../src/window.cpp" line="278"/>
+        <location filename="../src/window.cpp" line="290"/>
         <source>Show %1</source>
-        <translation>%1を表示する</translation>
+        <translation>%1を表示する(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="261"/>
+        <location filename="../src/window.cpp" line="279"/>
+        <location filename="../src/window.cpp" line="291"/>
         <source>New+Copy Password</source>
-        <translation>新しい+パスワードをコピー</translation>
+        <translation>新しい+パスワードをコピー(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="357"/>
+        <location filename="../src/window.cpp" line="280"/>
+        <source>Quit</source>
+        <translation>終了(&amp;Q)</translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="388"/>
         <source>Restart Required</source>
         <translation>再起動が必要です。</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="358"/>
+        <location filename="../src/window.cpp" line="389"/>
         <source>You will need to restart in order to use your new language setting
 Your password will be lost if you do not save it before restarting.</source>
         <translation>新しい言語設定を適用するには再起動が必要です。
 再起動前にパスワードを保存しなければ失われます！</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="422"/>
+        <location filename="../src/window.cpp" line="453"/>
         <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Version: %2&lt;/p&gt;&lt;p&gt;%1 is a free password generator that helps you create random and customizable passwords. The program adds or removes characters in the following order:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Numbers, Symbols, Lowercase letters, Uppercase letters&lt;/li&gt;&lt;li&gt;Adds the letters that the user has specified&lt;/li&gt;&lt;li&gt;Removes the letters that the user has specified&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;For issues or contributions, visit the &lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright © 2024 - ibra-kdbra&lt;/p&gt;&lt;p&gt;This program comes with NO WARRANTY OF ANY KIND.&lt;br&gt;See the &lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU General Public License&lt;/a&gt; for details.&lt;/p&gt;&lt;/div&gt;</source>
         <translatorcomment>no.3 literally translates to: &quot;use characters specified by the user&quot;, no.4: &quot;exclude characters specified by the user&quot;</translatorcomment>
         <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;バージョン: %2&lt;/p&gt;&lt;p&gt;%1はランダムでカスタマイズ可能なパスワードを作成するための無料のパスワードジェネレーターです。プログラムは次の順序で文字を追加または削除します:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;数字、記号、小文字、大文字&lt;/li&gt;&lt;li&gt;ユーザーに文字を特定されたを使う&lt;/li&gt;&lt;li&gt;ユーザーに文字を特定されたを除く&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;問題や貢献については、&lt;a href=https://github.com/ibra-kdbra/Cpp_Projects/tree/main/GenXPassword style=color:#0097CF&gt;GitHubリポジトリ&lt;/a&gt;を訪問してください&lt;/p&gt;&lt;p&gt;Copyright © 2023 - ibra-kdbra&lt;/p&gt;&lt;p&gt;このプログラムは保証なしで提供されます。&lt;br&gt;詳細については、&lt;a href=https://www.gnu.org/licenses/gpl-3.0.html style=color:#0097CF&gt;GNU一般公衆ライセンス&lt;/a&gt;をご覧ください。&lt;/p&gt;&lt;/div&gt; {1&gt;?} {1&lt;?} {1&gt;?} {2&lt;?} {1 ?} {0097C?} {2024 ?} {3.0.?} {0097C?}</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="449"/>
+        <location filename="../src/window.cpp" line="480"/>
         <source>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt;Created by &lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Contributors:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=https://fonts.google.com/icons style=color:#0097CF&gt;Material Icons&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</source>
         <translatorcomment>&quot;contributors&quot; replaced with &quot;components&quot; in japanese version, seen similar context in Kate &quot;About&quot; section japanese version.</translatorcomment>
         <translation>&lt;div style=&quot;text-align: center&quot;&gt;&lt;h1&gt;%1&lt;/h1&gt;&lt;p&gt; 作者:&lt;a href=https://github.com/ibra-kdbra style=color:#0097CF&gt;ibra-kdbra&lt;/a&gt;&lt;/p&gt;&lt;p&gt;コンポーネント:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=https://fonts.google.com/icons style=color:#0097CF&gt;Material Icons&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="362"/>
+        <location filename="../src/window.cpp" line="393"/>
         <source>Restart Now</source>
-        <translation>今すぐ再起動</translation>
+        <translation>今すぐ再起動(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="170"/>
         <source>[ja] Japanese</source>
         <translation>[ja] 日本語</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="364"/>
+        <location filename="../src/window.cpp" line="395"/>
         <source>Restart Later</source>
-        <translation>後で再起動</translation>
+        <translation>後で再起動(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="377"/>
+        <location filename="../src/window.cpp" line="408"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="378"/>
+        <location filename="../src/window.cpp" line="409"/>
         <source>Error: &quot;enum QProcess::ProcessError&quot;
 Value error: %1
 The program can still be used
@@ -291,25 +298,25 @@ Do you want copy this error in your clipboard?</source>
 このエラーをクリップボードにコピーしますか？</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="384"/>
+        <location filename="../src/window.cpp" line="415"/>
         <source>Copy to clipboard</source>
         <translation>クリップボードにコピー</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="386"/>
+        <location filename="../src/window.cpp" line="417"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="443"/>
+        <location filename="../src/window.cpp" line="474"/>
         <source>About %1</source>
         <translatorcomment>literally translates to: About GenXPassword</translatorcomment>
         <translation>%1について</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="458"/>
+        <location filename="../src/window.cpp" line="489"/>
         <source>Credits</source>
-        <translation>クレジット</translation>
+        <translation>クレジット(&amp;C)</translation>
     </message>
 </context>
 </TS>
