@@ -9,22 +9,25 @@
 
 <p align="center"><i>Shuffled random and customizable password generator.</i></p>
 
-<!-- 
+
 <div align="center">
   
-  ![image]()
-  ![image]()
+  <img alt="light" width="350" src="./screenshots/1.png"> <img alt="dark" width="350" src="./screenshots/2.png">
 </div>
- -->
+
  
 ## Features
-* Support for languages: Arabic, English, Spanish, French, Japanese.
+* Support for languages: Arabic, English, French, Japanese, Spanish.
 * Generates passwords of variable length, from 1 to 512 characters.
 * Support for custom characters.
 * TrayIcon Available
 * Modular source code
 * Cross-Platform
-  - Windows, macOS and Linux.
+  - Windows, MacOS and Linux.
+
+<div  align="center" >
+  <img alt="languages" width="250" src="./screenshots/languages.png">
+</div>
 
 ## Requirements
 **Windows:** No requirements<br>
@@ -39,4 +42,10 @@ make
 ./build/bin/GenXPassword
 ```
 
+## Installation
 
+### Unix like systems
+
+### Windows
+
+### MacOS
